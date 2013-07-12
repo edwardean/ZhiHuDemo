@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZHListViewDelegate : NSObject
+@interface ZHListViewDelegate : NSObject <UITableViewDelegate>
+
+@property (nonatomic) NSArray *objects;
+
+@property (nonatomic) Class listCellClass;
 
 @end

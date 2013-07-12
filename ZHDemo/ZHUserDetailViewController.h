@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZHListViewController.h"
 
-@interface ZHUserDetailViewController : UIViewController
+@interface ZHUserDetailViewController : ZHListViewController
 
 @end

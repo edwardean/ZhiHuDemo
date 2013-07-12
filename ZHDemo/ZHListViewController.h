@@ -7,7 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZHModel.h"
+
+@class ZHModel;
+@class ZHListViewDataSource;
+@class ZHListViewDelegate;
+@class ZHListView;
 
 @interface ZHListViewController : UIViewController
+
+@property (nonatomic) ZHListView *listView;
+@property (nonatomic) ZHListViewDelegate *listViewDelegate;
+@property (nonatomic) ZHListViewDataSource *listViewDataSource;
+@property (nonatomic) ZHModel *model;
+
+- (void)loadListView;
+
+- (void)registerCellClass:(Class)cellClass;
+
+- (void)createListViewDelegate;
+
+- (void)createListViewDataSource;
+
+- (void)numberOfSectionForListView:(NSInteger)sections;
+
+- (void)modelDidFinishLoading:(id<ZHModel>)model;
 
 @end

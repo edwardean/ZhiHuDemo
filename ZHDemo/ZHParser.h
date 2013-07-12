@@ -14,6 +14,4 @@
 
 - (id)parser;
 
-- (void)bindDataToModel:(id)data;
-
 @end

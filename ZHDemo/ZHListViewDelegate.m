@@ -10,4 +10,16 @@
 
 @implementation ZHListViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView
+		heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 44.0f;
+}
+
+- (void)tableView:(UITableView *)tableView
+		didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	
+}
+
 @end

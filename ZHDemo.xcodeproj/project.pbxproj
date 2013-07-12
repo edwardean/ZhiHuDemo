@@ -140,6 +140,9 @@
 		CA77DAD51790002F0012FE4F /* ZHListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAD41790002F0012FE4F /* ZHListViewCell.m */; };
 		CA77DAD81790004B0012FE4F /* ZHListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAD71790004B0012FE4F /* ZHListViewDelegate.m */; };
 		CA77DADB179000620012FE4F /* ZHListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DADA179000620012FE4F /* ZHListViewDataSource.m */; };
+		CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */; };
+		CA77DAE117900F8D0012FE4F /* ZHCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAE017900F8C0012FE4F /* ZHCollectionDataSource.m */; };
+		CA77DAE417900FA90012FE4F /* ZHCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAE317900FA90012FE4F /* ZHCollectionDelegate.m */; };
 		CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544B178EA2B2005552CE /* UIKit.framework */; };
 		CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544D178EA2B2005552CE /* Foundation.framework */; };
 		CA8C5456178EA2B2005552CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8C5454178EA2B2005552CE /* InfoPlist.strings */; };
@@ -339,6 +342,12 @@
 		CA77DAD71790004B0012FE4F /* ZHListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHListViewDelegate.m; sourceTree = "<group>"; };
 		CA77DAD9179000620012FE4F /* ZHListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHListViewDataSource.h; sourceTree = "<group>"; };
 		CA77DADA179000620012FE4F /* ZHListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHListViewDataSource.m; sourceTree = "<group>"; };
+		CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionCell.h; sourceTree = "<group>"; };
+		CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionCell.m; sourceTree = "<group>"; };
+		CA77DADF17900F8C0012FE4F /* ZHCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionDataSource.h; sourceTree = "<group>"; };
+		CA77DAE017900F8C0012FE4F /* ZHCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionDataSource.m; sourceTree = "<group>"; };
+		CA77DAE217900FA90012FE4F /* ZHCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionDelegate.h; sourceTree = "<group>"; };
+		CA77DAE317900FA90012FE4F /* ZHCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionDelegate.m; sourceTree = "<group>"; };
 		CA8C5448178EA2B2005552CE /* ZHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C544B178EA2B2005552CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CA8C544D178EA2B2005552CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -646,6 +655,8 @@
 				CA77DACF178FFF5D0012FE4F /* ZHListView.m */,
 				CA77DAD31790002F0012FE4F /* ZHListViewCell.h */,
 				CA77DAD41790002F0012FE4F /* ZHListViewCell.m */,
+				CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */,
+				CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -655,6 +666,8 @@
 			children = (
 				CA77DAD61790004B0012FE4F /* ZHListViewDelegate.h */,
 				CA77DAD71790004B0012FE4F /* ZHListViewDelegate.m */,
+				CA77DAE217900FA90012FE4F /* ZHCollectionDelegate.h */,
+				CA77DAE317900FA90012FE4F /* ZHCollectionDelegate.m */,
 			);
 			name = ListViewDelegate;
 			sourceTree = "<group>";
@@ -664,6 +677,8 @@
 			children = (
 				CA77DAD9179000620012FE4F /* ZHListViewDataSource.h */,
 				CA77DADA179000620012FE4F /* ZHListViewDataSource.m */,
+				CA77DADF17900F8C0012FE4F /* ZHCollectionDataSource.h */,
+				CA77DAE017900F8C0012FE4F /* ZHCollectionDataSource.m */,
 			);
 			name = ListViewDataSource;
 			sourceTree = "<group>";
@@ -703,10 +718,10 @@
 		CA8C5451178EA2B2005552CE /* ZHDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CA77DAD2178FFFAD0012FE4F /* ListViewDataSource */,
-				CA77DAD1178FFF9A0012FE4F /* ListViewDelegate */,
 				CA8C545A178EA2B2005552CE /* ZHAppDelegate.h */,
 				CA8C545B178EA2B2005552CE /* ZHAppDelegate.m */,
+				CA77DAD2178FFFAD0012FE4F /* ListViewDataSource */,
+				CA77DAD1178FFF9A0012FE4F /* ListViewDelegate */,
 				CA77DABC178FD8B40012FE4F /* ViewControllers */,
 				CA77DACD178FFF390012FE4F /* Views */,
 				CA54FAC4178EABBC007DC220 /* DataParser */,
@@ -994,6 +1009,9 @@
 				CA77DAD51790002F0012FE4F /* ZHListViewCell.m in Sources */,
 				CA77DAD81790004B0012FE4F /* ZHListViewDelegate.m in Sources */,
 				CA77DADB179000620012FE4F /* ZHListViewDataSource.m in Sources */,
+				CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */,
+				CA77DAE117900F8D0012FE4F /* ZHCollectionDataSource.m in Sources */,
+				CA77DAE417900FA90012FE4F /* ZHCollectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZHListViewCell.h"
 
-@interface ZHListViewDataSource : NSObject
+@interface ZHListViewDataSource : NSObject <UITableViewDataSource>
+
+@property (nonatomic) Class listCellClass;
+
+@property (nonatomic) NSInteger sections;
+
+@property (nonatomic) NSArray *objects;
 
 @end

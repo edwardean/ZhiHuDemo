@@ -49,7 +49,6 @@
                                           @"avatar_url":avatar_url};
   NSLog(@"AnsHeader:%@",answerHeaderDictinary);
   id object = [self.baseObject bindWithObjec:answerHeaderDictinary forObjectType:ZHObjectTypeAnswerHeader];
-  
   ZHModel *model = [[ZHModel alloc] init];
   model.object = object;
   //return answerHeaderDictinary;
