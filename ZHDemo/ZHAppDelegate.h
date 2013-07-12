@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SBJSON.h"
 
 @interface ZHAppDelegate : UIResponder <UIApplicationDelegate>
 
