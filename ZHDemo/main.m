@@ -9,15 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "ZHAppDelegate.h"
-#import "ZHDataParserFactory.h"
-#import "ZHCollectionFactory.h"
+
 
 int main(int argc, char *argv[])
 {
-  @autoreleasepool {
-    
-    ZHCollectionFactory *collection = [ZHCollectionFactory DataParserFactory];
-    
-      return UIApplicationMain(argc, argv, nil, NSStringFromClass([ZHAppDelegate class]));
+  @autoreleasepool {    
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([ZHAppDelegate class]));
   }
 }

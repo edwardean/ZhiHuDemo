@@ -1,0 +1,2 @@
+platform :ios ,"iOS6.0"
+pod 'SDWebImage'

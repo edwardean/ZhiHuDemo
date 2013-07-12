@@ -1,5 +1,5 @@
 //
-//  ZHParser.h
+//  ZHListViewDelegate.h
 //  ZHDemo
 //
 //  Created by Edward on 13-7-12.
@@ -7,13 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONKit.h"
-#import "ZHModel.h"
 
-@interface ZHParser : NSObject
-
-- (id)parser;
-
-- (void)bindDataToModel:(id)data;
+@interface ZHListViewDelegate : NSObject
 
 @end

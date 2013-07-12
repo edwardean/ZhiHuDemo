@@ -7,7 +7,16 @@
 //
 
 #import "ZHUserDetailParser.h"
+#import "ZHLoadJSONFile.h"
 
 @implementation ZHUserDetailParser
+
+- (id)parser
+{
+	NSData *data = [ZHLoadJSONFile UserDetailData];
+  NSDictionary *dictionary = [data objectFromJSONData];
+  
+  return nil;
+}
 
 @end

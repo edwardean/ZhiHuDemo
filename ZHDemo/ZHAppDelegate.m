@@ -9,6 +9,14 @@
 #import "ZHAppDelegate.h"
 #import "ZHCollectionViewController.h"
 
+#import "ZHDataParserFactory.h"
+#import "ZHCollectionFactory.h"
+#import "ZHAnswerFactory.h"
+#import "ZHAnswerHeaderFactory.h"
+#import "ZHUserInfoFactory.h"
+#import "ZHParser.h"
+#import "ZHCollectionParser.h"
+
 @implementation ZHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,6 +31,9 @@
   self.window.rootViewController = self.navigationConreoller;
   
   [self.window makeKeyAndVisible];
+  
+  ZHParser *parser = [ZHUserInfoFactory ParserFactory];
+  [parser parser];
   
   return YES;
 }
