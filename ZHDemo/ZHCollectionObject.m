@@ -10,7 +10,7 @@
 
 @implementation ZHCollectionObject
 @synthesize title = title_;
-@synthesize description = description_;
+@synthesize des = des_;
 @synthesize avatar_url = avatar_url_;
 @synthesize name = name_;
 @synthesize answer_count = answer_count_;
@@ -34,7 +34,7 @@
   }
   NSDictionary *dictionary = (NSDictionary *)object;
   collectionObject.title = [dictionary objectForKey:@"title"];
-  collectionObject.description = [dictionary objectForKey:@"description"];
+  collectionObject.des = [dictionary objectForKey:@"description"];
   collectionObject.name = [dictionary objectForKey:@"name"];
   collectionObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
   collectionObject.answer_count = [dictionary objectForKey:@"answer_count"];

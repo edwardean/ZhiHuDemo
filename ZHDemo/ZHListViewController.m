@@ -125,6 +125,7 @@
 	NSArray *dataArray = [mo objects];
   [self.listViewDelegate setObjects:dataArray];
   [self.listViewDataSource setObjects:dataArray];
+  //[self.listViewDataSource setSections:[dataArray count]];
   [self.listView reloadData];
 }
 

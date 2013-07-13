@@ -40,6 +40,7 @@
 {
   self.baseObject = [[ZHObject alloc] init];
   self.collectionObject = [[ZHCollectionObject alloc] init];
+  self.collectionArray = [NSMutableArray array];
   
 	NSData *data = [ZHLoadJSONFile CollectionData];
   NSDictionary *dictionary = [data objectFromJSONData];

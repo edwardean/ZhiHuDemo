@@ -10,6 +10,8 @@
 #import "ZHCollectionCell.h"
 #import "ZHCollectionDelegate.h"
 #import "ZHCollectionDataSource.h"
+#import "ZHParser.h"
+#import "ZHCollectionFactory.h"
 
 @interface ZHCollectionViewController ()
 
@@ -29,8 +31,17 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-	
+  
+  
   [self registerCellClass:[ZHCollectionCell class]];
+	
+  ZHParser *parser = [ZHCollectionFactory ParserFactory];
+  
+  ZHModel *model = [parser parser];
+  NSLog(@"Model,Object:%@",model.object);
+  NSLog(@"Model,Objects:%@",model.objects);
+  [self numberOfSectionForListView:model.objects.count];
+  [self modelDidFinishLoading:model];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,16 +50,21 @@
   
 }
 
-- (void)createListViewDelegate
-{
-	ZHCollectionDelegate *delegate = [[ZHCollectionDelegate alloc] init];
-  self.listViewDelegate = delegate;
-}
+//- (void)createListViewDelegate
+//{
+//	ZHCollectionDelegate *delegate = [[ZHCollectionDelegate alloc] init];
+//  self.listViewDelegate = delegate;
+//}
 
 //- (void)createListViewDataSource
 //{
 //	ZHCollectionDataSource *dataSource = [[ZHCollectionDataSource alloc] init];
 //  self.listViewDataSource = dataSource;
+//}
+
+//- (void)modelDidFinishLoading:(id<ZHModel>)model
+//{
+//	
 //}
 
 @end

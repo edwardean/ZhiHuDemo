@@ -10,4 +10,8 @@
 
 @interface ZHListViewCell : UITableViewCell
 
+- (void)bindWithObject:(id)object;
+
++ (CGFloat)RowHeightWitObject:(id)object;
+
 @end

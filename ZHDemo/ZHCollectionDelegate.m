@@ -12,12 +12,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 44;
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	
+	return 140;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -34,5 +29,18 @@
 {
 	
 }
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] stretchableImageWithLeftCapWidth:28 topCapHeight:28];
+	//UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(28, 15, 46, 45)];
+  UIImageView *imgView = [[UIImageView alloc] initWithFrame:cell.frame];
+  //[imgView setBackgroundColor:[UIColor yellowColor]];
+  [imgView setImage:resizedImage];
+  [cell setBackgroundView:imgView];
+}
+
 
 @end

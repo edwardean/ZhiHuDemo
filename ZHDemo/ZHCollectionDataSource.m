@@ -7,12 +7,10 @@
 //
 
 #import "ZHCollectionDataSource.h"
+#import "ZHCollectionCell.h"
+#import "ZHListViewCell.h"
 
 @implementation ZHCollectionDataSource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	
-}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ZHListViewDataSource.h"
+#import "ZHCollectionCell.h"
 
 @interface ZHListViewDataSource ()
 
@@ -72,7 +73,10 @@
     cell.hidden = YES;
   } else {
   	//填充cell数据
+    [cell bindWithObject:[self.objects objectAtIndex:indexPath.section]];
   }
+  
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
   
   return cell;
 }

@@ -32,9 +32,6 @@
   
   [self.window makeKeyAndVisible];
   
-  ZHParser *parser = [ZHAnswerHeaderFactory ParserFactory];
-  [parser parser];
-  
   return YES;
 }
 

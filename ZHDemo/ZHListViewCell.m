@@ -26,4 +26,14 @@
     // Configure the view for the selected state
 }
 
+- (void)bindWithObject:(id)object
+{
+
+}
+
++ (CGFloat)RowHeightWitObject:(id)object
+{
+	return 44.0f;
+}
+
 @end

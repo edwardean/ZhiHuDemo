@@ -7,16 +7,20 @@
 //
 
 #import "ZHListViewDelegate.h"
+#import "ZHListViewCell.h"
 
 @implementation ZHListViewDelegate
 
+@synthesize objects = objects_;
 @synthesize cellHeaderView = cellHeaderView_;
 @synthesize cellFooterView = cellFooterView_;
+@synthesize listCellClass = listCellClass_;
 
 - (CGFloat)tableView:(UITableView *)tableView
 		heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 44.0f;
+  id object = [self.objects objectAtIndex:indexPath.section];
+  return [self.listCellClass RowHeightWitObject:object];
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -35,6 +39,14 @@
 		viewForFooterInSection:(NSInteger)section
 {
 	return cellFooterView_;
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:28];
+  cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
 }
 
 @end

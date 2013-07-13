@@ -99,6 +99,9 @@
 		CA33ACD61790FE3C00F37894 /* ZHThankIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */; };
 		CA33ACD71790FE3C00F37894 /* ZHVoteupIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */; };
 		CA33ACD81790FE3C00F37894 /* ZHVoteupIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */; };
+		CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */; };
+		CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */; };
+		CA4EA69317912078004BE8F9 /* ZHDMViewInputBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */; };
 		CA54FAA1178EA7CD007DC220 /* ZHCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA54FAA0178EA7CD007DC220 /* ZHCollectionViewController.m */; };
 		CA54FAA4178EA81F007DC220 /* ZHAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA54FAA3178EA81F007DC220 /* ZHAnswerViewController.m */; };
 		CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA54FAA6178EA850007DC220 /* ZHUserInfoViewController.m */; };
@@ -144,6 +147,8 @@
 		CA8C5477178EA2B2005552CE /* ZHDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C5476178EA2B2005552CE /* ZHDemoTests.m */; };
 		CA8D9999179103F000AE1900 /* BackgroundTextures.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8D9997179103F000AE1900 /* BackgroundTextures.png */; };
 		CA8D999A179103F000AE1900 /* BackgroundTextures@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8D9998179103F000AE1900 /* BackgroundTextures@2x.png */; };
+		CAAEFCCF17911BA800F1233D /* ZHCellMiddleNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */; };
+		CAAEFCD017911BA800F1233D /* ZHCellMiddleNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CABA8A5517901316004B356E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A5417901316004B356E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
@@ -251,6 +256,9 @@
 		CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHThankIcon@2x.png"; sourceTree = "<group>"; };
 		CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHVoteupIcon.png; sourceTree = "<group>"; };
 		CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHVoteupIcon@2x.png"; sourceTree = "<group>"; };
+		CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHDMViewInputBox.png; sourceTree = "<group>"; };
+		CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHDMViewInputBox@2x.png"; sourceTree = "<group>"; };
 		CA54FA9F178EA7CD007DC220 /* ZHCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewController.h; sourceTree = "<group>"; };
 		CA54FAA0178EA7CD007DC220 /* ZHCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewController.m; sourceTree = "<group>"; };
 		CA54FAA2178EA81F007DC220 /* ZHAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerViewController.h; sourceTree = "<group>"; };
@@ -330,6 +338,8 @@
 		CA8C5476178EA2B2005552CE /* ZHDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHDemoTests.m; sourceTree = "<group>"; };
 		CA8D9997179103F000AE1900 /* BackgroundTextures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundTextures.png; sourceTree = "<group>"; };
 		CA8D9998179103F000AE1900 /* BackgroundTextures@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundTextures@2x.png"; sourceTree = "<group>"; };
+		CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHCellMiddleNormal.png; sourceTree = "<group>"; };
+		CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHCellMiddleNormal@2x.png"; sourceTree = "<group>"; };
 		CABA8A4F179012F0004B356E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		CABA8A50179012F0004B356E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		CABA8A5317901316004B356E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -341,6 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */,
 				CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */,
 				CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */,
 				CA54FAC0178EAB36007DC220 /* CoreGraphics.framework in Frameworks */,
@@ -405,6 +416,8 @@
 		CA33AC3C1790FE3C00F37894 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */,
+				CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */,
 				CA8D9997179103F000AE1900 /* BackgroundTextures.png */,
 				CA8D9998179103F000AE1900 /* BackgroundTextures@2x.png */,
 				CA33AC3D1790FE3C00F37894 /* AvatarFemale100.png */,
@@ -439,6 +452,8 @@
 				CA33AC5A1790FE3C00F37894 /* ZHCellSingleNormal@2x.png */,
 				CA33AC5B1790FE3C00F37894 /* ZHCellTopNormal.png */,
 				CA33AC5C1790FE3C00F37894 /* ZHCellTopNormal@2x.png */,
+				CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */,
+				CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */,
 				CA33AC5D1790FE3C00F37894 /* ZHExploreFavBase.png */,
 				CA33AC5E1790FE3C00F37894 /* ZHExploreFavBase@2x.png */,
 				CA33AC5F1790FE3C00F37894 /* ZHExploreFavTopBase.png */,
@@ -649,6 +664,7 @@
 		CA8C544A178EA2B2005552CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */,
 				CA8C544B178EA2B2005552CE /* UIKit.framework */,
 				CA8C544D178EA2B2005552CE /* Foundation.framework */,
 				CA8C544F178EA2B2005552CE /* CoreGraphics.framework */,
@@ -873,6 +889,7 @@
 				CA33ACC21790FE3C00F37894 /* ZHProfileMessageIconNormal@2x.png in Resources */,
 				CA33AC8E1790FE3C00F37894 /* AvatarMale100@2x.png in Resources */,
 				CA33AC981790FE3C00F37894 /* NavigationBar@2x.png in Resources */,
+				CAAEFCD017911BA800F1233D /* ZHCellMiddleNormal@2x.png in Resources */,
 				CA33ACBE1790FE3C00F37894 /* ZHNavigationBarShuffleIcon@2x.png in Resources */,
 				CA33ACB01790FE3C00F37894 /* ZHExploreShuffleIconNext@2x.png in Resources */,
 				CA33AC9E1790FE3C00F37894 /* NavigationBarButtonHighlight@2x.png in Resources */,
@@ -886,14 +903,17 @@
 				CA33AC261790FE0F00F37894 /* info1.json in Resources */,
 				CA33AC291790FE0F00F37894 /* info4.json in Resources */,
 				CA33AC991790FE3C00F37894 /* NavigationBarBackButtonHighlight.png in Resources */,
+				CAAEFCCF17911BA800F1233D /* ZHCellMiddleNormal.png in Resources */,
 				CA33AC331790FE2200F37894 /* detail2.json in Resources */,
 				CA33AC3B1790FE3000F37894 /* header.json in Resources */,
 				CA33AC361790FE2200F37894 /* detail5.json in Resources */,
 				CA8C5462178EA2B2005552CE /* Default-568h@2x.png in Resources */,
+				CA4EA69317912078004BE8F9 /* ZHDMViewInputBox@2x.png in Resources */,
 				CA33ACD31790FE3C00F37894 /* ZHQuestionViewFollowingIcon.png in Resources */,
 				CA33ACB51790FE3C00F37894 /* ZHListViewArrowRight.png in Resources */,
 				CA33AC8D1790FE3C00F37894 /* AvatarMale100.png in Resources */,
 				CA8D9999179103F000AE1900 /* BackgroundTextures.png in Resources */,
+				CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */,
 				CA33ACB21790FE3C00F37894 /* ZHFeaturedContentBase@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1015,6 +1035,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1028,8 +1049,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1052,7 +1074,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1062,6 +1084,8 @@
 		CA8C547B178EA2B2005552CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1075,6 +1099,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1082,6 +1107,8 @@
 		CA8C547C178EA2B2005552CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1095,6 +1122,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
