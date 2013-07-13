@@ -63,12 +63,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ZHListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.listViewCellClassIdentifier];
+	ZHListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                          self.listViewCellClassIdentifier];
   
   if (!cell) {
     cell = [[self.listCellClass alloc] initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:listViewCellClassIdentifier_];
   }
+  
   if (indexPath.row > [self.objects count] - 1) {
     cell.hidden = YES;
   } else {

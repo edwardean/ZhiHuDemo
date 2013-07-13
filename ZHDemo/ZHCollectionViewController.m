@@ -32,15 +32,14 @@
 {
   [super viewDidLoad];
   
-  
   [self registerCellClass:[ZHCollectionCell class]];
 	
   ZHParser *parser = [ZHCollectionFactory ParserFactory];
   
   ZHModel *model = [parser parser];
-  NSLog(@"Model,Object:%@",model.object);
-  NSLog(@"Model,Objects:%@",model.objects);
+  
   [self numberOfSectionForListView:model.objects.count];
+  
   [self modelDidFinishLoading:model];
 }
 

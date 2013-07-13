@@ -10,22 +10,26 @@
 
 @implementation ZHCollectionDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView
+		heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	return 140;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView
+		viewForHeaderInSection:(NSInteger)section
 {
 	return nil;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView
+		viewForFooterInSection:(NSInteger)section
 {
 	return nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView
+		didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
 }
