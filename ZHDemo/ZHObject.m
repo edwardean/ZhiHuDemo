@@ -11,9 +11,10 @@
 @implementation ZHObject
 @synthesize type = type_;
 
-//- (void)bindWithObjec:(id<ZHObject>)object forObjectType:(ZHObjectType)objecttype
-//{
-//	[NSException raise:NSInternalInconsistencyException format:@"子类%@必须重写%@方法",[NSString stringWithUTF8String:object_getClassName(self)],NSStringFromSelector(_cmd)];
-//}
+- (id)bindWithObjec:(id<ZHObject>)object forObjectType:(ZHObjectType)objecttype
+{
+	[NSException raise:NSInternalInconsistencyException format:@"子类%@必须重写%@方法",[NSString stringWithUTF8String:object_getClassName(self)],NSStringFromSelector(_cmd)];
+  return nil;
+}
 
 @end

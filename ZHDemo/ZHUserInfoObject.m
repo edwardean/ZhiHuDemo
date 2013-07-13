@@ -12,7 +12,7 @@
 
 @synthesize name = name_;
 @synthesize headline = headline_;
-@synthesize description = description_;
+@synthesize des = des_;
 @synthesize avatar_url = avatar_url_;
 @synthesize gender = gender_;
 @synthesize following_topic_count = following_topic_count_;
@@ -50,7 +50,7 @@
 	NSDictionary *dictionary = (NSDictionary *)object;
   userInfoObject.name = [dictionary objectForKey:@"name"];
   userInfoObject.headline = [dictionary objectForKey:@"headline"];
-  userInfoObject.description = [dictionary objectForKey:@"description"];
+  userInfoObject.des = [dictionary objectForKey:@"description"];
   userInfoObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
   userInfoObject.gender = [dictionary objectForKey:@"gender"];
   userInfoObject.following_topic_count = [dictionary objectForKey:@"following_topic_count"];
@@ -69,6 +69,7 @@
   userInfoObject.education = [dictionary objectForKey:@"education"];
   userInfoObject.employment = [dictionary objectForKey:@"employment"];
   userInfoObject.location = [dictionary objectForKey:@"location"];
+  NSLog(@"userInfoObject:%@",userInfoObject);
   return userInfoObject;
 }
 

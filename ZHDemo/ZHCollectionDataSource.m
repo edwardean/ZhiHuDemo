@@ -10,4 +10,9 @@
 
 @implementation ZHCollectionDataSource
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	
+}
+
 @end

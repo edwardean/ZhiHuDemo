@@ -8,21 +8,25 @@
 
 #import "ZHUserInfoParser.h"
 #import "ZHLoadJSONFile.h"
+#import "ZHUserInfoObject.h"
 #import "ZHObject.h"
 
 @interface ZHUserInfoParser ()
 
 @property (nonatomic) ZHObject *baseObject;
+@property (nonatomic) ZHUserInfoObject *userInfoObject;
 
 @end
 
 @implementation ZHUserInfoParser
 
 @synthesize baseObject = baseObject_;
+@synthesize userInfoObject = userInfoObject_;
 
 - (id)parser
 {
   self.baseObject = [[ZHObject alloc] init];
+  self.userInfoObject = [[ZHUserInfoObject alloc] init];
   
 	NSData *data = [ZHLoadJSONFile UserInfoData];
   NSDictionary *dictionary = [data objectFromJSONData];
@@ -42,7 +46,9 @@
   NSString *question_count = [NSString stringWithFormat:@"%d",[[dictionary objectForKey:@"question_count"] integerValue]];//问过
   
   NSString *sina_weibo_name = [dictionary objectForKey:@"sina_weibo_name"];//新浪微博用户名
+  
   NSString *qq_weibo_name = [dictionary objectForKey:@"qq_weibo_name"];//腾讯微博用户名
+  
   
   //详情页面的其它数据
   NSString *favorited_count = [dictionary objectForKey:@"favorited_count"];//答案被收藏
@@ -57,34 +63,96 @@
   NSArray *employment = [dictionary objectForKey:@"employment"];//工作经历
   
 	NSArray *location = [dictionary objectForKey:@"location"];//居住地
-
-  NSDictionary *userInfoDictionary = @{@"name" : name,
-                                       @"headline" : headline,
-                                       @"description" : description,
-                                       @"avatar_url" : avatar_url,
-                                       @"gender" : gender,
-                                       @"following_topic_count" : following_topic_count,
-                                       @"following_count" : following_count,
-                                       @"follower_count" : follower_count,
-                                       @"voteup_count" : voteup_count,
-                                       @"thanked_count" : thanked_count,
-                                       @"answer_count" : answer_count,
-                                       @"question_count" : question_count,
-                                       @"favorite_count" : favorite_count,
-                                       @"sina_weibo_name" : sina_weibo_name,
-                                       @"qq_weibo_name" : qq_weibo_name,
-                                       @"favorited_count" : favorited_count,
-                                       @"shared_count" : shared_count,
-                                       @"business" : business,
-                                       @"education" : education,
-                                       @"employment" : employment,
-                                       @"location" : location};
-  // NSLog(@"%@",userInfoDictionary);
-  id object = [baseObject_ bindWithObjec:userInfoDictionary forObjectType:ZHObjectTypeUserInfo];
+  
+  //  NSDictionary *dic = @{@"name" : name,
+  //                        @"headline" : headline,
+  //                        @"description" : description,
+  //                        @"avatar_url" : avatar_url,
+  //                        @"gender" : gender,
+  //                        @"following_topic_count" : following_topic_count,
+  //                        @"following_count" : following_count,
+  //                        @"follower_count" : follower_count,
+  //                        @"voteup_count" : voteup_count,
+  //                        @"thanked_count" : thanked_count,
+  //                        @"answer_count" : answer_count,
+  //                        @"question_count" : question_count,
+  //                        @"favorite_count" : favorite_count,
+  //                        @"favorited_count" : favorited_count,
+  //                        @"shared_count" : shared_count,
+  //                        @"business" : business,
+  //                        @"education" : education,
+  //                        @"employment" : employment,
+  //                        @"location" : location};
+  NSMutableDictionary *userInfoDictionary = [NSMutableDictionary dictionary];
+  if ([name length] > 0) {
+    [userInfoDictionary setObject:name forKey:@"name"];
+  }
+  if ([headline length] > 0) {
+    [userInfoDictionary setObject:headline forKey:@"headline"];
+  }
+  if ([description length] > 0) {
+    [userInfoDictionary setObject:description forKey:@"description"];
+  }
+  if ([avatar_url length] > 0) {
+    [userInfoDictionary setObject:avatar_url forKey:@"avatar_url"];
+  }
+  if (gender) {
+    [userInfoDictionary setObject:gender forKey:@"gender"];
+  }
+  if (following_topic_count) {
+    [userInfoDictionary setObject:following_topic_count forKey:@"following_topic_count"];
+  }
+  if (following_count) {
+    [userInfoDictionary setObject:following_count forKey:@"following_count"];
+  }
+  if (follower_count) {
+    [userInfoDictionary setObject:follower_count forKey:@"follower_count"];
+  }
+  if (voteup_count) {
+    [userInfoDictionary setObject:voteup_count forKey:@"voteup_count"];
+  }
+  if (thanked_count) {
+    [userInfoDictionary setObject:thanked_count forKey:@"thanked_count"];
+  }
+  if (answer_count) {
+    [userInfoDictionary setObject:answer_count forKey:@"answer_count"];
+  }
+  if (question_count) {
+    [userInfoDictionary setObject:question_count forKey:@"question_count"];
+  }
+  if (favorite_count) {
+    [userInfoDictionary setObject:favorite_count forKey:@"favorite_count"];
+  }
+  if (favorited_count) {
+    [userInfoDictionary setObject:favorited_count forKey:@"favorited_count"];
+  }
+  if (shared_count) {
+    [userInfoDictionary setObject:shared_count forKey:@"shared_count"];
+  }
+  if (business) {
+    [userInfoDictionary setObject:business forKey:@"business"];
+  }
+  if (education) {
+    [userInfoDictionary setObject:education forKey:@"education"];
+  }
+  if (employment) {
+    [userInfoDictionary setObject:employment forKey:@"employment"];
+  }
+  if (location) {
+    [userInfoDictionary setObject:location forKey:@"location"];
+  }
+  if ([sina_weibo_name length] > 0) {
+    [userInfoDictionary setObject:sina_weibo_name forKey:@"sina_weibo_name"];
+  }
+  if ([qq_weibo_name length] > 0) {
+    [userInfoDictionary setObject:qq_weibo_name forKey:@"qq_weibo_name"];
+  }
+  
+  NSLog(@"Dic :%@",userInfoDictionary);
+  ZHUserInfoObject* object = [userInfoObject_ bindWithObjec:userInfoDictionary forObjectType:ZHObjectTypeUserInfo];
   
   ZHModel *model = [[ZHModel alloc] init];
   model.object = object;
-  //return userInfoDictionary;
   return model;
 }
 

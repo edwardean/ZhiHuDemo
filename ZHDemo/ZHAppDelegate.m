@@ -32,7 +32,7 @@
   
   [self.window makeKeyAndVisible];
   
-  ZHParser *parser = [ZHUserInfoFactory ParserFactory];
+  ZHParser *parser = [ZHAnswerHeaderFactory ParserFactory];
   [parser parser];
   
   return YES;

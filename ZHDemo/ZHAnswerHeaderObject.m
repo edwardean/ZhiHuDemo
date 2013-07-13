@@ -11,7 +11,7 @@
 @implementation ZHAnswerHeaderObject
 
 @synthesize title = title_;
-@synthesize description = description_;
+@synthesize des = des_;
 @synthesize avatar_url = avatar_url_;
 @synthesize name = name_;
 @synthesize follower_count = follower_count_;
@@ -37,7 +37,7 @@
   
   
   answerHeaderObject.title = [dictionary objectForKey:@"title"];
-  answerHeaderObject.description = [dictionary objectForKey:@"description"];
+  answerHeaderObject.des = [dictionary objectForKey:@"description"];
   answerHeaderObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
   answerHeaderObject.name = [dictionary objectForKey:@"name"];
   answerHeaderObject.follower_count = [dictionary objectForKey:@"follower_count"];

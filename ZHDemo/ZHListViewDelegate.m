@@ -10,6 +10,9 @@
 
 @implementation ZHListViewDelegate
 
+@synthesize cellHeaderView = cellHeaderView_;
+@synthesize cellFooterView = cellFooterView_;
+
 - (CGFloat)tableView:(UITableView *)tableView
 		heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -20,6 +23,18 @@
 		didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
+}
+
+- (UIView *)tableView:(UITableView *)tableView
+		viewForHeaderInSection:(NSInteger)section
+{
+	return cellHeaderView_;
+}
+
+- (UIView *)tableView:(UITableView *)tableView
+		viewForFooterInSection:(NSInteger)section
+{
+	return cellFooterView_;
 }
 
 @end

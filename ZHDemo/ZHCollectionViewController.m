@@ -7,6 +7,9 @@
 //
 
 #import "ZHCollectionViewController.h"
+#import "ZHCollectionCell.h"
+#import "ZHCollectionDelegate.h"
+#import "ZHCollectionDataSource.h"
 
 @interface ZHCollectionViewController ()
 
@@ -26,7 +29,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor whiteColor];
+	
+  [self registerCellClass:[ZHCollectionCell class]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +38,17 @@
   [super didReceiveMemoryWarning];
   
 }
+
+- (void)createListViewDelegate
+{
+	ZHCollectionDelegate *delegate = [[ZHCollectionDelegate alloc] init];
+  self.listViewDelegate = delegate;
+}
+
+//- (void)createListViewDataSource
+//{
+//	ZHCollectionDataSource *dataSource = [[ZHCollectionDataSource alloc] init];
+//  self.listViewDataSource = dataSource;
+//}
 
 @end

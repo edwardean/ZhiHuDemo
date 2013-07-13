@@ -14,4 +14,8 @@
 
 @property (nonatomic) Class listCellClass;
 
+@property (nonatomic) UIView *cellHeaderView;
+
+@property (nonatomic) UIView *cellFooterView;
+
 @end

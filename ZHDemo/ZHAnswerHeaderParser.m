@@ -9,20 +9,24 @@
 #import "ZHAnswerHeaderParser.h"
 #import "ZHLoadJSONFile.h"
 #import "ZHObject.h"
+#import "ZHAnswerHeaderObject.h"
 
 @interface ZHAnswerHeaderParser ()
 
 @property (nonatomic) ZHObject *baseObject;
+@property (nonatomic) ZHAnswerHeaderObject *headerObject;
 
 @end
 
 @implementation ZHAnswerHeaderParser
 
 @synthesize baseObject = baseObject_;
+@synthesize headerObject = headerObject_;
 
 - (id)parser
 {
   self.baseObject = [[ZHObject alloc]init];
+  self.headerObject = [[ZHAnswerHeaderObject alloc] init];
   
 	NSData *data = [ZHLoadJSONFile AnswerHeaderData];
   NSDictionary *dictonary = [data objectFromJSONData];
@@ -40,15 +44,31 @@
   
   NSString *avatar_url = [creator objectForKey:@"avatar_url"];
   
-  
-  NSDictionary *answerHeaderDictinary = @{@"title": title,
-                                          @"description":description,
-                                          @"follower_count":follower_count,
-                                          @"comment_count":comment_count,
-                                          @"name":name,
-                                          @"avatar_url":avatar_url};
+  NSMutableDictionary *answerHeaderDictinary = [NSMutableDictionary dictionary];
+  if (title) {
+    [answerHeaderDictinary setObject:title forKey:@"title"];
+  }
+  if (description) {
+    [answerHeaderDictinary setObject:description forKey:@"description"];
+  }
+  if (follower_count) {
+    [answerHeaderDictinary setObject:follower_count forKey:@"follower_count"];
+  }
+  if (comment_count) {
+    [answerHeaderDictinary setObject:comment_count forKey:@"comment_count"];
+  }
+  if (creator) {
+    [answerHeaderDictinary setObject:creator forKey:@"creator"];
+  }
+  if (name) {
+    [answerHeaderDictinary setObject:name forKey:@"name"];
+  }
+  if (avatar_url) {
+    [answerHeaderDictinary setObject:avatar_url forKey:@"avatar_url"];
+  }
+
   NSLog(@"AnsHeader:%@",answerHeaderDictinary);
-  id object = [self.baseObject bindWithObjec:answerHeaderDictinary forObjectType:ZHObjectTypeAnswerHeader];
+  ZHAnswerHeaderObject *object = [self.headerObject bindWithObjec:answerHeaderDictinary forObjectType:ZHObjectTypeAnswerHeader];
   ZHModel *model = [[ZHModel alloc] init];
   model.object = object;
   //return answerHeaderDictinary;

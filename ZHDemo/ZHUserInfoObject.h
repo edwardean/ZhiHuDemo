@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSString *name;//姓名
 @property (nonatomic) NSString *headline;//用户名旁边的介绍
-@property (nonatomic) NSString *description;//头像下边的简介
+@property (nonatomic) NSString *des;//头像下边的简介
 @property (nonatomic) NSString *avatar_url;//头像地址
 @property (nonatomic) NSNumber *gender;//性别，1代表男性  -1代表女性
 @property (nonatomic) NSString *following_topic_count;//他的话题

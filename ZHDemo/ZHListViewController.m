@@ -32,6 +32,9 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [self.listView setBackgroundView:nil];
+  [self.listView setBackgroundColor:[UIColor colorWithPatternImage:
+                                     [UIImage imageNamed:@"BackgroundTextures.png"]]];
 }
 
 - (ZHListView *)listView

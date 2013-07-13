@@ -43,7 +43,7 @@ static NSString * const info6 = @"info6";
 + (NSString *)BundleFilePath:(NSString *)fileName
 {
 	if (fileName) {
-    return [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    return [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
   } else {
   	return nil;
   }
