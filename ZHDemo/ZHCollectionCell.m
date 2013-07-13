@@ -122,7 +122,7 @@
   [self.collectionCellNameLabel setText:name];
   [self.collectionCellAnswersLabel setText:[NSString stringWithFormat:@"%@个问答",answer_count]];
   
-  //GCD add here ...
+  // Downing Avatar Image Using 'avatar_url' here ...
   //UIImage *avatar_image = [UIImage imageWithContentsOfFile:avatar_url];
   //[self.collectionCellAvatarButton setImage:avatar_image forState:UIControlStateNormal];
   
