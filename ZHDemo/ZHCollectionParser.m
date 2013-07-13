@@ -8,7 +8,6 @@
 
 #import "ZHCollectionParser.h"
 #import "ZHLoadJSONFile.h"
-#import "ZHObject.h"
 #import "ZHCollectionObject.h"
 
 @interface ZHCollectionParser ()
@@ -25,7 +24,6 @@
 
 @property (nonatomic) NSMutableArray *collectionArray;
 
-@property (nonatomic) ZHObject *baseObject;
 @property (nonatomic) ZHCollectionObject *collectionObject;
 
 @end
@@ -33,12 +31,10 @@
 @implementation ZHCollectionParser
 
 @synthesize collectionArray = collectionArray_;
-@synthesize baseObject = baseObject_;
 @synthesize collectionObject = collectionObject_;
 
 - (id)parser
 {
-  self.baseObject = [[ZHObject alloc] init];
   self.collectionObject = [[ZHCollectionObject alloc] init];
   self.collectionArray = [NSMutableArray array];
   
@@ -48,12 +44,13 @@
   
 	for (id obj in dataArray) {
     NSDictionary *dic = (NSDictionary *)obj;
-    NSLog(@"Dic:::%@",dic);
     
-    NSString *answer_count = [NSString stringWithFormat:@"%d",[[dic objectForKey:@"answer_count"] integerValue]];//多少个回答
+    NSString *answer_count = [NSString stringWithFormat:@"%d",
+                              [[dic objectForKey:@"answer_count"] integerValue]];//多少个回答
     NSString *title = [dic objectForKey:@"title"];//收藏标题
     NSString *description = [dic objectForKey:@"description"];//描述
-    NSString *follower_count = [NSString stringWithFormat:@"%d",[[dic objectForKey:@"follower_count"] integerValue]];
+    NSString *follower_count = [NSString stringWithFormat:@"%d",
+                                [[dic objectForKey:@"follower_count"] integerValue]];
     
     NSDictionary *creator = [dic objectForKey:@"creator"];
     NSString *avatar_url = [creator objectForKey:@"avatar_url"];//头像地址
@@ -79,9 +76,8 @@
       [collectionDictionary setObject:avatar_url forKey:@"avatar_url"];
     }
     
-    NSLog(@"%@",collectionDictionary);
-    
-    ZHCollectionObject *object = [collectionObject_ bindWithObjec:collectionDictionary forObjectType:ZHObjectTypeCollection];
+    ZHCollectionObject *object = [collectionObject_ bindWithObjec:collectionDictionary
+                                                    forObjectType:ZHObjectTypeCollection];
     
     [self.collectionArray addObject:object];
   }

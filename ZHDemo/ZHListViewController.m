@@ -49,7 +49,8 @@
 
 - (void)loadListView
 {
-	self.listView = [[ZHListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.listView = [[ZHListView alloc] initWithFrame:
+                   [[UIScreen mainScreen] bounds]];
 }
 
 - (void)registerCellClass:(Class)cellClass
@@ -125,7 +126,6 @@
 	NSArray *dataArray = [mo objects];
   [self.listViewDelegate setObjects:dataArray];
   [self.listViewDataSource setObjects:dataArray];
-  //[self.listViewDataSource setSections:[dataArray count]];
   [self.listView reloadData];
 }
 

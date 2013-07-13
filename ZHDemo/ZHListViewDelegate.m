@@ -45,7 +45,10 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:28];
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
+                           stretchableImageWithLeftCapWidth:28
+                           topCapHeight:28];
+  
   cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
 }
 

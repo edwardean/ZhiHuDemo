@@ -34,12 +34,11 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] stretchableImageWithLeftCapWidth:28 topCapHeight:28];
-	//UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(28, 15, 46, 45)];
-  UIImageView *imgView = [[UIImageView alloc] initWithFrame:cell.frame];
-  //[imgView setBackgroundColor:[UIColor yellowColor]];
-  [imgView setImage:resizedImage];
-  [cell setBackgroundView:imgView];
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
+                           stretchableImageWithLeftCapWidth:28
+                           topCapHeight:28];
+	
+  [cell setBackgroundView:[[UIImageView alloc] initWithImage:resizedImage]];
 }
 
 

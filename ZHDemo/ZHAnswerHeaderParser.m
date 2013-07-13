@@ -8,24 +8,20 @@
 
 #import "ZHAnswerHeaderParser.h"
 #import "ZHLoadJSONFile.h"
-#import "ZHObject.h"
 #import "ZHAnswerHeaderObject.h"
 
 @interface ZHAnswerHeaderParser ()
 
-@property (nonatomic) ZHObject *baseObject;
 @property (nonatomic) ZHAnswerHeaderObject *headerObject;
 
 @end
 
 @implementation ZHAnswerHeaderParser
 
-@synthesize baseObject = baseObject_;
 @synthesize headerObject = headerObject_;
 
 - (id)parser
 {
-  self.baseObject = [[ZHObject alloc]init];
   self.headerObject = [[ZHAnswerHeaderObject alloc] init];
   
 	NSData *data = [ZHLoadJSONFile AnswerHeaderData];
@@ -35,9 +31,11 @@
   
   NSString *description = [dictonary objectForKey:@"description"];
   
-  NSString *follower_count = [NSString stringWithFormat:@"%d",[[dictonary objectForKey:@"follower_count"] integerValue]];
+  NSString *follower_count = [NSString stringWithFormat:@"%d",
+                              [[dictonary objectForKey:@"follower_count"] integerValue]];
   
-  NSString *comment_count = [NSString stringWithFormat:@"%d",[[dictonary objectForKey:@"comment_count"] integerValue]];
+  NSString *comment_count = [NSString stringWithFormat:@"%d",
+                             [[dictonary objectForKey:@"comment_count"] integerValue]];
   
   NSDictionary *creator = [dictonary objectForKey:@"creator"];
   NSString *name = [creator objectForKey:@"name"];
@@ -66,12 +64,13 @@
   if (avatar_url) {
     [answerHeaderDictinary setObject:avatar_url forKey:@"avatar_url"];
   }
-
-  NSLog(@"AnsHeader:%@",answerHeaderDictinary);
-  ZHAnswerHeaderObject *object = [self.headerObject bindWithObjec:answerHeaderDictinary forObjectType:ZHObjectTypeAnswerHeader];
+  
+  ZHAnswerHeaderObject *object = [self.headerObject bindWithObjec:answerHeaderDictinary
+                                                    forObjectType:ZHObjectTypeAnswerHeader];
+  
   ZHModel *model = [[ZHModel alloc] init];
   model.object = object;
-  //return answerHeaderDictinary;
+  
   return model;
 }
 
