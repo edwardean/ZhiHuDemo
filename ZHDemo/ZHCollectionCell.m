@@ -12,24 +12,24 @@
 
 #define Default_Cell_Height											95
 
-#define CellContent_Left_Margin									10
+#define CellContent_Left_Margin									15
 #define CellContent_Top_Margin									15
 
 // Des
 #define DesContent_To_Title_Margin							10
 #define DesContent_To_Right_Margin							25
-#define DesContent_To_Underline_Margin					15
+#define DesContent_To_Underline_Margin					10
 
 // Bottom Content
-#define BottomContent_To_Underline_Margin				15
+#define BottomContent_To_Underline_Margin				10
 #define BottomContent_Avatar_To_Name_Margin			10
 #define BottomContent_Answer_Max_Width					70
-#define BottomContent_Answer_To_Right_Margin	  10
+#define BottomContent_Answer_To_Right_Margin	  15
 #define BottomContent_To_Bottom								  10
 
 
 #define DesLabelFont														[UIFont systemFontOfSize:15.0f]
-#define DesLabelWidth														250
+#define DesLabelWidth														270
 
 
 @interface ZHCollectionCell ()
@@ -64,15 +64,17 @@
       [collectionCellTitleLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
       [collectionCellTitleLabel_ setNumberOfLines:1];
       [collectionCellTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
+      [collectionCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
       [self.contentView addSubview:collectionCellTitleLabel_];
     }
     
     if (!collectionCellDesLabel_) {
       self.collectionCellDesLabel = [[UILabel alloc] init];
       [collectionCellDesLabel_ setFont:DesLabelFont];
-      [collectionCellDesLabel_ setTextColor:[UIColor darkTextColor]];
+      [collectionCellDesLabel_ setTextColor:[UIColor lightGrayColor]];
       [collectionCellDesLabel_ setNumberOfLines:0];
       [collectionCellDesLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
+      [collectionCellDesLabel_ setBackgroundColor:[UIColor clearColor]];
       [self.contentView addSubview:collectionCellDesLabel_];
     }
     
@@ -90,15 +92,17 @@
     
     if (!collectionCellNameLabel_) {
       self.collectionCellNameLabel = [[UILabel alloc] init];
-      [collectionCellNameLabel_ setFont:[UIFont systemFontOfSize:13.0f]];
+      [collectionCellNameLabel_ setFont:[UIFont boldSystemFontOfSize:13.0f]];
+      [collectionCellNameLabel_ setBackgroundColor:[UIColor clearColor]];
       [self.contentView addSubview:collectionCellNameLabel_];
     }
     
     if (!collectionCellAnswersLabel_) {
       self.collectionCellAnswersLabel = [[UILabel alloc] init];
-      [collectionCellAnswersLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
+      [collectionCellAnswersLabel_ setFont:[UIFont boldSystemFontOfSize:11.0f]];
       [collectionCellAnswersLabel_ setTextColor:[UIColor grayColor]];
       [collectionCellAnswersLabel_ setTextAlignment:NSTextAlignmentRight];
+      [collectionCellAnswersLabel_ setBackgroundColor:[UIColor clearColor]];
       [self.contentView addSubview:collectionCellAnswersLabel_];
     }
     
