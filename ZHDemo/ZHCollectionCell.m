@@ -12,7 +12,7 @@
 
 #define Default_Cell_Height											95
 
-#define CellContent_Left_Margin									15
+#define CellContent_Left_Margin									10
 #define CellContent_Top_Margin									15
 
 // Des
@@ -24,7 +24,7 @@
 #define BottomContent_To_Underline_Margin				10
 #define BottomContent_Avatar_To_Name_Margin			10
 #define BottomContent_Answer_Max_Width					70
-#define BottomContent_Answer_To_Right_Margin	  15
+#define BottomContent_Answer_To_Right_Margin	  10
 #define BottomContent_To_Bottom								  10
 
 
