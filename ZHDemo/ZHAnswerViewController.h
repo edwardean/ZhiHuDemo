@@ -11,7 +11,4 @@
 
 @interface ZHAnswerViewController : ZHListViewController
 
-
-- (void)bindHeaderContentWithObject:(id<ZHObject>)object;
-
 @end

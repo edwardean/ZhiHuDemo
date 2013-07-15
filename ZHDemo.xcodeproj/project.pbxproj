@@ -99,8 +99,8 @@
 		CA33ACD61790FE3C00F37894 /* ZHThankIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */; };
 		CA33ACD71790FE3C00F37894 /* ZHVoteupIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */; };
 		CA33ACD81790FE3C00F37894 /* ZHVoteupIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */; };
-		CA4D4F851793AC06006305B3 /* ZHExploreFavTopBase.png.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png.png */; };
-		CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase.png@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase.png@2x.png */; };
+		CA4D4F851793AC06006305B3 /* ZHExploreFavTopBase.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */; };
+		CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */; };
 		CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */; };
 		CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */; };
 		CA4EA69317912078004BE8F9 /* ZHDMViewInputBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */; };
@@ -260,8 +260,8 @@
 		CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHThankIcon@2x.png"; sourceTree = "<group>"; };
 		CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHVoteupIcon.png; sourceTree = "<group>"; };
 		CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHVoteupIcon@2x.png"; sourceTree = "<group>"; };
-		CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHExploreFavTopBase.png.png; sourceTree = "<group>"; };
-		CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase.png@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHExploreFavTopBase.png@2x.png"; sourceTree = "<group>"; };
+		CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHExploreFavTopBase.png; sourceTree = "<group>"; };
+		CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHExploreFavTopBase@2x.png"; sourceTree = "<group>"; };
 		CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHDMViewInputBox.png; sourceTree = "<group>"; };
 		CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHDMViewInputBox@2x.png"; sourceTree = "<group>"; };
@@ -480,8 +480,8 @@
 				CA33AC5C1790FE3C00F37894 /* ZHCellTopNormal@2x.png */,
 				CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */,
 				CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */,
-				CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png.png */,
-				CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase.png@2x.png */,
+				CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */,
+				CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */,
 				CA33AC5D1790FE3C00F37894 /* ZHExploreFavBase.png */,
 				CA33AC5E1790FE3C00F37894 /* ZHExploreFavBase@2x.png */,
 				CA33AC611790FE3C00F37894 /* ZHExploreShuffleIconNext.png */,
@@ -842,7 +842,7 @@
 				CA33ACC41790FE3C00F37894 /* ZHProfileViewGenderFemale@2x.png in Resources */,
 				CA33ACC11790FE3C00F37894 /* ZHProfileMessageIconNormal.png in Resources */,
 				CA33ACA71790FE3C00F37894 /* ZHCellSingleNormal.png in Resources */,
-				CA4D4F851793AC06006305B3 /* ZHExploreFavTopBase.png.png in Resources */,
+				CA4D4F851793AC06006305B3 /* ZHExploreFavTopBase.png in Resources */,
 				CA33AC9A1790FE3C00F37894 /* NavigationBarBackButtonHighlight@2x.png in Resources */,
 				CA33AC2A1790FE0F00F37894 /* info5.json in Resources */,
 				CA33ACA81790FE3C00F37894 /* ZHCellSingleNormal@2x.png in Resources */,
@@ -871,7 +871,7 @@
 				CA33ACD01790FE3C00F37894 /* ZHQuestionViewAnswerVotedBase@2x.png in Resources */,
 				CA8D999A179103F000AE1900 /* BackgroundTextures@2x.png in Resources */,
 				CA33ACD81790FE3C00F37894 /* ZHVoteupIcon@2x.png in Resources */,
-				CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase.png@2x.png in Resources */,
+				CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase@2x.png in Resources */,
 				CA33ACBA1790FE3C00F37894 /* ZHNavigationBarMoreIcon@2x.png in Resources */,
 				CA33AC9B1790FE3C00F37894 /* NavigationBarBackButtonNormal.png in Resources */,
 				CA33AC9D1790FE3C00F37894 /* NavigationBarButtonHighlight.png in Resources */,

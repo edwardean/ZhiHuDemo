@@ -12,6 +12,7 @@
 #import "ZHAnswerHeaderFactory.h"
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerCell.h"
+#import "ZHListView.h"
 #import "ZHAnswerHeaderView.h"
 #import "ZHListViewDelegate.h"
 #import "ZHAnswerViewController.h"
@@ -52,36 +53,34 @@
   [self registerCellClass:[ZHAnswerCell class]];
   
   ZHAnswerHeaderView *headerView = [[ZHAnswerHeaderView alloc]
-                                    initWithFrame:CGRectMake(12, 12, 296, 10)];
+                                    initWithFrame:CGRectMake(0, 0, 320, 1)];
   
   UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavTopBase.png"]
                            stretchableImageWithLeftCapWidth:28
                            topCapHeight:28];
-  [headerView addSubview:[[UIImageView alloc] initWithImage:resizedImage]];
-  self.listViewDelegate.cellHeaderView = headerView;
+  
+	UIImageView *imgView = [[UIImageView alloc] initWithImage:resizedImage];
+  headerView.clipsToBounds = NO;
+  imgView.clipsToBounds = YES;
+
+  [headerView addSubview:imgView];
+  //self.listViewDelegate.cellHeaderView = headerView;
   
   ZHParser *answerHeaderParser = [ZHAnswerHeaderFactory ParserFactory];
   ZHModel *answerHeaderModel = [answerHeaderParser parser];
-  [self bindHeaderContentWithObject:answerHeaderModel.object];
+  [headerView bindHeaderContentWithObject:answerHeaderModel.object];
+  imgView.frame = headerView.bounds;
+  
+  [self.listView addSubview:headerView];
+  [self.listView setTableHeaderView:headerView];
+  [headerView sendSubviewToBack:imgView];
   
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
-  //////////////////////////////////////////////////////////////////////////////////
+
   [self numberOfSectionForListView:cellContentsModel.objects.count];
-  [self modelDidFinishLoading:cellContentsModel];
+  //[self modelDidFinishLoading:cellContentsModel];
   
-}
-
-
-- (void)bindHeaderContentWithObject:(id<ZHObject>)object
-{
-	ZHAnswerHeaderObject *answerObject = (ZHAnswerHeaderObject *)object;
-  self.title = answerObject.title;
-  self.des = answerObject.des;
-  self.avatar_url = answerObject.avatar_url;
-  self.name = answerObject.name;
-  self.follower_count = answerObject.follower_count;
-  self.comment_count = answerObject.comment_count;
 }
 
 - (void)didReceiveMemoryWarning

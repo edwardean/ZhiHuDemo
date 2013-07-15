@@ -11,7 +11,7 @@
 
 #define DesLabelFont														[UIFont systemFontOfSize:15.0f]
 
-#define CellContentMarginToLeftSide							10
+#define CellContentMarginToLeftSide							20
 #define CellContentMarginToTopSide				      10
 #define CellContentMarginToBottomSide						10
 
@@ -21,8 +21,15 @@
 #define BottomButtonImageSizeWidth							17
 #define BottomButtonImageSizeHeigh							15
 
+@interface ZHAnswerHeaderView ()
+
+@property (nonatomic) CGSize originSize;
+
+@end
 
 @implementation ZHAnswerHeaderView
+
+@synthesize originSize = originSize_;
 
 @synthesize answerHeaderTitleLabel = answerHeaderTitleLabel_;
 @synthesize answerHeaderDesLabel = answerHeaderDesLabel_;
@@ -37,13 +44,17 @@
 {
   self = [super initWithFrame:frame];
   if (self) {
+
+    self.originSize = frame.size;
     
     if (!answerHeaderTitleLabel_) {
       
       self.answerHeaderTitleLabel = [[UILabel alloc] init];
       [answerHeaderTitleLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
+      [answerHeaderTitleLabel_ setNumberOfLines:0];
+      [answerHeaderTitleLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
       [answerHeaderTitleLabel_ setOrigin:CGPointMake(CellContentMarginToLeftSide, CellContentMarginToTopSide)];
-      [answerHeaderTitleLabel_ setBackgroundColor:[UIColor blueColor]];
+      [answerHeaderTitleLabel_ setBackgroundColor:[UIColor clearColor]];
       [self addSubview:answerHeaderTitleLabel_];
     }
     
@@ -54,7 +65,7 @@
       [answerHeaderDesLabel_ setNumberOfLines:0];
       [answerHeaderDesLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
       [answerHeaderDesLabel_ setX:CellContentMarginToLeftSide];
-      [answerHeaderDesLabel_ setBackgroundColor:[UIColor cyanColor]];
+      [answerHeaderDesLabel_ setBackgroundColor:[UIColor clearColor]];
       [self addSubview:answerHeaderDesLabel_];
     }
     
@@ -71,7 +82,7 @@
     if (!answerHeaderNameLabel_) {
       self.answerHeaderNameLabel = [[UILabel alloc] init];
       [answerHeaderNameLabel_ setFont:[UIFont boldSystemFontOfSize:13.0f]];
-      [answerHeaderNameLabel_ setBackgroundColor:[UIColor greenColor]];
+      [answerHeaderNameLabel_ setBackgroundColor:[UIColor clearColor]];
       [self addSubview:answerHeaderNameLabel_];
     }
     
@@ -87,7 +98,7 @@
     if (!answerHeaderFocusLabel_) {
       self.answerHeaderFocusLabel = [[UILabel alloc] init];
       [answerHeaderFocusLabel_ setFont:[UIFont boldSystemFontOfSize:14.0f]];
-      [answerHeaderFocusLabel_ setBackgroundColor:[UIColor yellowColor]];
+      [answerHeaderFocusLabel_ setBackgroundColor:[UIColor clearColor]];
       [answerHeaderFocusLabel_ setText:@"0"];
       [self addSubview:answerHeaderFocusLabel_];
     }
@@ -103,7 +114,7 @@
     if (!answerHeaderCommentLabel_) {
       self.answerHeaderCommentLabel = [[UILabel alloc] init];
       [answerHeaderCommentLabel_ setFont:[UIFont boldSystemFontOfSize:14.0f]];
-      [answerHeaderCommentLabel_ setBackgroundColor:[UIColor redColor]];
+      [answerHeaderCommentLabel_ setBackgroundColor:[UIColor clearColor]];
       [answerHeaderCommentLabel_ setText:@"0"];
       [self addSubview:answerHeaderCommentLabel_];
     }
@@ -161,6 +172,8 @@
   
   [self layoutIfNeeded];
   
+  [self sizeToFit];
+  
 }
 
 - (void)layoutSubviews
@@ -168,25 +181,83 @@
 	[super layoutSubviews];
   
   // Layout Title Label
-  [self.answerHeaderTitleLabel setSize:TextFitsSize(self.answerHeaderTitleLabel.text,
-                                                    [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide,
-                                                    self.answerHeaderTitleLabel.font)];
+  if ([self.answerHeaderTitleLabel.text length] > 0) {
+    [self.answerHeaderTitleLabel setSize:TextFitsSize(self.answerHeaderTitleLabel.text,
+                                                      [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide,
+                                                      self.answerHeaderTitleLabel.font)];
+  } else {
+  	[self.answerHeaderTitleLabel setSize:CGSizeZero];
+  }
   
   // Layout Des Label
   CGFloat desLabelOriginY = [self.answerHeaderTitleLabel bottom] + CellContentMarginToBottomSide;
-  [self.answerHeaderDesLabel setY:desLabelOriginY];
-  [self.answerHeaderDesLabel setSize:TextFitsSize(self.answerHeaderDesLabel.text,
-                                                  [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,
-                                                  self.answerHeaderDesLabel.font)];
+  if ([self.answerHeaderDesLabel.text length] > 0) {
+    [self.answerHeaderDesLabel setY:desLabelOriginY];
+    [self.answerHeaderDesLabel setSize:TextFitsSize(self.answerHeaderDesLabel.text,
+                                                    [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,
+                                                    self.answerHeaderDesLabel.font)];
+  } else {
+  	[self.answerHeaderDesLabel setFrame:CGRectZero];
+  }
   
   // Layout AvatarButton and NameLabel
+  
+  //第一条下划线的y坐标
   CGFloat firstUnderlineOriginY = [self.answerHeaderDesLabel bottom] + CellContentMarginToBottomSide;
+  
+  //两条线中间间距高度的中点
+  CGFloat secondSectionContentCenterY = firstUnderlineOriginY + 40 * 0.5f;
+  [self.answerHeaderAvatarButton setCenterY:secondSectionContentCenterY];
+  
+  //头像距离用户名之间10个像素
+  CGFloat answerUserNameLabelOriginX = [self.answerHeaderAvatarButton right] + 10;
+  if ([self.answerHeaderNameLabel.text length] > 0) {
+    [self.answerHeaderNameLabel setX:answerUserNameLabelOriginX];
+    [self.answerHeaderNameLabel setCenterY:secondSectionContentCenterY];
+  } else {
+  	[self.answerHeaderNameLabel setFrame:CGRectZero];
+  }
+  
+  
+  
+  // Layout Focus Button/Label, Comment Button/Label
+  // 第二条线的y坐标等于第一条线的y坐标加上两条线之间的高度40
+  CGFloat secondUnderlineOriginY = firstUnderlineOriginY + 40;
+  
+  // 第二条线下边的高度中点等于第二条线y坐标加上下边内容高度的一半47（未透明像素高度做修正）
+  CGFloat thirdSectionContentCenterY = secondUnderlineOriginY + 47 * 0.5f;
+  [self.answerHeaderFocusButton setCenterY:thirdSectionContentCenterY];
+  
+  // answerHeaderFocusLabel的x坐标在answerHeaderFocusButton右边8个像素位置
+  [self.answerHeaderFocusLabel setX:[self.answerHeaderFocusButton right] + 8];
+  [self.answerHeaderFocusLabel setCenterY:thirdSectionContentCenterY];
+  
+  
+  [self.answerHeaderCommentButton setX:[self.answerHeaderFocusLabel right] + 10];
+  [self.answerHeaderCommentButton setCenterY:thirdSectionContentCenterY];
+  
+  [self.answerHeaderCommentLabel setX:[self.answerHeaderCommentButton right] + 8];
+  [self.answerHeaderCommentLabel setCenterY:thirdSectionContentCenterY];
   
 }
 
+
 - (CGSize)sizeThatFits:(CGSize)size
 {
-	return CGSizeZero;
+  CGSize titleSize = TextFitsSize(self.answerHeaderTitleLabel.text,
+                                  [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide,
+                                  self.answerHeaderTitleLabel.font);
+  
+  CGSize desSize = TextFitsSize(self.answerHeaderDesLabel.text,
+                                [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,
+                                self.answerHeaderDesLabel.font);
+	//CGFloat height = self.originSize.height + titleSize.height + desSize.height;
+  CGFloat height = 120 + titleSize.height + desSize.height;
+  
+  CGRect frame = self.frame;
+  frame.size.height = height;
+  
+  return frame.size;
 }
 
 CGSize TextFitsSize(NSString *text,CGFloat width,UIFont *font) {

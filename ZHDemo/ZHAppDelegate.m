@@ -8,6 +8,7 @@
 
 #import "ZHAppDelegate.h"
 #import "ZHCollectionViewController.h"
+#import "ZHAnswerViewController.h"
 
 @implementation ZHAppDelegate
 
@@ -19,8 +20,14 @@
                                                 initWithNibName:nil
                                                 bundle:nil];
   
+  
+  ZHAnswerViewController *answerController = [[ZHAnswerViewController alloc]
+                                              initWithNibName:nil
+                                              bundle:nil];
+  
+  
   self.navigationConreoller = [[UINavigationController alloc]
-                               initWithRootViewController:viewController];
+                               initWithRootViewController:answerController];
   
   self.window = [[UIWindow alloc]
                  initWithFrame:[[UIScreen mainScreen]bounds]];
