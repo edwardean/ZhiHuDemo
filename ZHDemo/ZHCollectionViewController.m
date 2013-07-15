@@ -7,8 +7,7 @@
 //
 
 #import "ZHCollectionCell.h"
-#import "ZHCollectionDelegate.h"
-#import "ZHCollectionDataSource.h"
+#import "ZHListViewDelegate.h"
 #import "ZHParser.h"
 #import "ZHCollectionFactory.h"
 #import "ZHCollectionViewController.h"
