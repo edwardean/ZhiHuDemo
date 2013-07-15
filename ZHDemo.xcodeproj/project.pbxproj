@@ -134,6 +134,14 @@
 		CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */; };
 		CA77DAE117900F8D0012FE4F /* ZHCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAE017900F8C0012FE4F /* ZHCollectionDataSource.m */; };
 		CA77DAE417900FA90012FE4F /* ZHCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAE317900FA90012FE4F /* ZHCollectionDelegate.m */; };
+		CA7CD2AE1793D98A000F2FCD /* ZHFollowButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2AA1793D98A000F2FCD /* ZHFollowButtonHighlight.png */; };
+		CA7CD2AF1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2AB1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png */; };
+		CA7CD2B01793D98A000F2FCD /* ZHFollowButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2AC1793D98A000F2FCD /* ZHFollowButtonNormal.png */; };
+		CA7CD2B11793D98A000F2FCD /* ZHFollowButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2AD1793D98A000F2FCD /* ZHFollowButtonNormal@2x.png */; };
+		CA7CD2B61793DA56000F2FCD /* ZHFeaturedButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */; };
+		CA7CD2B71793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2B31793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png */; };
+		CA7CD2B81793DA56000F2FCD /* ZHFeaturedButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2B41793DA56000F2FCD /* ZHFeaturedButtonNormal.png */; };
+		CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7CD2B51793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png */; };
 		CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544B178EA2B2005552CE /* UIKit.framework */; };
 		CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544D178EA2B2005552CE /* Foundation.framework */; };
 		CA8C5456178EA2B2005552CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8C5454178EA2B2005552CE /* InfoPlist.strings */; };
@@ -153,6 +161,7 @@
 		CAAEFCD017911BA800F1233D /* ZHCellMiddleNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CABA8A5517901316004B356E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A5417901316004B356E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CAC16BE81793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +332,14 @@
 		CA77DAE017900F8C0012FE4F /* ZHCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionDataSource.m; sourceTree = "<group>"; };
 		CA77DAE217900FA90012FE4F /* ZHCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionDelegate.h; sourceTree = "<group>"; };
 		CA77DAE317900FA90012FE4F /* ZHCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionDelegate.m; sourceTree = "<group>"; };
+		CA7CD2AA1793D98A000F2FCD /* ZHFollowButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHFollowButtonHighlight.png; sourceTree = "<group>"; };
+		CA7CD2AB1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHFollowButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CA7CD2AC1793D98A000F2FCD /* ZHFollowButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHFollowButtonNormal.png; sourceTree = "<group>"; };
+		CA7CD2AD1793D98A000F2FCD /* ZHFollowButtonNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHFollowButtonNormal@2x.png"; sourceTree = "<group>"; };
+		CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHFeaturedButtonHighlight.png; sourceTree = "<group>"; };
+		CA7CD2B31793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHFeaturedButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CA7CD2B41793DA56000F2FCD /* ZHFeaturedButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHFeaturedButtonNormal.png; sourceTree = "<group>"; };
+		CA7CD2B51793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHFeaturedButtonNormal@2x.png"; sourceTree = "<group>"; };
 		CA8C5448178EA2B2005552CE /* ZHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C544B178EA2B2005552CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CA8C544D178EA2B2005552CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -350,6 +367,8 @@
 		CABA8A50179012F0004B356E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		CABA8A5317901316004B356E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CABA8A5417901316004B356E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		CAC16BE61793DB1600063EF2 /* ZHAnswerHeaderFollowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFollowButton.h; sourceTree = "<group>"; };
+		CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFollowButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +412,8 @@
 				CA131B251791591D001EE98D /* ZHAnswerCell.m */,
 				CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */,
 				CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */,
+				CAC16BE61793DB1600063EF2 /* ZHAnswerHeaderFollowButton.h */,
+				CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */,
 			);
 			name = Answer;
 			sourceTree = "<group>";
@@ -526,6 +547,14 @@
 				CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */,
 				CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */,
 				CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */,
+				CA7CD2AA1793D98A000F2FCD /* ZHFollowButtonHighlight.png */,
+				CA7CD2AB1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png */,
+				CA7CD2AC1793D98A000F2FCD /* ZHFollowButtonNormal.png */,
+				CA7CD2AD1793D98A000F2FCD /* ZHFollowButtonNormal@2x.png */,
+				CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */,
+				CA7CD2B31793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png */,
+				CA7CD2B41793DA56000F2FCD /* ZHFeaturedButtonNormal.png */,
+				CA7CD2B51793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -871,9 +900,11 @@
 				CA33ACD01790FE3C00F37894 /* ZHQuestionViewAnswerVotedBase@2x.png in Resources */,
 				CA8D999A179103F000AE1900 /* BackgroundTextures@2x.png in Resources */,
 				CA33ACD81790FE3C00F37894 /* ZHVoteupIcon@2x.png in Resources */,
+				CA7CD2B01793D98A000F2FCD /* ZHFollowButtonNormal.png in Resources */,
 				CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase@2x.png in Resources */,
 				CA33ACBA1790FE3C00F37894 /* ZHNavigationBarMoreIcon@2x.png in Resources */,
 				CA33AC9B1790FE3C00F37894 /* NavigationBarBackButtonNormal.png in Resources */,
+				CA7CD2B61793DA56000F2FCD /* ZHFeaturedButtonHighlight.png in Resources */,
 				CA33AC9D1790FE3C00F37894 /* NavigationBarButtonHighlight.png in Resources */,
 				CA33ACCE1790FE3C00F37894 /* ZHProfileViewTopbg@2x.png in Resources */,
 				CA33ACC91790FE3C00F37894 /* ZHProfileViewTencentWeiboIcon.png in Resources */,
@@ -889,8 +920,10 @@
 				CA33ACD61790FE3C00F37894 /* ZHThankIcon@2x.png in Resources */,
 				CA8C545E178EA2B2005552CE /* Default.png in Resources */,
 				CA33AC2B1790FE0F00F37894 /* info6.json in Resources */,
+				CA7CD2AE1793D98A000F2FCD /* ZHFollowButtonHighlight.png in Resources */,
 				CA33AC911790FE3C00F37894 /* AvatarMaskM.png in Resources */,
 				CA33ACA91790FE3C00F37894 /* ZHCellTopNormal.png in Resources */,
+				CA7CD2B11793D98A000F2FCD /* ZHFollowButtonNormal@2x.png in Resources */,
 				CA33ACCD1790FE3C00F37894 /* ZHProfileViewTopbg.png in Resources */,
 				CA33ACB31790FE3C00F37894 /* ZHFeaturedIconRate.png in Resources */,
 				CA8C5460178EA2B2005552CE /* Default@2x.png in Resources */,
@@ -902,6 +935,7 @@
 				CA33ACA61790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png in Resources */,
 				CA33ACD51790FE3C00F37894 /* ZHThankIcon.png in Resources */,
 				CA33AC8F1790FE3C00F37894 /* AvatarMaskL.png in Resources */,
+				CA7CD2B81793DA56000F2FCD /* ZHFeaturedButtonNormal.png in Resources */,
 				CA33ACD71790FE3C00F37894 /* ZHVoteupIcon.png in Resources */,
 				CA33ACD41790FE3C00F37894 /* ZHQuestionViewFollowingIcon@2x.png in Resources */,
 				CA33ACC51790FE3C00F37894 /* ZHProfileViewGenderMale.png in Resources */,
@@ -929,7 +963,9 @@
 				CA33AC261790FE0F00F37894 /* info1.json in Resources */,
 				CA33AC291790FE0F00F37894 /* info4.json in Resources */,
 				CA33AC991790FE3C00F37894 /* NavigationBarBackButtonHighlight.png in Resources */,
+				CA7CD2B71793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png in Resources */,
 				CAAEFCCF17911BA800F1233D /* ZHCellMiddleNormal.png in Resources */,
+				CA7CD2AF1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png in Resources */,
 				CA33AC331790FE2200F37894 /* detail2.json in Resources */,
 				CA33AC3B1790FE3000F37894 /* header.json in Resources */,
 				CA33AC361790FE2200F37894 /* detail5.json in Resources */,
@@ -941,6 +977,7 @@
 				CA8D9999179103F000AE1900 /* BackgroundTextures.png in Resources */,
 				CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */,
 				CA33ACB21790FE3C00F37894 /* ZHFeaturedContentBase@2x.png in Resources */,
+				CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,6 +1037,7 @@
 				CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */,
 				CA77DAB5178FD86F0012FE4F /* ZHUserInfoObject.m in Sources */,
 				CA77DABB178FD88D0012FE4F /* ZHModel.m in Sources */,
+				CAC16BE81793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m in Sources */,
 				CA77DAC1178FEA290012FE4F /* ZHAnswerHeaderObject.m in Sources */,
 				CA77DAC4178FFBCE0012FE4F /* ZHListViewController.m in Sources */,
 				CA77DAD0178FFF5D0012FE4F /* ZHListView.m in Sources */,

@@ -18,4 +18,6 @@
 
 @property (nonatomic) UIView *cellFooterView;
 
+@property (nonatomic) UIImage *cellBackgroundImage;
+
 @end

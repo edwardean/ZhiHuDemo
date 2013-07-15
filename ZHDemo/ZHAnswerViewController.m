@@ -62,24 +62,22 @@
 	UIImageView *imgView = [[UIImageView alloc] initWithImage:resizedImage];
   headerView.clipsToBounds = NO;
   imgView.clipsToBounds = YES;
-
+  
   [headerView addSubview:imgView];
-  //self.listViewDelegate.cellHeaderView = headerView;
   
   ZHParser *answerHeaderParser = [ZHAnswerHeaderFactory ParserFactory];
   ZHModel *answerHeaderModel = [answerHeaderParser parser];
   [headerView bindHeaderContentWithObject:answerHeaderModel.object];
   imgView.frame = headerView.bounds;
   
-  [self.listView addSubview:headerView];
-  [self.listView setTableHeaderView:headerView];
-  [headerView sendSubviewToBack:imgView];
-  
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
-
+  
   [self numberOfSectionForListView:cellContentsModel.objects.count];
-  //[self modelDidFinishLoading:cellContentsModel];
+  [self modelDidFinishLoading:cellContentsModel];
+
+  [self.listView setTableHeaderView:headerView];
+  [headerView sendSubviewToBack:imgView];
   
 }
 

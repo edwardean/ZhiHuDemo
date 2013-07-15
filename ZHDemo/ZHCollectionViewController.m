@@ -33,6 +33,11 @@
   [super viewDidLoad];
   
   [self registerCellClass:[ZHCollectionCell class]];
+  
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
+                           stretchableImageWithLeftCapWidth:28
+                           topCapHeight:28];
+	self.listViewDelegate.cellBackgroundImage = resizedImage;
 	
   ZHParser *parser = [ZHCollectionFactory ParserFactory];
   

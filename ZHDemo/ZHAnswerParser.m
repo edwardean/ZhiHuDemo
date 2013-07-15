@@ -26,6 +26,7 @@
 - (id)parser
 {
   self.answerObject = [[ZHAnswerObject alloc] init];
+  self.answerArray = [NSMutableArray array];
   
 	NSData *data = [ZHLoadJSONFile AnswerData];
   NSDictionary *dictionary = [data objectFromJSONData];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZHObject.h"
 
+@class ZHAnswerHeaderFollowButton;
 @interface ZHAnswerHeaderView : UIView
 
 @property (nonatomic) UILabel *answerHeaderTitleLabel;
@@ -19,6 +20,7 @@
 @property (nonatomic) UILabel *answerHeaderFocusLabel;
 @property (nonatomic) UIButton *answerHeaderCommentButton;
 @property (nonatomic) UILabel *answerHeaderCommentLabel;
+@property (nonatomic) ZHAnswerHeaderFollowButton *answerHeaderfollowButton;
 
 + (CGFloat)AnswerHeaderViewHeightWithObject:(id<ZHObject>)object;
 

@@ -15,35 +15,36 @@
 @synthesize cellHeaderView = cellHeaderView_;
 @synthesize cellFooterView = cellFooterView_;
 @synthesize listCellClass = listCellClass_;
+@synthesize cellBackgroundImage = cellBackgroundImage_;
 
 - (CGFloat)tableView:(UITableView *)tableView
-		heightForRowAtIndexPath:(NSIndexPath *)indexPath
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   id object = [self.objects objectAtIndex:indexPath.section];
   return [self.listCellClass RowHeightWitObject:object];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
-		heightForHeaderInSection:(NSInteger)section
+heightForHeaderInSection:(NSInteger)section
 {
 	return 0.0f;
 }
 
 - (void)tableView:(UITableView *)tableView
-		didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
 }
 
 - (UIView *)tableView:(UITableView *)tableView
-		viewForHeaderInSection:(NSInteger)section
+viewForHeaderInSection:(NSInteger)section
 {
 	return cellHeaderView_;
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView
-		viewForFooterInSection:(NSInteger)section
+viewForFooterInSection:(NSInteger)section
 {
 	return cellFooterView_;
 }
@@ -52,11 +53,15 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
-                           stretchableImageWithLeftCapWidth:28
-                           topCapHeight:28];
+  //  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
+  //                           stretchableImageWithLeftCapWidth:28
+  //                           topCapHeight:28];
+  //
+  //  cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
   
-  cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
+  if (cellBackgroundImage_) {
+    cell.backgroundView = [[UIImageView alloc] initWithImage:cellBackgroundImage_];
+  }
 }
 
 @end

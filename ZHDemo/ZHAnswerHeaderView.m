@@ -8,14 +8,15 @@
 
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerHeaderView.h"
+#import "ZHAnswerHeaderFollowButton.h"
 
-#define DesLabelFont														[UIFont systemFontOfSize:15.0f]
+#define DesLabelFont														[UIFont systemFontOfSize:14.0f]
 
 #define CellContentMarginToLeftSide							20
 #define CellContentMarginToTopSide				      10
 #define CellContentMarginToBottomSide						10
 
-#define TitleContentMarginToRightSide						55
+#define TitleContentMarginToRightSide						65
 #define DesContentMaginToRightSide							40
 
 #define BottomButtonImageSizeWidth							17
@@ -39,6 +40,7 @@
 @synthesize answerHeaderFocusLabel = answerHeaderFocusLabel_;
 @synthesize answerHeaderCommentButton = answerHeaderCommentButton_;
 @synthesize answerHeaderCommentLabel = answerHeaderCommentLabel_;
+@synthesize answerHeaderfollowButton = answerHeaderfollowButton_;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -125,6 +127,10 @@
      自定义UIControl子类
      Add it here....
      **/
+    if (!answerHeaderfollowButton_) {
+      self.answerHeaderfollowButton = [[ZHAnswerHeaderFollowButton alloc] initWithFrame:CGRectZero];
+      [self addSubview:answerHeaderfollowButton_];
+    }
     
   }
   return self;
@@ -238,6 +244,9 @@
   
   [self.answerHeaderCommentLabel setX:[self.answerHeaderCommentButton right] + 8];
   [self.answerHeaderCommentLabel setCenterY:thirdSectionContentCenterY];
+  
+  [self.answerHeaderfollowButton setX:([self width] - 90)];
+  [self.answerHeaderfollowButton setCenterY:thirdSectionContentCenterY];
   
 }
 

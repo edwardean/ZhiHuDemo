@@ -19,5 +19,9 @@
     return self;
 }
 
++ (CGFloat)RowHeightWitObject:(id)object
+{
+	return 44.0f;
+}
 
 @end
