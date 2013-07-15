@@ -7,7 +7,11 @@
 //
 
 #import "ZHListViewController.h"
+#import "ZHObject.h"
 
 @interface ZHAnswerViewController : ZHListViewController
+
+
+- (void)bindHeaderContentWithObject:(id<ZHObject>)object;
 
 @end

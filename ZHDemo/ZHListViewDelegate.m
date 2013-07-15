@@ -23,6 +23,12 @@
   return [self.listCellClass RowHeightWitObject:object];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+		heightForHeaderInSection:(NSInteger)section
+{
+	return 0.0f;
+}
+
 - (void)tableView:(UITableView *)tableView
 		didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -34,6 +40,7 @@
 {
 	return cellHeaderView_;
 }
+
 
 - (UIView *)tableView:(UITableView *)tableView
 		viewForFooterInSection:(NSInteger)section

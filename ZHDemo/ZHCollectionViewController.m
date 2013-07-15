@@ -6,12 +6,12 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHCollectionViewController.h"
 #import "ZHCollectionCell.h"
 #import "ZHCollectionDelegate.h"
 #import "ZHCollectionDataSource.h"
 #import "ZHParser.h"
 #import "ZHCollectionFactory.h"
+#import "ZHCollectionViewController.h"
 
 @interface ZHCollectionViewController ()
 

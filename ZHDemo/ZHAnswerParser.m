@@ -67,6 +67,7 @@
   }
   
   ZHModel *model = [[ZHModel alloc] init];
+  
   model.objects = self.answerArray;
   
   return model;

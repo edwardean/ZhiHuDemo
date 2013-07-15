@@ -69,6 +69,7 @@
                                                     forObjectType:ZHObjectTypeAnswerHeader];
   
   ZHModel *model = [[ZHModel alloc] init];
+  
   model.object = object;
   
   return model;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B251791591D001EE98D /* ZHAnswerCell.m */; };
+		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
 		CA33AC1E1790FDC600F37894 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC1D1790FDC600F37894 /* collections.json */; };
 		CA33AC261790FE0F00F37894 /* info1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC201790FE0F00F37894 /* info1.json */; };
 		CA33AC271790FE0F00F37894 /* info2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC211790FE0F00F37894 /* info2.json */; };
@@ -164,6 +166,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA131B241791591D001EE98D /* ZHAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerCell.h; sourceTree = "<group>"; };
+		CA131B251791591D001EE98D /* ZHAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCell.m; sourceTree = "<group>"; };
+		CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderView.h; sourceTree = "<group>"; };
+		CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderView.m; sourceTree = "<group>"; };
 		CA33AC1D1790FDC600F37894 /* collections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections.json; sourceTree = "<group>"; };
 		CA33AC201790FE0F00F37894 /* info1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info1.json; sourceTree = "<group>"; };
 		CA33AC211790FE0F00F37894 /* info2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info2.json; sourceTree = "<group>"; };
@@ -371,6 +377,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA131B2A17915A7A001EE98D /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */,
+				CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */,
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
+		CA131B2B17915A89001EE98D /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				CA131B241791591D001EE98D /* ZHAnswerCell.h */,
+				CA131B251791591D001EE98D /* ZHAnswerCell.m */,
+				CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */,
+				CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */,
+			);
+			name = Answer;
+			sourceTree = "<group>";
+		};
 		CA33AC1C1790FDC600F37894 /* collections */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,12 +634,12 @@
 		CA77DACD178FFF390012FE4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA131B2A17915A7A001EE98D /* Collections */,
+				CA131B2B17915A89001EE98D /* Answer */,
 				CA77DACE178FFF5D0012FE4F /* ZHListView.h */,
 				CA77DACF178FFF5D0012FE4F /* ZHListView.m */,
 				CA77DAD31790002F0012FE4F /* ZHListViewCell.h */,
 				CA77DAD41790002F0012FE4F /* ZHListViewCell.m */,
-				CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */,
-				CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -951,6 +977,7 @@
 			files = (
 				CA561F72178F9D2400383B89 /* ZHParser.m in Sources */,
 				CA561F75178F9D3900383B89 /* ZHAnswerParser.m in Sources */,
+				CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */,
 				CA54FB7E178EB32F007DC220 /* ZHLoadJSONFile.m in Sources */,
 				CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */,
 				CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */,
@@ -970,6 +997,7 @@
 				CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */,
 				CA77DAB2178FD8450012FE4F /* ZHAnswerObject.m in Sources */,
 				CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */,
+				CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */,
 				CA77DAB5178FD86F0012FE4F /* ZHUserInfoObject.m in Sources */,
 				CA77DABB178FD88D0012FE4F /* ZHModel.m in Sources */,
 				CA77DAC1178FEA290012FE4F /* ZHAnswerHeaderObject.m in Sources */,
