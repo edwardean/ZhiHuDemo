@@ -16,3 +16,6 @@ ZHDemo
 初步完成回答页面cell布局设计
 
 ![](./screenshot/4.png)
+
+用户资料页面headerview
+![](./screenshot/5.png)
