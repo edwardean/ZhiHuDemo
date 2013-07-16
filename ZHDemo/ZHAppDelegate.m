@@ -27,7 +27,7 @@
   
   
   self.navigationConreoller = [[UINavigationController alloc]
-                               initWithRootViewController:collectionViewController];
+                               initWithRootViewController:answerController];
   
   self.window = [[UIWindow alloc]
                  initWithFrame:[[UIScreen mainScreen]bounds]];

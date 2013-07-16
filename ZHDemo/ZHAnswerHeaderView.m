@@ -6,10 +6,12 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <QuartzCore/QuartzCore.h>
+#import "UIImage+RounedImage.h"
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerHeaderView.h"
 #import "ZHAnswerHeaderFollowButton.h"
-#import <QuartzCore/QuartzCore.h>
 
 #define DesLabelFont														[UIFont systemFontOfSize:14.0f]
 
@@ -132,7 +134,6 @@
       self.answerHeaderfollowButton = [[ZHAnswerHeaderFollowButton alloc] initWithFrame:CGRectZero];
       [self addSubview:answerHeaderfollowButton_];
     }
-    
   }
   return self;
 }
@@ -169,6 +170,14 @@
     /**
      根据url设置用户头像
      **/
+    __block typeof(self) weakself = self;
+    UIImageView *avatarImage = [[UIImageView alloc] init];
+    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
+      image = [image makeRoundedImage:image radius:3.0f];
+      [weakself.answerHeaderAvatarButton setImage:image forState:UIControlStateNormal];
+    } failure:^(NSError *error) {
+      
+    }];
   }
   
   [self.answerHeaderTitleLabel sizeToFit];

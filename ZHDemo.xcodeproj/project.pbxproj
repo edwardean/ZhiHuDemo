@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0714181794ECF3008EDE73 /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */; };
 		CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EE61794DD1C0067C31C /* ImageIO.framework */; };
 		CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */; };
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
@@ -201,6 +202,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA0714161794ECF3008EDE73 /* UIImage+RounedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RounedImage.h"; sourceTree = "<group>"; };
+		CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RounedImage.m"; sourceTree = "<group>"; };
 		CA080EE61794DD1C0067C31C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		CA080EF41794DEB70067C31C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -610,6 +613,8 @@
 				CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */,
 				CABA8A5217901316004B356E /* JSONKit */,
 				CABA8A4E179012F0004B356E /* UIView+Frame */,
+				CA0714161794ECF3008EDE73 /* UIImage+RounedImage.h */,
+				CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */,
 			);
 			name = Verdons;
 			sourceTree = "<group>";
@@ -1226,6 +1231,7 @@
 				CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */,
 				CA77DAB2178FD8450012FE4F /* ZHAnswerObject.m in Sources */,
 				CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */,
+				CA0714181794ECF3008EDE73 /* UIImage+RounedImage.m in Sources */,
 				CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */,
 				CA77DAB5178FD86F0012FE4F /* ZHUserInfoObject.m in Sources */,
 				CA77DABB178FD88D0012FE4F /* ZHModel.m in Sources */,

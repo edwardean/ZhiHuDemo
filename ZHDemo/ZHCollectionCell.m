@@ -7,6 +7,7 @@
 //
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImage+RounedImage.h"
 #import "ZHCollectionObject.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ZHCollectionCell.h"
@@ -137,8 +138,8 @@
     UIImageView *avatarImage = weakself.temporaryImageView;
     [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
       
-      UIImage *avatarImage = [self makeRoundedImage:image radius:3.0f];
-      [weakself.collectionCellAvatarButton setImage:avatarImage forState:UIControlStateNormal];
+      image = [image makeRoundedImage:image radius:3.0f];
+      [weakself.collectionCellAvatarButton setImage:image forState:UIControlStateNormal];
     } failure:^(NSError *error) {
       
     }];
@@ -153,23 +154,23 @@
 }
 
 
--(UIImage *)makeRoundedImage:(UIImage *) image
-                      radius: (float) radius;
-{
-  CALayer *imageLayer = [CALayer layer];
-  imageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-  imageLayer.contents = (id) image.CGImage;
-  
-  imageLayer.masksToBounds = YES;
-  imageLayer.cornerRadius = radius;
-  
-  UIGraphicsBeginImageContext(image.size);
-  [imageLayer renderInContext:UIGraphicsGetCurrentContext()];
-  UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  
-  return roundedImage;
-}
+//-(UIImage *)makeRoundedImage:(UIImage *) image
+//                      radius: (float) radius;
+//{
+//  CALayer *imageLayer = [CALayer layer];
+//  imageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+//  imageLayer.contents = (id) image.CGImage;
+//  
+//  imageLayer.masksToBounds = YES;
+//  imageLayer.cornerRadius = radius;
+//  
+//  UIGraphicsBeginImageContext(image.size);
+//  [imageLayer renderInContext:UIGraphicsGetCurrentContext()];
+//  UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
+//  UIGraphicsEndImageContext();
+//  
+//  return roundedImage;
+//}
 
 - (void)layoutSubviews
 {

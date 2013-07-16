@@ -58,8 +58,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
   //                           topCapHeight:28];
   //
   //  cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
-  
+
   if (cellBackgroundImage_) {
+    
     cell.backgroundView = [[UIImageView alloc] initWithImage:cellBackgroundImage_];
   }
 }

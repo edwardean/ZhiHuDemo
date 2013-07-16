@@ -52,6 +52,7 @@
   
   [self registerCellClass:[ZHAnswerCell class]];
   
+	// Header View
   ZHAnswerHeaderView *headerView = [[ZHAnswerHeaderView alloc]
                                     initWithFrame:CGRectMake(0, 0, 320, 1)];
   
@@ -69,6 +70,11 @@
   ZHModel *answerHeaderModel = [answerHeaderParser parser];
   [headerView bindHeaderContentWithObject:answerHeaderModel.object];
   imgView.frame = headerView.bounds;
+  
+  // Cell
+  UIImage *cellBackgroundImage = [[UIImage imageNamed:@"ZHCellSingleNormal.png"]
+                                  stretchableImageWithLeftCapWidth:28 topCapHeight:28];
+  self.listViewDelegate.cellBackgroundImage = cellBackgroundImage;
   
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
