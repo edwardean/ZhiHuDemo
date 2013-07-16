@@ -134,7 +134,7 @@
   // Downloading Avatar Image Using 'avatar_url' here ...
   if (avatar_url) {
     __block typeof(self) weakself = self;
-    UIImageView *avatarImage = self.temporaryImageView;
+    UIImageView *avatarImage = weakself.temporaryImageView;
     [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
       
       UIImage *avatarImage = [self makeRoundedImage:image radius:3.0f];
