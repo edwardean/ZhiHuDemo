@@ -136,6 +136,8 @@
 		CA71859A179538BB005726B3 /* answers8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718590179538BB005726B3 /* answers8.json */; };
 		CA71859B179538BB005726B3 /* answers9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718591179538BB005726B3 /* answers9.json */; };
 		CA71859C179538BB005726B3 /* answers10.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718592179538BB005726B3 /* answers10.json */; };
+		CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */; };
+		CA7185A3179541BA005726B3 /* ZHUserInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */; };
 		CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */; };
 		CA77DAAC178FD8140012FE4F /* ZHObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAB178FD8130012FE4F /* ZHObject.m */; };
 		CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAE178FD8320012FE4F /* ZHCollectionObject.m */; };
@@ -361,6 +363,10 @@
 		CA718590179538BB005726B3 /* answers8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers8.json; sourceTree = "<group>"; };
 		CA718591179538BB005726B3 /* answers9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers9.json; sourceTree = "<group>"; };
 		CA718592179538BB005726B3 /* answers10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers10.json; sourceTree = "<group>"; };
+		CA71859E17953F84005726B3 /* ZHUserInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoHeaderView.h; sourceTree = "<group>"; };
+		CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserInfoHeaderView.m; sourceTree = "<group>"; };
+		CA7185A1179541BA005726B3 /* ZHUserInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoBottomView.h; sourceTree = "<group>"; };
+		CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserInfoBottomView.m; sourceTree = "<group>"; };
 		CA77DA94178FB8EF0012FE4F /* ZHAnswerHeaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFactory.h; sourceTree = "<group>"; };
 		CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFactory.m; sourceTree = "<group>"; };
 		CA77DAAA178FD8130012FE4F /* ZHObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHObject.h; sourceTree = "<group>"; };
@@ -544,8 +550,6 @@
 		CA33AC3C1790FE3C00F37894 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				CA07141A1794F61D008EDE73 /* ZHExploreListItemBase.png */,
-				CA07141B1794F61D008EDE73 /* ZHExploreListItemBase@2x.png */,
 				CA33AC3D1790FE3C00F37894 /* AvatarFemale100.png */,
 				CA33AC3E1790FE3C00F37894 /* AvatarFemale100@2x.png */,
 				CA33AC3F1790FE3C00F37894 /* AvatarMale100.png */,
@@ -584,14 +588,14 @@
 				CA33AC5A1790FE3C00F37894 /* ZHCellSingleNormal@2x.png */,
 				CA33AC5B1790FE3C00F37894 /* ZHCellTopNormal.png */,
 				CA33AC5C1790FE3C00F37894 /* ZHCellTopNormal@2x.png */,
-				CACBD9F517940609006D1835 /* ZHSettingsViewWorkCell.png */,
-				CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */,
 				CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */,
 				CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */,
 				CA33AC5D1790FE3C00F37894 /* ZHExploreFavBase.png */,
 				CA33AC5E1790FE3C00F37894 /* ZHExploreFavBase@2x.png */,
 				CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */,
 				CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */,
+				CA07141A1794F61D008EDE73 /* ZHExploreListItemBase.png */,
+				CA07141B1794F61D008EDE73 /* ZHExploreListItemBase@2x.png */,
 				CA33AC611790FE3C00F37894 /* ZHExploreShuffleIconNext.png */,
 				CA33AC621790FE3C00F37894 /* ZHExploreShuffleIconNext@2x.png */,
 				CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */,
@@ -638,6 +642,8 @@
 				CA33AC841790FE3C00F37894 /* ZHQuestionViewCommentIcon@2x.png */,
 				CA33AC851790FE3C00F37894 /* ZHQuestionViewFollowingIcon.png */,
 				CA33AC861790FE3C00F37894 /* ZHQuestionViewFollowingIcon@2x.png */,
+				CACBD9F517940609006D1835 /* ZHSettingsViewWorkCell.png */,
+				CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */,
 				CA33AC871790FE3C00F37894 /* ZHThankIcon.png */,
 				CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */,
 				CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */,
@@ -696,6 +702,17 @@
 			name = JsonFiles;
 			sourceTree = "<group>";
 		};
+		CA71859D17953F5D005726B3 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CA71859E17953F84005726B3 /* ZHUserInfoHeaderView.h */,
+				CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */,
+				CA7185A1179541BA005726B3 /* ZHUserInfoBottomView.h */,
+				CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */,
+			);
+			name = UserInfo;
+			sourceTree = "<group>";
+		};
 		CA77DABC178FD8B40012FE4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +750,7 @@
 		CA77DACD178FFF390012FE4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA71859D17953F5D005726B3 /* UserInfo */,
 				CADC8B871793F8B200637D4A /* CellSuperClass */,
 				CA131B2A17915A7A001EE98D /* CollectionCells */,
 				CA131B2B17915A89001EE98D /* AnswerCells */,
@@ -1276,11 +1294,13 @@
 				CA54FAC3178EABB5007DC220 /* ZHCollectionFactory.m in Sources */,
 				CA71858717950B80005726B3 /* ZHCalculateTextSize.m in Sources */,
 				CA54FACD178EAC43007DC220 /* ZHDataParserFactory.m in Sources */,
+				CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */,
 				CA54FACE178EAC64007DC220 /* ZHAnswerFactory.m in Sources */,
 				CA54FACF178EAC68007DC220 /* ZHUserInfoFactory.m in Sources */,
 				CA54FAAA178EA860007DC220 /* ZHUserDetailViewController.m in Sources */,
 				CA561F6F178F9D0F00383B89 /* ZHCollectionParser.m in Sources */,
 				CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */,
+				CA7185A3179541BA005726B3 /* ZHUserInfoBottomView.m in Sources */,
 				CA77DAAC178FD8140012FE4F /* ZHObject.m in Sources */,
 				CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */,
 				CA77DAB2178FD8450012FE4F /* ZHAnswerObject.m in Sources */,
