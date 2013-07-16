@@ -21,13 +21,13 @@
 #define AvatarToTagMargin												5
 
 #define AvatarToExcerptMargin										10
-#define AvatarWidth															23
-#define AvatarHeight														23
-#define TagWidth																23
+#define AvatarWidth															25
+#define AvatarHeight														25
+#define TagWidth																25
 #define TagHeight																15
 
-#define TitleLabelWidth													260
-#define ExcerptLabelWidth												240
+#define TitleLabelWidth													250
+#define ExcerptLabelWidth												235
 
 #define TitleLabelMaxHeight											44
 #define ExcerptLabelMaxHeight										60
@@ -37,7 +37,7 @@
 
 #define ArrowbuttonToRightSideMargin						10
 
-#define AnswerExcerptLabelFont                  [UIFont systemFontOfSize:13.0f]
+#define AnswerExcerptLabelFont                  [UIFont systemFontOfSize:14.0f]
 #define AnswerTitleLabelFont                    [UIFont boldSystemFontOfSize:15.0f]
 
 
@@ -163,11 +163,19 @@
   CGSize excerptSize = CGSizeZero;
   
   if (answerObject.title) {
-    titleSize = CalculateTextSize(answerObject.title, AnswerTitleLabelFont,TitleLabelWidth, TitleLabelMaxHeight, NSLineBreakByTruncatingTail);
+    titleSize = CalculateTextSize(answerObject.title,
+                                  AnswerTitleLabelFont,
+                                  TitleLabelWidth,
+                                  TitleLabelMaxHeight,
+                                  NSLineBreakByTruncatingTail);
   }
   
   if (answerObject.excerpt) {
-    excerptSize = CalculateTextSize(answerObject.excerpt, AnswerExcerptLabelFont,ExcerptLabelWidth, ExcerptLabelMaxHeight, NSLineBreakByTruncatingTail);
+    excerptSize = CalculateTextSize(answerObject.excerpt,
+                                    AnswerExcerptLabelFont,
+                                    ExcerptLabelWidth,
+                                    ExcerptLabelMaxHeight,
+                                    NSLineBreakByTruncatingTail);
   }
   
   CGFloat cellHeight = titleSize.height + excerptSize.height + AnswerCellContentMarginToTopSide + AnswerCellTitleToLineMargin + AnswerCellBottomContentOriginToLine + ExcerptLabelToBottommargin;
@@ -179,7 +187,6 @@
     cellHeight = AnswerCellMinHeight;
   }
   
-  NSLog(@"CellHeight:%.0f",cellHeight);
 	return cellHeight;
 }
 
@@ -195,7 +202,7 @@
   }
   
   if (answerObject.avatar_url) {
-  
+    
     __block typeof(self) weakself = self;
     
     UIImageView *avatarImageView = weakself.temporaryImageView;
@@ -203,23 +210,20 @@
                     placeholderImage:nil
                              options:SDWebImageProgressiveDownload
                              success:^(UIImage *image) {
-      image = [image makeRoundedImage:image radius:3.0f];
-      [weakself.avatarButton setImage:image forState:UIControlStateNormal];
-    } failure:^(NSError *error) {
-      
-    }];
+                               image = [image makeRoundedImage:image
+                                                        radius:3.0f];
+                               [weakself.avatarButton setImage:image
+                                                      forState:UIControlStateNormal];
+                             } failure:^(NSError *error) {
+                               
+                             }];
   }
   
   if (answerObject.voteup_count) {
     [self.voteupLabel setText:answerObject.voteup_count];
   }
-  
-  //[self.answerTitleLabel sizeToFit];
-  //[self.answerExcerptLabel sizeToFit];
-  //[self.voteupLabel sizeToFit];
 
   [self layoutIfNeeded];
-
 }
 
 - (void)layoutSubviews
@@ -229,7 +233,12 @@
   // Layout Subviews
   
   // Layout TitleLabel
-	CGSize answerTitleSize = CalculateTextSize(self.answerTitleLabel.text, AnswerTitleLabelFont, TitleLabelWidth, TitleLabelMaxHeight, self.answerTitleLabel.lineBreakMode);
+	CGSize answerTitleSize = CalculateTextSize(self.answerTitleLabel.text,
+                                             AnswerTitleLabelFont,
+                                             TitleLabelWidth,
+                                             TitleLabelMaxHeight,
+                                             self.answerTitleLabel.lineBreakMode);
+  
   [self.answerTitleLabel setSize:answerTitleSize];
   
   // Layout Arrow Button
@@ -252,15 +261,32 @@
   // Layout TagLabel
   [self.voteupLabel setSize:CGSizeMake([self.voteupBackgroundView width] - 1,
                                        [self.voteupBackgroundView height] - 1)];
-  [self.voteupLabel setCenter:self.voteupLabel.center];
   
   // Layout Excerpt Label
   CGFloat excerptLabelOriginX = [self.avatarButton right] + AvatarToExcerptMargin;
   CGFloat excerptLabelOriginY = [self.avatarButton y];
   
-  CGSize excerptSize = CalculateTextSize(self.answerExcerptLabel.text, AnswerExcerptLabelFont, ExcerptLabelWidth, ExcerptLabelMaxHeight, self.answerExcerptLabel.lineBreakMode);
-  [self.answerExcerptLabel setFrame:CGRectMake(excerptLabelOriginX, excerptLabelOriginY, excerptSize.width, excerptSize.height)];
+  CGSize excerptSize = CalculateTextSize(self.answerExcerptLabel.text,
+                                         AnswerExcerptLabelFont,
+                                         ExcerptLabelWidth,
+                                         ExcerptLabelMaxHeight,
+                                         self.answerExcerptLabel.lineBreakMode);
 
+  CGFloat voteupLabelBottom = [self.voteupBackgroundView bottom];
+	CGFloat height = voteupLabelBottom - avatarOriginY;
+  CGFloat excerptCenterY = 0;
+  if (excerptSize.height < height) {
+    excerptCenterY = height * 0.5f;
+  }
+  
+  [self.answerExcerptLabel setFrame:CGRectMake(excerptLabelOriginX,
+                                               excerptLabelOriginY,
+                                               excerptSize.width,
+                                               excerptSize.height)];
+  if (excerptCenterY) {
+    [self.answerExcerptLabel setCenterY:excerptLabelOriginY + excerptCenterY];
+  }
+  
 }
 
 @end

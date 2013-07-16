@@ -8,6 +8,17 @@
 
 #import "ZHLoadJSONFile.h"
 
+static NSString * const answer1 = @"answers1";
+static NSString * const answer2 = @"answers2";
+static NSString * const answer3 = @"answers3";
+static NSString * const answer4 = @"answers4";
+static NSString * const answer5 = @"answers5";
+static NSString * const answer6 = @"answers6";
+static NSString * const answer7 = @"answers7";
+static NSString * const answer8 = @"answers8";
+static NSString * const answer9 = @"answers9";
+static NSString * const answer10 = @"answers10";
+
 static NSString * const detail1 = @"detail1";
 static NSString * const detail2 = @"detail2";
 static NSString * const detail3 = @"detail3";
@@ -77,7 +88,10 @@ static NSString * const info6 = @"info6";
 
 + (NSString *)AnswersFilePath
 {
-	return [ZHLoadJSONFile BundleFilePath:@"answers"];
+  NSArray *array = @[answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10];
+  NSUInteger arrayIndex = arc4random() % [array count];
+  NSString *filePath = [array objectAtIndex:arrayIndex];
+	return [ZHLoadJSONFile BundleFilePath:filePath];
 }
 
 + (NSData *)CollectionData

@@ -126,6 +126,16 @@
 		CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F77178F9D5F00383B89 /* ZHUserInfoParser.m */; };
 		CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */; };
 		CA71858717950B80005726B3 /* ZHCalculateTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CA71858617950B80005726B3 /* ZHCalculateTextSize.m */; };
+		CA718593179538BB005726B3 /* answers1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718589179538BB005726B3 /* answers1.json */; };
+		CA718594179538BB005726B3 /* answers2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858A179538BB005726B3 /* answers2.json */; };
+		CA718595179538BB005726B3 /* answers3.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858B179538BB005726B3 /* answers3.json */; };
+		CA718596179538BB005726B3 /* answers4.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858C179538BB005726B3 /* answers4.json */; };
+		CA718597179538BB005726B3 /* answers5.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858D179538BB005726B3 /* answers5.json */; };
+		CA718598179538BB005726B3 /* answers6.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858E179538BB005726B3 /* answers6.json */; };
+		CA718599179538BB005726B3 /* answers7.json in Resources */ = {isa = PBXBuildFile; fileRef = CA71858F179538BB005726B3 /* answers7.json */; };
+		CA71859A179538BB005726B3 /* answers8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718590179538BB005726B3 /* answers8.json */; };
+		CA71859B179538BB005726B3 /* answers9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718591179538BB005726B3 /* answers9.json */; };
+		CA71859C179538BB005726B3 /* answers10.json in Resources */ = {isa = PBXBuildFile; fileRef = CA718592179538BB005726B3 /* answers10.json */; };
 		CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */; };
 		CA77DAAC178FD8140012FE4F /* ZHObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAB178FD8130012FE4F /* ZHObject.m */; };
 		CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAE178FD8320012FE4F /* ZHCollectionObject.m */; };
@@ -341,6 +351,16 @@
 		CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderParser.m; sourceTree = "<group>"; };
 		CA71858517950B80005726B3 /* ZHCalculateTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCalculateTextSize.h; sourceTree = "<group>"; };
 		CA71858617950B80005726B3 /* ZHCalculateTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCalculateTextSize.m; sourceTree = "<group>"; };
+		CA718589179538BB005726B3 /* answers1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers1.json; sourceTree = "<group>"; };
+		CA71858A179538BB005726B3 /* answers2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers2.json; sourceTree = "<group>"; };
+		CA71858B179538BB005726B3 /* answers3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers3.json; sourceTree = "<group>"; };
+		CA71858C179538BB005726B3 /* answers4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers4.json; sourceTree = "<group>"; };
+		CA71858D179538BB005726B3 /* answers5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers5.json; sourceTree = "<group>"; };
+		CA71858E179538BB005726B3 /* answers6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers6.json; sourceTree = "<group>"; };
+		CA71858F179538BB005726B3 /* answers7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers7.json; sourceTree = "<group>"; };
+		CA718590179538BB005726B3 /* answers8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers8.json; sourceTree = "<group>"; };
+		CA718591179538BB005726B3 /* answers9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers9.json; sourceTree = "<group>"; };
+		CA718592179538BB005726B3 /* answers10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers10.json; sourceTree = "<group>"; };
 		CA77DA94178FB8EF0012FE4F /* ZHAnswerHeaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFactory.h; sourceTree = "<group>"; };
 		CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFactory.m; sourceTree = "<group>"; };
 		CA77DAAA178FD8130012FE4F /* ZHObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHObject.h; sourceTree = "<group>"; };
@@ -505,6 +525,16 @@
 		CA33AC371790FE3000F37894 /* answerpage */ = {
 			isa = PBXGroup;
 			children = (
+				CA718589179538BB005726B3 /* answers1.json */,
+				CA71858A179538BB005726B3 /* answers2.json */,
+				CA71858B179538BB005726B3 /* answers3.json */,
+				CA71858C179538BB005726B3 /* answers4.json */,
+				CA71858D179538BB005726B3 /* answers5.json */,
+				CA71858E179538BB005726B3 /* answers6.json */,
+				CA71858F179538BB005726B3 /* answers7.json */,
+				CA718590179538BB005726B3 /* answers8.json */,
+				CA718591179538BB005726B3 /* answers9.json */,
+				CA718592179538BB005726B3 /* answers10.json */,
 				CA33AC381790FE3000F37894 /* answers.json */,
 				CA33AC391790FE3000F37894 /* header.json */,
 			);
@@ -1076,6 +1106,7 @@
 				CA33ACC11790FE3C00F37894 /* ZHProfileMessageIconNormal.png in Resources */,
 				CA33ACA71790FE3C00F37894 /* ZHCellSingleNormal.png in Resources */,
 				CA4D4F851793AC06006305B3 /* ZHExploreFavTopBase.png in Resources */,
+				CA71859A179538BB005726B3 /* answers8.json in Resources */,
 				CA33AC9A1790FE3C00F37894 /* NavigationBarBackButtonHighlight@2x.png in Resources */,
 				CA33AC2A1790FE0F00F37894 /* info5.json in Resources */,
 				CA33ACA81790FE3C00F37894 /* ZHCellSingleNormal@2x.png in Resources */,
@@ -1098,6 +1129,7 @@
 				CA33ACCC1790FE3C00F37894 /* ZHProfileViewToolbar@2x.png in Resources */,
 				CA33ACCB1790FE3C00F37894 /* ZHProfileViewToolbar.png in Resources */,
 				CA33AC921790FE3C00F37894 /* AvatarMaskM@2x.png in Resources */,
+				CA718595179538BB005726B3 /* answers3.json in Resources */,
 				CA33ACAF1790FE3C00F37894 /* ZHExploreShuffleIconNext.png in Resources */,
 				CA33ACD21790FE3C00F37894 /* ZHQuestionViewCommentIcon@2x.png in Resources */,
 				CA33AC281790FE0F00F37894 /* info3.json in Resources */,
@@ -1107,12 +1139,14 @@
 				CA7CD2B01793D98A000F2FCD /* ZHFollowButtonNormal.png in Resources */,
 				CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase@2x.png in Resources */,
 				CA33ACBA1790FE3C00F37894 /* ZHNavigationBarMoreIcon@2x.png in Resources */,
+				CA718598179538BB005726B3 /* answers6.json in Resources */,
 				CA33AC9B1790FE3C00F37894 /* NavigationBarBackButtonNormal.png in Resources */,
 				CA7CD2B61793DA56000F2FCD /* ZHFeaturedButtonHighlight.png in Resources */,
 				CA33AC9D1790FE3C00F37894 /* NavigationBarButtonHighlight.png in Resources */,
 				CA33ACCE1790FE3C00F37894 /* ZHProfileViewTopbg@2x.png in Resources */,
 				CA33ACC91790FE3C00F37894 /* ZHProfileViewTencentWeiboIcon.png in Resources */,
 				CA33AC961790FE3C00F37894 /* AvatarMaskXL@2x.png in Resources */,
+				CA718593179538BB005726B3 /* answers1.json in Resources */,
 				CA33ACD11790FE3C00F37894 /* ZHQuestionViewCommentIcon.png in Resources */,
 				CA33AC931790FE3C00F37894 /* AvatarMaskS.png in Resources */,
 				CA33AC901790FE3C00F37894 /* AvatarMaskL@2x.png in Resources */,
@@ -1124,6 +1158,7 @@
 				CA33ACD61790FE3C00F37894 /* ZHThankIcon@2x.png in Resources */,
 				CA8C545E178EA2B2005552CE /* Default.png in Resources */,
 				CA33AC2B1790FE0F00F37894 /* info6.json in Resources */,
+				CA71859B179538BB005726B3 /* answers9.json in Resources */,
 				CA7CD2AE1793D98A000F2FCD /* ZHFollowButtonHighlight.png in Resources */,
 				CA33AC911790FE3C00F37894 /* AvatarMaskM.png in Resources */,
 				CA33ACA91790FE3C00F37894 /* ZHCellTopNormal.png in Resources */,
@@ -1143,6 +1178,7 @@
 				CA07141D1794F61D008EDE73 /* ZHExploreListItemBase@2x.png in Resources */,
 				CA7CD2B81793DA56000F2FCD /* ZHFeaturedButtonNormal.png in Resources */,
 				CA33ACD71790FE3C00F37894 /* ZHVoteupIcon.png in Resources */,
+				CA718599179538BB005726B3 /* answers7.json in Resources */,
 				CA33ACD41790FE3C00F37894 /* ZHQuestionViewFollowingIcon@2x.png in Resources */,
 				CA33ACC51790FE3C00F37894 /* ZHProfileViewGenderMale.png in Resources */,
 				CA33ACA51790FE3C00F37894 /* ZHAnswerViewThankIconNormal.png in Resources */,
@@ -1150,6 +1186,7 @@
 				CA33AC8B1790FE3C00F37894 /* AvatarFemale100.png in Resources */,
 				CA33AC941790FE3C00F37894 /* AvatarMaskS@2x.png in Resources */,
 				CA33ACC71790FE3C00F37894 /* ZHProfileViewSinaWeiboIcon.png in Resources */,
+				CA71859C179538BB005726B3 /* answers10.json in Resources */,
 				CA33AC951790FE3C00F37894 /* AvatarMaskXL.png in Resources */,
 				CA33ACAA1790FE3C00F37894 /* ZHCellTopNormal@2x.png in Resources */,
 				CA33ACC01790FE3C00F37894 /* ZHProfileMessageIconHighlight@2x.png in Resources */,
@@ -1169,6 +1206,7 @@
 				CA33AC261790FE0F00F37894 /* info1.json in Resources */,
 				CA33AC291790FE0F00F37894 /* info4.json in Resources */,
 				CA33AC991790FE3C00F37894 /* NavigationBarBackButtonHighlight.png in Resources */,
+				CA718597179538BB005726B3 /* answers5.json in Resources */,
 				CA7CD2B71793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png in Resources */,
 				CAAEFCCF17911BA800F1233D /* ZHCellMiddleNormal.png in Resources */,
 				CA7CD2AF1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png in Resources */,
@@ -1177,6 +1215,7 @@
 				CA33AC361790FE2200F37894 /* detail5.json in Resources */,
 				CADC8B931793FD5E00637D4A /* ZHCellBottomNormal@2x.png in Resources */,
 				CA8C5462178EA2B2005552CE /* Default-568h@2x.png in Resources */,
+				CA718594179538BB005726B3 /* answers2.json in Resources */,
 				CA4EA69317912078004BE8F9 /* ZHDMViewInputBox@2x.png in Resources */,
 				CA33ACD31790FE3C00F37894 /* ZHQuestionViewFollowingIcon.png in Resources */,
 				CA33ACB51790FE3C00F37894 /* ZHListViewArrowRight.png in Resources */,
@@ -1185,6 +1224,7 @@
 				CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */,
 				CA33ACB21790FE3C00F37894 /* ZHFeaturedContentBase@2x.png in Resources */,
 				CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */,
+				CA718596179538BB005726B3 /* answers4.json in Resources */,
 				CACBD9F717940609006D1835 /* ZHSettingsViewWorkCell.png in Resources */,
 				CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */,
 				CA07141C1794F61D008EDE73 /* ZHExploreListItemBase.png in Resources */,

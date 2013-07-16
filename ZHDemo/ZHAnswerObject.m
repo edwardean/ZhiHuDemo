@@ -32,10 +32,7 @@
   answerObject.excerpt = [dictionary objectForKey:@"excerpt"];
   answerObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
   answerObject.voteup_count = [dictionary objectForKey:@"voteup_count"];
-  //NSLog(@"title:%@ excerpt:%@ avatar_url:%@ voyeup_count:%@",answerObject.title,answerObject.excerpt,answerObject.avatar_url,answerObject.voteup_count);
-  
   return answerObject;
-  
 }
 
 @end
