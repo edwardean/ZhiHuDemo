@@ -9,6 +9,7 @@
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerHeaderView.h"
 #import "ZHAnswerHeaderFollowButton.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define DesLabelFont														[UIFont systemFontOfSize:14.0f]
 

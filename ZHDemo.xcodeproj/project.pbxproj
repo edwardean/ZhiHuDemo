@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EE61794DD1C0067C31C /* ImageIO.framework */; };
+		CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */; };
+		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
 		CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B251791591D001EE98D /* ZHAnswerCell.m */; };
 		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
 		CA33AC1E1790FDC600F37894 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC1D1790FDC600F37894 /* collections.json */; };
@@ -160,9 +163,34 @@
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CABA8A5517901316004B356E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A5417901316004B356E /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CAC16BE81793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */; };
+		CACBD9F717940609006D1835 /* ZHSettingsViewWorkCell.png in Resources */ = {isa = PBXBuildFile; fileRef = CACBD9F517940609006D1835 /* ZHSettingsViewWorkCell.png */; };
+		CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */; };
+		CADC8B921793FD5E00637D4A /* ZHCellBottomNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */; };
+		CADC8B931793FD5E00637D4A /* ZHCellBottomNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CA080EED1794DDFA0067C31C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53922D6F148C55820056699D;
+			remoteInfo = SDWebImage;
+		};
+		CA080EEF1794DDFA0067C31C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53761325155AD0D5005750A4;
+			remoteInfo = "SDWebImage ARC";
+		};
+		CA080EF11794DE0B0067C31C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53761307155AD0D5005750A4;
+			remoteInfo = "SDWebImage ARC";
+		};
 		CA8C546D178EA2B2005552CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA8C5440178EA2B2005552CE /* Project object */;
@@ -173,6 +201,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA080EE61794DD1C0067C31C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = "<group>"; };
+		CA080EF41794DEB70067C31C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CA131B241791591D001EE98D /* ZHAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerCell.h; sourceTree = "<group>"; };
 		CA131B251791591D001EE98D /* ZHAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCell.m; sourceTree = "<group>"; };
 		CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderView.h; sourceTree = "<group>"; };
@@ -363,6 +394,10 @@
 		CABA8A5417901316004B356E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CAC16BE61793DB1600063EF2 /* ZHAnswerHeaderFollowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFollowButton.h; sourceTree = "<group>"; };
 		CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFollowButton.m; sourceTree = "<group>"; };
+		CACBD9F517940609006D1835 /* ZHSettingsViewWorkCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHSettingsViewWorkCell.png; sourceTree = "<group>"; };
+		CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHSettingsViewWorkCell@2x.png"; sourceTree = "<group>"; };
+		CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHCellBottomNormal.png; sourceTree = "<group>"; };
+		CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHCellBottomNormal@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +405,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */,
+				CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */,
+				CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */,
 				CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */,
 				CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */,
 				CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */,
@@ -390,16 +428,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA131B2A17915A7A001EE98D /* Collections */ = {
+		CA080EE91794DDF90067C31C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA080EEE1794DDFA0067C31C /* libSDWebImage.a */,
+				CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA131B2A17915A7A001EE98D /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
 				CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */,
 				CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */,
 			);
-			name = Collections;
+			name = CollectionCells;
 			sourceTree = "<group>";
 		};
-		CA131B2B17915A89001EE98D /* Answer */ = {
+		CA131B2B17915A89001EE98D /* AnswerCells */ = {
 			isa = PBXGroup;
 			children = (
 				CA131B241791591D001EE98D /* ZHAnswerCell.h */,
@@ -409,7 +456,7 @@
 				CAC16BE61793DB1600063EF2 /* ZHAnswerHeaderFollowButton.h */,
 				CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */,
 			);
-			name = Answer;
+			name = AnswerCells;
 			sourceTree = "<group>";
 		};
 		CA33AC1C1790FDC600F37894 /* collections */ = {
@@ -457,10 +504,6 @@
 		CA33AC3C1790FE3C00F37894 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */,
-				CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */,
-				CA8D9997179103F000AE1900 /* BackgroundTextures.png */,
-				CA8D9998179103F000AE1900 /* BackgroundTextures@2x.png */,
 				CA33AC3D1790FE3C00F37894 /* AvatarFemale100.png */,
 				CA33AC3E1790FE3C00F37894 /* AvatarFemale100@2x.png */,
 				CA33AC3F1790FE3C00F37894 /* AvatarMale100.png */,
@@ -473,6 +516,8 @@
 				CA33AC461790FE3C00F37894 /* AvatarMaskS@2x.png */,
 				CA33AC471790FE3C00F37894 /* AvatarMaskXL.png */,
 				CA33AC481790FE3C00F37894 /* AvatarMaskXL@2x.png */,
+				CA8D9997179103F000AE1900 /* BackgroundTextures.png */,
+				CA8D9998179103F000AE1900 /* BackgroundTextures@2x.png */,
 				CA33AC491790FE3C00F37894 /* NavigationBar.png */,
 				CA33AC4A1790FE3C00F37894 /* NavigationBar@2x.png */,
 				CA33AC4B1790FE3C00F37894 /* NavigationBarBackButtonHighlight.png */,
@@ -489,22 +534,36 @@
 				CA33AC561790FE3C00F37894 /* ZHAnswerViewCollectIconNormal@2x.png */,
 				CA33AC571790FE3C00F37894 /* ZHAnswerViewThankIconNormal.png */,
 				CA33AC581790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png */,
+				CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */,
+				CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */,
+				CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */,
+				CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */,
 				CA33AC591790FE3C00F37894 /* ZHCellSingleNormal.png */,
 				CA33AC5A1790FE3C00F37894 /* ZHCellSingleNormal@2x.png */,
 				CA33AC5B1790FE3C00F37894 /* ZHCellTopNormal.png */,
 				CA33AC5C1790FE3C00F37894 /* ZHCellTopNormal@2x.png */,
-				CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */,
-				CAAEFCCE17911BA800F1233D /* ZHCellMiddleNormal@2x.png */,
-				CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */,
-				CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */,
+				CACBD9F517940609006D1835 /* ZHSettingsViewWorkCell.png */,
+				CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */,
+				CA4EA69017912078004BE8F9 /* ZHDMViewInputBox.png */,
+				CA4EA69117912078004BE8F9 /* ZHDMViewInputBox@2x.png */,
 				CA33AC5D1790FE3C00F37894 /* ZHExploreFavBase.png */,
 				CA33AC5E1790FE3C00F37894 /* ZHExploreFavBase@2x.png */,
+				CA4D4F831793AC06006305B3 /* ZHExploreFavTopBase.png */,
+				CA4D4F841793AC06006305B3 /* ZHExploreFavTopBase@2x.png */,
 				CA33AC611790FE3C00F37894 /* ZHExploreShuffleIconNext.png */,
 				CA33AC621790FE3C00F37894 /* ZHExploreShuffleIconNext@2x.png */,
+				CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */,
+				CA7CD2B31793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png */,
+				CA7CD2B41793DA56000F2FCD /* ZHFeaturedButtonNormal.png */,
+				CA7CD2B51793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png */,
 				CA33AC631790FE3C00F37894 /* ZHFeaturedContentBase.png */,
 				CA33AC641790FE3C00F37894 /* ZHFeaturedContentBase@2x.png */,
 				CA33AC651790FE3C00F37894 /* ZHFeaturedIconRate.png */,
 				CA33AC661790FE3C00F37894 /* ZHFeaturedIconRate@2x.png */,
+				CA7CD2AA1793D98A000F2FCD /* ZHFollowButtonHighlight.png */,
+				CA7CD2AB1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png */,
+				CA7CD2AC1793D98A000F2FCD /* ZHFollowButtonNormal.png */,
+				CA7CD2AD1793D98A000F2FCD /* ZHFollowButtonNormal@2x.png */,
 				CA33AC671790FE3C00F37894 /* ZHListViewArrowRight.png */,
 				CA33AC681790FE3C00F37894 /* ZHListViewArrowRight@2x.png */,
 				CA33AC691790FE3C00F37894 /* ZHNavigationBarActionIcon.png */,
@@ -541,14 +600,6 @@
 				CA33AC881790FE3C00F37894 /* ZHThankIcon@2x.png */,
 				CA33AC891790FE3C00F37894 /* ZHVoteupIcon.png */,
 				CA33AC8A1790FE3C00F37894 /* ZHVoteupIcon@2x.png */,
-				CA7CD2AA1793D98A000F2FCD /* ZHFollowButtonHighlight.png */,
-				CA7CD2AB1793D98A000F2FCD /* ZHFollowButtonHighlight@2x.png */,
-				CA7CD2AC1793D98A000F2FCD /* ZHFollowButtonNormal.png */,
-				CA7CD2AD1793D98A000F2FCD /* ZHFollowButtonNormal@2x.png */,
-				CA7CD2B21793DA56000F2FCD /* ZHFeaturedButtonHighlight.png */,
-				CA7CD2B31793DA56000F2FCD /* ZHFeaturedButtonHighlight@2x.png */,
-				CA7CD2B41793DA56000F2FCD /* ZHFeaturedButtonNormal.png */,
-				CA7CD2B51793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -556,6 +607,7 @@
 		CA54FA8A178EA707007DC220 /* Verdons */ = {
 			isa = PBXGroup;
 			children = (
+				CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */,
 				CABA8A5217901316004B356E /* JSONKit */,
 				CABA8A4E179012F0004B356E /* UIView+Frame */,
 			);
@@ -636,8 +688,8 @@
 			isa = PBXGroup;
 			children = (
 				CADC8B871793F8B200637D4A /* CellSuperClass */,
-				CA131B2A17915A7A001EE98D /* Collections */,
-				CA131B2B17915A89001EE98D /* Answer */,
+				CA131B2A17915A7A001EE98D /* CollectionCells */,
+				CA131B2B17915A89001EE98D /* AnswerCells */,
 				CADC8B861793F8A200637D4A /* listTableView */,
 			);
 			name = Views;
@@ -685,6 +737,8 @@
 		CA8C544A178EA2B2005552CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA080EF41794DEB70067C31C /* MapKit.framework */,
+				CA080EE61794DD1C0067C31C /* ImageIO.framework */,
 				CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */,
 				CA8C544B178EA2B2005552CE /* UIKit.framework */,
 				CA8C544D178EA2B2005552CE /* Foundation.framework */,
@@ -920,6 +974,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CA080EF21794DE0B0067C31C /* PBXTargetDependency */,
 			);
 			name = ZHDemo;
 			productName = ZHDemo;
@@ -965,6 +1020,12 @@
 			mainGroup = CA8C543F178EA2B2005552CE;
 			productRefGroup = CA8C5449178EA2B2005552CE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CA080EE91794DDF90067C31C /* Products */;
+					ProjectRef = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CA8C5447178EA2B2005552CE /* ZHDemo */,
@@ -972,6 +1033,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CA080EEE1794DDFA0067C31C /* libSDWebImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDWebImage.a;
+			remoteRef = CA080EED1794DDFA0067C31C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDWebImageARC.a;
+			remoteRef = CA080EEF1794DDFA0067C31C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CA8C5446178EA2B2005552CE /* Resources */ = {
@@ -1042,6 +1120,7 @@
 				CA33AC971790FE3C00F37894 /* NavigationBar.png in Resources */,
 				CA33AC1E1790FDC600F37894 /* collections.json in Resources */,
 				CA33ACA01790FE3C00F37894 /* NavigationBarButtonNormal@2x.png in Resources */,
+				CADC8B921793FD5E00637D4A /* ZHCellBottomNormal.png in Resources */,
 				CA33ACA61790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png in Resources */,
 				CA33ACD51790FE3C00F37894 /* ZHThankIcon.png in Resources */,
 				CA33AC8F1790FE3C00F37894 /* AvatarMaskL.png in Resources */,
@@ -1079,6 +1158,7 @@
 				CA33AC331790FE2200F37894 /* detail2.json in Resources */,
 				CA33AC3B1790FE3000F37894 /* header.json in Resources */,
 				CA33AC361790FE2200F37894 /* detail5.json in Resources */,
+				CADC8B931793FD5E00637D4A /* ZHCellBottomNormal@2x.png in Resources */,
 				CA8C5462178EA2B2005552CE /* Default-568h@2x.png in Resources */,
 				CA4EA69317912078004BE8F9 /* ZHDMViewInputBox@2x.png in Resources */,
 				CA33ACD31790FE3C00F37894 /* ZHQuestionViewFollowingIcon.png in Resources */,
@@ -1088,6 +1168,8 @@
 				CA4EA69217912078004BE8F9 /* ZHDMViewInputBox.png in Resources */,
 				CA33ACB21790FE3C00F37894 /* ZHFeaturedContentBase@2x.png in Resources */,
 				CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */,
+				CACBD9F717940609006D1835 /* ZHSettingsViewWorkCell.png in Resources */,
+				CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,6 +1252,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CA080EF21794DE0B0067C31C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SDWebImage ARC";
+			targetProxy = CA080EF11794DE0B0067C31C /* PBXContainerItemProxy */;
+		};
 		CA8C546E178EA2B2005552CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA8C5447178EA2B2005552CE /* ZHDemo */;
@@ -1266,12 +1353,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+				);
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				WRAPPER_EXTENSION = app;
@@ -1289,12 +1380,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+				);
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";

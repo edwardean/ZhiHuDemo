@@ -7,3 +7,8 @@ ZHDemo
 7/15:完成问答页面的headerview
 
 ![](./screenshot/2.png)
+
+
+异步下载用户头像
+
+![](./screenshot/3.png)

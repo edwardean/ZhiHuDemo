@@ -6,9 +6,10 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHCollectionCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "ZHCollectionObject.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ZHCollectionCell.h"
 
 #define Default_Cell_Height											95
 
@@ -42,6 +43,8 @@
 @property (nonatomic) UIButton *collectionCellAvatarButton;
 @property (nonatomic) UILabel *collectionCellNameLabel;
 @property (nonatomic) UILabel *collectionCellAnswersLabel;
+
+@property (nonatomic) UIImageView *temporaryImageView;
 
 @end
 
@@ -107,6 +110,7 @@
     }
     
     answerLabelOriginX = self.width - BottomContent_Answer_Max_Width - BottomContent_Answer_To_Right_Margin;
+ 		self.temporaryImageView = [[UIImageView alloc] init];
   }
   return self;
 }
@@ -128,8 +132,17 @@
                                             stringWithFormat:@"%@个问答",answer_count]];
   
   // Downloading Avatar Image Using 'avatar_url' here ...
-  //UIImage *avatar_image = [UIImage imageWithContentsOfFile:avatar_url];
-  //[self.collectionCellAvatarButton setImage:avatar_image forState:UIControlStateNormal];
+  if (avatar_url) {
+    __block typeof(self) weakself = self;
+    UIImageView *avatarImage = self.temporaryImageView;
+    [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
+      
+      UIImage *avatarImage = [self makeRoundedImage:image radius:3.0f];
+      [weakself.collectionCellAvatarButton setImage:avatarImage forState:UIControlStateNormal];
+    } failure:^(NSError *error) {
+      
+    }];
+  }
   
   [self.collectionCellTitleLabel sizeToFit];
   [self.collectionCellDesLabel sizeToFit];
@@ -137,6 +150,25 @@
   [self.collectionCellAnswersLabel sizeToFit];
   
   [self layoutIfNeeded];
+}
+
+
+-(UIImage *)makeRoundedImage:(UIImage *) image
+                      radius: (float) radius;
+{
+  CALayer *imageLayer = [CALayer layer];
+  imageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+  imageLayer.contents = (id) image.CGImage;
+  
+  imageLayer.masksToBounds = YES;
+  imageLayer.cornerRadius = radius;
+  
+  UIGraphicsBeginImageContext(image.size);
+  [imageLayer renderInContext:UIGraphicsGetCurrentContext()];
+  UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  
+  return roundedImage;
 }
 
 - (void)layoutSubviews
