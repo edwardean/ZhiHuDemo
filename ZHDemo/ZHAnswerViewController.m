@@ -72,16 +72,20 @@
   imgView.frame = headerView.bounds;
   
   // Cell
-  UIImage *cellBackgroundImage = [[UIImage imageNamed:@"ZHCellSingleNormal.png"]
-                                  stretchableImageWithLeftCapWidth:28 topCapHeight:28];
-  self.listViewDelegate.cellBackgroundImage = cellBackgroundImage;
+  // 设置cell背景图片，默认为单张cell图片进行拉伸，之后再根据计算放上分割线
+  UIImage *cellBackgroundImage = [UIImage imageNamed:@"ZHExploreListItemBase.png"];
+                                  //stretchableImageWithLeftCapWidth:11 topCapHeight:22];
+  
+  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15) resizingMode:UIImageResizingModeStretch];
+  
+  self.listViewDelegate.cellBackgroundImage = image;
   
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
   
   [self numberOfSectionForListView:cellContentsModel.objects.count];
   [self modelDidFinishLoading:cellContentsModel];
-
+  
   [self.listView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:imgView];
   

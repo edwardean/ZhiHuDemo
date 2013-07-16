@@ -41,7 +41,7 @@
     NSString *excerpt = [dic objectForKey:@"excerpt"];
     
     NSDictionary *question = [dic objectForKey:@"question"];
-    NSString *title = [question objectForKey:@"question"];
+    NSString *title = [question objectForKey:@"title"];
     
     NSDictionary *author = [dic objectForKey:@"author"];
     NSString *avatar_url = [author objectForKey:@"avatar_url"];
@@ -61,7 +61,7 @@
       [answerDictionary setObject:avatar_url forKey:@"avatar_url"];
     }
     
-    ZHAnswerObject *object = [answerObject_ bindWithObjec:answerDictionary
+    ZHAnswerObject *object = [self.answerObject bindWithObjec:answerDictionary
                                             forObjectType:ZHObjectTypeAnswer];
     
     [self.answerArray addObject:object];

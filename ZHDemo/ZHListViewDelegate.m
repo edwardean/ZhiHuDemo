@@ -53,15 +53,12 @@ viewForFooterInSection:(NSInteger)section
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  //  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
-  //                           stretchableImageWithLeftCapWidth:28
-  //                           topCapHeight:28];
-  //
-  //  cell.backgroundView = [[UIImageView alloc] initWithImage:resizedImage];
-
   if (cellBackgroundImage_) {
-    
-    cell.backgroundView = [[UIImageView alloc] initWithImage:cellBackgroundImage_];
+    //cell.backgroundView = nil;
+    UIImageView *cellBackView = [[UIImageView alloc] init];
+    [cellBackView setImage:cellBackgroundImage_];
+    cellBackView.clipsToBounds = YES;
+    [cell setBackgroundView:/*[[UIImageView alloc] initWithImage:cellBackgroundImage_]*/cellBackView];
   }
 }
 

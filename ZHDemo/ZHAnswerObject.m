@@ -26,15 +26,16 @@
 - (id)bindWithObjec:(id)object forObjectType:(ZHObjectType)objecttype
 {
   ZHAnswerObject *answerObject = [[ZHAnswerObject alloc] init];
-  if (objecttype != answerObject.type) {
-    return nil;
-  }
+
   NSDictionary *dictionary = (NSDictionary *)object;
   answerObject.title = [dictionary objectForKey:@"title"];
   answerObject.excerpt = [dictionary objectForKey:@"excerpt"];
   answerObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
   answerObject.voteup_count = [dictionary objectForKey:@"voteup_count"];
+  //NSLog(@"title:%@ excerpt:%@ avatar_url:%@ voyeup_count:%@",answerObject.title,answerObject.excerpt,answerObject.avatar_url,answerObject.voteup_count);
+  
   return answerObject;
+  
 }
 
 @end

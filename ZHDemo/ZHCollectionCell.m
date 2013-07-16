@@ -31,7 +31,7 @@
 
 
 #define DesLabelFont														[UIFont systemFontOfSize:15.0f]
-#define DesLabelWidth														270
+#define DesLabelWidth														270.0f
 
 
 @interface ZHCollectionCell ()
@@ -153,25 +153,6 @@
   [self layoutIfNeeded];
 }
 
-
-//-(UIImage *)makeRoundedImage:(UIImage *) image
-//                      radius: (float) radius;
-//{
-//  CALayer *imageLayer = [CALayer layer];
-//  imageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-//  imageLayer.contents = (id) image.CGImage;
-//  
-//  imageLayer.masksToBounds = YES;
-//  imageLayer.cornerRadius = radius;
-//  
-//  UIGraphicsBeginImageContext(image.size);
-//  [imageLayer renderInContext:UIGraphicsGetCurrentContext()];
-//  UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
-//  UIGraphicsEndImageContext();
-//  
-//  return roundedImage;
-//}
-
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
@@ -182,7 +163,7 @@
   // Layout des label
 	CGFloat desLabelOriginY = [collectionCellTitleLabel_ bottom] + DesContent_To_Title_Margin;
   [self.collectionCellDesLabel setOrigin:CGPointMake(CellContent_Left_Margin, desLabelOriginY)];
-  [self.collectionCellDesLabel setSize:desTextSize(self.collectionCellDesLabel.text)];
+  [self.collectionCellDesLabel setSize:CalculateTextSize(self.collectionCellDesLabel.text, DesLabelFont,DesLabelWidth, MAXFLOAT, NSLineBreakByWordWrapping)];
   
   // Layout Bottom contents
   CGFloat bottomContentOriginY = [self.collectionCellDesLabel bottom] + DesContent_To_Underline_Margin + BottomContent_To_Underline_Margin;
@@ -204,17 +185,11 @@
     return Default_Cell_Height;
   }
   
-  CGFloat rowHeight = desTextSize(des).height + Default_Cell_Height;
+  CGFloat rowHeight = CalculateTextSize(des,DesLabelFont,
+                                        DesLabelWidth,
+                                        MAXFLOAT,
+                                        NSLineBreakByWordWrapping).height + Default_Cell_Height;
   return rowHeight;
-}
-
-CGSize desTextSize(NSString *desText) {
-  
-	CGSize size = [desText sizeWithFont:DesLabelFont
-                    constrainedToSize:CGSizeMake(DesLabelWidth, MAXFLOAT)
-                        lineBreakMode:NSLineBreakByWordWrapping];
-  return size;
-  
 }
 
 @end

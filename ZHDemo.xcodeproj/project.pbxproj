@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA0714181794ECF3008EDE73 /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */; };
+		CA07141C1794F61D008EDE73 /* ZHExploreListItemBase.png in Resources */ = {isa = PBXBuildFile; fileRef = CA07141A1794F61D008EDE73 /* ZHExploreListItemBase.png */; };
+		CA07141D1794F61D008EDE73 /* ZHExploreListItemBase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA07141B1794F61D008EDE73 /* ZHExploreListItemBase@2x.png */; };
 		CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EE61794DD1C0067C31C /* ImageIO.framework */; };
 		CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */; };
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
@@ -123,6 +125,7 @@
 		CA561F75178F9D3900383B89 /* ZHAnswerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F74178F9D3900383B89 /* ZHAnswerParser.m */; };
 		CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F77178F9D5F00383B89 /* ZHUserInfoParser.m */; };
 		CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */; };
+		CA71858717950B80005726B3 /* ZHCalculateTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CA71858617950B80005726B3 /* ZHCalculateTextSize.m */; };
 		CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */; };
 		CA77DAAC178FD8140012FE4F /* ZHObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAB178FD8130012FE4F /* ZHObject.m */; };
 		CA77DAAF178FD8330012FE4F /* ZHCollectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAAE178FD8320012FE4F /* ZHCollectionObject.m */; };
@@ -204,6 +207,8 @@
 /* Begin PBXFileReference section */
 		CA0714161794ECF3008EDE73 /* UIImage+RounedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RounedImage.h"; sourceTree = "<group>"; };
 		CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RounedImage.m"; sourceTree = "<group>"; };
+		CA07141A1794F61D008EDE73 /* ZHExploreListItemBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHExploreListItemBase.png; sourceTree = "<group>"; };
+		CA07141B1794F61D008EDE73 /* ZHExploreListItemBase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHExploreListItemBase@2x.png"; sourceTree = "<group>"; };
 		CA080EE61794DD1C0067C31C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		CA080EF41794DEB70067C31C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -334,6 +339,8 @@
 		CA561F77178F9D5F00383B89 /* ZHUserInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserInfoParser.m; sourceTree = "<group>"; };
 		CA561F7C178FA50800383B89 /* ZHAnswerHeaderParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderParser.h; sourceTree = "<group>"; };
 		CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderParser.m; sourceTree = "<group>"; };
+		CA71858517950B80005726B3 /* ZHCalculateTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCalculateTextSize.h; sourceTree = "<group>"; };
+		CA71858617950B80005726B3 /* ZHCalculateTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCalculateTextSize.m; sourceTree = "<group>"; };
 		CA77DA94178FB8EF0012FE4F /* ZHAnswerHeaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFactory.h; sourceTree = "<group>"; };
 		CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFactory.m; sourceTree = "<group>"; };
 		CA77DAAA178FD8130012FE4F /* ZHObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHObject.h; sourceTree = "<group>"; };
@@ -507,6 +514,8 @@
 		CA33AC3C1790FE3C00F37894 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CA07141A1794F61D008EDE73 /* ZHExploreListItemBase.png */,
+				CA07141B1794F61D008EDE73 /* ZHExploreListItemBase@2x.png */,
 				CA33AC3D1790FE3C00F37894 /* AvatarFemale100.png */,
 				CA33AC3E1790FE3C00F37894 /* AvatarFemale100@2x.png */,
 				CA33AC3F1790FE3C00F37894 /* AvatarMale100.png */,
@@ -615,6 +624,8 @@
 				CABA8A4E179012F0004B356E /* UIView+Frame */,
 				CA0714161794ECF3008EDE73 /* UIImage+RounedImage.h */,
 				CA0714171794ECF3008EDE73 /* UIImage+RounedImage.m */,
+				CA71858517950B80005726B3 /* ZHCalculateTextSize.h */,
+				CA71858617950B80005726B3 /* ZHCalculateTextSize.m */,
 			);
 			name = Verdons;
 			sourceTree = "<group>";
@@ -1129,6 +1140,7 @@
 				CA33ACA61790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png in Resources */,
 				CA33ACD51790FE3C00F37894 /* ZHThankIcon.png in Resources */,
 				CA33AC8F1790FE3C00F37894 /* AvatarMaskL.png in Resources */,
+				CA07141D1794F61D008EDE73 /* ZHExploreListItemBase@2x.png in Resources */,
 				CA7CD2B81793DA56000F2FCD /* ZHFeaturedButtonNormal.png in Resources */,
 				CA33ACD71790FE3C00F37894 /* ZHVoteupIcon.png in Resources */,
 				CA33ACD41790FE3C00F37894 /* ZHQuestionViewFollowingIcon@2x.png in Resources */,
@@ -1175,6 +1187,7 @@
 				CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */,
 				CACBD9F717940609006D1835 /* ZHSettingsViewWorkCell.png in Resources */,
 				CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */,
+				CA07141C1794F61D008EDE73 /* ZHExploreListItemBase.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1234,7 @@
 				CA8C545C178EA2B2005552CE /* ZHAppDelegate.m in Sources */,
 				CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */,
 				CA54FAC3178EABB5007DC220 /* ZHCollectionFactory.m in Sources */,
+				CA71858717950B80005726B3 /* ZHCalculateTextSize.m in Sources */,
 				CA54FACD178EAC43007DC220 /* ZHDataParserFactory.m in Sources */,
 				CA54FACE178EAC64007DC220 /* ZHAnswerFactory.m in Sources */,
 				CA54FACF178EAC68007DC220 /* ZHUserInfoFactory.m in Sources */,

@@ -198,9 +198,8 @@
   
   // Layout Title Label
   if ([self.answerHeaderTitleLabel.text length] > 0) {
-    [self.answerHeaderTitleLabel setSize:TextFitsSize(self.answerHeaderTitleLabel.text,
-                                                      [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide,
-                                                      self.answerHeaderTitleLabel.font)];
+    
+    [self.answerHeaderTitleLabel setSize:CalculateTextSize(self.answerHeaderTitleLabel.text, self.answerHeaderTitleLabel.font,[self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide, MAXFLOAT, NSLineBreakByWordWrapping)];
   } else {
   	[self.answerHeaderTitleLabel setSize:CGSizeZero];
   }
@@ -209,9 +208,7 @@
   CGFloat desLabelOriginY = [self.answerHeaderTitleLabel bottom] + CellContentMarginToBottomSide;
   if ([self.answerHeaderDesLabel.text length] > 0) {
     [self.answerHeaderDesLabel setY:desLabelOriginY];
-    [self.answerHeaderDesLabel setSize:TextFitsSize(self.answerHeaderDesLabel.text,
-                                                    [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,
-                                                    self.answerHeaderDesLabel.font)];
+    [self.answerHeaderDesLabel setSize:CalculateTextSize(self.answerHeaderDesLabel.text,self.answerHeaderDesLabel.font, [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,MAXFLOAT , NSLineBreakByWordWrapping)];
   } else {
   	[self.answerHeaderDesLabel setFrame:CGRectZero];
   }
@@ -263,13 +260,11 @@
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
-  CGSize titleSize = TextFitsSize(self.answerHeaderTitleLabel.text,
-                                  [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide,
-                                  self.answerHeaderTitleLabel.font);
+  CGSize titleSize = CalculateTextSize(self.answerHeaderTitleLabel.text,self.answerHeaderTitleLabel.font,
+                                       [self width] - CellContentMarginToLeftSide - TitleContentMarginToRightSide, MAXFLOAT,
+                                       NSLineBreakByWordWrapping);
   
-  CGSize desSize = TextFitsSize(self.answerHeaderDesLabel.text,
-                                [self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide,
-                                self.answerHeaderDesLabel.font);
+  CGSize desSize = CalculateTextSize(self.answerHeaderDesLabel.text, self.answerHeaderDesLabel.font,[self width] - CellContentMarginToLeftSide - DesContentMaginToRightSide, MAXFLOAT, NSLineBreakByWordWrapping);
 	//CGFloat height = self.originSize.height + titleSize.height + desSize.height;
   CGFloat height = 120 + titleSize.height + desSize.height;
   
@@ -277,14 +272,6 @@
   frame.size.height = height;
   
   return frame.size;
-}
-
-CGSize TextFitsSize(NSString *text,CGFloat width,UIFont *font) {
-	
-  CGSize size = [text sizeWithFont:font
-                 constrainedToSize:CGSizeMake(width, MAXFLOAT)
-                     lineBreakMode:NSLineBreakByWordWrapping];
-  return size;
 }
 
 @end
