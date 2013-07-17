@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+RounedImage.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIImage (RounedImage)
 

@@ -15,6 +15,10 @@
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
 		CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B251791591D001EE98D /* ZHAnswerCell.m */; };
 		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
+		CA245CA817963311008A16A1 /* info7.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA417963311008A16A1 /* info7.json */; };
+		CA245CA917963311008A16A1 /* info8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA517963311008A16A1 /* info8.json */; };
+		CA245CAA17963311008A16A1 /* info9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA617963311008A16A1 /* info9.json */; };
+		CA245CAB17963311008A16A1 /* info10.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA717963311008A16A1 /* info10.json */; };
 		CA33AC1E1790FDC600F37894 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC1D1790FDC600F37894 /* collections.json */; };
 		CA33AC261790FE0F00F37894 /* info1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC201790FE0F00F37894 /* info1.json */; };
 		CA33AC271790FE0F00F37894 /* info2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC211790FE0F00F37894 /* info2.json */; };
@@ -183,6 +187,8 @@
 		CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */; };
 		CADC8B921793FD5E00637D4A /* ZHCellBottomNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */; };
 		CADC8B931793FD5E00637D4A /* ZHCellBottomNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */; };
+		CAF662971796388700A7C9BA /* ZHAnswerViewTopBarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662951796388600A7C9BA /* ZHAnswerViewTopBarShadow.png */; };
+		CAF662981796388700A7C9BA /* ZHAnswerViewTopBarShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662961796388600A7C9BA /* ZHAnswerViewTopBarShadow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +234,10 @@
 		CA131B251791591D001EE98D /* ZHAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCell.m; sourceTree = "<group>"; };
 		CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderView.h; sourceTree = "<group>"; };
 		CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderView.m; sourceTree = "<group>"; };
+		CA245CA417963311008A16A1 /* info7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info7.json; sourceTree = "<group>"; };
+		CA245CA517963311008A16A1 /* info8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info8.json; sourceTree = "<group>"; };
+		CA245CA617963311008A16A1 /* info9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info9.json; sourceTree = "<group>"; };
+		CA245CA717963311008A16A1 /* info10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info10.json; sourceTree = "<group>"; };
 		CA33AC1D1790FDC600F37894 /* collections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections.json; sourceTree = "<group>"; };
 		CA33AC201790FE0F00F37894 /* info1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info1.json; sourceTree = "<group>"; };
 		CA33AC211790FE0F00F37894 /* info2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info2.json; sourceTree = "<group>"; };
@@ -434,6 +444,8 @@
 		CACBD9F617940609006D1835 /* ZHSettingsViewWorkCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHSettingsViewWorkCell@2x.png"; sourceTree = "<group>"; };
 		CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHCellBottomNormal.png; sourceTree = "<group>"; };
 		CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHCellBottomNormal@2x.png"; sourceTree = "<group>"; };
+		CAF662951796388600A7C9BA /* ZHAnswerViewTopBarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHAnswerViewTopBarShadow.png; sourceTree = "<group>"; };
+		CAF662961796388600A7C9BA /* ZHAnswerViewTopBarShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHAnswerViewTopBarShadow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,11 +519,15 @@
 			isa = PBXGroup;
 			children = (
 				CA33AC201790FE0F00F37894 /* info1.json */,
+				CA245CA717963311008A16A1 /* info10.json */,
 				CA33AC211790FE0F00F37894 /* info2.json */,
 				CA33AC221790FE0F00F37894 /* info3.json */,
 				CA33AC231790FE0F00F37894 /* info4.json */,
 				CA33AC241790FE0F00F37894 /* info5.json */,
 				CA33AC251790FE0F00F37894 /* info6.json */,
+				CA245CA417963311008A16A1 /* info7.json */,
+				CA245CA517963311008A16A1 /* info8.json */,
+				CA245CA617963311008A16A1 /* info9.json */,
 			);
 			path = userinfo;
 			sourceTree = "<group>";
@@ -580,6 +596,8 @@
 				CA33AC561790FE3C00F37894 /* ZHAnswerViewCollectIconNormal@2x.png */,
 				CA33AC571790FE3C00F37894 /* ZHAnswerViewThankIconNormal.png */,
 				CA33AC581790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png */,
+				CAF662951796388600A7C9BA /* ZHAnswerViewTopBarShadow.png */,
+				CAF662961796388600A7C9BA /* ZHAnswerViewTopBarShadow@2x.png */,
 				CADC8B901793FD5E00637D4A /* ZHCellBottomNormal.png */,
 				CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */,
 				CAAEFCCD17911BA800F1233D /* ZHCellMiddleNormal.png */,
@@ -1156,9 +1174,11 @@
 				CA33ACD81790FE3C00F37894 /* ZHVoteupIcon@2x.png in Resources */,
 				CA7CD2B01793D98A000F2FCD /* ZHFollowButtonNormal.png in Resources */,
 				CA4D4F861793AC06006305B3 /* ZHExploreFavTopBase@2x.png in Resources */,
+				CA245CA817963311008A16A1 /* info7.json in Resources */,
 				CA33ACBA1790FE3C00F37894 /* ZHNavigationBarMoreIcon@2x.png in Resources */,
 				CA718598179538BB005726B3 /* answers6.json in Resources */,
 				CA33AC9B1790FE3C00F37894 /* NavigationBarBackButtonNormal.png in Resources */,
+				CA245CAB17963311008A16A1 /* info10.json in Resources */,
 				CA7CD2B61793DA56000F2FCD /* ZHFeaturedButtonHighlight.png in Resources */,
 				CA33AC9D1790FE3C00F37894 /* NavigationBarButtonHighlight.png in Resources */,
 				CA33ACCE1790FE3C00F37894 /* ZHProfileViewTopbg@2x.png in Resources */,
@@ -1205,6 +1225,7 @@
 				CA33AC941790FE3C00F37894 /* AvatarMaskS@2x.png in Resources */,
 				CA33ACC71790FE3C00F37894 /* ZHProfileViewSinaWeiboIcon.png in Resources */,
 				CA71859C179538BB005726B3 /* answers10.json in Resources */,
+				CA245CA917963311008A16A1 /* info8.json in Resources */,
 				CA33AC951790FE3C00F37894 /* AvatarMaskXL.png in Resources */,
 				CA33ACAA1790FE3C00F37894 /* ZHCellTopNormal@2x.png in Resources */,
 				CA33ACC01790FE3C00F37894 /* ZHProfileMessageIconHighlight@2x.png in Resources */,
@@ -1244,8 +1265,11 @@
 				CA7CD2B91793DA56000F2FCD /* ZHFeaturedButtonNormal@2x.png in Resources */,
 				CA718596179538BB005726B3 /* answers4.json in Resources */,
 				CACBD9F717940609006D1835 /* ZHSettingsViewWorkCell.png in Resources */,
+				CA245CAA17963311008A16A1 /* info9.json in Resources */,
 				CACBD9F817940609006D1835 /* ZHSettingsViewWorkCell@2x.png in Resources */,
 				CA07141C1794F61D008EDE73 /* ZHExploreListItemBase.png in Resources */,
+				CAF662971796388700A7C9BA /* ZHAnswerViewTopBarShadow.png in Resources */,
+				CAF662981796388700A7C9BA /* ZHAnswerViewTopBarShadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1390,7 +1414,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1415,7 +1439,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1426,7 +1450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1438,6 +1462,7 @@
 					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
 				);
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1445,6 +1470,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1465,6 +1491,7 @@
 					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
 				);
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

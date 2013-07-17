@@ -16,7 +16,7 @@
 #define DesLabelFont														[UIFont systemFontOfSize:14.0f]
 
 #define CellContentMarginToLeftSide							20
-#define CellContentMarginToTopSide				      10
+#define CellContentMarginToTopSide				      15
 #define CellContentMarginToBottomSide						10
 
 #define TitleContentMarginToRightSide						65

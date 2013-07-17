@@ -75,8 +75,8 @@
   if (self) {
     
     if (!userInfoHeaderAvatarView_) {
-      self.userInfoHeaderAvatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10,
-                                                                                    10,
+      self.userInfoHeaderAvatarView = [[UIImageView alloc] initWithFrame:CGRectMake(8,
+                                                                                    15,
                                                                                     80,
                                                                                     81)];
       

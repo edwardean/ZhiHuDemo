@@ -146,7 +146,7 @@
     if (!answerSeparateLine_) {
       self.answerSeparateLine = [[UIImageView alloc]
                                  initWithImage:[UIImage
-                                                imageNamed:@"ZHFeaturedContentBase.png"]];
+                                                imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
       [self.contentView addSubview:answerSeparateLine_];
     }
     

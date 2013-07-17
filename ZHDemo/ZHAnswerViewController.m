@@ -76,7 +76,8 @@
   UIImage *cellBackgroundImage = [UIImage imageNamed:@"ZHExploreListItemBase.png"];
                                   //stretchableImageWithLeftCapWidth:11 topCapHeight:22];
   
-  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15) resizingMode:UIImageResizingModeStretch];
+  //UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15) resizingMode:UIImageResizingModeStretch];
+  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15)];
   
   self.listViewDelegate.cellBackgroundImage = image;
   

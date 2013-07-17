@@ -31,6 +31,10 @@ static NSString * const info3 = @"info3";
 static NSString * const info4 = @"info4";
 static NSString * const info5 = @"info5";
 static NSString * const info6 = @"info6";
+static NSString * const info7 = @"info7";
+static NSString * const info8 = @"info8";
+static NSString * const info9 = @"info9";
+static NSString * const info10 = @"info10";
 
 
 @interface ZHLoadJSONFile ()
@@ -80,7 +84,7 @@ static NSString * const info6 = @"info6";
 
 + (NSString *)UserInfoFilePath
 {
-	NSArray *array = @[info1,info2,info3,info4,info5,info6];
+	NSArray *array = @[info1,info2,info3,info4,info5,info6,info7,info8,info9,info10];
   NSUInteger arrayIndex = arc4random() % [array count];
   NSString *filePath = [array objectAtIndex:arrayIndex];
   return [ZHLoadJSONFile BundleFilePath:filePath];
