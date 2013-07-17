@@ -12,31 +12,31 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ZHCollectionCell.h"
 
-#define Default_Cell_Height											95
+#define ZHCOLLECTIONCELLDEFAULTCELLHEIGHT												95
 
-#define CellContent_Left_Margin									10
-#define CellContent_Top_Margin									15
+#define ZHCOLLECTIONCELLCONTENTLEFTMARGIN												10
+#define ZHCOLLECTIONCELLCONTENTTOPMARGIN												15
 
 // Des
-#define DesContent_To_Title_Margin							10
-#define DesContent_To_Right_Margin							25
-#define DesContent_To_Underline_Margin					10
+#define ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN									10
+#define ZHCOLLECTIONCELLDESCONTENTTORIGHTMARGIN									25
+#define ZHCOLLECTIONCELLDESCONTENTTOUNDERLINEMARGIN							10
 
 // Bottom Content
-#define BottomContent_To_Underline_Margin				10
-#define BottomContent_Avatar_To_Name_Margin			10
-#define BottomContent_Answer_Max_Width					70
-#define BottomContent_Answer_To_Right_Margin	  10
-#define BottomContent_To_Bottom								  10
+#define ZHCOLLECTIONCELLBOTTOMCONTENTTOUNDERLINEMARGIN					10
+#define ZHCOLLECTIONCELLBOTTOMCONTENTAVATARTONAMEMARGIN					10
+#define ZHCOLLECTIONCELLBOTTOMCONTENTANSWERMAXWIDTH							70
+#define ZHCOLLECTIONCELLBOTTOMCONTENTANSWERTORIGHTMARGIN	  		10
+#define ZHCOLLECTIONCELLBOTTOMCONTENTTOBOTTOM								 	  10
 
 
-#define DesLabelFont														[UIFont systemFontOfSize:15.0f]
-#define DesLabelWidth														270.0f
+#define ZHCOLLECTIONCELLDESLABELFONTSIZE												15.0f
+#define ZHCOLLECTIONCELLDESLABELWIDTH														270.0f
 
 
 @interface ZHCollectionCell ()
 {
-	CGFloat answerLabelOriginX;
+	CGFloat answerLabelOriginX_;
 }
 
 @property (nonatomic) UILabel *collectionCellTitleLabel;
@@ -74,7 +74,7 @@
     
     if (!collectionCellDesLabel_) {
       self.collectionCellDesLabel = [[UILabel alloc] init];
-      [collectionCellDesLabel_ setFont:DesLabelFont];
+      [collectionCellDesLabel_ setFont:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]];
       [collectionCellDesLabel_ setTextColor:[UIColor lightGrayColor]];
       [collectionCellDesLabel_ setNumberOfLines:0];
       [collectionCellDesLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
@@ -110,7 +110,7 @@
       [self.contentView addSubview:collectionCellAnswersLabel_];
     }
     
-    answerLabelOriginX = self.width - BottomContent_Answer_Max_Width - BottomContent_Answer_To_Right_Margin;
+    answerLabelOriginX_ = self.width - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERMAXWIDTH - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERTORIGHTMARGIN;
  		self.temporaryImageView = [[UIImageView alloc] init];
     
     [self clearCellContent];
@@ -142,19 +142,23 @@
   [self.collectionCellDesLabel setText:description];
   [self.collectionCellNameLabel setText:name];
   [self.collectionCellAnswersLabel setText:[NSString
-                                            stringWithFormat:@"%@个问答",answer_count]];
+                                            stringWithFormat:@"%@ 个问答",answer_count]];
   
   // Downloading Avatar Image Using 'avatar_url' here ...
   if (avatar_url) {
     __block typeof(self) weakself = self;
     UIImageView *avatarImage = weakself.temporaryImageView;
-    [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
-      
-      image = [image makeRoundedImage:image radius:3.0f];
-      [weakself.collectionCellAvatarButton setImage:image forState:UIControlStateNormal];
-    } failure:^(NSError *error) {
-      
-    }];
+    [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url]
+                placeholderImage:nil
+                         options:SDWebImageProgressiveDownload
+                         success:^(UIImage *image) {
+                           
+                           image = [image makeRoundedImage:image radius:3.0f];
+                           [weakself.collectionCellAvatarButton setImage:image forState:UIControlStateNormal];
+                         }
+                         failure:^(NSError *error) {
+                           
+                         }];
   }
   
   [self.collectionCellTitleLabel sizeToFit];
@@ -170,22 +174,26 @@
 	[super layoutSubviews];
   
   // Layout title label
-  [self.collectionCellTitleLabel setOrigin:CGPointMake(CellContent_Left_Margin, CellContent_Top_Margin)];
+  [self.collectionCellTitleLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, ZHCOLLECTIONCELLCONTENTTOPMARGIN)];
   
   // Layout des label
-	CGFloat desLabelOriginY = [collectionCellTitleLabel_ bottom] + DesContent_To_Title_Margin;
-  [self.collectionCellDesLabel setOrigin:CGPointMake(CellContent_Left_Margin, desLabelOriginY)];
-  [self.collectionCellDesLabel setSize:CalculateTextSize(self.collectionCellDesLabel.text, DesLabelFont,DesLabelWidth, MAXFLOAT, NSLineBreakByWordWrapping)];
+	CGFloat desLabelOriginY = [collectionCellTitleLabel_ bottom] + ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN;
+  [self.collectionCellDesLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, desLabelOriginY)];
+  [self.collectionCellDesLabel setSize:CalculateTextSize(self.collectionCellDesLabel.text,
+                                                         [UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE],
+                                                         ZHCOLLECTIONCELLDESLABELWIDTH,
+                                                         MAXFLOAT,
+                                                         NSLineBreakByWordWrapping)];
   
   // Layout Bottom contents
-  CGFloat bottomContentOriginY = [self.collectionCellDesLabel bottom] + DesContent_To_Underline_Margin + BottomContent_To_Underline_Margin;
-  [self.collectionCellAvatarButton setOrigin:CGPointMake(CellContent_Left_Margin, bottomContentOriginY)];
+  CGFloat bottomContentOriginY = [self.collectionCellDesLabel bottom] + ZHCOLLECTIONCELLDESCONTENTTOUNDERLINEMARGIN + ZHCOLLECTIONCELLBOTTOMCONTENTTOUNDERLINEMARGIN;
+  [self.collectionCellAvatarButton setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, bottomContentOriginY)];
   
-  CGFloat nameLabelOriginX = [self.collectionCellAvatarButton right] + BottomContent_Avatar_To_Name_Margin;
+  CGFloat nameLabelOriginX = [self.collectionCellAvatarButton right] + ZHCOLLECTIONCELLBOTTOMCONTENTAVATARTONAMEMARGIN;
   [self.collectionCellNameLabel setOrigin:CGPointMake(nameLabelOriginX,bottomContentOriginY)];
   
   
-  [self.collectionCellAnswersLabel setOrigin:CGPointMake(answerLabelOriginX, bottomContentOriginY)];
+  [self.collectionCellAnswersLabel setOrigin:CGPointMake(answerLabelOriginX_, bottomContentOriginY)];
   
 }
 
@@ -194,13 +202,14 @@
   ZHCollectionObject *collectionObject = (ZHCollectionObject *)object;
   NSString *des = collectionObject.des;
   if ([des isEqualToString:@""] || !des) {
-    return Default_Cell_Height;
+    return ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
   }
   
-  CGFloat rowHeight = CalculateTextSize(des,DesLabelFont,
-                                        DesLabelWidth,
+  CGFloat rowHeight = CalculateTextSize(des,
+                                        [UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE],
+                                        ZHCOLLECTIONCELLDESLABELWIDTH,
                                         MAXFLOAT,
-                                        NSLineBreakByWordWrapping).height + Default_Cell_Height;
+                                        NSLineBreakByWordWrapping).height + ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
   return rowHeight;
 }
 
