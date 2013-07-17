@@ -6,13 +6,12 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
+#import <ZHListView/ZHListView.h>
 #import "ZHUserInfoViewController.h"
 #import "ZHUserInfoObject.h"
 #import "ZHUserInfoFactory.h"
 #import "ZHParser.h"
-#import "ZHListView.h"
 #import "ZHUserInfoHeaderView.h"
-
 #import "ZHAnswerCell.h"
 
 @interface ZHUserInfoViewController ()

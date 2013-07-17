@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHObject.h"
+#import <ZHListView/ZHObject.h>
 
 @class ZHAnswerHeaderFollowButton;
 @interface ZHAnswerHeaderView : UIView

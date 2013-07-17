@@ -6,15 +6,16 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
+
+#import <ZHListView/ZHListView.h>
+#import <ZHListView/ZHModel.h>
+#import <ZHListView/ZHListViewDelegate.h>
 #import "ZHParser.h"
-#import "ZHModel.h"
 #import "ZHAnswerFactory.h"
 #import "ZHAnswerHeaderFactory.h"
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerCell.h"
-#import "ZHListView.h"
 #import "ZHAnswerHeaderView.h"
-#import "ZHListViewDelegate.h"
 #import "UIImage+RounedImage.h"
 #import "ZHAnswerViewController.h"
 
@@ -72,17 +73,11 @@
   [headerView bindHeaderContentWithObject:answerHeaderModel.object];
   imgView.frame = headerView.bounds;
   
-  // Cell
-  // 设置cell背景图片，默认为单张cell图片进行拉伸，之后再根据计算放上分割线ZHExploreViewItemBase.png
-  UIImage *cellBackgroundImage = [UIImage imageNamed:@"ZHExploreListItemBase.png"];
-  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)];
-  
-  self.listViewDelegate.cellBackgroundImage = image;
-  
+  // Cell  
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
   
-  [self numberOfSectionForListView:cellContentsModel.objects.count];
+  //[self numberOfSectionForListView:cellContentsModel.objects.count];
   [self modelDidFinishLoading:cellContentsModel];
   
   [self.listView setTableHeaderView:headerView];

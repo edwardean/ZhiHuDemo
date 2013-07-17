@@ -7,7 +7,7 @@
 //
 
 #import "ZHCollectionCell.h"
-#import "ZHListViewDelegate.h"
+#import <ZHListView/ZHListViewDelegate.h>
 #import "ZHParser.h"
 #import "ZHCollectionFactory.h"
 #import "ZHCollectionViewController.h"
@@ -32,17 +32,12 @@
   [super viewDidLoad];
   
   [self registerCellClass:[ZHCollectionCell class]];
-  
-  UIImage *resizedImage = [[UIImage imageNamed:@"ZHExploreFavBase.png"]
-                           stretchableImageWithLeftCapWidth:28
-                           topCapHeight:28];
-	self.listViewDelegate.cellBackgroundImage = resizedImage;
 	
   ZHParser *parser = [ZHCollectionFactory ParserFactory];
   
   ZHModel *model = [parser parser];
   
-  [self numberOfSectionForListView:model.objects.count];
+  //[self numberOfSectionForListView:model.objects.count];
   
   [self modelDidFinishLoading:model];
 }

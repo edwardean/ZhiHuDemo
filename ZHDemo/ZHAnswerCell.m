@@ -13,8 +13,8 @@
 #import "ZHAnswerCell.h"
 #import "ZHAnswerObject.h"
 
-#define ZHANSWERCELLCONTENTMARGINTOTOPSIDE									10
-#define ZHANSWERCELLCONTENTMARGINTOLEFTSIDE									10
+#define ZHANSWERCELLCONTENTMARGINTOTOPSIDE									20
+#define ZHANSWERCELLCONTENTMARGINTOLEFTSIDE									20
 #define ZHANSWERCELLTITLETOLINEMARGIN												10
 
 #define ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE								15
@@ -32,7 +32,7 @@
 #define ZHANSWERCELLTITLELABELMAXHEIGHT											44
 #define ZHANSWERCELLEXCERPTLABELMAXHEIGHT										60
 
-#define ZHANSWERCELLTAGLABELTOBOTTOMMARGIN									15
+#define ZHANSWERCELLTAGLABELTOBOTTOMMARGIN									20
 #define ZHANSWERCELLEXCERPTLABELTOBOTTOMMARGIN							15
 
 #define ZHANSWERCELLARROWBUTTONTORIGHTSIDEMARGIN						10
@@ -74,6 +74,13 @@
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
+    
+    self.backgroundView = [[UIImageView alloc]
+                               initWithImage:[[UIImage
+                                               imageNamed:@"ZHExploreListItemBase.png"]
+                                              resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+    //self.backgroundView = cellBackgroundView_;
+
     
     // answerTitleLabel
     self.answerTitleLabel = [[UILabel alloc] init];
@@ -237,7 +244,7 @@
 {
 	[super layoutSubviews];
   
-  [self.contentView setClipsToBounds:YES];
+  [self.backgroundView setClipsToBounds:YES];
   // Layout Subviews
   
   // Layout TitleLabel

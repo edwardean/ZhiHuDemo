@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHListViewController.h"
-#import "ZHObject.h"
+#import <ZHListView/ZHListViewController.h>
+#import <ZHListView/ZHObject.h>
 
 @interface ZHAnswerViewController : ZHListViewController
 

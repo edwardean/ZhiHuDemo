@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHListViewCell.h"
+#import <ZHListView/ZHListViewCell.h>
 
 @interface ZHAnswerCell : ZHListViewCell
 

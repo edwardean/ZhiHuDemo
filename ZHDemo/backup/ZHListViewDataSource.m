@@ -17,27 +17,8 @@
 
 @implementation ZHListViewDataSource
 
-@synthesize sections = sections_;
 @synthesize listCellClass = listCellClass_;
 @synthesize listViewCellClassIdentifier = listViewCellClassIdentifier_;
-
-- (NSInteger)sections
-{
-	if (!sections_) {
-    return 1;
-  } else {
-  	return sections_;
-  }
-}
-
-- (void)setSections:(NSInteger)sections
-{
-	if (!sections) {
-    sections_ = 1;
-    return;
-  }
-	sections_ = sections;
-}
 
 - (void)setListCellClass:(Class)listCellClass
 {
@@ -51,13 +32,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return self.sections;
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-	return 1;
+	return [self.objects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHListViewController.h"
+#import <ZHListView/ZHListViewController.h>
 
 @interface ZHUserInfoViewController : ZHListViewController
 

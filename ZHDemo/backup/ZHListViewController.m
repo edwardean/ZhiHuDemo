@@ -129,12 +129,6 @@
   [self.listView reloadData];
 }
 
-- (void)numberOfSectionForListView:(NSInteger)sections
-{
-	if (listViewDataSource_) {
-    self.listViewDataSource.sections = sections;
-  }
-}
 
 #pragma mark - Memory Manage
 

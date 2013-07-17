@@ -12,10 +12,8 @@
 @implementation ZHListViewDelegate
 
 @synthesize objects = objects_;
-@synthesize cellHeaderView = cellHeaderView_;
-@synthesize cellFooterView = cellFooterView_;
+
 @synthesize listCellClass = listCellClass_;
-@synthesize cellBackgroundImage = cellBackgroundImage_;
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -34,30 +32,6 @@ heightForHeaderInSection:(NSInteger)section
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
-}
-
-- (UIView *)tableView:(UITableView *)tableView
-viewForHeaderInSection:(NSInteger)section
-{
-	return cellHeaderView_;
-}
-
-
-- (UIView *)tableView:(UITableView *)tableView
-viewForFooterInSection:(NSInteger)section
-{
-	return cellFooterView_;
-}
-
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  if (cellBackgroundImage_) {
-    cell.backgroundView = nil;
-    UIImageView *cellBackView = [[UIImageView alloc] initWithImage:cellBackgroundImage_];
-    [cell setBackgroundView:cellBackView];
-  }
 }
 
 @end

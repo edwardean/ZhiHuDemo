@@ -13,7 +13,7 @@
 
 @property (nonatomic) Class listCellClass;
 
-@property (nonatomic) NSInteger sections;
+//@property (nonatomic) NSInteger sections;
 
 @property (nonatomic) NSArray *objects;
 

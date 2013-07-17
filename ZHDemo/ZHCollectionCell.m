@@ -14,7 +14,7 @@
 
 #define ZHCOLLECTIONCELLDEFAULTCELLHEIGHT												95
 
-#define ZHCOLLECTIONCELLCONTENTLEFTMARGIN												10
+#define ZHCOLLECTIONCELLCONTENTLEFTMARGIN												15
 #define ZHCOLLECTIONCELLCONTENTTOPMARGIN												15
 
 // Des
@@ -38,7 +38,7 @@
 {
 	CGFloat answerLabelOriginX_;
 }
-
+@property (nonatomic) UIImageView *cellBackgroundView;
 @property (nonatomic) UILabel *collectionCellTitleLabel;
 @property (nonatomic) UILabel *collectionCellDesLabel;
 @property (nonatomic) UIButton *collectionCellAvatarButton;
@@ -51,6 +51,7 @@
 
 @implementation ZHCollectionCell
 
+@synthesize cellBackgroundView = cellBackgroundView_;
 @synthesize collectionCellTitleLabel = collectionCellTitleLabel_;
 @synthesize collectionCellDesLabel = collectionCellDesLabel_;
 @synthesize collectionCellAvatarButton = collectionCellAvatarButton_;
@@ -63,52 +64,53 @@
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
     
-    if (!collectionCellTitleLabel_) {
-      self.collectionCellTitleLabel = [[UILabel alloc] init];
-      [collectionCellTitleLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-      [collectionCellTitleLabel_ setNumberOfLines:1];
-      [collectionCellTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
-      [collectionCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
-      [self.contentView addSubview:collectionCellTitleLabel_];
-    }
+    self.backgroundView = [[UIImageView alloc]
+                           initWithImage:[[UIImage
+                                           imageNamed:@"ZHExploreFavBase.png"]
+                                          stretchableImageWithLeftCapWidth:28
+                                          topCapHeight:28]];
     
-    if (!collectionCellDesLabel_) {
-      self.collectionCellDesLabel = [[UILabel alloc] init];
-      [collectionCellDesLabel_ setFont:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]];
-      [collectionCellDesLabel_ setTextColor:[UIColor lightGrayColor]];
-      [collectionCellDesLabel_ setNumberOfLines:0];
-      [collectionCellDesLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
-      [collectionCellDesLabel_ setBackgroundColor:[UIColor clearColor]];
-      [self.contentView addSubview:collectionCellDesLabel_];
-    }
+    // collectionCellTitleLabel
+    self.collectionCellTitleLabel = [[UILabel alloc] init];
+    [collectionCellTitleLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
+    [collectionCellTitleLabel_ setNumberOfLines:1];
+    [collectionCellTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
+    [collectionCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
+    [self.contentView addSubview:collectionCellTitleLabel_];
     
-    if (!collectionCellAvatarButton_) {
-      self.collectionCellAvatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-      [collectionCellAvatarButton_ setSize:CGSizeMake(20, 20)];
-      [collectionCellAvatarButton_ setImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
-                                   forState:UIControlStateNormal];
-      [collectionCellAvatarButton_.layer setCornerRadius:3.0f];
-      [self.contentView addSubview:collectionCellAvatarButton_];
-      
-      // Add Button Event here...
-      //[collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    }
+    // collectionCellDesLabel
+    self.collectionCellDesLabel = [[UILabel alloc] init];
+    [collectionCellDesLabel_ setFont:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]];
+    [collectionCellDesLabel_ setTextColor:[UIColor lightGrayColor]];
+    [collectionCellDesLabel_ setNumberOfLines:0];
+    [collectionCellDesLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
+    [collectionCellDesLabel_ setBackgroundColor:[UIColor clearColor]];
+    [self.contentView addSubview:collectionCellDesLabel_];
     
-    if (!collectionCellNameLabel_) {
-      self.collectionCellNameLabel = [[UILabel alloc] init];
-      [collectionCellNameLabel_ setFont:[UIFont boldSystemFontOfSize:13.0f]];
-      [collectionCellNameLabel_ setBackgroundColor:[UIColor clearColor]];
-      [self.contentView addSubview:collectionCellNameLabel_];
-    }
+    // collectionCellAvatarButton
+    self.collectionCellAvatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [collectionCellAvatarButton_ setSize:CGSizeMake(20, 20)];
+    [collectionCellAvatarButton_ setImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
+                                 forState:UIControlStateNormal];
+    [collectionCellAvatarButton_.layer setCornerRadius:3.0f];
+    [self.contentView addSubview:collectionCellAvatarButton_];
+    // Add Button Event here...
+    //[collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    if (!collectionCellAnswersLabel_) {
-      self.collectionCellAnswersLabel = [[UILabel alloc] init];
-      [collectionCellAnswersLabel_ setFont:[UIFont boldSystemFontOfSize:11.0f]];
-      [collectionCellAnswersLabel_ setTextColor:[UIColor grayColor]];
-      [collectionCellAnswersLabel_ setTextAlignment:NSTextAlignmentRight];
-      [collectionCellAnswersLabel_ setBackgroundColor:[UIColor clearColor]];
-      [self.contentView addSubview:collectionCellAnswersLabel_];
-    }
+    
+    // collectionCellNameLabel
+    self.collectionCellNameLabel = [[UILabel alloc] init];
+    [collectionCellNameLabel_ setFont:[UIFont boldSystemFontOfSize:13.0f]];
+    [collectionCellNameLabel_ setBackgroundColor:[UIColor clearColor]];
+    [self.contentView addSubview:collectionCellNameLabel_];
+    
+    // collectionCellAnswersLabel
+    self.collectionCellAnswersLabel = [[UILabel alloc] init];
+    [collectionCellAnswersLabel_ setFont:[UIFont boldSystemFontOfSize:11.0f]];
+    [collectionCellAnswersLabel_ setTextColor:[UIColor grayColor]];
+    [collectionCellAnswersLabel_ setTextAlignment:NSTextAlignmentRight];
+    [collectionCellAnswersLabel_ setBackgroundColor:[UIColor clearColor]];
+    [self.contentView addSubview:collectionCellAnswersLabel_];
     
     answerLabelOriginX_ = self.width - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERMAXWIDTH - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERTORIGHTMARGIN;
  		self.temporaryImageView = [[UIImageView alloc] init];

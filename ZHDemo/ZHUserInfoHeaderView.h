@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHObject.h"
+#import <ZHListView/ZHObject.h>
 
 @interface ZHUserInfoHeaderView : UIView
 

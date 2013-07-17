@@ -8,8 +8,8 @@
 
 #import "ZHUserInfoBottomView.h"
 
-#define ButtonToLabelMargin										8
-#define LabelToButtonMargin										10
+#define ZHUSERINFOBUTTONTOLABELMARGIN										8
+#define ZHUSERINFOLABELTOBUTTONMARGIN										10
 
 @interface ZHUserInfoBottomView ()
 
@@ -71,7 +71,7 @@
         self.thankedLabel = [[UILabel alloc] init];
         [thankedLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
         [thankedLabel_ setText:@"0"];
-        [thankedLabel_ setX:100 + ButtonToLabelMargin];
+        [thankedLabel_ setX:100 + ZHUSERINFOBUTTONTOLABELMARGIN];
         [thankedLabel_ setCenterY:self.contentCenter.y];
         [self addSubview:thankedLabel_];
       }

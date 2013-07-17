@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHModel.h"
+#import <ZHListView/ZHModel.h>
 
 @class ZHModel;
 @class ZHListViewDataSource;
@@ -28,8 +28,6 @@
 - (void)createListViewDelegate;
 
 - (void)createListViewDataSource;
-
-- (void)numberOfSectionForListView:(NSInteger)sections;
 
 - (void)modelDidFinishLoading:(id<ZHModel>)model;
 
