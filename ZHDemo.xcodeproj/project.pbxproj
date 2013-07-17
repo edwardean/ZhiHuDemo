@@ -199,6 +199,8 @@
 		CAF662AD1796584300A7C9BA /* collections9.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A21796584300A7C9BA /* collections9.json */; };
 		CAF662AE1796584300A7C9BA /* collections10.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A31796584300A7C9BA /* collections10.json */; };
 		CAF662AF1796584300A7C9BA /* collections11.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A41796584300A7C9BA /* collections11.json */; };
+		CAF662B21796835100A7C9BA /* ZHExploreViewItemBase.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662B01796834300A7C9BA /* ZHExploreViewItemBase.png */; };
+		CAF662B31796835100A7C9BA /* ZHExploreViewItemBase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662B11796834900A7C9BA /* ZHExploreViewItemBase@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,6 +468,8 @@
 		CAF662A21796584300A7C9BA /* collections9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections9.json; sourceTree = "<group>"; };
 		CAF662A31796584300A7C9BA /* collections10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections10.json; sourceTree = "<group>"; };
 		CAF662A41796584300A7C9BA /* collections11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections11.json; sourceTree = "<group>"; };
+		CAF662B01796834300A7C9BA /* ZHExploreViewItemBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHExploreViewItemBase.png; sourceTree = "<group>"; };
+		CAF662B11796834900A7C9BA /* ZHExploreViewItemBase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHExploreViewItemBase@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +600,8 @@
 		CA33AC3C1790FE3C00F37894 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CAF662B01796834300A7C9BA /* ZHExploreViewItemBase.png */,
+				CAF662B11796834900A7C9BA /* ZHExploreViewItemBase@2x.png */,
 				CA33AC3D1790FE3C00F37894 /* AvatarFemale100.png */,
 				CA33AC3E1790FE3C00F37894 /* AvatarFemale100@2x.png */,
 				CA33AC3F1790FE3C00F37894 /* AvatarMale100.png */,
@@ -1310,6 +1316,8 @@
 				CAF662AD1796584300A7C9BA /* collections9.json in Resources */,
 				CAF662AE1796584300A7C9BA /* collections10.json in Resources */,
 				CAF662AF1796584300A7C9BA /* collections11.json in Resources */,
+				CAF662B21796835100A7C9BA /* ZHExploreViewItemBase.png in Resources */,
+				CAF662B31796835100A7C9BA /* ZHExploreViewItemBase@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

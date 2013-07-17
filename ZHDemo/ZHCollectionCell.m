@@ -112,13 +112,25 @@
     
     answerLabelOriginX = self.width - BottomContent_Answer_Max_Width - BottomContent_Answer_To_Right_Margin;
  		self.temporaryImageView = [[UIImageView alloc] init];
+    
+    [self clearCellContent];
   }
   return self;
 }
 
+- (void)clearCellContent
+{
+	[self.collectionCellTitleLabel setText:nil];
+  [self.collectionCellDesLabel setText:nil];
+  [self.collectionCellNameLabel setText:nil];
+  [self.collectionCellAnswersLabel setText:nil];
+  
+}
 
 - (void)bindWithObject:(id)object
 {
+  [self clearCellContent];
+  
 	ZHCollectionObject *collectionObject = (ZHCollectionObject *)object;
   NSString *title = collectionObject.title;
   NSString *description = collectionObject.des;
