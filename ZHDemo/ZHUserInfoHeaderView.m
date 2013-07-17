@@ -134,7 +134,7 @@
     
     if (!userInfoHeaderFollowing_topicLabel_) {
       self.userInfoHeaderFollowing_topicLabel = [[UILabel alloc] init];
-      [userInfoHeaderFollowing_topicLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
+      [userInfoHeaderFollowing_topicLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowing_topicLabel_ setTextColor:[UIColor grayColor]];
       [userInfoHeaderFollowing_topicLabel_ setText:@"他的话题"];
       [userInfoHeaderFollowing_topicLabel_ setBackgroundColor:[UIColor clearColor]];
@@ -165,7 +165,7 @@
     
     if (!userInfoHeaderFollowingLabel_) {
       self.userInfoHeaderFollowingLabel = [[UILabel alloc] init];
-      [userInfoHeaderFollowingLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
+      [userInfoHeaderFollowingLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowingLabel_ setTextColor:[UIColor grayColor]];
       [userInfoHeaderFollowingLabel_ setText:@"他关注的人"];
       [userInfoHeaderFollowingLabel_ setBackgroundColor:[UIColor clearColor]];
@@ -179,7 +179,9 @@
     if (!followerButton_) {
       self.followerButton = [UIButton buttonWithType:UIButtonTypeCustom];
       [followerButton_ setFrame:CGRectMake(243, 52, 65, 40)];
-      
+      [[followerButton_ layer] setCornerRadius:3.0f];
+      [[followerButton_ layer] setBackgroundColor:[[UIColor colorWithWhite:0.817 alpha:1.000] CGColor]];
+     	//[followerButton_ addTarget:self action:@selector(followerButtonTapped) forControlEvents:UIControlEventTouchUpInside];
       // Add followerButton_ touch event here ...
       [self addSubview:followerButton_];
     }
@@ -197,7 +199,7 @@
     
     if (!userInfoHeaderFollowerLabel_) {
       self.userInfoHeaderFollowerLabel = [[UILabel alloc] init];
-      [userInfoHeaderFollowerLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
+      [userInfoHeaderFollowerLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowerLabel_ setTextColor:[UIColor grayColor]];
       [userInfoHeaderFollowerLabel_  setText:@"关注他的人"];
       [userInfoHeaderFollowerLabel_ setBackgroundColor:[UIColor clearColor]];
@@ -212,10 +214,16 @@
       [userInfoHeaderDescriptionLabel_ setFont:HeaderDescriptionFont];
       [userInfoHeaderDescriptionLabel_ setNumberOfLines:0];
       [userInfoHeaderDescriptionLabel_ setLineBreakMode:NSLineBreakByWordWrapping];
+      [userInfoHeaderDescriptionLabel_ setTextColor:[UIColor lightGrayColor]];
       [userInfoHeaderDescriptionLabel_ setBackgroundColor:[UIColor clearColor]];
       [self addSubview:userInfoHeaderDescriptionLabel_];
     }
-    
+      
+    if (!userInfoBottomView_) {
+      self.userInfoBottomView = [[ZHUserInfoBottomView alloc] initWithFrame:CGRectMake(0, 0, 320, 51)];
+      [userInfoBottomView_ setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ZHProfileViewToolbar.png"]]];
+      [self addSubview:userInfoBottomView_];
+    }
   }
   return self;
 }
@@ -273,7 +281,6 @@
   [self.userInfoHeaderFollowingLabel sizeToFit];
   [self.userInfoHeaderFollower_countLabel sizeToFit];
   [self.userInfoHeaderFollowerLabel sizeToFit];
-  //[self.userInfoHeaderDescriptionLabel sizeToFit];
   
   [self layoutIfNeeded];
   
@@ -288,13 +295,22 @@
   CGFloat headlineScrollViewOriginX = [self.userInfoHeaderNameLabel right];
   CGSize headlineLabelSize = [self.userInfoHeaderHeadlineLabel size];
   [self.headlineScrollView setX:headlineScrollViewOriginX];
-  [self.headlineScrollView setSize:CGSizeMake([self width] - headlineScrollViewOriginX - 10, headlineLabelSize.height)];
+  [self.headlineScrollView setSize:CGSizeMake([self width] - headlineScrollViewOriginX - 10,
+                                              headlineLabelSize.height)];
   [self.headlineScrollView setContentSize:headlineLabelSize];
   
   // Layout userInfoHeaderDescriptionLabel_
-  CGSize size = CalculateTextSize(self.userInfoHeaderDescriptionLabel.text, [UIFont systemFontOfSize:14.0f], HeaderDescriptionMaxWidth, MAXFLOAT, self.userInfoHeaderDescriptionLabel.lineBreakMode);
+  CGSize size = CalculateTextSize(self.userInfoHeaderDescriptionLabel.text,
+                                  [UIFont systemFontOfSize:14.0f],
+                                  HeaderDescriptionMaxWidth,
+                                  MAXFLOAT,
+                                  self.userInfoHeaderDescriptionLabel.lineBreakMode);
   CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
-  [self.userInfoHeaderDescriptionLabel setFrame:CGRectMake(10, descriptionLabelOriginY, size.width, size.height)];
+  [self.userInfoHeaderDescriptionLabel setFrame:CGRectMake(10,
+                                                           descriptionLabelOriginY,
+                                                           size.width,
+                                                           size.height)];
+  [self.userInfoBottomView setY:[self bottom]];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size

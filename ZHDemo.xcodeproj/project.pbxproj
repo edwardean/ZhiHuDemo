@@ -19,7 +19,6 @@
 		CA245CA917963311008A16A1 /* info8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA517963311008A16A1 /* info8.json */; };
 		CA245CAA17963311008A16A1 /* info9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA617963311008A16A1 /* info9.json */; };
 		CA245CAB17963311008A16A1 /* info10.json in Resources */ = {isa = PBXBuildFile; fileRef = CA245CA717963311008A16A1 /* info10.json */; };
-		CA33AC1E1790FDC600F37894 /* collections.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC1D1790FDC600F37894 /* collections.json */; };
 		CA33AC261790FE0F00F37894 /* info1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC201790FE0F00F37894 /* info1.json */; };
 		CA33AC271790FE0F00F37894 /* info2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC211790FE0F00F37894 /* info2.json */; };
 		CA33AC281790FE0F00F37894 /* info3.json in Resources */ = {isa = PBXBuildFile; fileRef = CA33AC221790FE0F00F37894 /* info3.json */; };
@@ -189,6 +188,17 @@
 		CADC8B931793FD5E00637D4A /* ZHCellBottomNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */; };
 		CAF662971796388700A7C9BA /* ZHAnswerViewTopBarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662951796388600A7C9BA /* ZHAnswerViewTopBarShadow.png */; };
 		CAF662981796388700A7C9BA /* ZHAnswerViewTopBarShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF662961796388600A7C9BA /* ZHAnswerViewTopBarShadow@2x.png */; };
+		CAF662A51796584300A7C9BA /* collections1.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629A1796584300A7C9BA /* collections1.json */; };
+		CAF662A61796584300A7C9BA /* collections2.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629B1796584300A7C9BA /* collections2.json */; };
+		CAF662A71796584300A7C9BA /* collections3.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629C1796584300A7C9BA /* collections3.json */; };
+		CAF662A81796584300A7C9BA /* collections4.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629D1796584300A7C9BA /* collections4.json */; };
+		CAF662A91796584300A7C9BA /* collections5.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629E1796584300A7C9BA /* collections5.json */; };
+		CAF662AA1796584300A7C9BA /* collections6.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF6629F1796584300A7C9BA /* collections6.json */; };
+		CAF662AB1796584300A7C9BA /* collections7.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A01796584300A7C9BA /* collections7.json */; };
+		CAF662AC1796584300A7C9BA /* collections8.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A11796584300A7C9BA /* collections8.json */; };
+		CAF662AD1796584300A7C9BA /* collections9.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A21796584300A7C9BA /* collections9.json */; };
+		CAF662AE1796584300A7C9BA /* collections10.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A31796584300A7C9BA /* collections10.json */; };
+		CAF662AF1796584300A7C9BA /* collections11.json in Resources */ = {isa = PBXBuildFile; fileRef = CAF662A41796584300A7C9BA /* collections11.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,7 +248,6 @@
 		CA245CA517963311008A16A1 /* info8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info8.json; sourceTree = "<group>"; };
 		CA245CA617963311008A16A1 /* info9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info9.json; sourceTree = "<group>"; };
 		CA245CA717963311008A16A1 /* info10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info10.json; sourceTree = "<group>"; };
-		CA33AC1D1790FDC600F37894 /* collections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections.json; sourceTree = "<group>"; };
 		CA33AC201790FE0F00F37894 /* info1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info1.json; sourceTree = "<group>"; };
 		CA33AC211790FE0F00F37894 /* info2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info2.json; sourceTree = "<group>"; };
 		CA33AC221790FE0F00F37894 /* info3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info3.json; sourceTree = "<group>"; };
@@ -446,6 +455,17 @@
 		CADC8B911793FD5E00637D4A /* ZHCellBottomNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHCellBottomNormal@2x.png"; sourceTree = "<group>"; };
 		CAF662951796388600A7C9BA /* ZHAnswerViewTopBarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHAnswerViewTopBarShadow.png; sourceTree = "<group>"; };
 		CAF662961796388600A7C9BA /* ZHAnswerViewTopBarShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHAnswerViewTopBarShadow@2x.png"; sourceTree = "<group>"; };
+		CAF6629A1796584300A7C9BA /* collections1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections1.json; sourceTree = "<group>"; };
+		CAF6629B1796584300A7C9BA /* collections2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections2.json; sourceTree = "<group>"; };
+		CAF6629C1796584300A7C9BA /* collections3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections3.json; sourceTree = "<group>"; };
+		CAF6629D1796584300A7C9BA /* collections4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections4.json; sourceTree = "<group>"; };
+		CAF6629E1796584300A7C9BA /* collections5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections5.json; sourceTree = "<group>"; };
+		CAF6629F1796584300A7C9BA /* collections6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections6.json; sourceTree = "<group>"; };
+		CAF662A01796584300A7C9BA /* collections7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections7.json; sourceTree = "<group>"; };
+		CAF662A11796584300A7C9BA /* collections8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections8.json; sourceTree = "<group>"; };
+		CAF662A21796584300A7C9BA /* collections9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections9.json; sourceTree = "<group>"; };
+		CAF662A31796584300A7C9BA /* collections10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections10.json; sourceTree = "<group>"; };
+		CAF662A41796584300A7C9BA /* collections11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collections11.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,7 +530,17 @@
 		CA33AC1C1790FDC600F37894 /* collections */ = {
 			isa = PBXGroup;
 			children = (
-				CA33AC1D1790FDC600F37894 /* collections.json */,
+				CAF6629A1796584300A7C9BA /* collections1.json */,
+				CAF6629B1796584300A7C9BA /* collections2.json */,
+				CAF6629C1796584300A7C9BA /* collections3.json */,
+				CAF6629D1796584300A7C9BA /* collections4.json */,
+				CAF6629E1796584300A7C9BA /* collections5.json */,
+				CAF6629F1796584300A7C9BA /* collections6.json */,
+				CAF662A01796584300A7C9BA /* collections7.json */,
+				CAF662A11796584300A7C9BA /* collections8.json */,
+				CAF662A21796584300A7C9BA /* collections9.json */,
+				CAF662A31796584300A7C9BA /* collections10.json */,
+				CAF662A41796584300A7C9BA /* collections11.json */,
 			);
 			path = collections;
 			sourceTree = "<group>";
@@ -1207,7 +1237,6 @@
 				CA33AC8C1790FE3C00F37894 /* AvatarFemale100@2x.png in Resources */,
 				CA33ACA41790FE3C00F37894 /* ZHAnswerViewCollectIconNormal@2x.png in Resources */,
 				CA33AC971790FE3C00F37894 /* NavigationBar.png in Resources */,
-				CA33AC1E1790FDC600F37894 /* collections.json in Resources */,
 				CA33ACA01790FE3C00F37894 /* NavigationBarButtonNormal@2x.png in Resources */,
 				CADC8B921793FD5E00637D4A /* ZHCellBottomNormal.png in Resources */,
 				CA33ACA61790FE3C00F37894 /* ZHAnswerViewThankIconNormal@2x.png in Resources */,
@@ -1270,6 +1299,17 @@
 				CA07141C1794F61D008EDE73 /* ZHExploreListItemBase.png in Resources */,
 				CAF662971796388700A7C9BA /* ZHAnswerViewTopBarShadow.png in Resources */,
 				CAF662981796388700A7C9BA /* ZHAnswerViewTopBarShadow@2x.png in Resources */,
+				CAF662A51796584300A7C9BA /* collections1.json in Resources */,
+				CAF662A61796584300A7C9BA /* collections2.json in Resources */,
+				CAF662A71796584300A7C9BA /* collections3.json in Resources */,
+				CAF662A81796584300A7C9BA /* collections4.json in Resources */,
+				CAF662A91796584300A7C9BA /* collections5.json in Resources */,
+				CAF662AA1796584300A7C9BA /* collections6.json in Resources */,
+				CAF662AB1796584300A7C9BA /* collections7.json in Resources */,
+				CAF662AC1796584300A7C9BA /* collections8.json in Resources */,
+				CAF662AD1796584300A7C9BA /* collections9.json in Resources */,
+				CAF662AE1796584300A7C9BA /* collections10.json in Resources */,
+				CAF662AF1796584300A7C9BA /* collections11.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

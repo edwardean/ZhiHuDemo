@@ -37,6 +37,18 @@ static NSString * const info9 = @"info9";
 static NSString * const info10 = @"info10";
 
 
+static NSString * const collections1 = @"collections1";
+static NSString * const collections2 = @"collections2";
+static NSString * const collections3 = @"collections3";
+static NSString * const collections4 = @"collections4";
+static NSString * const collections5 = @"collections5";
+static NSString * const collections6 = @"collections6";
+static NSString * const collections7 = @"collections7";
+static NSString * const collections8 = @"collections8";
+static NSString * const collections9 = @"collections9";
+static NSString * const collections10 = @"collections10";
+static NSString * const collections11 = @"collections11";
+
 @interface ZHLoadJSONFile ()
 
 + (NSString *)AnswersFilePath;
@@ -66,7 +78,10 @@ static NSString * const info10 = @"info10";
 
 + (NSString *)CollectionsFilePath
 {
-	return [ZHLoadJSONFile BundleFilePath:@"collections"];
+  NSArray *array = @[collections1,collections2,collections3,collections4,collections5,collections6,collections7,collections8,collections9,collections10,collections11];
+  NSUInteger arrayIndex = arc4random() % [array count];
+  NSString *filePath = [array objectAtIndex:arrayIndex];
+	return [ZHLoadJSONFile BundleFilePath:filePath];
 }
 
 + (NSString *)AnswerHeaderFilePath
