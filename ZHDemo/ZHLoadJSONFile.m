@@ -19,6 +19,18 @@ static NSString * const answer8 = @"answers8";
 static NSString * const answer9 = @"answers9";
 static NSString * const answer10 = @"answers10";
 
+
+static NSString * const header1 = @"header1";
+static NSString * const header2 = @"header2";
+static NSString * const header3 = @"header3";
+static NSString * const header4 = @"header4";
+static NSString * const header5 = @"header5";
+static NSString * const header6 = @"header6";
+static NSString * const header7 = @"header7";
+static NSString * const header8 = @"header8";
+static NSString * const header9 = @"header9";
+static NSString * const header10 = @"header10";
+
 static NSString * const detail1 = @"detail1";
 static NSString * const detail2 = @"detail2";
 static NSString * const detail3 = @"detail3";
@@ -86,7 +98,10 @@ static NSString * const collections11 = @"collections11";
 
 + (NSString *)AnswerHeaderFilePath
 {
-	return [ZHLoadJSONFile BundleFilePath:@"header"];
+  NSArray *array = @[header1,header10,header2,header3,header4,header5,header6,header7,header8,header9];
+  NSUInteger arrayIndex = arc4random() % [array count];
+  NSString *filePath = [array objectAtIndex:arrayIndex];
+	return [ZHLoadJSONFile BundleFilePath:filePath];
 }
 
 + (NSString *)UserDetailFilePath
