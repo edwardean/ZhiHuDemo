@@ -147,11 +147,10 @@
       self.answerSeparateLine = [[UIImageView alloc]
                                  initWithImage:[UIImage
                                                 imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
+
       [self.contentView addSubview:answerSeparateLine_];
     }
-    
-    
-    self.clipsToBounds = YES;
+
   }
   return self;
 }
@@ -222,7 +221,7 @@
   if (answerObject.voteup_count) {
     [self.voteupLabel setText:answerObject.voteup_count];
   }
-
+  
   [self layoutIfNeeded];
 }
 
@@ -271,7 +270,7 @@
                                          ExcerptLabelWidth,
                                          ExcerptLabelMaxHeight,
                                          self.answerExcerptLabel.lineBreakMode);
-
+  
   CGFloat voteupLabelBottom = [self.voteupBackgroundView bottom];
 	CGFloat height = voteupLabelBottom - avatarOriginY;
   CGFloat excerptCenterY = 0;

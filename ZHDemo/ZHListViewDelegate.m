@@ -54,11 +54,9 @@ viewForFooterInSection:(NSInteger)section
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
   if (cellBackgroundImage_) {
-    //cell.backgroundView = nil;
-    UIImageView *cellBackView = [[UIImageView alloc] init];
-    [cellBackView setImage:cellBackgroundImage_];
-    cellBackView.clipsToBounds = YES;
-    [cell setBackgroundView:/*[[UIImageView alloc] initWithImage:cellBackgroundImage_]*/cellBackView];
+    cell.backgroundView = nil;
+    UIImageView *cellBackView = [[UIImageView alloc] initWithImage:cellBackgroundImage_];
+    [cell setBackgroundView:cellBackView];
   }
 }
 

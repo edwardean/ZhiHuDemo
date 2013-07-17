@@ -15,6 +15,7 @@
 #import "ZHListView.h"
 #import "ZHAnswerHeaderView.h"
 #import "ZHListViewDelegate.h"
+#import "UIImage+RounedImage.h"
 #import "ZHAnswerViewController.h"
 
 @interface ZHAnswerViewController ()
@@ -74,10 +75,8 @@
   // Cell
   // 设置cell背景图片，默认为单张cell图片进行拉伸，之后再根据计算放上分割线
   UIImage *cellBackgroundImage = [UIImage imageNamed:@"ZHExploreListItemBase.png"];
-                                  //stretchableImageWithLeftCapWidth:11 topCapHeight:22];
-  
-  //UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15) resizingMode:UIImageResizingModeStretch];
-  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 6, 15)];
+	cellBackgroundImage = [cellBackgroundImage makeRoundedImage:cellBackgroundImage radius:0.0f];
+  UIImage *image = [cellBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)];
   
   self.listViewDelegate.cellBackgroundImage = image;
   

@@ -79,6 +79,7 @@
   }
   
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
+  cell.clipsToBounds = YES;
   
   return cell;
 }
