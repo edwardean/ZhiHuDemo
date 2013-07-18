@@ -137,8 +137,8 @@
   NSString *title = collectionObject.title;
   NSString *description = collectionObject.des;
   NSString *name = collectionObject.name;
-  NSString *avatar_url = collectionObject.avatar_url;
-  NSString *answer_count = collectionObject.answer_count;
+  NSString *avatar_url = collectionObject.avatarURL;
+  NSString *answer_count = collectionObject.answerCOUNT;
   
   [self.collectionCellTitleLabel setText:title];
   [self.collectionCellDesLabel setText:description];
@@ -161,6 +161,7 @@
                          failure:^(NSError *error) {
                            
                          }];
+    
   }
   
   [self.collectionCellTitleLabel sizeToFit];

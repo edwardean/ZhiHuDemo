@@ -336,6 +336,7 @@
 		53761323155AD0D5005750A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				DSTROOT = /tmp/SDWebImage.dst;
@@ -352,6 +353,7 @@
 		53761324155AD0D5005750A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				DSTROOT = /tmp/SDWebImage.dst;
@@ -432,6 +434,7 @@
 		53922D7D148C55820056699D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				DSTROOT = /tmp/SDWebImage.dst;
@@ -447,6 +450,7 @@
 		53922D7E148C55820056699D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				DSTROOT = /tmp/SDWebImage.dst;

@@ -12,9 +12,6 @@
 @class ZHAnswerHeaderFollowButton;
 @interface ZHAnswerHeaderView : UIView
 
-
-+ (CGFloat)AnswerHeaderViewHeightWithObject:(id<ZHObject>)object;
-
 - (void)bindHeaderContentWithObject:(id<ZHObject>)object;
 
 @end
