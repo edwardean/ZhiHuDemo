@@ -136,7 +136,7 @@
     }
     
     if (!checkbox_) {
-      self.checkbox = [ZHAnswerCheckBox checkBoxNormalTitle:@"收藏" SelectedTitle:@"取消收藏"];
+      self.checkbox = [ZHAnswerCheckBox checkBoxNormalTitle:@"关注收藏夹" SelectedTitle:@"取消关注"];
       [checkbox_ setDelegate:self];
       [self addSubview:checkbox_];
     }
@@ -149,9 +149,9 @@
 - (void)checkbox:(ZHAnswerCheckBox *)checkBox didChangeState:(BOOL)selected
 {
   if (selected) {
-    NSLog(@"收藏..");
+    NSLog(@"关注收藏夹..");
   } else {
-  	NSLog(@"取消收藏..");
+  	NSLog(@"取消关注..");
   }
 	
 }

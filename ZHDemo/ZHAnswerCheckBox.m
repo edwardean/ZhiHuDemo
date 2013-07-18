@@ -57,6 +57,7 @@
   self.checkBoxTitleLabel = [[UILabel alloc] init];
   [self.checkBoxTitleLabel setText:self.normalTitle];
   [self.checkBoxTitleLabel setBackgroundColor:[UIColor clearColor]];
+  [self.checkBoxTitleLabel setShadowColor:[UIColor grayColor]];
   [self.checkBoxTitleLabel setAdjustsFontSizeToFitWidth:YES];
   
 	self.unselectedNormalImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
@@ -67,7 +68,7 @@
   self.checkBoxImageView = [[UIImageView alloc] initWithImage:self.unselectedNormalImage];
   [self.checkBoxImageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
   [self.checkBoxTitleLabel setFrame:self.checkBoxImageView.bounds];
-  [self.checkBoxTitleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+  [self.checkBoxTitleLabel setFont:[UIFont boldSystemFontOfSize:13.0]];
   [self.checkBoxTitleLabel setTextAlignment:NSTextAlignmentCenter];
   [self.checkBoxTitleLabel setTextColor:[UIColor whiteColor]];
   [self.checkBoxImageView addSubview:self.checkBoxTitleLabel];
@@ -105,10 +106,13 @@
 - (void)updateCheckbox:(BOOL)checked
 {
 	if (checked) {
+    [self.checkBoxTitleLabel setShadowOffset:CGSizeMake(0, 0)];
     [self.checkBoxTitleLabel setText:self.selectedTitle];
     [self.checkBoxTitleLabel setTextColor:[UIColor grayColor]];
     [self.checkBoxImageView setImage:self.selectedNormalImage];
   } else {
+    
+    [self.checkBoxTitleLabel setShadowOffset:CGSizeMake(0, -1)];
     [self.checkBoxTitleLabel setText:self.normalTitle];
     [self.checkBoxTitleLabel setTextColor:[UIColor whiteColor]];
   	[self.checkBoxImageView setImage:self.unselectedNormalImage];
