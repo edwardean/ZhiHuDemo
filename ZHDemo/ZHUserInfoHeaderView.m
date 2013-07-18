@@ -301,8 +301,8 @@
     [self.userInfoHeaderDescriptionLabel setText:infoObject.des];
   }
   
-  NSString *voteup_count = nil;
-  NSString *thanked_count = nil;
+  NSString *voteup_count = @"0";
+  NSString *thanked_count = @"0";
   
   if (infoObject.voteup_count) {
     voteup_count = infoObject.voteup_count;

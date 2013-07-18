@@ -11,7 +11,7 @@
 #import "UIImage+RounedImage.h"
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerHeaderView.h"
-#import "ZHAnswerHeaderFollowButton.h"
+#import "ZHAnswerCheckBox.h"
 
 #define ZH_ANSWERHEADER_DESLABELFONTSIZE												14.0f
 
@@ -25,7 +25,7 @@
 #define ZH_ANSWERHEADER_BOTTOMBUTTONIMAGESIZEWIDTH							17
 #define ZH_ANSWERHEADER_BOTTOMBUTTONIMAGESIZEHEIGH							15
 
-@interface ZHAnswerHeaderView ()
+@interface ZHAnswerHeaderView () <ZHAnswerCheckboxDelegate>
 
 
 @property (nonatomic) UILabel *answerHeaderTitleLabel;
@@ -38,6 +38,8 @@
 @property (nonatomic) UILabel *answerHeaderCommentLabel;
 @property (nonatomic) ZHAnswerHeaderFollowButton *answerHeaderfollowButton;
 @property (nonatomic) CGSize originSize;
+
+@property (nonatomic, strong) ZHAnswerCheckBox *checkbox;
 
 @end
 
@@ -54,6 +56,8 @@
 @synthesize answerHeaderCommentButton = answerHeaderCommentButton_;
 @synthesize answerHeaderCommentLabel = answerHeaderCommentLabel_;
 @synthesize answerHeaderfollowButton = answerHeaderfollowButton_;
+
+@synthesize checkbox = checkbox_;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -113,7 +117,6 @@
       self.answerHeaderFocusLabel = [[UILabel alloc] init];
       [answerHeaderFocusLabel_ setFont:[UIFont boldSystemFontOfSize:14.0f]];
       [answerHeaderFocusLabel_ setBackgroundColor:[UIColor clearColor]];
-      [answerHeaderFocusLabel_ setText:@"0"];
       [self addSubview:answerHeaderFocusLabel_];
     }
     
@@ -129,27 +132,43 @@
       self.answerHeaderCommentLabel = [[UILabel alloc] init];
       [answerHeaderCommentLabel_ setFont:[UIFont boldSystemFontOfSize:14.0f]];
       [answerHeaderCommentLabel_ setBackgroundColor:[UIColor clearColor]];
-      [answerHeaderCommentLabel_ setText:@"0"];
       [self addSubview:answerHeaderCommentLabel_];
     }
     
-    
-    /**
-     关注收藏夹按钮，
-     自定义UIControl子类
-     Add it here....
-     **/
-    if (!answerHeaderfollowButton_) {
-      self.answerHeaderfollowButton = [[ZHAnswerHeaderFollowButton alloc] initWithFrame:CGRectZero];
-      [self addSubview:answerHeaderfollowButton_];
+    if (!checkbox_) {
+      self.checkbox = [ZHAnswerCheckBox checkBoxNormalTitle:@"收藏" SelectedTitle:@"取消收藏"];
+      [checkbox_ setDelegate:self];
+      [self addSubview:checkbox_];
     }
+    
+    [self clearAnswerHeaderContent];
   }
   return self;
 }
 
+- (void)checkbox:(ZHAnswerCheckBox *)checkBox didChangeState:(BOOL)selected
+{
+  if (selected) {
+    NSLog(@"收藏..");
+  } else {
+  	NSLog(@"取消收藏..");
+  }
+	
+}
+
+- (void)clearAnswerHeaderContent
+{
+	[self.answerHeaderTitleLabel setText:nil];
+  [self.answerHeaderDesLabel setText:nil];
+  [self.answerHeaderNameLabel setText:nil];
+  [self.answerHeaderFocusLabel setText:@"0"];
+  [self.answerHeaderCommentLabel setText:@"0"];
+}
 
 - (void)bindHeaderContentWithObject:(id<ZHObject>)object
 {
+  [self clearAnswerHeaderContent];
+  
 	ZHAnswerHeaderObject *answerHeaderObject = (ZHAnswerHeaderObject *)object;
   if (answerHeaderObject.title) {
     [self.answerHeaderTitleLabel setText:answerHeaderObject.title];
@@ -177,12 +196,16 @@
      **/
     __block typeof(self) weakself = self;
     UIImageView *avatarImage = [[UIImageView alloc] init];
-    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatarURL] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
-      image = [image makeRoundedImage:image radius:3.0f];
-      [weakself.answerHeaderAvatarButton setImage:image forState:UIControlStateNormal];
-    } failure:^(NSError *error) {
-      
-    }];
+    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatarURL]
+                placeholderImage:nil
+                         options:SDWebImageProgressiveDownload
+                         success:^(UIImage *image) {
+                           image = [image makeRoundedImage:image radius:3.0f];
+                           [weakself.answerHeaderAvatarButton setImage:image forState:UIControlStateNormal];
+                         }
+                         failure:^(NSError *error) {
+                           
+                         }];
   }
   
   [self.answerHeaderTitleLabel sizeToFit];
@@ -265,9 +288,8 @@
   [self.answerHeaderCommentLabel setX:[self.answerHeaderCommentButton right] + 8];
   [self.answerHeaderCommentLabel setCenterY:thirdSectionContentCenterY];
   
-  [self.answerHeaderfollowButton setX:([self width] - 90)];
-  [self.answerHeaderfollowButton setCenterY:thirdSectionContentCenterY];
-  
+  [self.checkbox setX:[self width] - 100];
+  [self.checkbox setCenterY:thirdSectionContentCenterY];
 }
 
 

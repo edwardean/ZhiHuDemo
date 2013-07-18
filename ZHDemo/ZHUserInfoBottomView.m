@@ -78,14 +78,24 @@
       }
       
 			if (!privateletterButton_) {
-        self.privateletterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.privateletterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.privateletterButton setSize:CGSizeMake(52, 31)];
         [privateletterButton_ setCenterY:self.contentCenter.y];
+        [self.privateletterButton setImage:[UIImage imageNamed:@"ZHRegisterButton3Highlight.png"] forState:UIControlStateHighlighted];
+        [self.privateletterButton setImage:[UIImage imageNamed:@"ZHRegisterButton3Normal.png"] forState:UIControlStateNormal];
+        [privateletterButton_ setX:120];
+        [self.privateletterButton addTarget:self action:@selector(button1Tapped) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:privateletterButton_];
       }
       
       [self clearBottomViewContent];
     }
     return self;
+}
+
+- (void)button1Tapped
+{
+	NSLog(@"%s",__func__);
 }
 
 - (void)clearBottomViewContent
