@@ -10,4 +10,6 @@
 
 @interface ZHUserInfoBottomView : UIView
 
+- (void)addUserVoteupCount:(NSString *)voteup ThankCount:(NSString *)thankCount;
+
 @end

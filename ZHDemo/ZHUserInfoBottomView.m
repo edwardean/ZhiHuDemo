@@ -8,8 +8,8 @@
 
 #import "ZHUserInfoBottomView.h"
 
-#define ZHUSERINFOBUTTONTOLABELMARGIN										8
-#define ZHUSERINFOLABELTOBUTTONMARGIN										10
+#define ZHUSERINFOBUTTONTOLABELMARGIN										5
+#define ZHUSERINFOLABELTOBUTTONMARGIN										8
 
 @interface ZHUserInfoBottomView ()
 
@@ -43,9 +43,9 @@
       if (!voteupButton_) {
         self.voteupButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [voteupButton_ setSize:CGSizeMake(20, 19)];
-        [voteupButton_ setImage:[UIImage imageNamed:@"ZHFeaturedIconRate.png"]
+        [voteupButton_ setImage:[UIImage imageNamed:@"ZHVoteupIcon.png"]
                        forState:UIControlStateNormal];
-        [voteupButton_ setX:15.0f];
+        [voteupButton_ setX:8.0f];
         [voteupButton_ setCenterY:self.contentCenter.y];
         [self addSubview:voteupButton_];
       }
@@ -53,7 +53,7 @@
       if (!voteupLabel_) {
         self.voteupLabel = [[UILabel alloc] init];
         [voteupLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-        [voteupLabel_ setText:@"0"];
+        [voteupLabel_ setBackgroundColor:[UIColor clearColor]];
         [voteupLabel_ setCenterY:self.contentCenter.y];
         [self addSubview:voteupLabel_];
       }
@@ -61,8 +61,8 @@
       if (!thankedButton_) {
         self.thankedButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [thankedButton_ setSize:CGSizeMake(20, 19)];
-        [thankedButton_ setImage:[UIImage imageNamed:@"ZHAnswerViewThankIconNormal.png"] forState:UIControlStateNormal];
-        [thankedButton_ setX:100];
+        [thankedButton_ setImage:[UIImage imageNamed:@"ZHThankIcon.png"] forState:UIControlStateNormal];
+        [thankedButton_ setX:70];
         [thankedButton_ setCenterY:self.contentCenter.y];
         [self addSubview:thankedButton_];
       }
@@ -70,23 +70,54 @@
       if (!thankedLabel_) {
         self.thankedLabel = [[UILabel alloc] init];
         [thankedLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-        [thankedLabel_ setText:@"0"];
-        [thankedLabel_ setX:100 + ZHUSERINFOBUTTONTOLABELMARGIN];
+        [thankedLabel_ setBackgroundColor:[UIColor clearColor]];
+        [thankedLabel_ setAdjustsFontSizeToFitWidth:YES];
+        [thankedLabel_ setX:70 + ZHUSERINFOBUTTONTOLABELMARGIN];
         [thankedLabel_ setCenterY:self.contentCenter.y];
         [self addSubview:thankedLabel_];
       }
       
+			if (!privateletterButton_) {
+        self.privateletterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [privateletterButton_ setCenterY:self.contentCenter.y];
+        [self addSubview:privateletterButton_];
+      }
       
+      [self clearBottomViewContent];
     }
     return self;
 }
 
+- (void)clearBottomViewContent
+{
+	[self.voteupLabel setText:@"0"];
+  [self.thankedLabel setText:@"0"];
+}
+
+- (void)addUserVoteupCount:(NSString *)voteup ThankCount:(NSString *)thankCount
+{
+	[self clearBottomViewContent];
+  
+  [self.voteupLabel setText:voteup];
+  [self.thankedLabel setText:thankCount];
+  
+  [self.voteupLabel sizeToFit];
+  [self.thankedLabel sizeToFit];
+  
+  [self setNeedsLayout];
+}
 
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
   
+  [self.voteupLabel setX:[self.voteupButton right] + ZHUSERINFOBUTTONTOLABELMARGIN];
+  [self.voteupLabel setCenterY:[self.voteupButton centerY]];
   
+  [self.thankedButton setX:[self.voteupLabel right] + ZHUSERINFOLABELTOBUTTONMARGIN];
+  
+  [self.thankedLabel setX:[self.thankedButton right] + ZHUSERINFOBUTTONTOLABELMARGIN];
+  [self.thankedLabel setCenterY:[self.voteupButton centerY]];
 }
 
 @end

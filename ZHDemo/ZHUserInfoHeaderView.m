@@ -22,6 +22,8 @@
 @interface ZHUserInfoHeaderView ()
 
 @property (nonatomic) UIImageView *userInfoHeaderAvatarView;
+//@property (nonatomic) UIImage *userInfoHeaderAvatarPlaceHolderFemaleImage;
+@property (nonatomic) UIImage *userInfoHeaderAvatarPlaceHolderMaleImage;
 
 @property (nonatomic) UILabel *userInfoHeaderNameLabel;
 
@@ -47,6 +49,8 @@
 
 @implementation ZHUserInfoHeaderView
 @synthesize userInfoHeaderAvatarView = userInfoHeaderAvatarView_;
+//@synthesize userInfoHeaderAvatarPlaceHolderFemaleImage = userInfoHeaderAvatarPlaceHolderFemaleImage_;
+@synthesize userInfoHeaderAvatarPlaceHolderMaleImage = userInfoHeaderAvatarPlaceHolderMaleImage_;
 
 @synthesize userInfoHeaderNameLabel = userInfoHeaderNameLabel_;
 
@@ -78,11 +82,17 @@
                                                                                     15,
                                                                                     80,
                                                                                     81)];
-      
-      [userInfoHeaderAvatarView_ setImage:[UIImage imageNamed:@"AvatarMaskXL.png"]];
       [[userInfoHeaderAvatarView_ layer] setCornerRadius:5.0f];
       userInfoHeaderAvatarView_.clipsToBounds = YES;
       [self addSubview:userInfoHeaderAvatarView_];
+    }
+    
+//    if (!userInfoHeaderAvatarPlaceHolderFemaleImage_) {
+//      self.userInfoHeaderAvatarPlaceHolderFemaleImage = [UIImage imageNamed:@"AvatarFemale150.png"];
+//    }
+    
+    if (!userInfoHeaderAvatarPlaceHolderMaleImage_) {
+      self.userInfoHeaderAvatarPlaceHolderMaleImage = [UIImage imageNamed:@"AvatarMale150.png"];
     }
     
     if (!userInfoHeaderNameLabel_) {
@@ -123,7 +133,6 @@
     if (!userInfoHeaderFollowing_topic_countLabel_) {
       self.userInfoHeaderFollowing_topic_countLabel = [[UILabel alloc] init];
       [userInfoHeaderFollowing_topic_countLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-      [userInfoHeaderFollowing_topic_countLabel_ setText:@"0"];
       [userInfoHeaderFollowing_topic_countLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollowing_topic_countLabel_ setOrigin:CGPointMake(5, 5)];
       if (following_topicButton_) {
@@ -135,7 +144,6 @@
       self.userInfoHeaderFollowing_topicLabel = [[UILabel alloc] init];
       [userInfoHeaderFollowing_topicLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowing_topicLabel_ setTextColor:[UIColor grayColor]];
-      [userInfoHeaderFollowing_topicLabel_ setText:@"他的话题"];
       [userInfoHeaderFollowing_topicLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollowing_topicLabel_ setOrigin:CGPointMake(5, 22)];
       if (following_topicButton_) {
@@ -154,7 +162,6 @@
     if (!userInfoHeaderFollowing_countLabel_) {
       self.userInfoHeaderFollowing_countLabel = [[UILabel alloc] init];
       [userInfoHeaderFollowing_countLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-      [userInfoHeaderFollowing_countLabel_ setText:@"0"];
       [userInfoHeaderFollowing_countLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollowing_countLabel_ setOrigin:CGPointMake(5, 5)];
       if (following_countButton_) {
@@ -166,7 +173,6 @@
       self.userInfoHeaderFollowingLabel = [[UILabel alloc] init];
       [userInfoHeaderFollowingLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowingLabel_ setTextColor:[UIColor grayColor]];
-      [userInfoHeaderFollowingLabel_ setText:@"他关注的人"];
       [userInfoHeaderFollowingLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollowingLabel_ setOrigin:CGPointMake(5, 22)];
       if (following_countButton_) {
@@ -188,7 +194,6 @@
     if (!userInfoHeaderFollower_countLabel_) {
       self.userInfoHeaderFollower_countLabel = [[UILabel alloc] init];
       [userInfoHeaderFollower_countLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-      [userInfoHeaderFollower_countLabel_ setText:@"0"];
       [userInfoHeaderFollower_countLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollower_countLabel_ setOrigin:CGPointMake(5, 5)];
       if (followerButton_) {
@@ -200,7 +205,6 @@
       self.userInfoHeaderFollowerLabel = [[UILabel alloc] init];
       [userInfoHeaderFollowerLabel_ setFont:[UIFont systemFontOfSize:10.0f]];
       [userInfoHeaderFollowerLabel_ setTextColor:[UIColor grayColor]];
-      [userInfoHeaderFollowerLabel_  setText:@"关注他的人"];
       [userInfoHeaderFollowerLabel_ setBackgroundColor:[UIColor clearColor]];
       [userInfoHeaderFollowerLabel_ setOrigin:CGPointMake(5, 22)];
       if (followerButton_) {
@@ -223,12 +227,30 @@
       [userInfoBottomView_ setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ZHProfileViewToolbar.png"]]];
       [self addSubview:userInfoBottomView_];
     }
+    
+    [self clearHeaderContent];
   }
   return self;
 }
 
+- (void)clearHeaderContent
+{
+	[self.userInfoHeaderAvatarView setImage:[UIImage imageNamed:@"AvatarMaskXL.png"]];
+  [self.userInfoHeaderNameLabel setText:nil];
+  [self.userInfoHeaderHeadlineLabel setText:nil];
+  [self.userInfoHeaderFollowing_topic_countLabel setText:@"0"];
+  [self.userInfoHeaderFollowing_topicLabel setText:@"他的话题"];
+  [self.userInfoHeaderFollowing_countLabel setText:@"0"];
+  [self.userInfoHeaderFollowingLabel setText:@"他关注的人"];
+  [self.userInfoHeaderFollower_countLabel setText:@"0"];
+  [self.userInfoHeaderFollowerLabel  setText:@"关注他的人"];
+  [self.userInfoHeaderDescriptionLabel setText:nil];
+}
+
 - (void)bindHeaderContentWithObject:(id<ZHObject>)object
 {
+  [self clearHeaderContent];
+  
 	ZHUserInfoObject *infoObject = (ZHUserInfoObject *)object;
   
   if (infoObject.name) {
@@ -237,13 +259,28 @@
   if (infoObject.headline) {
     [self.userInfoHeaderHeadlineLabel setText:infoObject.headline];
   }
+  
+  if ([infoObject.gender integerValue] == -1) {
+    [self.userInfoHeaderFollowing_topicLabel setText:@"她的话题"];
+    [self.userInfoHeaderFollowingLabel setText:@"她关注的人"];
+    [self.userInfoHeaderFollowerLabel  setText:@"关注她的人"];
+  } else {
+  	[self.userInfoHeaderFollowing_topicLabel setText:@"他的话题"];
+    [self.userInfoHeaderFollowingLabel setText:@"他关注的人"];
+    [self.userInfoHeaderFollowerLabel  setText:@"关注他的人"];
+  }
+  
   if (infoObject.avatar_url) {
+    __block typeof(self) weakself = self;
     [self.userInfoHeaderAvatarView setImageWithURL:[NSURL URLWithString:infoObject.avatar_url]
-                                  placeholderImage:nil options:SDWebImageProgressiveDownload
+                                  placeholderImage:[UIImage imageNamed:@"AvatarMaskXL.png"]
+                                           options:SDWebImageProgressiveDownload
                                            success:^(UIImage *image) {
                                              
                                            }
                                            failure:^(NSError *error) {
+                                             
+                                             [weakself.userInfoHeaderAvatarView setImage:weakself.userInfoHeaderAvatarPlaceHolderMaleImage];
                                              
                                            }];
   }
@@ -260,20 +297,22 @@
     [self.userInfoHeaderFollower_countLabel setText:infoObject.follower_count];
   }
   
-  if ([infoObject.gender integerValue] == -1) {
-    [self.userInfoHeaderFollowing_topicLabel setText:@"她的话题"];
-    [self.userInfoHeaderFollowingLabel setText:@"她关注的人"];
-    [self.userInfoHeaderFollowerLabel  setText:@"关注她的人"];
-  } else {
-  	[self.userInfoHeaderFollowing_topicLabel setText:@"他的话题"];
-    [self.userInfoHeaderFollowingLabel setText:@"他关注的人"];
-    [self.userInfoHeaderFollowerLabel  setText:@"关注他的人"];
-  }
-  
   if (infoObject.des) {
     [self.userInfoHeaderDescriptionLabel setText:infoObject.des];
   }
   
+  NSString *voteup_count = nil;
+  NSString *thanked_count = nil;
+  
+  if (infoObject.voteup_count) {
+    voteup_count = infoObject.voteup_count;
+  }
+  
+  if (infoObject.thanked_count) {
+    thanked_count = infoObject.thanked_count;
+  }
+  
+  [self.userInfoBottomView addUserVoteupCount:voteup_count ThankCount:thanked_count];
   
   [self.userInfoHeaderNameLabel sizeToFit];
   [self.userInfoHeaderHeadlineLabel sizeToFit];

@@ -49,9 +49,9 @@
   if (comment_count) {
     [answerHeaderDictinary setObject:comment_count forKey:@"comment_count"];
   }
-  if (creator) {
-    [answerHeaderDictinary setObject:creator forKey:@"creator"];
-  }
+//  if (creator) {
+//    [answerHeaderDictinary setObject:creator forKey:@"creator"];
+//  }
   if (name) {
     [answerHeaderDictinary setObject:name forKey:@"name"];
   }

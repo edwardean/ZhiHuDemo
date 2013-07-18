@@ -144,11 +144,10 @@
     self.temporaryImageView = [[UIImageView alloc] init];
     
     // answerSeparateLine
-    self.answerSeparateLine = [[UIImageView alloc]
-                               initWithImage:[UIImage
-                                              imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
-    [self.contentView addSubview:self.answerSeparateLine];
-		[self.contentView setClipsToBounds:YES];
+    self.answerSeparateLine = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 0, 301, 1)];
+    [answerSeparateLine_ setImage:[UIImage imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
+    
+    [self.backgroundView addSubview:self.answerSeparateLine];
     
     [self resetCellContent];
     
@@ -240,8 +239,6 @@
 {
 	[super layoutSubviews];
   
-  [self.contentView setClipsToBounds:YES];
-  [self setClipsToBounds:YES];
   // Layout Subviews
   
   // Layout TitleLabel
@@ -252,7 +249,7 @@
   [self.answerTitleLabel setSize:answerTitleSize];
   
   // Layout Arrow Button
-  [self.answerArrowListButton setX:[self width] - 45];
+  [self.answerArrowListButton setX:[self width] - 35];
   [self.answerArrowListButton setCenterY:[self.answerTitleLabel centerY]];
   
   // Layout Line

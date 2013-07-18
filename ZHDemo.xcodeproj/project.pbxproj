@@ -204,6 +204,20 @@
 		CA8C5477178EA2B2005552CE /* ZHDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C5476178EA2B2005552CE /* ZHDemoTests.m */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CAC16BE81793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */; };
+		CAEF26AE1797B59600F7F111 /* AvatarFemale150.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */; };
+		CAEF26AF1797B59600F7F111 /* AvatarFemale150@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AB1797B59600F7F111 /* AvatarFemale150@2x.png */; };
+		CAEF26B01797B59600F7F111 /* AvatarMale150.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AC1797B59600F7F111 /* AvatarMale150.png */; };
+		CAEF26B11797B59600F7F111 /* AvatarMale150@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AD1797B59600F7F111 /* AvatarMale150@2x.png */; };
+		CAEF26B41797BF4300F7F111 /* ZHProfileViewFollowingHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B21797BF4300F7F111 /* ZHProfileViewFollowingHighlight.png */; };
+		CAEF26B51797BF4300F7F111 /* ZHProfileViewFollowingHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B31797BF4300F7F111 /* ZHProfileViewFollowingHighlight@2x.png */; };
+		CAEF26BA1797BFE100F7F111 /* ZHGuidePushButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B61797BFE100F7F111 /* ZHGuidePushButtonHighlight.png */; };
+		CAEF26BB1797BFE100F7F111 /* ZHGuidePushButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B71797BFE100F7F111 /* ZHGuidePushButtonHighlight@2x.png */; };
+		CAEF26BC1797BFE100F7F111 /* ZHGuidePushButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B81797BFE100F7F111 /* ZHGuidePushButtonNormal.png */; };
+		CAEF26BD1797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26B91797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png */; };
+		CAEF26C21797C03B00F7F111 /* ZHRegisterButton3Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26BE1797C03B00F7F111 /* ZHRegisterButton3Highlight.png */; };
+		CAEF26C31797C03B00F7F111 /* ZHRegisterButton3Highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26BF1797C03B00F7F111 /* ZHRegisterButton3Highlight@2x.png */; };
+		CAEF26C41797C03B00F7F111 /* ZHRegisterButton3Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26C01797C03B00F7F111 /* ZHRegisterButton3Normal.png */; };
+		CAEF26C51797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26C11797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -470,6 +484,20 @@
 		CABA8A50179012F0004B356E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		CAC16BE61793DB1600063EF2 /* ZHAnswerHeaderFollowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderFollowButton.h; sourceTree = "<group>"; };
 		CAC16BE71793DB1600063EF2 /* ZHAnswerHeaderFollowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderFollowButton.m; sourceTree = "<group>"; };
+		CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarFemale150.png; sourceTree = "<group>"; };
+		CAEF26AB1797B59600F7F111 /* AvatarFemale150@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvatarFemale150@2x.png"; sourceTree = "<group>"; };
+		CAEF26AC1797B59600F7F111 /* AvatarMale150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarMale150.png; sourceTree = "<group>"; };
+		CAEF26AD1797B59600F7F111 /* AvatarMale150@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvatarMale150@2x.png"; sourceTree = "<group>"; };
+		CAEF26B21797BF4300F7F111 /* ZHProfileViewFollowingHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHProfileViewFollowingHighlight.png; sourceTree = "<group>"; };
+		CAEF26B31797BF4300F7F111 /* ZHProfileViewFollowingHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHProfileViewFollowingHighlight@2x.png"; sourceTree = "<group>"; };
+		CAEF26B61797BFE100F7F111 /* ZHGuidePushButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHGuidePushButtonHighlight.png; sourceTree = "<group>"; };
+		CAEF26B71797BFE100F7F111 /* ZHGuidePushButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHGuidePushButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CAEF26B81797BFE100F7F111 /* ZHGuidePushButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHGuidePushButtonNormal.png; sourceTree = "<group>"; };
+		CAEF26B91797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHGuidePushButtonNormal@2x.png"; sourceTree = "<group>"; };
+		CAEF26BE1797C03B00F7F111 /* ZHRegisterButton3Highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHRegisterButton3Highlight.png; sourceTree = "<group>"; };
+		CAEF26BF1797C03B00F7F111 /* ZHRegisterButton3Highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHRegisterButton3Highlight@2x.png"; sourceTree = "<group>"; };
+		CAEF26C01797C03B00F7F111 /* ZHRegisterButton3Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHRegisterButton3Normal.png; sourceTree = "<group>"; };
+		CAEF26C11797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHRegisterButton3Normal@2x.png"; sourceTree = "<group>"; };
 		CAEFFF431796F58700ABA65B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAEFFF441796F58700ABA65B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CAEFFF451796F58700ABA65B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -634,10 +662,22 @@
 		CA5D49811797A2FF005EF79B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CAEF26BE1797C03B00F7F111 /* ZHRegisterButton3Highlight.png */,
+				CAEF26BF1797C03B00F7F111 /* ZHRegisterButton3Highlight@2x.png */,
+				CAEF26C01797C03B00F7F111 /* ZHRegisterButton3Normal.png */,
+				CAEF26C11797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png */,
+				CAEF26B61797BFE100F7F111 /* ZHGuidePushButtonHighlight.png */,
+				CAEF26B71797BFE100F7F111 /* ZHGuidePushButtonHighlight@2x.png */,
+				CAEF26B81797BFE100F7F111 /* ZHGuidePushButtonNormal.png */,
+				CAEF26B91797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png */,
 				CA5D49821797A2FF005EF79B /* AvatarFemale100.png */,
 				CA5D49831797A2FF005EF79B /* AvatarFemale100@2x.png */,
+				CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */,
+				CAEF26AB1797B59600F7F111 /* AvatarFemale150@2x.png */,
 				CA5D49841797A2FF005EF79B /* AvatarMale100.png */,
 				CA5D49851797A2FF005EF79B /* AvatarMale100@2x.png */,
+				CAEF26AC1797B59600F7F111 /* AvatarMale150.png */,
+				CAEF26AD1797B59600F7F111 /* AvatarMale150@2x.png */,
 				CA5D49861797A2FF005EF79B /* AvatarMaskL.png */,
 				CA5D49871797A2FF005EF79B /* AvatarMaskL@2x.png */,
 				CA5D49881797A2FF005EF79B /* AvatarMaskM.png */,
@@ -712,6 +752,8 @@
 				CA5D49CD1797A2FF005EF79B /* ZHProfileMessageIconHighlight@2x.png */,
 				CA5D49CE1797A2FF005EF79B /* ZHProfileMessageIconNormal.png */,
 				CA5D49CF1797A2FF005EF79B /* ZHProfileMessageIconNormal@2x.png */,
+				CAEF26B21797BF4300F7F111 /* ZHProfileViewFollowingHighlight.png */,
+				CAEF26B31797BF4300F7F111 /* ZHProfileViewFollowingHighlight@2x.png */,
 				CA5D49D01797A2FF005EF79B /* ZHProfileViewGenderFemale.png */,
 				CA5D49D11797A2FF005EF79B /* ZHProfileViewGenderFemale@2x.png */,
 				CA5D49D21797A2FF005EF79B /* ZHProfileViewGenderMale.png */,
@@ -1156,10 +1198,12 @@
 				CA5D4A151797A300005EF79B /* collections6.json in Resources */,
 				CA5D4A4A1797A300005EF79B /* ZHExploreShuffleIconNext@2x.png in Resources */,
 				CA5D4A131797A300005EF79B /* collections4.json in Resources */,
+				CAEF26AE1797B59600F7F111 /* AvatarFemale150.png in Resources */,
 				CA5D4A751797A300005EF79B /* ZHQuestionViewCommentIcon.png in Resources */,
 				CA5D4A121797A300005EF79B /* collections3.json in Resources */,
 				CA5D4A341797A300005EF79B /* ZHAnswerViewCollectIconNormal@2x.png in Resources */,
 				CA5D4A7F1797A300005EF79B /* detail1.json in Resources */,
+				CAEF26B11797B59600F7F111 /* AvatarMale150@2x.png in Resources */,
 				CA5D4A431797A300005EF79B /* ZHExploreFavBase.png in Resources */,
 				CA5D4A4D1797A300005EF79B /* ZHFeaturedButtonHighlight.png in Resources */,
 				CA5D4A2D1797A300005EF79B /* NavigationBarButtonHighlight.png in Resources */,
@@ -1168,6 +1212,7 @@
 				CA5D4A011797A300005EF79B /* answers7.json in Resources */,
 				CA5D4A361797A300005EF79B /* ZHAnswerViewThankIconNormal@2x.png in Resources */,
 				CA5D4A101797A300005EF79B /* collections11.json in Resources */,
+				CAEF26C41797C03B00F7F111 /* ZHRegisterButton3Normal.png in Resources */,
 				CA5D4A6D1797A300005EF79B /* ZHProfileViewTencentWeiboIcon.png in Resources */,
 				CA5D4A461797A300005EF79B /* ZHExploreFavTopBase@2x.png in Resources */,
 				CA5D4A021797A300005EF79B /* answers8.json in Resources */,
@@ -1182,6 +1227,7 @@
 				CA5D4A621797A300005EF79B /* ZHNavigationBarShuffleIcon@2x.png in Resources */,
 				CA5D4A111797A300005EF79B /* collections2.json in Resources */,
 				CA5D4A6C1797A300005EF79B /* ZHProfileViewSinaWeiboIcon@2x.png in Resources */,
+				CAEF26BD1797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png in Resources */,
 				CA5D4A261797A300005EF79B /* BackgroundTextures@2x.png in Resources */,
 				CA5D4A7C1797A300005EF79B /* ZHThankIcon@2x.png in Resources */,
 				CA5D4A5A1797A300005EF79B /* ZHListViewArrowRight@2x.png in Resources */,
@@ -1213,7 +1259,9 @@
 				CA5D4A201797A300005EF79B /* AvatarMaskM@2x.png in Resources */,
 				CA5D4A7B1797A300005EF79B /* ZHThankIcon.png in Resources */,
 				CA5D49FD1797A300005EF79B /* answers3.json in Resources */,
+				CAEF26C21797C03B00F7F111 /* ZHRegisterButton3Highlight.png in Resources */,
 				CA5D4A0B1797A300005EF79B /* header7.json in Resources */,
+				CAEF26BC1797BFE100F7F111 /* ZHGuidePushButtonNormal.png in Resources */,
 				CA5D4A1A1797A300005EF79B /* AvatarFemale100@2x.png in Resources */,
 				CA5D4A781797A300005EF79B /* ZHQuestionViewFollowingIcon@2x.png in Resources */,
 				CA5D4A811797A300005EF79B /* detail3.json in Resources */,
@@ -1228,9 +1276,11 @@
 				CA5D4A441797A300005EF79B /* ZHExploreFavBase@2x.png in Resources */,
 				CA5D4A391797A300005EF79B /* ZHCellBottomNormal.png in Resources */,
 				CA5D4A241797A300005EF79B /* AvatarMaskXL@2x.png in Resources */,
+				CAEF26AF1797B59600F7F111 /* AvatarFemale150@2x.png in Resources */,
 				CA5D4A281797A300005EF79B /* NavigationBar@2x.png in Resources */,
 				CA5D4A851797A300005EF79B /* info10.json in Resources */,
 				CA5D4A0E1797A300005EF79B /* collections1.json in Resources */,
+				CAEF26B01797B59600F7F111 /* AvatarMale150.png in Resources */,
 				CA5D4A511797A300005EF79B /* ZHFeaturedContentBase.png in Resources */,
 				CA5D4A3C1797A300005EF79B /* ZHCellMiddleNormal@2x.png in Resources */,
 				CA5D4A031797A300005EF79B /* answers9.json in Resources */,
@@ -1270,10 +1320,13 @@
 				CA5D4A2F1797A300005EF79B /* NavigationBarButtonNormal.png in Resources */,
 				CA5D4A671797A300005EF79B /* ZHProfileViewGenderFemale.png in Resources */,
 				CA5D4A601797A300005EF79B /* ZHNavigationBarSettingsIcon@2x.png in Resources */,
+				CAEF26B41797BF4300F7F111 /* ZHProfileViewFollowingHighlight.png in Resources */,
 				CA5D4A731797A300005EF79B /* ZHQuestionViewAnswerVotedBase.png in Resources */,
 				CA5D4A081797A300005EF79B /* header4.json in Resources */,
 				CA5D4A5E1797A300005EF79B /* ZHNavigationBarMoreIcon@2x.png in Resources */,
 				CA5D4A331797A300005EF79B /* ZHAnswerViewCollectIconNormal.png in Resources */,
+				CAEF26C31797C03B00F7F111 /* ZHRegisterButton3Highlight@2x.png in Resources */,
+				CAEF26B51797BF4300F7F111 /* ZHProfileViewFollowingHighlight@2x.png in Resources */,
 				CA5D4A661797A300005EF79B /* ZHProfileMessageIconNormal@2x.png in Resources */,
 				CA5D4A3F1797A300005EF79B /* ZHCellTopNormal.png in Resources */,
 				CA5D4A831797A300005EF79B /* detail5.json in Resources */,
@@ -1284,14 +1337,17 @@
 				CA5D4A701797A300005EF79B /* ZHProfileViewToolbar@2x.png in Resources */,
 				CA5D4A041797A300005EF79B /* header1.json in Resources */,
 				CA5D4A211797A300005EF79B /* AvatarMaskS.png in Resources */,
+				CAEF26BA1797BFE100F7F111 /* ZHGuidePushButtonHighlight.png in Resources */,
 				CA5D4A531797A300005EF79B /* ZHFeaturedIconRate.png in Resources */,
 				CA5D4A891797A300005EF79B /* info5.json in Resources */,
 				CA5D4A6A1797A300005EF79B /* ZHProfileViewGenderMale@2x.png in Resources */,
 				CA5D4A481797A300005EF79B /* ZHExploreListItemBase@2x.png in Resources */,
 				CA5D4A611797A300005EF79B /* ZHNavigationBarShuffleIcon.png in Resources */,
 				CA5D4A2B1797A300005EF79B /* NavigationBarBackButtonNormal.png in Resources */,
+				CAEF26BB1797BFE100F7F111 /* ZHGuidePushButtonHighlight@2x.png in Resources */,
 				CA5D49FA1797A300005EF79B /* answers1.json in Resources */,
 				CA5D4A8B1797A300005EF79B /* info7.json in Resources */,
+				CAEF26C51797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png in Resources */,
 				CA5D4A411797A300005EF79B /* ZHDMViewInputBox.png in Resources */,
 				CA5D4A491797A300005EF79B /* ZHExploreShuffleIconNext.png in Resources */,
 			);
