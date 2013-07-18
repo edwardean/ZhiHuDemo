@@ -185,7 +185,7 @@
       self.followerButton = [UIButton buttonWithType:UIButtonTypeCustom];
       [followerButton_ setFrame:CGRectMake(243, 52, 65, 40)];
       [[followerButton_ layer] setCornerRadius:3.0f];
-      [[followerButton_ layer] setBackgroundColor:[[UIColor colorWithWhite:0.817 alpha:1.000] CGColor]];
+      //[[followerButton_ layer] setBackgroundColor:[[UIColor colorWithWhite:0.817 alpha:1.000] CGColor]];
      	//[followerButton_ addTarget:self action:@selector(followerButtonTapped) forControlEvents:UIControlEventTouchUpInside];
       // Add followerButton_ touch event here ...
       [self addSubview:followerButton_];
@@ -224,7 +224,9 @@
     
     if (!userInfoBottomView_) {
       self.userInfoBottomView = [[ZHUserInfoBottomView alloc] initWithFrame:CGRectMake(0, 0, 320, 51)];
-      [userInfoBottomView_ setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ZHProfileViewToolbar.png"]]];
+      [userInfoBottomView_ setBackgroundColor:[UIColor
+                        colorWithPatternImage:[UIImage
+                                   imageNamed:@"ZHProfileViewToolbar.png"]]];
       [self addSubview:userInfoBottomView_];
     }
     
@@ -280,7 +282,8 @@
                                            }
                                            failure:^(NSError *error) {
                                              
-                                             [weakself.userInfoHeaderAvatarView setImage:weakself.userInfoHeaderAvatarPlaceHolderMaleImage];
+                                             [weakself.userInfoHeaderAvatarView
+                                              setImage:weakself.userInfoHeaderAvatarPlaceHolderMaleImage];
                                              
                                            }];
   }
@@ -351,7 +354,7 @@
                                                            descriptionLabelOriginY,
                                                            size.width,
                                                            size.height)];
-  [self.userInfoBottomView setY:[self bottom]];
+  [self.userInfoBottomView setY:[self bottom] - 25];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size

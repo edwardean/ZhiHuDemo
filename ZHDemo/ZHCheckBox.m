@@ -1,14 +1,14 @@
 //
-//  ZHAnswerCheckBox.m
-//  ZHAnswerCheckBox
+//  ZHCheckBox.m
+//  ZHCheckBox
 //
 //  Created by Edward on 13-7-18.
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHAnswerCheckBox.h"
+#import "ZHCheckBox.h"
 
-@interface ZHAnswerCheckBox ()
+@interface ZHCheckBox ()
 
 @property (nonatomic, strong) UIImageView *checkBoxImageView;
 
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation ZHAnswerCheckBox
+@implementation ZHCheckBox
 
 @synthesize normalTitle = normalTitle_;
 @synthesize selectedTitle = selectedTitle_;
@@ -40,13 +40,31 @@
 @synthesize selectedHighlightImage = selectedHighlightImage_;
 @synthesize checkBoxTitleLabel = checkBoxTitleLabel_;
 
-+ (id)checkBoxNormalTitle:(NSString *)normalTitle
-            SelectedTitle:(NSString *)selectedTitle
++ (id)checkBoxWithSize:(CGSize)size
+           NormalTitle:(NSString *)normalTitle
+         SelectedTitle:(NSString *)selectedTitle
+ unselectedNormalImage:(UIImage *)unselectedImage
+unselectedHighlightImage:(UIImage *)unselectedHighlightImage
+   selectedNormalImage:(UIImage *)selectedNormalImage
+selectedHighlightImage:(UIImage *)selectedHighlightImage
 {
-  ZHAnswerCheckBox *checkBox = [[ZHAnswerCheckBox alloc] initWithFrame:CGRectZero];
+	ZHCheckBox *checkBox = [[ZHCheckBox alloc]
+                                initWithFrame:CGRectMake(0,
+                                                         0,
+                                                         size.width,
+                                                         size.height)];
   checkBox.normalTitle = normalTitle;
   checkBox.selectedTitle = selectedTitle;
+  checkBox.unselectedNormalImage = unselectedImage;
+  checkBox.unselectedHighlightImage = unselectedHighlightImage;
+  checkBox.selectedNormalImage = selectedNormalImage;
+  checkBox.selectedHighlightImage = selectedHighlightImage;
+  
+  checkBox.checkBoxImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+  [checkBox.checkBoxImageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+
   [checkBox setUp];
+  
   return checkBox;
 }
 
@@ -60,13 +78,7 @@
   [self.checkBoxTitleLabel setShadowColor:[UIColor grayColor]];
   [self.checkBoxTitleLabel setAdjustsFontSizeToFitWidth:YES];
   
-	self.unselectedNormalImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
-  self.unselectedHighlightImage = [UIImage imageNamed:@"ZHFollowButtonHighlight.png"];
-  self.selectedNormalImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
-  self.selectedHighlightImage = [UIImage imageNamed:@"ZHGuidePushButtonHighlight.png"];
-  
-  self.checkBoxImageView = [[UIImageView alloc] initWithImage:self.unselectedNormalImage];
-  [self.checkBoxImageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+  [self.checkBoxImageView setImage:self.unselectedNormalImage];
   [self.checkBoxTitleLabel setFrame:self.checkBoxImageView.bounds];
   [self.checkBoxTitleLabel setFont:[UIFont boldSystemFontOfSize:13.0]];
   [self.checkBoxTitleLabel setTextAlignment:NSTextAlignmentCenter];
@@ -74,7 +86,8 @@
   [self.checkBoxImageView addSubview:self.checkBoxTitleLabel];
   self.bounds = self.checkBoxImageView.bounds;
   
-  [self addTarget:self action:@selector(handleTouchEvent) forControlEvents:UIControlEventTouchUpInside];
+  [self addTarget:self action:@selector(handleTouchEvent)
+ forControlEvents:UIControlEventTouchUpInside];
   [self addSubview:self.checkBoxImageView];
 }
 
@@ -97,8 +110,7 @@
 
 - (void)handleTouchEvent
 {
-  
-	self.selected = !self.selected;
+  self.selected = !self.selected;
   
   [self updateCheckbox:self.isSelected];
 }
@@ -106,12 +118,11 @@
 - (void)updateCheckbox:(BOOL)checked
 {
 	if (checked) {
-    [self.checkBoxTitleLabel setShadowOffset:CGSizeMake(0, 0)];
+    [self.checkBoxTitleLabel setShadowOffset:CGSizeZero];
     [self.checkBoxTitleLabel setText:self.selectedTitle];
     [self.checkBoxTitleLabel setTextColor:[UIColor grayColor]];
     [self.checkBoxImageView setImage:self.selectedNormalImage];
   } else {
-    
     [self.checkBoxTitleLabel setShadowOffset:CGSizeMake(0, -1)];
     [self.checkBoxTitleLabel setText:self.normalTitle];
     [self.checkBoxTitleLabel setTextColor:[UIColor whiteColor]];
@@ -121,7 +132,7 @@
   if ([self.delegate respondsToSelector:@selector(checkbox:didChangeState:)]) {
     [self.delegate checkbox:self didChangeState:checked];
   }
-
+  
 }
 
 @end

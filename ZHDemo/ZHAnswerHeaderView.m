@@ -11,7 +11,7 @@
 #import "UIImage+RounedImage.h"
 #import "ZHAnswerHeaderObject.h"
 #import "ZHAnswerHeaderView.h"
-#import "ZHAnswerCheckBox.h"
+#import "ZHCheckBox.h"
 
 #define ZH_ANSWERHEADER_DESLABELFONTSIZE												14.0f
 
@@ -25,7 +25,7 @@
 #define ZH_ANSWERHEADER_BOTTOMBUTTONIMAGESIZEWIDTH							17
 #define ZH_ANSWERHEADER_BOTTOMBUTTONIMAGESIZEHEIGH							15
 
-@interface ZHAnswerHeaderView () <ZHAnswerCheckboxDelegate>
+@interface ZHAnswerHeaderView () <ZHCheckBoxDelegate>
 
 
 @property (nonatomic) UILabel *answerHeaderTitleLabel;
@@ -39,7 +39,7 @@
 @property (nonatomic) ZHAnswerHeaderFollowButton *answerHeaderfollowButton;
 @property (nonatomic) CGSize originSize;
 
-@property (nonatomic, strong) ZHAnswerCheckBox *checkbox;
+@property (nonatomic, strong) ZHCheckBox *checkbox;
 
 @end
 
@@ -136,8 +136,22 @@
     }
     
     if (!checkbox_) {
-      self.checkbox = [ZHAnswerCheckBox checkBoxNormalTitle:@"关注收藏夹" SelectedTitle:@"取消关注"];
+      
+      UIImage *unselectedNormalImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
+      UIImage *unselectedHighlightImage = [UIImage imageNamed:@"ZHFollowButtonHighlight.png"];
+      UIImage *selectedNormalImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
+      UIImage *selectedHighlightImage = [UIImage imageNamed:@"ZHGuidePushButtonHighlight.png"];
+      
+      self.checkbox = [ZHCheckBox checkBoxWithSize:CGSizeMake(76, 31)
+                                             NormalTitle:@"关注收藏夹"
+                                           SelectedTitle:@"取消关注"
+                                   unselectedNormalImage:unselectedNormalImage
+                                unselectedHighlightImage:unselectedHighlightImage
+                                     selectedNormalImage:selectedNormalImage
+                                  selectedHighlightImage:selectedHighlightImage];
+
       [checkbox_ setDelegate:self];
+      
       [self addSubview:checkbox_];
     }
     
@@ -146,7 +160,7 @@
   return self;
 }
 
-- (void)checkbox:(ZHAnswerCheckBox *)checkBox didChangeState:(BOOL)selected
+- (void)checkbox:(ZHCheckBox *)checkBox didChangeState:(BOOL)selected
 {
   if (selected) {
     NSLog(@"关注收藏夹..");

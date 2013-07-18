@@ -12,7 +12,7 @@
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
 		CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B251791591D001EE98D /* ZHAnswerCell.m */; };
 		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
-		CA2B86921797E0070068F056 /* ZHAnswerCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2B86911797E0070068F056 /* ZHAnswerCheckBox.m */; };
+		CA2B86921797E0070068F056 /* ZHCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2B86911797E0070068F056 /* ZHCheckBox.m */; };
 		CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */; };
 		CA54FAA1178EA7CD007DC220 /* ZHCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA54FAA0178EA7CD007DC220 /* ZHCollectionViewController.m */; };
 		CA54FAA4178EA81F007DC220 /* ZHAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA54FAA3178EA81F007DC220 /* ZHAnswerViewController.m */; };
@@ -259,8 +259,8 @@
 		CA131B251791591D001EE98D /* ZHAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCell.m; sourceTree = "<group>"; };
 		CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderView.h; sourceTree = "<group>"; };
 		CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderView.m; sourceTree = "<group>"; };
-		CA2B86901797E0070068F056 /* ZHAnswerCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerCheckBox.h; sourceTree = "<group>"; };
-		CA2B86911797E0070068F056 /* ZHAnswerCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCheckBox.m; sourceTree = "<group>"; };
+		CA2B86901797E0070068F056 /* ZHCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCheckBox.h; sourceTree = "<group>"; };
+		CA2B86911797E0070068F056 /* ZHCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCheckBox.m; sourceTree = "<group>"; };
 		CA3DFFC21796F8E7002929FF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CA4EA68E17911F3C004BE8F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CA54FA9F178EA7CD007DC220 /* ZHCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewController.h; sourceTree = "<group>"; };
@@ -558,8 +558,8 @@
 				CA131B251791591D001EE98D /* ZHAnswerCell.m */,
 				CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */,
 				CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */,
-				CA2B86901797E0070068F056 /* ZHAnswerCheckBox.h */,
-				CA2B86911797E0070068F056 /* ZHAnswerCheckBox.m */,
+				CA2B86901797E0070068F056 /* ZHCheckBox.h */,
+				CA2B86911797E0070068F056 /* ZHCheckBox.m */,
 			);
 			name = AnswerCells;
 			sourceTree = "<group>";
@@ -1396,7 +1396,7 @@
 				CA8C5458178EA2B2005552CE /* main.m in Sources */,
 				CA54FAA1178EA7CD007DC220 /* ZHCollectionViewController.m in Sources */,
 				CA8C545C178EA2B2005552CE /* ZHAppDelegate.m in Sources */,
-				CA2B86921797E0070068F056 /* ZHAnswerCheckBox.m in Sources */,
+				CA2B86921797E0070068F056 /* ZHCheckBox.m in Sources */,
 				CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */,
 				CA54FAC3178EABB5007DC220 /* ZHCollectionFactory.m in Sources */,
 				CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */,
