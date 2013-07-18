@@ -11,7 +11,6 @@
 #import "ZHUserInfoHeaderView.h"
 #import "ZHUserInfoBottomView.h"
 #import "ZHUserInfoObject.h"
-#import "ZHCalculateTextSize.h"
 #import "UIImage+RounedImage.h"
 
 #define HeaderDescriptionFont 										[UIFont systemFontOfSize:14.0f]
@@ -218,7 +217,7 @@
       [userInfoHeaderDescriptionLabel_ setBackgroundColor:[UIColor clearColor]];
       [self addSubview:userInfoHeaderDescriptionLabel_];
     }
-      
+    
     if (!userInfoBottomView_) {
       self.userInfoBottomView = [[ZHUserInfoBottomView alloc] initWithFrame:CGRectMake(0, 0, 320, 51)];
       [userInfoBottomView_ setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ZHProfileViewToolbar.png"]]];
@@ -239,11 +238,14 @@
     [self.userInfoHeaderHeadlineLabel setText:infoObject.headline];
   }
   if (infoObject.avatar_url) {
-    [self.userInfoHeaderAvatarView setImageWithURL:[NSURL URLWithString:infoObject.avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
-      
-    } failure:^(NSError *error) {
-      
-    }];
+    [self.userInfoHeaderAvatarView setImageWithURL:[NSURL URLWithString:infoObject.avatar_url]
+                                  placeholderImage:nil options:SDWebImageProgressiveDownload
+                                           success:^(UIImage *image) {
+                                             
+                                           }
+                                           failure:^(NSError *error) {
+                                             
+                                           }];
   }
   
   if (infoObject.following_topic_count) {
@@ -300,11 +302,11 @@
   [self.headlineScrollView setContentSize:headlineLabelSize];
   
   // Layout userInfoHeaderDescriptionLabel_
-  CGSize size = CalculateTextSize(self.userInfoHeaderDescriptionLabel.text,
-                                  [UIFont systemFontOfSize:14.0f],
-                                  HeaderDescriptionMaxWidth,
-                                  MAXFLOAT,
-                                  self.userInfoHeaderDescriptionLabel.lineBreakMode);
+  CGSize size = [self.userInfoHeaderDescriptionLabel.text
+                 CalculateTextSizeWith:[UIFont systemFontOfSize:14.0f]
+                 Size:CGSizeMake(HeaderDescriptionMaxWidth, MAXFLOAT)
+                 LineBreakMode:self.userInfoHeaderDescriptionLabel.lineBreakMode];
+  
   CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
   [self.userInfoHeaderDescriptionLabel setFrame:CGRectMake(10,
                                                            descriptionLabelOriginY,
@@ -318,7 +320,12 @@
   
   CGRect frame = self.frame;
   CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
-	CGSize descriptionSize = CalculateTextSize(self.userInfoHeaderDescriptionLabel.text, [UIFont systemFontOfSize:14.0f], HeaderDescriptionMaxWidth, MAXFLOAT, self.userInfoHeaderDescriptionLabel.lineBreakMode);
+  
+	CGSize descriptionSize = [self.userInfoHeaderDescriptionLabel.text
+                            CalculateTextSizeWith:[UIFont systemFontOfSize:14.0f]
+                            Size:CGSizeMake(HeaderDescriptionMaxWidth, MAXFLOAT)
+                            LineBreakMode:self.userInfoHeaderDescriptionLabel.lineBreakMode];
+  
   CGFloat height = descriptionLabelOriginY + descriptionSize.height + HeaderDescriptionToBottomMargin;
   frame.size.height = height;
 	return frame.size;

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONKit.h"
-//#import "ZHModel.h"
 #import <ZHListView/ZHModel.h>
 
 @interface ZHParser : NSObject

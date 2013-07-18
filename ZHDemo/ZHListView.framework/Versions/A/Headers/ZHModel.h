@@ -15,8 +15,8 @@
 
 @interface ZHModel : NSObject <ZHModel>
 
-@property (nonatomic) NSArray *objects;
-@property (nonatomic) ZHObject *object;
+@property (nonatomic, strong) NSArray *objects;
+@property (nonatomic, strong) ZHObject *object;
 
 - (void)bindModelWithObject:(id<ZHObject>)object;
 

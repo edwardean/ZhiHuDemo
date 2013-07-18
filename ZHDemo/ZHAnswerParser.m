@@ -10,22 +10,20 @@
 #import "ZHLoadJSONFile.h"
 #import "ZHAnswerObject.h"
 
+#import "ZHCollectionObject.h"
+
 @interface ZHAnswerParser ()
 
 @property (nonatomic) NSMutableArray *answerArray;
-
-@property (nonatomic) ZHAnswerObject *answerObject;
 
 @end
 
 @implementation ZHAnswerParser
 
 @synthesize answerArray = answerArray_;
-@synthesize answerObject = answerObject_;
 
 - (id)parser
 {
-  self.answerObject = [[ZHAnswerObject alloc] init];
   self.answerArray = [NSMutableArray array];
   
 	NSData *data = [ZHLoadJSONFile AnswerData];
@@ -45,7 +43,7 @@
     
     NSDictionary *author = [dic objectForKey:@"author"];
     NSString *avatar_url = [author objectForKey:@"avatar_url"];
-
+    
     NSMutableDictionary *answerDictionary = [NSMutableDictionary dictionary];
     
     if (voteup_count) {
@@ -61,8 +59,7 @@
       [answerDictionary setObject:avatar_url forKey:@"avatar_url"];
     }
     
-    ZHAnswerObject *object = [self.answerObject bindWithObjec:answerDictionary
-                                            forObjectType:ZHObjectTypeAnswer];
+    ZHAnswerObject *object = [ZHAnswerObject objectWithData:answerDictionary];
     
     [self.answerArray addObject:object];
   }

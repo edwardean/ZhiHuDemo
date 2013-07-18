@@ -36,41 +36,60 @@
 {
 	self = [super init];
   if (self) {
-    self.type = ZHObjectTypeUserInfo;
   }
   return self;
 }
 
-- (id)bindWithObjec:(id)object forObjectType:(ZHObjectType)objecttype
++ (ZHUserInfoObject *)objectWithData:(id)data
 {
-  ZHUserInfoObject *userInfoObject = [[ZHUserInfoObject alloc] init];
-	if (objecttype != userInfoObject.type) {
-    return nil;
+  if ([[self class] checkObject:data]) {
+    ZHUserInfoObject *userinfoObject = [[ZHUserInfoObject alloc] init];
+    [userinfoObject bindWithObject:data];
+    return userinfoObject;
   }
-	NSDictionary *dictionary = (NSDictionary *)object;
-  userInfoObject.name = [dictionary objectForKey:@"name"];
-  userInfoObject.headline = [dictionary objectForKey:@"headline"];
-  userInfoObject.des = [dictionary objectForKey:@"description"];
-  userInfoObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
-  userInfoObject.gender = [dictionary objectForKey:@"gender"];
-  userInfoObject.following_topic_count = [dictionary objectForKey:@"following_topic_count"];
-  userInfoObject.following_count = [dictionary objectForKey:@"following_count"];
-  userInfoObject.follower_count = [dictionary objectForKey:@"follower_count"];
-  userInfoObject.voteup_count = [dictionary objectForKey:@"voteup_count"];
-  userInfoObject.thanked_count = [dictionary objectForKey:@"thanked_count"];
-  userInfoObject.answer_count = [dictionary objectForKey:@"answer_count"];
-  userInfoObject.question_count = [dictionary objectForKey:@"question_count"];
-  userInfoObject.favorite_count = [dictionary objectForKey:@"favorite_count"];
-  userInfoObject.favorited_count = [dictionary objectForKey:@"favorited_count"];
-  userInfoObject.sina_weibo_name = [dictionary objectForKey:@"sina_weibo_name"];
-  userInfoObject.qq_weibo_name = [dictionary objectForKey:@"qq_weibo_name"];
-  userInfoObject.shared_count = [dictionary objectForKey:@"shared_count"];
-  userInfoObject.business = [dictionary objectForKey:@"business"];
-  userInfoObject.education = [dictionary objectForKey:@"education"];
-  userInfoObject.employment = [dictionary objectForKey:@"employment"];
-  userInfoObject.location = [dictionary objectForKey:@"location"];
-  NSLog(@"userInfoObject:%@",userInfoObject);
-  return userInfoObject;
+	return nil;
+}
+
+- (void)bindWithObject:(id)object
+{
+	if ([[self class] checkObject:object]) {
+    NSDictionary *dic = (NSDictionary *)object;
+    [self bind:dic];
+  }
+}
+
+- (void)bind:(NSDictionary *)dictionary
+{
+	self.name = [dictionary objectForKey:@"name"];
+  self.headline = [dictionary objectForKey:@"headline"];
+  self.des = [dictionary objectForKey:@"description"];
+  self.avatar_url = [dictionary objectForKey:@"avatar_url"];
+  self.gender = [dictionary objectForKey:@"gender"];
+  self.following_topic_count = [dictionary objectForKey:@"following_topic_count"];
+  self.following_count = [dictionary objectForKey:@"following_count"];
+  self.follower_count = [dictionary objectForKey:@"follower_count"];
+  self.voteup_count = [dictionary objectForKey:@"voteup_count"];
+  self.thanked_count = [dictionary objectForKey:@"thanked_count"];
+  self.answer_count = [dictionary objectForKey:@"answer_count"];
+  self.question_count = [dictionary objectForKey:@"question_count"];
+  self.favorite_count = [dictionary objectForKey:@"favorite_count"];
+  self.favorited_count = [dictionary objectForKey:@"favorited_count"];
+  self.sina_weibo_name = [dictionary objectForKey:@"sina_weibo_name"];
+  self.qq_weibo_name = [dictionary objectForKey:@"qq_weibo_name"];
+  self.shared_count = [dictionary objectForKey:@"shared_count"];
+  self.business = [dictionary objectForKey:@"business"];
+  self.education = [dictionary objectForKey:@"education"];
+  self.employment = [dictionary objectForKey:@"employment"];
+  self.location = [dictionary objectForKey:@"location"];
+}
+
++ (BOOL)checkObject:(id)object
+{
+	if (![object isKindOfClass:[NSDictionary class]]) {
+    return NO;
+  }
+  
+  return YES;
 }
 
 @end

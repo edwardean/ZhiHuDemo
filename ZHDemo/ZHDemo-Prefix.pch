@@ -12,6 +12,6 @@
 		#import <UIKit/UIKit.h>
 		#import <Foundation/Foundation.h>
 		#import "UIView+Frame.h"
-		#import "ZHCalculateTextSize.h"
+		#import "NSString+CalculateTextSize.h"
 		#import <ZHListView/ZHList.h>
 #endif

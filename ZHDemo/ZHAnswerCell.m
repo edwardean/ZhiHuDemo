@@ -76,11 +76,11 @@
   if (self) {
     
     self.backgroundView = [[UIImageView alloc]
-                               initWithImage:[[UIImage
-                                               imageNamed:@"ZHExploreListItemBase.png"]
-                                              resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+                           initWithImage:[[UIImage
+                                           imageNamed:@"ZHExploreListItemBase.png"]
+                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
     //self.backgroundView = cellBackgroundView_;
-
+    
     
     // answerTitleLabel
     self.answerTitleLabel = [[UILabel alloc] init];
@@ -147,8 +147,8 @@
     self.answerSeparateLine = [[UIImageView alloc]
                                initWithImage:[UIImage
                                               imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
-    [self.contentView addSubview:answerSeparateLine_];
-    
+    [self.contentView addSubview:self.answerSeparateLine];
+		[self.contentView setClipsToBounds:YES];
     
     [self resetCellContent];
     
@@ -160,7 +160,7 @@
 {
 	[self.answerTitleLabel setText:nil];
   [self.avatarButton setImage:[UIImage imageNamed:@"AvatarMaskS.png"]
-                 forState:UIControlStateNormal];
+                     forState:UIControlStateNormal];
   [self.voteupLabel setText:@"0"];
   [self.answerExcerptLabel setText:nil];
 }
@@ -172,19 +172,15 @@
   CGSize excerptSize = CGSizeZero;
   
   if (answerObject.title) {
-    titleSize = CalculateTextSize(answerObject.title,
-                                  [UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT],
-                                  ZHANSWERCELLTITLELABELWIDTH,
-                                  ZHANSWERCELLTITLELABELMAXHEIGHT,
-                                  NSLineBreakByTruncatingTail);
+    titleSize = [answerObject.title CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]
+                                                     Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
+                                            LineBreakMode:NSLineBreakByTruncatingTail];
   }
   
   if (answerObject.excerpt) {
-    excerptSize = CalculateTextSize(answerObject.excerpt,
-                                    [UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE],
-                                    ZHANSWERCELLEXCERPTLABELWIDTH,
-                                    ZHANSWERCELLEXCERPTLABELMAXHEIGHT,
-                                    NSLineBreakByTruncatingTail);
+    excerptSize = [answerObject.excerpt CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
+                                                         Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
+                                                LineBreakMode:NSLineBreakByTruncatingTail];
   }
   
   CGFloat cellHeight = titleSize.height + excerptSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + ZHANSWERCELLEXCERPTLABELTOBOTTOMMARGIN;
@@ -244,15 +240,14 @@
 {
 	[super layoutSubviews];
   
-  [self.backgroundView setClipsToBounds:YES];
+  [self.contentView setClipsToBounds:YES];
+  [self setClipsToBounds:YES];
   // Layout Subviews
   
   // Layout TitleLabel
-	CGSize answerTitleSize = CalculateTextSize(self.answerTitleLabel.text,
-                                             [UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT],
-                                             ZHANSWERCELLTITLELABELWIDTH,
-                                             ZHANSWERCELLTITLELABELMAXHEIGHT,
-                                             self.answerTitleLabel.lineBreakMode);
+	CGSize answerTitleSize = [self.answerTitleLabel.text CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]
+                                                                        Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
+                                                               LineBreakMode:self.answerTitleLabel.lineBreakMode];
   
   [self.answerTitleLabel setSize:answerTitleSize];
   
@@ -281,11 +276,9 @@
   CGFloat excerptLabelOriginX = [self.avatarButton right] + ZHANSWERCELLAVATARTOEXCERPTMARGIN;
   CGFloat excerptLabelOriginY = [self.avatarButton y];
   
-  CGSize excerptSize = CalculateTextSize(self.answerExcerptLabel.text,
-                                         [UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE],
-                                         ZHANSWERCELLEXCERPTLABELWIDTH,
-                                         ZHANSWERCELLEXCERPTLABELMAXHEIGHT,
-                                         self.answerExcerptLabel.lineBreakMode);
+  CGSize excerptSize = [self.answerExcerptLabel.text CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
+                                                                      Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
+                                                             LineBreakMode:self.answerExcerptLabel.lineBreakMode];
   
   CGFloat voteupLabelBottom = [self.voteupBackgroundView bottom];
 	CGFloat height = voteupLabelBottom - avatarOriginY;

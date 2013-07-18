@@ -16,10 +16,10 @@
 
 @interface ZHListViewController : UIViewController
 
-@property (nonatomic) ZHListView *listView;
-@property (nonatomic) ZHListViewDelegate *listViewDelegate;
-@property (nonatomic) ZHListViewDataSource *listViewDataSource;
-@property (nonatomic) ZHModel *model;
+@property (nonatomic, strong) ZHListView *listView;
+@property (nonatomic, strong) ZHListViewDelegate *listViewDelegate;
+@property (nonatomic, strong) ZHListViewDataSource *listViewDataSource;
+@property (nonatomic, strong) ZHModel *model;
 
 - (void)loadListView;
 

@@ -12,37 +12,51 @@
 
 @synthesize title = title_;
 @synthesize des = des_;
-@synthesize avatar_url = avatar_url_;
+@synthesize avatarURL = avatarURL_;
 @synthesize name = name_;
-@synthesize follower_count = follower_count_;
-@synthesize comment_count = comment_count_;
+@synthesize followerCOUNT = followerCOUNT_;
+@synthesize commentCOUNT = commentCOUNT_;
 
 - (id)init
 {
 	self = [super init];
   if (self) {
-    self.type = ZHObjectTypeAnswerHeader;
   }
   return self;
 }
 
-- (id)bindWithObjec:(id)object forObjectType:(ZHObjectType)objecttype
++ (ZHAnswerHeaderObject *)objectWithData:(id)data
 {
-  ZHAnswerHeaderObject *answerHeaderObject = [[ZHAnswerHeaderObject alloc] init];
-
-	if (objecttype != answerHeaderObject.type) {
-    return nil;
+	if ([[self class] checkObject:data]) {
+    ZHAnswerHeaderObject *headerObject = [[ZHAnswerHeaderObject alloc] init];
+    [headerObject bindWithObject:data];
+    return headerObject;
   }
-  NSDictionary *dictionary = (NSDictionary *)object;
   
+  return nil;
+}
+
+- (void)bindWithObject:(id)object
+{
+	if ([[self class] checkObject:object]) {
+    NSDictionary *dictionary = (NSDictionary *)object;
+    self.title = [dictionary objectForKey:@"title"];
+    self.des = [dictionary objectForKey:@"description"];
+    self.avatarURL = [dictionary objectForKey:@"avatar_url"];
+    self.name = [dictionary objectForKey:@"name"];
+    self.followerCOUNT = [dictionary objectForKey:@"follower_count"];
+    self.commentCOUNT = [dictionary objectForKey:@"comment_count"];
+  }
+}
+
+
++ (BOOL)checkObject:(id)object
+{
+	if (![object isKindOfClass:[NSDictionary class]]) {
+    return NO;
+  }
   
-  answerHeaderObject.title = [dictionary objectForKey:@"title"];
-  answerHeaderObject.des = [dictionary objectForKey:@"description"];
-  answerHeaderObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
-  answerHeaderObject.name = [dictionary objectForKey:@"name"];
-  answerHeaderObject.follower_count = [dictionary objectForKey:@"follower_count"];
-  answerHeaderObject.comment_count = [dictionary objectForKey:@"comment_count"];
-  return answerHeaderObject;
+  return YES;
 }
 
 @end

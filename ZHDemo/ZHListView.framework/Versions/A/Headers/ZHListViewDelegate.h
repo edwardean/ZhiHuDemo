@@ -10,8 +10,8 @@
 
 @interface ZHListViewDelegate : NSObject <UITableViewDelegate>
 
-@property (nonatomic) NSArray *objects;
+@property (nonatomic, strong) NSArray *objects;
 
-@property (nonatomic) Class listCellClass;
+@property (nonatomic, strong) Class listCellClass;
 
 @end

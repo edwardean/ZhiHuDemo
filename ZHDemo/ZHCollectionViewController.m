@@ -37,8 +37,6 @@
   
   ZHModel *model = [parser parser];
   
-  //[self numberOfSectionForListView:model.objects.count];
-  
   [self modelDidFinishLoading:model];
 }
 
@@ -47,22 +45,5 @@
   [super didReceiveMemoryWarning];
   
 }
-
-//- (void)createListViewDelegate
-//{
-//	ZHCollectionDelegate *delegate = [[ZHCollectionDelegate alloc] init];
-//  self.listViewDelegate = delegate;
-//}
-
-//- (void)createListViewDataSource
-//{
-//	ZHCollectionDataSource *dataSource = [[ZHCollectionDataSource alloc] init];
-//  self.listViewDataSource = dataSource;
-//}
-
-//- (void)modelDidFinishLoading:(id<ZHModel>)model
-//{
-//	
-//}
 
 @end

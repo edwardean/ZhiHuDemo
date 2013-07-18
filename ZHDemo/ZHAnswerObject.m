@@ -18,21 +18,53 @@
 {
 	self = [super init];
   if (self) {
-    self.type = ZHObjectTypeAnswer;
   }
   return self;
 }
 
-- (id)bindWithObjec:(id)object forObjectType:(ZHObjectType)objecttype
-{
-  ZHAnswerObject *answerObject = [[ZHAnswerObject alloc] init];
 
-  NSDictionary *dictionary = (NSDictionary *)object;
-  answerObject.title = [dictionary objectForKey:@"title"];
-  answerObject.excerpt = [dictionary objectForKey:@"excerpt"];
-  answerObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
-  answerObject.voteup_count = [dictionary objectForKey:@"voteup_count"];
-  return answerObject;
++ (ZHAnswerObject *)objectWithData:(id)data
+{
+  if ([[self class] checkObject:data]) {
+    ZHAnswerObject *answerObject = [[ZHAnswerObject alloc]init];
+    [answerObject bindWithObject:data];
+    return answerObject;
+  }
+  return nil;
+}
+
+- (void)bindWithObject:(id)object
+{
+  if ([[self class] checkObject:object]) {
+    [self bind:object];
+  }
+}
+
+- (void)bind:(NSDictionary *)dictionary
+{
+  self.title = [dictionary objectForKey:@"title"];
+  self.excerpt = [dictionary objectForKey:@"excerpt"];
+  self.avatar_url = [dictionary objectForKey:@"avatar_url"];
+  self.voteup_count = [dictionary objectForKey:@"voteup_count"];
+}
+
++ (BOOL)check
+{
+	if (![[self class] isSubclassOfClass:[ZHAnswerObject class]]) {
+    NSLog(@"NO Class:%@",[self class]);
+    return NO;
+  }
+  NSLog(@"YES Class:%@",[self class]);
+  return YES;
+}
+
++ (BOOL)checkObject:(id)object
+{
+	if (![object isKindOfClass:[NSDictionary class]]) {
+    return NO;
+  }
+  
+  return YES;
 }
 
 @end

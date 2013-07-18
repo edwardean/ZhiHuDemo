@@ -11,34 +11,54 @@
 @implementation ZHCollectionObject
 @synthesize title = title_;
 @synthesize des = des_;
-@synthesize avatar_url = avatar_url_;
+@synthesize avatarURL = avatarURL_;
 @synthesize name = name_;
-@synthesize answer_count = answer_count_;
+@synthesize answerCOUNT = answerCOUNT_;
 
 - (id)init
 {
 	self = [super init];
   if (self) {
-    self.type = ZHObjectTypeCollection;
+    
   }
   return self;
 }
 
-- (id)bindWithObjec:(id)object forObjectType:(ZHObjectType)objecttype
+
++ (ZHCollectionObject *)objectWithData:(id)data
 {
-  ZHCollectionObject *collectionObject = [[ZHCollectionObject alloc] init];
-  
-	if (objecttype != collectionObject.type) {
-    
-    return nil;
+  if ([[self class] checkObject:data]) {
+    ZHCollectionObject *collectionObject = [[ZHCollectionObject alloc] init];
+    [collectionObject bindWithObject:data];
+    return collectionObject;
+	}
+	
+  return nil;
+}
+
+- (void)bindWithObject:(id)data
+{
+  if ([[self class] checkObject:data]) {
+    [self bindObject:data];
   }
-  NSDictionary *dictionary = (NSDictionary *)object;
-  collectionObject.title = [dictionary objectForKey:@"title"];
-  collectionObject.des = [dictionary objectForKey:@"description"];
-  collectionObject.name = [dictionary objectForKey:@"name"];
-  collectionObject.avatar_url = [dictionary objectForKey:@"avatar_url"];
-  collectionObject.answer_count = [dictionary objectForKey:@"answer_count"];
-  return collectionObject;
+}
+
+- (void)bindObject:(NSDictionary *)dic
+{
+	self.title = [dic objectForKey:@"title"];
+  self.des = [dic objectForKey:@"description"];
+  self.name = [dic objectForKey:@"name"];
+  self.avatarURL = [dic objectForKey:@"avatar_url"];
+  self.answerCOUNT = [dic objectForKey:@"answer_count"];
+}
+
+
++ (BOOL)checkObject:(id)data
+{
+  if (![data isKindOfClass:[NSDictionary class]]) {
+    return NO;
+  }
+	return YES;
 }
 
 @end

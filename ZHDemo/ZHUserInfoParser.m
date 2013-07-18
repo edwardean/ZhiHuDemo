@@ -12,17 +12,12 @@
 
 @interface ZHUserInfoParser ()
 
-@property (nonatomic) ZHUserInfoObject *userInfoObject;
-
 @end
 
 @implementation ZHUserInfoParser
 
-@synthesize userInfoObject = userInfoObject_;
-
 - (id)parser
 {
-  self.userInfoObject = [[ZHUserInfoObject alloc] init];
   
 	NSData *data = [ZHLoadJSONFile UserInfoData];
   NSDictionary *dictionary = [data objectFromJSONData];
@@ -155,7 +150,7 @@
     [userInfoDictionary setObject:qq_weibo_name forKey:@"qq_weibo_name"];
   }
   
-  ZHUserInfoObject* object = [userInfoObject_ bindWithObjec:userInfoDictionary forObjectType:ZHObjectTypeUserInfo];
+  ZHUserInfoObject* object = [ZHUserInfoObject objectWithData:userInfoDictionary];
   
   ZHModel *model = [[ZHModel alloc] init];
   model.object = object;

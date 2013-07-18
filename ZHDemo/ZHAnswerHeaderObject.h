@@ -12,9 +12,9 @@
 
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *des;
-@property (nonatomic) NSString *avatar_url;
+@property (nonatomic) NSString *avatarURL;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *follower_count;
-@property (nonatomic) NSString *comment_count;
+@property (nonatomic) NSString *followerCOUNT;
+@property (nonatomic) NSString *commentCOUNT;
 
 @end

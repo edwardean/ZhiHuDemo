@@ -59,7 +59,7 @@
 {
   self = [super initWithFrame:frame];
   if (self) {
-
+    
     self.originSize = frame.size;
     
     if (!answerHeaderTitleLabel_) {
@@ -147,10 +147,6 @@
   return self;
 }
 
-+ (CGFloat)AnswerHeaderViewHeightWithObject:(id<ZHObject>)object
-{
-	return 0.0f;
-}
 
 - (void)bindHeaderContentWithObject:(id<ZHObject>)object
 {
@@ -167,21 +163,21 @@
     [self.answerHeaderNameLabel setText:answerHeaderObject.name];
   }
   
-  if (answerHeaderObject.follower_count) {
-    [self.answerHeaderFocusLabel setText:answerHeaderObject.follower_count];
+  if (answerHeaderObject.followerCOUNT) {
+    [self.answerHeaderFocusLabel setText:answerHeaderObject.followerCOUNT];
   }
   
-  if (answerHeaderObject.comment_count) {
-    [self.answerHeaderCommentLabel setText:answerHeaderObject.comment_count];
+  if (answerHeaderObject.commentCOUNT) {
+    [self.answerHeaderCommentLabel setText:answerHeaderObject.commentCOUNT];
   }
   
-  if (answerHeaderObject.avatar_url) {
+  if (answerHeaderObject.avatarURL) {
     /**
      根据url设置用户头像
      **/
     __block typeof(self) weakself = self;
     UIImageView *avatarImage = [[UIImageView alloc] init];
-    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatar_url] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
+    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatarURL] placeholderImage:nil options:SDWebImageProgressiveDownload success:^(UIImage *image) {
       image = [image makeRoundedImage:image radius:3.0f];
       [weakself.answerHeaderAvatarButton setImage:image forState:UIControlStateNormal];
     } failure:^(NSError *error) {
@@ -208,7 +204,11 @@
   // Layout Title Label
   if ([self.answerHeaderTitleLabel.text length] > 0) {
     
-    [self.answerHeaderTitleLabel setSize:CalculateTextSize(self.answerHeaderTitleLabel.text, self.answerHeaderTitleLabel.font,[self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_TITLECONTENTMARGINTORIGHTSIDE, MAXFLOAT, NSLineBreakByWordWrapping)];
+    CGSize headerTitleSize = [self.answerHeaderTitleLabel.text
+                              CalculateTextSizeWith:self.answerHeaderTitleLabel.font
+                              Size:CGSizeMake([self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_TITLECONTENTMARGINTORIGHTSIDE, MAXFLOAT)
+                              LineBreakMode:NSLineBreakByWordWrapping];
+    [self.answerHeaderTitleLabel setSize:headerTitleSize];
   } else {
   	[self.answerHeaderTitleLabel setSize:CGSizeZero];
   }
@@ -217,7 +217,11 @@
   CGFloat desLabelOriginY = [self.answerHeaderTitleLabel bottom] + ZH_ANSWERHEADER_CONTENTMARGINTOBOTTOMSIDE;
   if ([self.answerHeaderDesLabel.text length] > 0) {
     [self.answerHeaderDesLabel setY:desLabelOriginY];
-    [self.answerHeaderDesLabel setSize:CalculateTextSize(self.answerHeaderDesLabel.text,self.answerHeaderDesLabel.font, [self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_DESCONTENTMAGINTORIGHTSIDE,MAXFLOAT , NSLineBreakByWordWrapping)];
+    CGSize headerDesSize = [self.answerHeaderDesLabel.text
+                            CalculateTextSizeWith:self.answerHeaderDesLabel.font
+                            Size:CGSizeMake([self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_DESCONTENTMAGINTORIGHTSIDE, MAXFLOAT)
+                            LineBreakMode: NSLineBreakByWordWrapping];
+    [self.answerHeaderDesLabel setSize:headerDesSize];
   } else {
   	[self.answerHeaderDesLabel setFrame:CGRectZero];
   }
@@ -269,12 +273,13 @@
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
-  CGSize titleSize = CalculateTextSize(self.answerHeaderTitleLabel.text,self.answerHeaderTitleLabel.font,
-                                       [self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_TITLECONTENTMARGINTORIGHTSIDE, MAXFLOAT,
-                                       NSLineBreakByWordWrapping);
+  CGSize titleSize = [self.answerHeaderTitleLabel.text CalculateTextSizeWith:self.answerHeaderTitleLabel.font
+                                                                        Size:CGSizeMake([self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_TITLECONTENTMARGINTORIGHTSIDE, MAXFLOAT)
+                                                               LineBreakMode:NSLineBreakByWordWrapping];
   
-  CGSize desSize = CalculateTextSize(self.answerHeaderDesLabel.text, self.answerHeaderDesLabel.font,[self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_DESCONTENTMAGINTORIGHTSIDE, MAXFLOAT, NSLineBreakByWordWrapping);
-	//CGFloat height = self.originSize.height + titleSize.height + desSize.height;
+  CGSize desSize = [self.answerHeaderDesLabel.text CalculateTextSizeWith:self.answerHeaderDesLabel.font
+                                                                    Size:CGSizeMake([self width] - ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE - ZH_ANSWERHEADER_DESCONTENTMAGINTORIGHTSIDE, MAXFLOAT)
+                                                           LineBreakMode:NSLineBreakByWordWrapping];	//CGFloat
   CGFloat height = 120 + titleSize.height + desSize.height;
   
   CGRect frame = self.frame;

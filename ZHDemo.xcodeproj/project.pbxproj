@@ -30,7 +30,6 @@
 		CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */; };
 		CA591F4817979F7400B20A26 /* ZHListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA591F4717979F7400B20A26 /* ZHListView.framework */; };
 		CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D49551797A286005EF79B /* UIImage+RounedImage.m */; };
-		CA5D49591797A286005EF79B /* ZHCalculateTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D49571797A286005EF79B /* ZHCalculateTextSize.m */; };
 		CA5D495D1797A2AE005EF79B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D495C1797A2AE005EF79B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA5D49F91797A300005EF79B /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49601797A2FF005EF79B /* answers.json */; };
 		CA5D49FA1797A300005EF79B /* answers1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49611797A2FF005EF79B /* answers1.json */; };
@@ -181,6 +180,7 @@
 		CA5D4A8B1797A300005EF79B /* info7.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49F61797A300005EF79B /* info7.json */; };
 		CA5D4A8C1797A300005EF79B /* info8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49F71797A300005EF79B /* info8.json */; };
 		CA5D4A8D1797A300005EF79B /* info9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49F81797A300005EF79B /* info9.json */; };
+		CA5D4A911797A7F2005EF79B /* NSString+CalculateTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */; };
 		CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */; };
 		CA7185A3179541BA005726B3 /* ZHUserInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */; };
 		CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */; };
@@ -278,8 +278,6 @@
 		CA591F4717979F7400B20A26 /* ZHListView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZHListView.framework; path = ZHDemo/ZHListView.framework; sourceTree = "<group>"; };
 		CA5D49541797A286005EF79B /* UIImage+RounedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RounedImage.h"; path = "Vendors/UIImage+RounedImage.h"; sourceTree = "<group>"; };
 		CA5D49551797A286005EF79B /* UIImage+RounedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RounedImage.m"; path = "Vendors/UIImage+RounedImage.m"; sourceTree = "<group>"; };
-		CA5D49561797A286005EF79B /* ZHCalculateTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCalculateTextSize.h; path = Vendors/ZHCalculateTextSize.h; sourceTree = "<group>"; };
-		CA5D49571797A286005EF79B /* ZHCalculateTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCalculateTextSize.m; path = Vendors/ZHCalculateTextSize.m; sourceTree = "<group>"; };
 		CA5D495B1797A2AE005EF79B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CA5D495C1797A2AE005EF79B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CA5D49601797A2FF005EF79B /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers.json; sourceTree = "<group>"; };
@@ -431,6 +429,8 @@
 		CA5D49F61797A300005EF79B /* info7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info7.json; sourceTree = "<group>"; };
 		CA5D49F71797A300005EF79B /* info8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info8.json; sourceTree = "<group>"; };
 		CA5D49F81797A300005EF79B /* info9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info9.json; sourceTree = "<group>"; };
+		CA5D4A8F1797A7F2005EF79B /* NSString+CalculateTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CalculateTextSize.h"; path = "Vendors/NSString+CalculateTextSize.h"; sourceTree = "<group>"; };
+		CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CalculateTextSize.m"; path = "Vendors/NSString+CalculateTextSize.m"; sourceTree = "<group>"; };
 		CA71859E17953F84005726B3 /* ZHUserInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoHeaderView.h; sourceTree = "<group>"; };
 		CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserInfoHeaderView.m; sourceTree = "<group>"; };
 		CA7185A1179541BA005726B3 /* ZHUserInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoBottomView.h; sourceTree = "<group>"; };
@@ -539,10 +539,10 @@
 		CA54FA8A178EA707007DC220 /* Verdons */ = {
 			isa = PBXGroup;
 			children = (
+				CA5D4A8F1797A7F2005EF79B /* NSString+CalculateTextSize.h */,
+				CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */,
 				CA5D49541797A286005EF79B /* UIImage+RounedImage.h */,
 				CA5D49551797A286005EF79B /* UIImage+RounedImage.m */,
-				CA5D49561797A286005EF79B /* ZHCalculateTextSize.h */,
-				CA5D49571797A286005EF79B /* ZHCalculateTextSize.m */,
 				CA5D495A1797A2AE005EF79B /* JSONKit */,
 				CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */,
 				CABA8A4E179012F0004B356E /* UIView+Frame */,
@@ -1336,8 +1336,8 @@
 				CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */,
 				CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */,
 				CA54FAA4178EA81F007DC220 /* ZHAnswerViewController.m in Sources */,
+				CA5D4A911797A7F2005EF79B /* NSString+CalculateTextSize.m in Sources */,
 				CA8C5458178EA2B2005552CE /* main.m in Sources */,
-				CA5D49591797A286005EF79B /* ZHCalculateTextSize.m in Sources */,
 				CA54FAA1178EA7CD007DC220 /* ZHCollectionViewController.m in Sources */,
 				CA8C545C178EA2B2005552CE /* ZHAppDelegate.m in Sources */,
 				CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */,
@@ -1416,7 +1416,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hang Li (B4WB78DCEG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
@@ -1432,7 +1432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1452,7 +1452,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hang Li (B4WB78DCEG)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1460,7 +1460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
@@ -1483,7 +1483,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
@@ -1497,7 +1497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1507,10 +1507,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";
 				INFOPLIST_FILE = "ZHDemo/ZHDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;

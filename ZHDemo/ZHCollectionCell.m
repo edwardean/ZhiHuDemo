@@ -182,11 +182,8 @@
   // Layout des label
 	CGFloat desLabelOriginY = [collectionCellTitleLabel_ bottom] + ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN;
   [self.collectionCellDesLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, desLabelOriginY)];
-  [self.collectionCellDesLabel setSize:CalculateTextSize(self.collectionCellDesLabel.text,
-                                                         [UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE],
-                                                         ZHCOLLECTIONCELLDESLABELWIDTH,
-                                                         MAXFLOAT,
-                                                         NSLineBreakByWordWrapping)];
+  CGSize desLabelSize = [self.collectionCellDesLabel.text CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE] Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT) LineBreakMode:NSLineBreakByWordWrapping];
+  [self.collectionCellDesLabel setSize:desLabelSize];
   
   // Layout Bottom contents
   CGFloat bottomContentOriginY = [self.collectionCellDesLabel bottom] + ZHCOLLECTIONCELLDESCONTENTTOUNDERLINEMARGIN + ZHCOLLECTIONCELLBOTTOMCONTENTTOUNDERLINEMARGIN;
@@ -204,15 +201,15 @@
 {
   ZHCollectionObject *collectionObject = (ZHCollectionObject *)object;
   NSString *des = collectionObject.des;
+  NSLog(@"Des:%@",des);
   if ([des isEqualToString:@""] || !des) {
     return ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
   }
   
-  CGFloat rowHeight = CalculateTextSize(des,
-                                        [UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE],
-                                        ZHCOLLECTIONCELLDESLABELWIDTH,
-                                        MAXFLOAT,
-                                        NSLineBreakByWordWrapping).height + ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
+  CGFloat rowHeight = [des CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]
+                                            Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT)
+                                   LineBreakMode:NSLineBreakByWordWrapping].height + ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
+  NSLog(@"RowHeight:%.0f",rowHeight);
   return rowHeight;
 }
 

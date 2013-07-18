@@ -12,8 +12,8 @@
 
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *des;
-@property (nonatomic) NSString *avatar_url;
+@property (nonatomic) NSString *avatarURL;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *answer_count;
+@property (nonatomic) NSString *answerCOUNT;
 
 @end

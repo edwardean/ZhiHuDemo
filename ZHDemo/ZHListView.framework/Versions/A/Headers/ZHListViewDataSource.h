@@ -11,10 +11,8 @@
 
 @interface ZHListViewDataSource : NSObject <UITableViewDataSource>
 
-@property (nonatomic) Class listCellClass;
+@property (nonatomic, strong) Class listCellClass;
 
-//@property (nonatomic) NSInteger sections;
-
-@property (nonatomic) NSArray *objects;
+@property (nonatomic, strong) NSArray *objects;
 
 @end

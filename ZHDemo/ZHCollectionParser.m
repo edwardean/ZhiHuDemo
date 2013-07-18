@@ -9,6 +9,7 @@
 #import "ZHCollectionParser.h"
 #import "ZHLoadJSONFile.h"
 #import "ZHCollectionObject.h"
+#import "ZHAnswerObject.h"
 
 @interface ZHCollectionParser ()
 
@@ -76,8 +77,8 @@
       [collectionDictionary setObject:avatar_url forKey:@"avatar_url"];
     }
     
-    ZHCollectionObject *object = [collectionObject_ bindWithObjec:collectionDictionary
-                                                    forObjectType:ZHObjectTypeCollection];
+    
+    ZHCollectionObject * object = [ZHCollectionObject objectWithData:collectionDictionary];
     
     [self.collectionArray addObject:object];
   }

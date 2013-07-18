@@ -12,19 +12,13 @@
 
 @interface ZHAnswerHeaderParser ()
 
-@property (nonatomic) ZHAnswerHeaderObject *headerObject;
-
 @end
 
 @implementation ZHAnswerHeaderParser
 
-@synthesize headerObject = headerObject_;
-
 - (id)parser
 {
-  self.headerObject = [[ZHAnswerHeaderObject alloc] init];
-  
-	NSData *data = [ZHLoadJSONFile AnswerHeaderData];
+  NSData *data = [ZHLoadJSONFile AnswerHeaderData];
   NSDictionary *dictonary = [data objectFromJSONData];
   
 	NSString *title = [dictonary objectForKey:@"title"];
@@ -65,8 +59,7 @@
     [answerHeaderDictinary setObject:avatar_url forKey:@"avatar_url"];
   }
   
-  ZHAnswerHeaderObject *object = [self.headerObject bindWithObjec:answerHeaderDictinary
-                                                    forObjectType:ZHObjectTypeAnswerHeader];
+  ZHAnswerHeaderObject *object = [ZHAnswerHeaderObject objectWithData:answerHeaderDictinary];
   
   ZHModel *model = [[ZHModel alloc] init];
   
