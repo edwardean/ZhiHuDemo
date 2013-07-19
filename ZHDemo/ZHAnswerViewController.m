@@ -54,6 +54,7 @@
   
   [self registerCellClass:[ZHAnswerCell class]];
   
+  
 	// Header View
   ZHAnswerHeaderView *headerView = [[ZHAnswerHeaderView alloc]
                                     initWithFrame:CGRectMake(0, 0, 320, 1)];

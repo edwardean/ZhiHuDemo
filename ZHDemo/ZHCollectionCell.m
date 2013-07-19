@@ -14,25 +14,28 @@
 
 #define ZHCOLLECTIONCELLDEFAULTCELLHEIGHT												95
 
-#define ZHCOLLECTIONCELLCONTENTLEFTMARGIN												15
+#define ZHCOLLECTIONCELLCONTENTLEFTMARGIN												20
 #define ZHCOLLECTIONCELLCONTENTTOPMARGIN												15
 
 // Des
-#define ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN									10
+#define ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN									15
 #define ZHCOLLECTIONCELLDESCONTENTTORIGHTMARGIN									25
-#define ZHCOLLECTIONCELLDESCONTENTTOUNDERLINEMARGIN							10
+#define ZHCOLLECTIONCELLDESCONTENTTOUNDERLINEMARGIN							5
 
 // Bottom Content
-#define ZHCOLLECTIONCELLBOTTOMCONTENTTOUNDERLINEMARGIN					10
+#define ZHCOLLECTIONCELLBOTTOMCONTENTTOUNDERLINEMARGIN					28
 #define ZHCOLLECTIONCELLBOTTOMCONTENTAVATARTONAMEMARGIN					10
 #define ZHCOLLECTIONCELLBOTTOMCONTENTANSWERMAXWIDTH							70
 #define ZHCOLLECTIONCELLBOTTOMCONTENTANSWERTORIGHTMARGIN	  		10
 #define ZHCOLLECTIONCELLBOTTOMCONTENTTOBOTTOM								 	  10
 
-
+#define ZHCOLLECTIONCELLTITLELABELFONTSIZE											15.0f
 #define ZHCOLLECTIONCELLDESLABELFONTSIZE												15.0f
 #define ZHCOLLECTIONCELLDESLABELWIDTH														270.0f
 
+
+#define TITLEHEIGHT												44
+#define TITLEWIDTH												250
 
 @interface ZHCollectionCell ()
 {
@@ -72,11 +75,12 @@
     
     // collectionCellTitleLabel
     self.collectionCellTitleLabel = [[UILabel alloc] init];
-    [collectionCellTitleLabel_ setFont:[UIFont boldSystemFontOfSize:15.0f]];
-    [collectionCellTitleLabel_ setNumberOfLines:1];
+    [collectionCellTitleLabel_ setFont:[UIFont boldSystemFontOfSize:ZHCOLLECTIONCELLTITLELABELFONTSIZE]];
+    [collectionCellTitleLabel_ setNumberOfLines:0];
     [collectionCellTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
     [collectionCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
     [self.contentView addSubview:collectionCellTitleLabel_];
+    [self.collectionCellTitleLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, ZHCOLLECTIONCELLCONTENTTOPMARGIN)];
     
     // collectionCellDesLabel
     self.collectionCellDesLabel = [[UILabel alloc] init];
@@ -164,8 +168,6 @@
     
   }
   
-  [self.collectionCellTitleLabel sizeToFit];
-  [self.collectionCellDesLabel sizeToFit];
   [self.collectionCellNameLabel sizeToFit];
   [self.collectionCellAnswersLabel sizeToFit];
   
@@ -177,12 +179,20 @@
 	[super layoutSubviews];
   
   // Layout title label
-  [self.collectionCellTitleLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, ZHCOLLECTIONCELLCONTENTTOPMARGIN)];
+  CGSize titleSize = [self.collectionCellTitleLabel.text
+                      CalculateTextSizeWith:self.collectionCellTitleLabel.font
+                      Size:CGSizeMake(TITLEWIDTH, TITLEHEIGHT)
+                      LineBreakMode:self.collectionCellTitleLabel.lineBreakMode];
+  [self.collectionCellTitleLabel setSize:titleSize];
   
   // Layout des label
-	CGFloat desLabelOriginY = [collectionCellTitleLabel_ bottom] + ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN;
+	CGFloat desLabelOriginY = [self.collectionCellTitleLabel bottom] + ZHCOLLECTIONCELLDESCONTENTTOTITLEMARGIN;
   [self.collectionCellDesLabel setOrigin:CGPointMake(ZHCOLLECTIONCELLCONTENTLEFTMARGIN, desLabelOriginY)];
-  CGSize desLabelSize = [self.collectionCellDesLabel.text CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE] Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT) LineBreakMode:NSLineBreakByWordWrapping];
+  
+  CGSize desLabelSize = [self.collectionCellDesLabel.text
+                         CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]
+                         Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT)
+                         LineBreakMode:self.collectionCellDesLabel.lineBreakMode];
   [self.collectionCellDesLabel setSize:desLabelSize];
   
   // Layout Bottom contents
@@ -200,15 +210,22 @@
 + (CGFloat)RowHeightWitObject:(id)object
 {
   ZHCollectionObject *collectionObject = (ZHCollectionObject *)object;
-  NSString *des = collectionObject.des;
-  NSLog(@"Des:%@",des);
-  if ([des isEqualToString:@""] || !des) {
-    return ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
+  NSString *des = @"";
+  NSString *title = @"";
+  if (collectionObject.des) {
+    des = collectionObject.des;
   }
+  if (collectionObject.title) {
+    title = collectionObject.title;
+  }
+
+  CGFloat titleHeight = [title CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHCOLLECTIONCELLTITLELABELFONTSIZE]
+                                                Size:CGSizeMake(TITLEWIDTH, TITLEHEIGHT)
+                                       LineBreakMode:NSLineBreakByTruncatingTail].height;
   
   CGFloat rowHeight = [des CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]
                                             Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT)
-                                   LineBreakMode:NSLineBreakByWordWrapping].height + ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
+                                   LineBreakMode:NSLineBreakByWordWrapping].height + titleHeight+ ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
   NSLog(@"RowHeight:%.0f",rowHeight);
   return rowHeight;
 }

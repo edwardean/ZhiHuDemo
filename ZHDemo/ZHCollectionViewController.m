@@ -31,6 +31,8 @@
 {
   [super viewDidLoad];
   
+  self.listView.contentOffset = CGPointMake(0, -10);
+  
   [self registerCellClass:[ZHCollectionCell class]];
 	
   ZHParser *parser = [ZHCollectionFactory ParserFactory];
