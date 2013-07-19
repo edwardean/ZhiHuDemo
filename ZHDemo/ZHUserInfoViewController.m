@@ -199,7 +199,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
       [cell setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellMiddleNormal.png"]]];
       
       [cell setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellMiddleHighlight.png"]]];
-      
     }
   }
   
@@ -212,4 +211,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+//
+//	Change weibo cells to the bottom of collection cell
+//
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 @end

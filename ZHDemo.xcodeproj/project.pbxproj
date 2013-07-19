@@ -596,8 +596,6 @@
 				CA131B251791591D001EE98D /* ZHAnswerCell.m */,
 				CA131B2717915A5E001EE98D /* ZHAnswerHeaderView.h */,
 				CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */,
-				CA2B86901797E0070068F056 /* ZHCheckBox.h */,
-				CA2B86911797E0070068F056 /* ZHCheckBox.m */,
 			);
 			name = AnswerCells;
 			sourceTree = "<group>";
@@ -916,6 +914,7 @@
 		CA77DACD178FFF390012FE4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAA4B21E17994B9100C3B3DE /* Checkbutton */,
 				CA71859D17953F5D005726B3 /* UserInfo */,
 				CA131B2A17915A7A001EE98D /* CollectionCells */,
 				CA131B2B17915A89001EE98D /* AnswerCells */,
@@ -1007,6 +1006,15 @@
 				CA8C5472178EA2B2005552CE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CAA4B21E17994B9100C3B3DE /* Checkbutton */ = {
+			isa = PBXGroup;
+			children = (
+				CA2B86901797E0070068F056 /* ZHCheckBox.h */,
+				CA2B86911797E0070068F056 /* ZHCheckBox.m */,
+			);
+			name = Checkbutton;
 			sourceTree = "<group>";
 		};
 		CABA8A4E179012F0004B356E /* UIView+Frame */ = {
