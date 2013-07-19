@@ -87,10 +87,6 @@
       [self addSubview:userInfoHeaderAvatarView_];
     }
     
-//    if (!userInfoHeaderAvatarPlaceHolderFemaleImage_) {
-//      self.userInfoHeaderAvatarPlaceHolderFemaleImage = [UIImage imageNamed:@"AvatarFemale150.png"];
-//    }
-    
     if (!userInfoHeaderAvatarPlaceHolderMaleImage_) {
       self.userInfoHeaderAvatarPlaceHolderMaleImage = [UIImage imageNamed:@"AvatarMale150.png"];
     }
@@ -354,21 +350,24 @@
                                                            descriptionLabelOriginY,
                                                            size.width,
                                                            size.height)];
-  [self.userInfoBottomView setY:[self bottom]];
+  [self.userInfoBottomView setY:[self.userInfoHeaderDescriptionLabel bottom] + 12];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
   
   CGRect frame = self.frame;
+  
   CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
+  
+  CGFloat bottomViewHeight = [self.userInfoBottomView height];
   
 	CGSize descriptionSize = [self.userInfoHeaderDescriptionLabel.text
                             CalculateTextSizeWith:[UIFont systemFontOfSize:14.0f]
                             Size:CGSizeMake(HeaderDescriptionMaxWidth, MAXFLOAT)
                             LineBreakMode:self.userInfoHeaderDescriptionLabel.lineBreakMode];
   
-  CGFloat height = descriptionLabelOriginY + descriptionSize.height + HeaderDescriptionToBottomMargin;
+  CGFloat height = descriptionLabelOriginY + descriptionSize.height + HeaderDescriptionToBottomMargin + bottomViewHeight;
   frame.size.height = height;
 	return frame.size;
 }

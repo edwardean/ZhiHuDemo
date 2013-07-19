@@ -25,3 +25,6 @@ ZHDemo
 
 修改img5的bug
 !["img7"](./screenshot/7.png)
+
+修改img7中关注按钮不响应点击的bug
+![](./screenshot/8.png)
