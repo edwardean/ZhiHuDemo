@@ -7,7 +7,7 @@
 //
 
 #import <ZHListView/ZHListViewController.h>
-
-@interface ZHUserInfoViewController : ZHListViewController
+#import <UIKit/UITableViewController.h>
+@interface ZHUserInfoViewController : UITableViewController
 
 @end

@@ -354,7 +354,7 @@
                                                            descriptionLabelOriginY,
                                                            size.width,
                                                            size.height)];
-  [self.userInfoBottomView setY:[self bottom] - 25];
+  [self.userInfoBottomView setY:[self bottom]];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size

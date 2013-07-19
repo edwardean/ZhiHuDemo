@@ -13,6 +13,7 @@
 #import "ZHParser.h"
 #import "ZHUserInfoHeaderView.h"
 #import "ZHAnswerCell.h"
+#import "ZHUserInfoListView.h"
 
 @interface ZHUserInfoViewController ()
 
@@ -33,20 +34,25 @@
 {
   [super viewDidLoad];
   
-  [self registerCellClass:[ZHAnswerCell class]];
+  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  UIView *headerBG = [[UIView alloc] initWithFrame:CGRectMake(0, -600, 320, 600)];
+  [headerBG setBackgroundColor:[UIColor colorWithRed:245/255.0 green:245.5/255.0 blue:245/255.0 alpha:1.0]];
   
   ZHUserInfoHeaderView *headerView = [[ZHUserInfoHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
   
   UIImage *resizedImage = [[UIImage imageNamed:@"ZHProfileViewTopbg.png"] stretchableImageWithLeftCapWidth:28 topCapHeight:95];
   UIImageView *headerBackGroundView = [[UIImageView alloc] initWithImage:resizedImage];
   [headerView addSubview:headerBackGroundView];
+  [headerView addSubview:headerBG];
   
   ZHParser *userInfoParser = [ZHUserInfoFactory ParserFactory];
   ZHModel *userInfoModel = [userInfoParser parser];
   [headerView bindHeaderContentWithObject:userInfoModel.object];
   headerBackGroundView.frame = headerView.frame;
   
-  [self.listView setTableHeaderView:headerView];
+  
+  [self.tableView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:headerBackGroundView];
 }
 
