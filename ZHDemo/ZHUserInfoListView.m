@@ -13,10 +13,13 @@
 - (id)initWithFrame:(CGRect)frame
 {
   self = [super initWithFrame:frame style:UITableViewStyleGrouped];
+  
   if (self) {
+    
     [self setBackgroundView:nil];
+    
     [self setBackgroundColor:[UIColor colorWithPatternImage:
-                                       [UIImage imageNamed:@"BackgroundTextures.png"]]];
+                              [UIImage imageNamed:@"BackgroundTextures.png"]]];
   }
   return self;
 }

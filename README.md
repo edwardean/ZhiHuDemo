@@ -28,3 +28,6 @@ ZHDemo
 
 修改img7中关注按钮不响应点击的bug
 ![](./screenshot/8.png)
+
+最后一个界面大体完工
+![](./screenshot/9.png)

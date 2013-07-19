@@ -8,6 +8,8 @@
 
 #import <ZHListView/ZHListViewController.h>
 #import <UIKit/UITableViewController.h>
-@interface ZHUserInfoViewController : UITableViewController
+@interface ZHUserInfoViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic) NSUInteger sections;
 
 @end
