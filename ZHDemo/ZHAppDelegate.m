@@ -11,6 +11,8 @@
 #import "ZHAnswerViewController.h"
 #import "ZHUserInfoViewController.h"
 
+#import "ZHViewController.h"
+
 @implementation ZHAppDelegate
 
 - (BOOL)application:(UIApplication *)application
@@ -29,6 +31,8 @@
   ZHUserInfoViewController *userInfoController = [[ZHUserInfoViewController alloc]
                                                   initWithNibName:nil
                                                   bundle:nil];
+  
+  ZHViewController *viewVC = [[ZHViewController alloc] initWithNibName:nil bundle:nil];
   
   
   self.navigationConreoller = [[UINavigationController alloc]
