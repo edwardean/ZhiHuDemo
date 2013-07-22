@@ -70,7 +70,7 @@ typedef struct {
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
+  
   self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
   [self.view addSubview:self.tableView];
   [self.tableView setDelegate:self];
@@ -109,8 +109,7 @@ typedef struct {
   
   [self.tableView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:headerBackGroundView];
-  [self performSelector:@selector(setUpData:) withObject:userInfoModel.object afterDelay:1.0f];
-  [self.tableView reloadData];
+	[self performSelector:@selector(setUpData:) withObject:userInfoModel.object afterDelay:1.0f];
 }
 
 - (void)setUpData:(ZHObject *)object
@@ -138,7 +137,7 @@ typedef struct {
   [self.collectionArray addObject:self.question_count];
   [self.collectionArray addObject:self.favorite_count];
   
-
+  
   [self.weiboArray removeAllObjects];
   if (self.profileObject.sina_weibo_name) {
     NSDictionary *sinaname = [NSDictionary dictionaryWithObject:self.profileObject.sina_weibo_name forKey:@"sina"];
@@ -155,6 +154,7 @@ typedef struct {
     }
   }
   [self.dataArray insertObject:self.weiboArray atIndex:WeiboSection];
+  [self.tableView reloadData];
 }
 
 
@@ -168,7 +168,7 @@ typedef struct {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+  
   NSInteger section = 0;
   if ([self.weiboArray count] > 0) {
     section = UserProfileSectionCount;
@@ -176,13 +176,14 @@ typedef struct {
   } else {
   	section = UserProfileSectionCount - 1;
   }
+  NSLog(@"Section:%d",section);
 	return section;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   NSInteger row = 0;
-  BOOL isWeibo = [self.weiboArray count] > 0 ? YES : NO;
-  
+  NSInteger offset = [self.weiboArray count] > 0 ? 0 : 1;
+  NSInteger weiboCount = [self.weiboArray count];
   switch (section) {
     case DetailSection:
       row = UserProfileDetailCount;
@@ -193,76 +194,66 @@ typedef struct {
     case CollectionSection:
       row = UserProfileCollectionCount;
       break;
-      
     case WeiboSection:
-      if (isWeibo) {
-        row = [self.weiboArray count];
+      if (offset == 0) {
+        row = weiboCount;
+        break;
       } else {
-        row = UserInfoCellBlacklistCount;
+      	
       }
-      break;
     case BlacklistSection:
-      if (isWeibo) {
+      if (offset == 0) {
         row = UserInfoCellBlacklistCount;
+        break;
       } else {
-        row = UserInfoReportCount;
+      	if (section == BlacklistSection - offset) {
+          row = UserInfoCellBlacklistCount;
+          break;
+        }
       }
-      break;
     case ReportSection:
-      if (isWeibo) {
+      if (offset == 0) {
         row = UserInfoReportCount;
+        break;
       } else {
-        NSAssert(0, @"Index overload!");
+      	if (section == ReportSection - offset) {
+          row = UserInfoReportCount;
+          break;
+        }
+        NSAssert(0, @"Crash");
       }
-      break;
-      
-      
     default:
       break;
       
   }
+  
   return row;
 	
 }
 
-- (Class)getCellClassWithType:(NSInteger)type
-{
-  Class class = nil;
-  
-  if (type == UserInfoCellDetail || type == UserInfoCellAllTrends) {
-    class = [ZHProfileNormalStyleCell class];
-  } else if (type == UserInfoCellAnswered || type == UserInfoCellQuestioned || type == UserInfoCellCollection) {
-    
-    class = [ZHProfileCollectionStyleCell class];
-  }  else if (type == UserInfoCellWeiboSina || type == UserInfoCellWeiboQQ) {
-  	class = [ZHUserProfileWeiboStyleCell class];
-  } else if (type == UserInfoCellBlacklist || type == USerInfoCellReport) {
-  	class = [ZHProfileBlacklistStyleCell class];
-  }
-  return class;
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+  
   cellBaseModel cellModel = [self createCellModelInTableView:tableView
                                              forRowIndexPath:indexPath];
-  cellModel.cellclass = [self cellClassForIndexPath:indexPath];
   
   Class cellClass = cellModel.cellclass;
   id data = cellModel.cellData;
   
   ZHProfileCellPositionType cellType = cellModel.cellPostionType;
+  
   ZHProfileBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
   if (!cell) {
     cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
                             reuseIdentifier:NSStringFromClass(cellClass)];
   }
   
+  
   if ([cellClass isSubclassOfClass:[ZHProfileCollectionStyleCell class]]) {
-    [cell bindCellTitle:data detail:[self.collectionArray objectAtIndex:indexPath.row] withCellType:cellType];
+    [cell bindCellTitle:data
+                 detail:[self.collectionArray objectAtIndex:indexPath.row]
+           withCellType:cellType];
   } else {
     [cell bindWithObject:data
             withCellType:cellType];
@@ -270,6 +261,7 @@ typedef struct {
   
   return cell;
 }
+
 - (cellBaseModel)createCellModelInTableView:(UITableView *)tableView
                             forRowIndexPath:(NSIndexPath *)indexPath {
 	cellBaseModel cellModel;
@@ -302,50 +294,59 @@ typedef struct {
   NSInteger row = indexPath.row;
   Class cellClass;
   
-  if (section ==0 ) {
-    if (row == 0) {
+  NSInteger offset = [self.weiboArray count] > 0 ? 0 : 1;
+  switch (section) {
+    case DetailSection:
       cellClass = [ZHProfileNormalStyleCell class];
-    } else {
-    	NSAssert(0, @"First Section Cell indexPath OverLoad!");
-    }
-  } else if (section == 1) {
-  	if (row == 0) {
-      cellClass = [ZHProfileNormalStyleCell class];
-    } else if (row == 1) {
-    	cellClass = [ZHProfileCollectionStyleCell class];
-    } else if (row == 2) {
-    	cellClass = [ZHProfileCollectionStyleCell class];
-    } else {
-    	NSAssert(0, @"Second Section Cell indexPath OverLoad!");
-    }
-  } else if (section == 2) {
-    if (row == 0) {
-      cellClass = [ZHProfileCollectionStyleCell class];
-    } else {
-      NSAssert(0, @"Third Section Cell indexPath OverLoad!");
-    }
-  } else if (section == 3) {
-    if ([self.weiboArray count] > 0) {
-      if (row == 0) {
-        cellClass = [ZHUserProfileWeiboStyleCell class];
-      } else if (row == 1) {
-        cellClass = [ZHUserProfileWeiboStyleCell class];
-      } else {
-        NSAssert(0, @"Weibo Section IndexPath Overload!");
+      break;
+    case TrendsSection:
+      switch (row) {
+        case UserInfoCellAllTrends:
+          cellClass = [ZHProfileNormalStyleCell class];
+          break;
+        case UserInfoCellAnswered:
+          cellClass = [ZHProfileCollectionStyleCell class];
+          break;
+        case UserInfoCellQuestioned:
+          cellClass = [ZHProfileCollectionStyleCell class];
+          break;
+          
+        default:
+          break;
       }
-    } else {
-      if (row == 0) {
+    case CollectionSection:
+      return [ZHProfileCollectionStyleCell class];
+    case WeiboSection:
+      if (offset == 0) {
+        cellClass = [ZHUserProfileWeiboStyleCell class];
+        break;
+      } else {
+      	// Do next case...
+      }
+    case BlacklistSection:
+      if (offset == 0) {
         cellClass = [ZHProfileBlacklistStyleCell class];
+        break;
       } else {
-        NSAssert(0, @"Black Section Index Overload!");
+        if (section == BlacklistSection - offset) {
+          cellClass = [ZHProfileBlacklistStyleCell class];
+          break;
+        }
+      	// Do next case...
       }
-    }
-  } else if (section == 4) {
-    if (row == 0) {
-      cellClass = [ZHProfileBlacklistStyleCell class];
-    } else {
-      NSAssert(0, @"Block section overload indexPath!s");
-    }
+    case ReportSection:
+      if (offset == 0) {
+        cellClass = [ZHProfileBlacklistStyleCell class];
+        break;
+      } else {
+        if (section == ReportSection - offset) {
+          cellClass = [ZHProfileBlacklistStyleCell class];
+          break;
+        }
+        // Do next case...
+      }
+    default:
+      break;
   }
   
   return cellClass;
