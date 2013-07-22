@@ -44,7 +44,6 @@
 
 - (void)bindWithObject:(id)object
 {
-	NSLog(@"Object:%@",object);
   NSString *cellTitle = (NSString *)object;
   [self.profileCellTitleLabel setText:nil];
   

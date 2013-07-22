@@ -21,7 +21,6 @@
 #import "ZHUserProfileWeiboStyleCell.h"
 #import "ZHProfileBlacklistStyleCell.h"
 
-
 @class ZHProfileNormalStyleCell;
 @class ZHProfileCollectionStyleCell;
 @class ZHUserProfileWeiboStyleCell;
@@ -72,8 +71,7 @@ typedef struct {
 {
   [super viewDidLoad];
 
-  self.tableView = [[UITableView alloc] initWithFrame:[self.view bounds] style:UITableViewStyleGrouped];
-  [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundTextures.png"]]];
+  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
   [self.view addSubview:self.tableView];
   [self.tableView setDelegate:self];
   [self.tableView setDataSource:self];
