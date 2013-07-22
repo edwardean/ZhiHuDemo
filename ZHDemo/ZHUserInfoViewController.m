@@ -15,57 +15,25 @@
 #import "ZHAnswerCell.h"
 #import "ZHUserInfoListView.h"
 
+#import "ZHProfileBaseCell.h"
 #import "ZHProfileNormalStyleCell.h"
 #import "ZHProfileCollectionStyleCell.h"
 #import "ZHUserProfileWeiboStyleCell.h"
 #import "ZHProfileBlacklistStyleCell.h"
 
-typedef NS_ENUM(NSInteger, UserProfileDetail) {				//详细信息
-  UserInfoCellDetail = 0,
-  UserProfileDetailCount
-};
 
-typedef NS_ENUM(NSInteger, UserProfileTrends) {				//动态
-  UserInfoCellAllTrends = 0,
-  UserInfoCellAnswered,
-  UserInfoCellQuestioned,
-  UserProfileTrendsCount
-};
+@class ZHProfileNormalStyleCell;
+@class ZHProfileCollectionStyleCell;
+@class ZHUserProfileWeiboStyleCell;
+@class ZHProfileBlacklistStyleCell;
 
-typedef NS_ENUM(NSInteger, UserProfileCollection) {		//收藏
-	UserInfoCellCollection = 0,
-  UserProfileCollectionCount
-};
-
-typedef NS_ENUM(NSInteger, UserInfoWeibo) {						//微博
-	UserInfoCellWeiboSina = 0,
-  UserInfoCellWeiboQQ,
-  UserInfoCellWeiboCount
-};
-
-typedef NS_ENUM(NSInteger, UserInfoBlacklist) {				//黑名单
-	UserInfoCellBlacklist = 0,
-  UserInfoCellBlacklistCount
-  
-};
-
-typedef NS_ENUM(NSInteger, UserInfoReport) {					//举报
-	USerInfoCellReport = 0,
-  UserInfoReportCount
-};
-
-typedef NS_ENUM(NSInteger, UserProfileSection) {
-	DetailSection = 0,
-  TrendsSection,
-  CollectionSection,
-  WeiboSection,
-  BlacklistSection,
-  ReportSection,
-  UserProfileSectionCount
-};
+typedef struct {
+	Class cellclass;
+  __unsafe_unretained id cellData;
+  ZHProfileCellPositionType cellPostionType;
+} cellBaseModel;
 
 @interface ZHUserInfoViewController ()
-
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) NSMutableArray *collectionArray;
 @property (nonatomic, copy) NSString *answer_count;
@@ -76,16 +44,19 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
 @property (nonatomic, strong) UIImageView *accessory;
 
 @property (nonatomic, strong) ZHUserInfoObject *profileObject;
+
+- (Class)getCellClassWithType:(NSInteger)type;
+
+
 @end
 
 @implementation ZHUserInfoViewController
+@synthesize tableView = tableView_;
 @synthesize answer_count = answer_count_;
 @synthesize question_count = question_count_;
 @synthesize favorite_count = favorite_count_;
 @synthesize weiboArray = weiboArray_;
 @synthesize accessory = accessory_;
-
-@synthesize profileObject = profileObject_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -100,9 +71,13 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
+  self.tableView = [[UITableView alloc] initWithFrame:[self.view bounds] style:UITableViewStyleGrouped];
+  [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundTextures.png"]]];
+  [self.view addSubview:self.tableView];
+  [self.tableView setDelegate:self];
+  [self.tableView setDataSource:self];
   
-  self.accessory = [[UIImageView alloc]
-                    initWithImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]];
   NSArray *detail = @[@"详细信息"];
   NSArray *dongtai = @[@"全部动态",@"答过",@"问过"];
   NSArray *collection = @[@"他的收藏"];
@@ -110,13 +85,14 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
   NSArray *jubao = @[@"举报"];
   
   self.dataArray = [NSMutableArray arrayWithObjects:detail,dongtai,collection,heimingdan,jubao, nil];
-  
   self.answer_count = @"0";
   self.question_count = @"0";
   self.favorite_count = @"0";
-  self.weiboArray = [NSMutableArray array];
+  [self.collectionArray addObject:answer_count_];
+  [self.collectionArray addObject:question_count_];
+  [self.collectionArray addObject:favorite_count_];
   
-  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.weiboArray = [NSMutableArray arrayWithCapacity:0];
   
   UIView *headerBG = [[UIView alloc] initWithFrame:CGRectMake(0, -600, 320, 600)];
   [headerBG setBackgroundColor:[UIColor colorWithRed:245/255.0 green:245.5/255.0 blue:245/255.0 alpha:1.0]];
@@ -135,9 +111,8 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
   
   [self.tableView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:headerBackGroundView];
-  
-  [self performSelector:@selector(setUpData:) withObject:userInfoModel.object afterDelay:4.5f];
-  
+  [self performSelector:@selector(setUpData:) withObject:userInfoModel.object afterDelay:1.0f];
+  [self.tableView reloadData];
 }
 
 - (void)setUpData:(ZHObject *)object
@@ -165,6 +140,8 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
   [self.collectionArray addObject:self.question_count];
   [self.collectionArray addObject:self.favorite_count];
   
+
+  [self.weiboArray removeAllObjects];
   if (self.profileObject.sina_weibo_name) {
     NSDictionary *sinaname = [NSDictionary dictionaryWithObject:self.profileObject.sina_weibo_name forKey:@"sina"];
     [self.weiboArray addObject:sinaname];
@@ -174,10 +151,12 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
     NSDictionary *qqname = [NSDictionary dictionaryWithObject:self.profileObject.qq_weibo_name forKey:@"qq"];
     [self.weiboArray addObject:qqname];
   }
-  
+  for (id obj in self.dataArray) {
+    if ([obj isEqualToArray:self.weiboArray]) {
+      [self.dataArray removeObject:self.weiboArray];
+    }
+  }
   [self.dataArray insertObject:self.weiboArray atIndex:WeiboSection];
-  
-  [self.tableView reloadData];
 }
 
 
@@ -187,10 +166,11 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
 }
 
 
-#pragma mark - UITableViewDelegate & UITableViewDataSource
+//#pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
   NSInteger section = 0;
   if ([self.weiboArray count] > 0) {
     section = UserProfileSectionCount;
@@ -200,12 +180,11 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
   }
 	return section;
 }
-
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   NSInteger row = 0;
+  BOOL isWeibo = [self.weiboArray count] > 0 ? YES : NO;
+  
   switch (section) {
     case DetailSection:
       row = UserProfileDetailCount;
@@ -216,235 +195,163 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
     case CollectionSection:
       row = UserProfileCollectionCount;
       break;
+      
     case WeiboSection:
-      row = [self.weiboArray count];
+      if (isWeibo) {
+        row = [self.weiboArray count];
+      } else {
+        row = UserInfoCellBlacklistCount;
+      }
       break;
     case BlacklistSection:
-      row = UserInfoCellBlacklistCount;
+      if (isWeibo) {
+        row = UserInfoCellBlacklistCount;
+      } else {
+        row = UserInfoReportCount;
+      }
       break;
     case ReportSection:
-      row = UserInfoReportCount;
+      if (isWeibo) {
+        row = UserInfoReportCount;
+      } else {
+        NSAssert(0, @"Index overload!");
+      }
       break;
+      
+      
     default:
       break;
+      
   }
   return row;
+	
 }
+
+- (Class)getCellClassWithType:(NSInteger)type
+{
+  Class class = nil;
+  
+  if (type == UserInfoCellDetail || type == UserInfoCellAllTrends) {
+    class = [ZHProfileNormalStyleCell class];
+  } else if (type == UserInfoCellAnswered || type == UserInfoCellQuestioned || type == UserInfoCellCollection) {
+    
+    class = [ZHProfileCollectionStyleCell class];
+  }  else if (type == UserInfoCellWeiboSina || type == UserInfoCellWeiboQQ) {
+  	class = [ZHUserProfileWeiboStyleCell class];
+  } else if (type == UserInfoCellBlacklist || type == USerInfoCellReport) {
+  	class = [ZHProfileBlacklistStyleCell class];
+  }
+  return class;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *normalCellID = @"NORMAL";
-  static NSString *collectionCellID = @"COLLECTION";
-  static NSString *weiboCellID = @"WEIBO";
-  static NSString *blackCellID = @"BLACK";
+    
+  cellBaseModel cellModel = [self createCellModelInTableView:tableView
+                                             forRowIndexPath:indexPath];
+  cellModel.cellclass = [self cellClassForIndexPath:indexPath];
   
-  NSInteger section = indexPath.section;
-  NSInteger row = indexPath.row;
-	
-  UITableViewCell *cell = nil;
+  Class cellClass = cellModel.cellclass;
+  id data = cellModel.cellData;
   
-  switch (section) {
-    case DetailSection:
-      switch (row) {
-        case UserInfoCellDetail:
-          cell = [tableView dequeueReusableCellWithIdentifier:normalCellID];
-          if (!cell) {
-            cell = [[ZHProfileNormalStyleCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:normalCellID];
-          }
-          [(ZHProfileNormalStyleCell *)cell bindCellTitle:[[self.dataArray
-                                                            objectAtIndex:DetailSection]
-                                                           objectAtIndex:UserInfoCellDetail]];
-          break;
-          
-        default:
-          break;
-      }
-      break;
-      
-    case TrendsSection:
-      switch (row) {
-        case UserInfoCellAllTrends:
-          cell = [tableView dequeueReusableCellWithIdentifier:normalCellID];
-          if (!cell) {
-            cell = [[ZHProfileNormalStyleCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:normalCellID];
-          }
-          
-          [(ZHProfileNormalStyleCell *)cell
-           bindCellTitle:[[self.dataArray
-                           objectAtIndex:TrendsSection]
-                          objectAtIndex:UserInfoCellAllTrends]];
-          break;
-          
-        case UserInfoCellAnswered:
-          cell = [tableView dequeueReusableCellWithIdentifier:collectionCellID];
-          if (!cell) {
-            cell = [[ZHProfileCollectionStyleCell alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:collectionCellID];
-          }
-          [(ZHProfileCollectionStyleCell *)cell bindCellTitle:[[self.dataArray
-                                                                objectAtIndex:TrendsSection]
-                                                               objectAtIndex:UserInfoCellAnswered]
-                                                        count:self.answer_count];
-          break;
-          
-        case UserInfoCellQuestioned:
-          cell = [tableView dequeueReusableCellWithIdentifier:collectionCellID];
-          if (!cell) {
-            cell = [[ZHProfileCollectionStyleCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                       reuseIdentifier:collectionCellID];
-          }
-          [(ZHProfileCollectionStyleCell *)cell
-           bindCellTitle:[[self.dataArray objectAtIndex:TrendsSection]
-                          objectAtIndex:UserInfoCellQuestioned]
-           count:self.question_count];
-          break;
-          
-        default:
-          break;
-          
-      }
-      
-      break;
-      
-    case CollectionSection:
-      switch (row) {
-        case UserInfoCellCollection:
-          cell = [tableView dequeueReusableCellWithIdentifier:collectionCellID];
-          if (!cell) {
-            cell = [self setupCellWithClass:[ZHProfileCollectionStyleCell class]
-                            reuseIdentifier:collectionCellID];
-          }
-          [(ZHProfileCollectionStyleCell *)cell bindCellTitle:[[self.dataArray
-                                                                objectAtIndex:CollectionSection]
-                                                               objectAtIndex:UserInfoCellCollection]
-                                                        count:self.favorite_count];
-          break;
-          
-        default:
-          break;
-      }
-      
-      break;
-      
-    case WeiboSection:
-      switch (row) {
-        case UserInfoCellWeiboSina:
-          cell = [tableView dequeueReusableCellWithIdentifier:weiboCellID];
-          if (!cell) {
-            cell = [self setupCellWithClass:[ZHUserProfileWeiboStyleCell class]
-                            reuseIdentifier:weiboCellID];
-          }
-          
-          [(ZHUserProfileWeiboStyleCell *)cell
-           bindWeiboObject:[self.weiboArray objectAtIndex:UserInfoCellWeiboSina]];
-          break;
-          
-        case UserInfoCellWeiboQQ:
-          cell = [tableView dequeueReusableCellWithIdentifier:weiboCellID];
-          if (!cell) {
-            cell = [self setupCellWithClass:[ZHUserProfileWeiboStyleCell class]
-                            reuseIdentifier:weiboCellID];
-          }
-          
-          [(ZHUserProfileWeiboStyleCell *)cell
-           bindWeiboObject:[self.weiboArray objectAtIndex:UserInfoCellWeiboQQ]];
-          break;
-          
-        default:
-          break;
-      }
-      
-      break;
-      
-      
-    case BlacklistSection:
-      switch (row) {
-        case UserInfoCellBlacklist:
-          cell = [tableView dequeueReusableCellWithIdentifier:blackCellID];
-          if (!cell) {
-            cell = [self setupCellWithClass:[ZHProfileBlacklistStyleCell class]
-                            reuseIdentifier:blackCellID];
-          }
-          
-          [(ZHProfileBlacklistStyleCell *)cell
-           bindCellTitle:[[self.dataArray
-                           objectAtIndex:BlacklistSection]
-                          objectAtIndex:UserInfoCellBlacklist]];
-          break;
-          
-        default:
-          break;
-      }
-      break;
-      
-    case ReportSection:
-      switch (row) {
-        case USerInfoCellReport:
-          cell = [tableView dequeueReusableCellWithIdentifier:blackCellID];
-          if (!cell) {
-            cell = [self setupCellWithClass:[ZHProfileBlacklistStyleCell class]
-                            reuseIdentifier:blackCellID];
-          }
-          [(ZHProfileBlacklistStyleCell *)cell
-           bindCellTitle:[[self.dataArray
-                           objectAtIndex:ReportSection]
-                          objectAtIndex:USerInfoCellReport]];
-          break;
-          
-        default:
-          NSAssert(0, @"Overflow cell");
-          break;
-      }
-      break;
-      
-      
-    default:
-      NSAssert(0, @"Overflow section");
-      break;
+  ZHProfileCellPositionType cellType = cellModel.cellPostionType;
+  ZHProfileBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
+  if (!cell) {
+    cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
+                            reuseIdentifier:NSStringFromClass(cellClass)];
+  }
+  
+  if ([cellClass isSubclassOfClass:[ZHProfileCollectionStyleCell class]]) {
+    [cell bindCellTitle:data detail:[self.collectionArray objectAtIndex:indexPath.row] withCellType:cellType];
+  } else {
+    [cell bindWithObject:data
+            withCellType:cellType];
   }
   
   return cell;
 }
-
-
-- (UITableViewCell *)setupCellWithClass:(Class)class reuseIdentifier:(NSString *)reuseid
-{
-  return [[class alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseid];
+- (cellBaseModel)createCellModelInTableView:(UITableView *)tableView
+                            forRowIndexPath:(NSIndexPath *)indexPath {
+	cellBaseModel cellModel;
+  cellModel.cellclass = [self cellClassForIndexPath:indexPath];
+  cellModel.cellData = [[self.dataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+  ZHProfileCellPositionType cellType;
+  
+  NSInteger section = indexPath.section;
+  NSInteger row = indexPath.row;
+  if ([tableView numberOfRowsInSection:section] == 1) {
+    cellType = CellSingle;
+  } else {
+    if (row == 0) {
+      cellType = CellTop;
+    } else if (row == [tableView numberOfRowsInSection:section] - 1) {
+  		cellType = CellBottom;
+    } else {
+    	cellType = CellMiddle;
+    }
+    
+  }
+  cellModel.cellPostionType = cellType;
+  
+  return cellModel;
 }
 
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
+- (Class)cellClassForIndexPath:(NSIndexPath *)indexPath
 {
-  if ([tableView numberOfRowsInSection:indexPath.section] == 1) {
-    [cell setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellSingleNormal.png"]]];
-    [cell setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellSingleHighlight.png"]]];
-  } else {
-    
-    if (indexPath.row == 0) {
-      [cell setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellTopNormal.png"]]];
-      [cell setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellTopHighlight.png"]]];
-      
-      
-    } else if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
-      [cell setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellBottomNormal.png"]]];
-      [cell setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellBottomHighlight.png"]]];
-      
+	NSInteger section = indexPath.section;
+  NSInteger row = indexPath.row;
+  Class cellClass;
+  
+  if (section ==0 ) {
+    if (row == 0) {
+      cellClass = [ZHProfileNormalStyleCell class];
     } else {
-      [cell setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellMiddleNormal.png"]]];
-      
-      [cell setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ZHCellMiddleHighlight.png"]]];
+    	NSAssert(0, @"First Section Cell indexPath OverLoad!");
+    }
+  } else if (section == 1) {
+  	if (row == 0) {
+      cellClass = [ZHProfileNormalStyleCell class];
+    } else if (row == 1) {
+    	cellClass = [ZHProfileCollectionStyleCell class];
+    } else if (row == 2) {
+    	cellClass = [ZHProfileCollectionStyleCell class];
+    } else {
+    	NSAssert(0, @"Second Section Cell indexPath OverLoad!");
+    }
+  } else if (section == 2) {
+    if (row == 0) {
+      cellClass = [ZHProfileCollectionStyleCell class];
+    } else {
+      NSAssert(0, @"Third Section Cell indexPath OverLoad!");
+    }
+  } else if (section == 3) {
+    if ([self.weiboArray count] > 0) {
+      if (row == 0) {
+        cellClass = [ZHUserProfileWeiboStyleCell class];
+      } else if (row == 1) {
+        cellClass = [ZHUserProfileWeiboStyleCell class];
+      } else {
+        NSAssert(0, @"Weibo Section IndexPath Overload!");
+      }
+    } else {
+      if (row == 0) {
+        cellClass = [ZHProfileBlacklistStyleCell class];
+      } else {
+        NSAssert(0, @"Black Section Index Overload!");
+      }
+    }
+  } else if (section == 4) {
+    if (row == 0) {
+      cellClass = [ZHProfileBlacklistStyleCell class];
+    } else {
+      NSAssert(0, @"Block section overload indexPath!s");
     }
   }
   
+  return cellClass;
 }
-
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -42,14 +42,16 @@
   
 }
 
-- (void)bindCellTitle:(NSString *)cellTitle
+- (void)bindWithObject:(id)object
 {
+	NSLog(@"Object:%@",object);
+  NSString *cellTitle = (NSString *)object;
   [self.profileCellTitleLabel setText:nil];
   
 	[self.profileCellTitleLabel setText:cellTitle];
-  
-  [self layoutIfNeeded];
+
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

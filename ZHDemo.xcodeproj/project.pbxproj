@@ -207,7 +207,6 @@
 		CA77DAB5178FD86F0012FE4F /* ZHUserInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAB4178FD86E0012FE4F /* ZHUserInfoObject.m */; };
 		CA77DAC1178FEA290012FE4F /* ZHAnswerHeaderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DAC0178FEA290012FE4F /* ZHAnswerHeaderObject.m */; };
 		CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */; };
-		CA85042617999E9800B3EB1B /* ZHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA85042517999E9800B3EB1B /* ZHViewController.m */; };
 		CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544B178EA2B2005552CE /* UIKit.framework */; };
 		CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544D178EA2B2005552CE /* Foundation.framework */; };
 		CA8C5456178EA2B2005552CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8C5454178EA2B2005552CE /* InfoPlist.strings */; };
@@ -504,8 +503,6 @@
 		CA77DAC0178FEA290012FE4F /* ZHAnswerHeaderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderObject.m; sourceTree = "<group>"; };
 		CA77DADC17900F6C0012FE4F /* ZHCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionCell.h; sourceTree = "<group>"; };
 		CA77DADD17900F6C0012FE4F /* ZHCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionCell.m; sourceTree = "<group>"; };
-		CA85042417999E9800B3EB1B /* ZHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHViewController.h; sourceTree = "<group>"; };
-		CA85042517999E9800B3EB1B /* ZHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHViewController.m; sourceTree = "<group>"; };
 		CA8C5448178EA2B2005552CE /* ZHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C544B178EA2B2005552CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CA8C544D178EA2B2005552CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1044,8 +1041,6 @@
 			children = (
 				CA54FA9F178EA7CD007DC220 /* ZHCollectionViewController.h */,
 				CA54FAA0178EA7CD007DC220 /* ZHCollectionViewController.m */,
-				CA85042417999E9800B3EB1B /* ZHViewController.h */,
-				CA85042517999E9800B3EB1B /* ZHViewController.m */,
 			);
 			name = Collection;
 			sourceTree = "<group>";
@@ -1528,7 +1523,6 @@
 				CA77DAC1178FEA290012FE4F /* ZHAnswerHeaderObject.m in Sources */,
 				CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */,
 				CA2F5D7C1798D2C5001A2872 /* ZHUserInfoListView.m in Sources */,
-				CA85042617999E9800B3EB1B /* ZHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

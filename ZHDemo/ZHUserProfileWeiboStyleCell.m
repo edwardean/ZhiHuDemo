@@ -80,6 +80,27 @@
   [self.weiboNameLabel setText:weiboName];
 }
 
+- (void)bindWithObject:(id)object
+{
+	NSLog(@"%s ,, %@",__func__,object);
+  NSDictionary *weiboDic = (NSDictionary *)object;
+  [self clearCellContent];
+  
+  UIImage *sina = [UIImage imageNamed:@"ZHProfileViewSinaWeiboIcon.png"];
+  UIImage *qq = [UIImage imageNamed:@"ZHProfileViewTencentWeiboIcon.png"];
+  
+  if ([weiboDic objectForKey:@"sina"]) {
+    [self.weiboIconImageView setImage:sina];
+    [self.weiboNameLabel setText:[weiboDic objectForKey:@"sina"]];
+  }
+  if ([weiboDic objectForKey:@"qq"]) {
+    [self.weiboIconImageView setImage:qq];
+    [self.weiboNameLabel setText:[weiboDic objectForKey:@"qq"]];
+    
+  }
+
+}
+
 - (void)bindWeiboObject:(NSDictionary *)weiboDic
 {
 	[self clearCellContent];

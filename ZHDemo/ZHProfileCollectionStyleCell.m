@@ -57,6 +57,12 @@
   [self.profileCellTitleLabel setText:nil];
 }
 
+- (void)bindWithObject:(id)object
+{
+	NSLog(@"%s %@",__func__,object);
+  //NSString *cellTitle = (NSString *)object;
+}
+
 - (void)bindCellTitle:(NSString *)cellTitle count:(NSString *)countString
 {
 	[self clearCellContent];
@@ -64,6 +70,15 @@
   [self.profileCellTitleLabel setText:cellTitle];
   [self.profileCellCountLabel setText:countString];
   
+}
+
+- (void)bindCellTitle:(NSString *)title detail:(NSString *)detail
+{
+  [self clearCellContent];
+  
+  [self.profileCellTitleLabel setText:title];
+  [self.profileCellCountLabel setText:detail];
+	
 }
 
 - (void)layoutSubviews

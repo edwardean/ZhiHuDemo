@@ -38,11 +38,17 @@
 	[[self cellTitleLabel] setText:nil];
 }
 
-- (void)bindCellTitle:(NSString *)cellTitle
+- (void)bindWithObject:(id)object
 {
+  NSString *cellTitle = (NSString *)object;
   [self.cellTitleLabel setText:nil];
   
   [self.cellTitleLabel setText:cellTitle];
+}
+
+- (void)bindCellTitle:(NSString *)cellTitle
+{
+
   
 }
 

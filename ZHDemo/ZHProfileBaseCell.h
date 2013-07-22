@@ -24,8 +24,16 @@ typedef enum {
  功能：
  1 cell 背景图片设置
  2 绑定数据，会执行 bindWithObject:(id)object
- */
+*/
+
 - (void)bindWithObject:(id)object
           withCellType:(ZHProfileCellPositionType)aCellType;
+
+- (void)bindCellTitle:(NSString *)title
+               detail:(NSString *)detail
+         withCellType:(ZHProfileCellPositionType)aCellType;
+
+- (void)bindCellTitle:(NSString *)title
+               detail:(NSString *)detail;
 
 @end

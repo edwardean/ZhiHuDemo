@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ZHProfileCollectionStyleCell : UITableViewCell
+#import "ZHProfileBaseCell.h"
+@interface ZHProfileCollectionStyleCell : ZHProfileBaseCell
 
 - (void)bindCellTitle:(NSString *)cellTitle count:(NSString *)countString;
 

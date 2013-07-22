@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZHProfileBaseCell.h"
 
-@interface ZHProfileNormalStyleCell : UITableViewCell
-
-- (void)bindCellTitle:(NSString *)cellTitle;
+@interface ZHProfileNormalStyleCell : ZHProfileBaseCell
 
 @end

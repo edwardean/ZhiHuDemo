@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZHProfileBaseCell.h"
 typedef NS_ENUM(NSInteger, WeiboType) {
   SinaWeibo = 0,
   QQWeibo,
 };
 
 
-@interface ZHUserProfileWeiboStyleCell : UITableViewCell
+@interface ZHUserProfileWeiboStyleCell : ZHProfileBaseCell
 
 - (void)bindWeiboCellWithType:(WeiboType)type weiboName:(NSString *)weiboName;
 
