@@ -8,16 +8,32 @@
 
 #import "ZHFeedsCell.h"
 
+@interface ZHFeedsCell ()
+
+@property (nonatomic, strong, readwrite) UILabel *actorsLabel;							//某某某
+@property (nonatomic, strong, readwrite) UILabel *feedLabel;								//回答/赞同了该问题
+@property (nonatomic, strong, readwrite) UIImageView *avatarImageView;	    //头像
+@property (nonatomic, strong, readwrite) UILabel *titleLabel;								//标题
+@property (nonatomic, strong, readwrite) UIImageView *voteupBackgroundView;	//标签背景
+@property (nonatomic, strong, readwrite) UILabel *voteupLabel;							//标签
+@property (nonatomic, strong, readwrite) UILabel *answerExcerptLabel;				//问题描述
+
+@end
+
 @implementation ZHFeedsCell
+@synthesize actorsLabel = actorsLabel_;
+@synthesize feedLabel = feedLabel_;
+@synthesize avatarImageView = avatarImageView_;
+@synthesize titleLabel = titleLabel_;
+@synthesize voteupBackgroundView = voteupBackgroundView_;
+@synthesize voteupLabel = voteupLabel_;
+@synthesize answerExcerptLabel = answerExcerptLabel_;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
-//    self.backgroundView = [[UIImageView alloc]
-//                           initWithImage:[[UIImage
-//                              imageNamed:@"ZHExploreListItemBase.png"]
-//             resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+    
   }
   return self;
 }
