@@ -35,3 +35,7 @@ ZHDemo
 ![](./screenshot/10.png)
 
 ![](./screenshot/11.png)
+
+增加了最新动态界面
+
+![](./screenshot/12.png)

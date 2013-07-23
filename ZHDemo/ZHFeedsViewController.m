@@ -64,7 +64,14 @@
   self.navigationItem.rightBarButtonItem = rightButtonItem;
   
   [self registerCellClass:[ZHFeedsCell class]];
-  ZHParser *parser = [ZHFeedsParserFactory ParserFactory];
+  
+  [self performSelector:@selector(dataReady) withObject:nil afterDelay:2.5f];
+  
+}
+
+- (void)dataReady
+{
+	ZHParser *parser = [ZHFeedsParserFactory ParserFactory];
   ZHModel *model = [parser parser];
   
   [self modelDidFinishLoading:model];
