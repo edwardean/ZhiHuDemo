@@ -1,5 +1,10 @@
 ZHDemo
 =====
+
+AppleDelegate类中有几个未使用的ViewController类，分别对应几个不同的view
+---
+
+
 7/13:初步完成第一个界面设计
 
 ![img1](./screenshot/1.png)
