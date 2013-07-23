@@ -20,4 +20,5 @@
 
 + (NSData *)UserDetailData;
 
++ (NSData *)FeedsData;
 @end

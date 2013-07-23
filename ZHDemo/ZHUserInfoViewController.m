@@ -47,7 +47,7 @@ typedef struct {
 @end
 
 @implementation ZHUserInfoViewController
-@synthesize tableView = tableView_;
+//@synthesize tableView = tableView_;
 @synthesize answer_count = answer_count_;
 @synthesize question_count = question_count_;
 @synthesize favorite_count = favorite_count_;
@@ -68,10 +68,7 @@ typedef struct {
 {
   [super viewDidLoad];
   
-  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
-  [self.view addSubview:self.tableView];
-  [self.tableView setDelegate:self];
-  [self.tableView setDataSource:self];
+  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   NSArray *detail = @[@"详细信息"];
   NSArray *dongtai = @[@"全部动态",@"答过",@"问过"];

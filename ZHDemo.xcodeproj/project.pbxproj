@@ -14,6 +14,14 @@
 		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
 		CA131EB71799380900A9FB22 /* ZHListViewArrowRightHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CA131EB51799380900A9FB22 /* ZHListViewArrowRightHighlight.png */; };
 		CA131EB81799380900A9FB22 /* ZHListViewArrowRightHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA131EB61799380900A9FB22 /* ZHListViewArrowRightHighlight@2x.png */; };
+		CA20C27F179E441A00B6DBBD /* ZHFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20C27E179E441A00B6DBBD /* ZHFeedsViewController.m */; };
+		CA20C283179E44AF00B6DBBD /* ZHFeedsParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20C282179E44AF00B6DBBD /* ZHFeedsParserFactory.m */; };
+		CA20C286179E44C400B6DBBD /* ZHFeedsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20C285179E44C400B6DBBD /* ZHFeedsParser.m */; };
+		CA20C28D179E452E00B6DBBD /* feeds1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C288179E452E00B6DBBD /* feeds1.json */; };
+		CA20C28F179E452E00B6DBBD /* feeds3.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C28A179E452E00B6DBBD /* feeds3.json */; };
+		CA20C290179E452E00B6DBBD /* feeds4.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C28B179E452E00B6DBBD /* feeds4.json */; };
+		CA20C291179E452E00B6DBBD /* feeds5.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C28C179E452E00B6DBBD /* feeds5.json */; };
+		CA20C293179E455200B6DBBD /* feeds2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C292179E455200B6DBBD /* feeds2.json */; };
 		CA2B86921797E0070068F056 /* ZHCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2B86911797E0070068F056 /* ZHCheckBox.m */; };
 		CA2F5D7C1798D2C5001A2872 /* ZHUserInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F5D7B1798D2C4001A2872 /* ZHUserInfoListView.m */; };
 		CA38A83D1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA38A83B1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png */; };
@@ -283,6 +291,17 @@
 		CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderView.m; sourceTree = "<group>"; };
 		CA131EB51799380900A9FB22 /* ZHListViewArrowRightHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHListViewArrowRightHighlight.png; sourceTree = "<group>"; };
 		CA131EB61799380900A9FB22 /* ZHListViewArrowRightHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHListViewArrowRightHighlight@2x.png"; sourceTree = "<group>"; };
+		CA20C27D179E441A00B6DBBD /* ZHFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsViewController.h; sourceTree = "<group>"; };
+		CA20C27E179E441A00B6DBBD /* ZHFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsViewController.m; sourceTree = "<group>"; };
+		CA20C281179E44AF00B6DBBD /* ZHFeedsParserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsParserFactory.h; sourceTree = "<group>"; };
+		CA20C282179E44AF00B6DBBD /* ZHFeedsParserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsParserFactory.m; sourceTree = "<group>"; };
+		CA20C284179E44C400B6DBBD /* ZHFeedsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsParser.h; sourceTree = "<group>"; };
+		CA20C285179E44C400B6DBBD /* ZHFeedsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsParser.m; sourceTree = "<group>"; };
+		CA20C288179E452E00B6DBBD /* feeds1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds1.json; sourceTree = "<group>"; };
+		CA20C28A179E452E00B6DBBD /* feeds3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds3.json; sourceTree = "<group>"; };
+		CA20C28B179E452E00B6DBBD /* feeds4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds4.json; sourceTree = "<group>"; };
+		CA20C28C179E452E00B6DBBD /* feeds5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds5.json; sourceTree = "<group>"; };
+		CA20C292179E455200B6DBBD /* feeds2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds2.json; sourceTree = "<group>"; };
 		CA2B86901797E0070068F056 /* ZHCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCheckBox.h; sourceTree = "<group>"; };
 		CA2B86911797E0070068F056 /* ZHCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCheckBox.m; sourceTree = "<group>"; };
 		CA2F5D7A1798D2C4001A2872 /* ZHUserInfoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoListView.h; sourceTree = "<group>"; };
@@ -611,6 +630,45 @@
 			name = AnswerCells;
 			sourceTree = "<group>";
 		};
+		CA20C279179E43B300B6DBBD /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				CA20C27D179E441A00B6DBBD /* ZHFeedsViewController.h */,
+				CA20C27E179E441A00B6DBBD /* ZHFeedsViewController.m */,
+			);
+			name = Feeds;
+			sourceTree = "<group>";
+		};
+		CA20C280179E446900B6DBBD /* FeedsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CA20C281179E44AF00B6DBBD /* ZHFeedsParserFactory.h */,
+				CA20C282179E44AF00B6DBBD /* ZHFeedsParserFactory.m */,
+				CA20C284179E44C400B6DBBD /* ZHFeedsParser.h */,
+				CA20C285179E44C400B6DBBD /* ZHFeedsParser.m */,
+			);
+			name = FeedsInfo;
+			sourceTree = "<group>";
+		};
+		CA20C287179E452E00B6DBBD /* feeds */ = {
+			isa = PBXGroup;
+			children = (
+				CA20C288179E452E00B6DBBD /* feeds1.json */,
+				CA20C292179E455200B6DBBD /* feeds2.json */,
+				CA20C28A179E452E00B6DBBD /* feeds3.json */,
+				CA20C28B179E452E00B6DBBD /* feeds4.json */,
+				CA20C28C179E452E00B6DBBD /* feeds5.json */,
+			);
+			path = feeds;
+			sourceTree = "<group>";
+		};
+		CA20C294179E472800B6DBBD /* FeedsObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FeedsObject;
+			sourceTree = "<group>";
+		};
 		CA54FA8A178EA707007DC220 /* Verdons */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +686,7 @@
 		CA54FAC4178EABBC007DC220 /* DataParser */ = {
 			isa = PBXGroup;
 			children = (
+				CA20C280179E446900B6DBBD /* FeedsInfo */,
 				CADC8B8B1793F91500637D4A /* UserInfo */,
 				CADC8B891793F8E100637D4A /* Answer */,
 				CADC8B881793F8D400637D4A /* Collection */,
@@ -877,6 +936,7 @@
 		CA5D4A8E1797A30A005EF79B /* JsonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CA20C287179E452E00B6DBBD /* feeds */,
 				CA5D49EE1797A300005EF79B /* userinfo */,
 				CA5D49E81797A2FF005EF79B /* userdetail */,
 				CA5D49751797A2FF005EF79B /* collections */,
@@ -901,6 +961,7 @@
 		CA77DABC178FD8B40012FE4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA20C279179E43B300B6DBBD /* Feeds */,
 				CADC8B821793F85E00637D4A /* Collection */,
 				CADC8B831793F86C00637D4A /* Answer */,
 				CADC8B841793F87600637D4A /* UserInfo */,
@@ -912,6 +973,7 @@
 		CA77DABD178FD8F90012FE4F /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				CA20C294179E472800B6DBBD /* FeedsObject */,
 				CADC8B8F1793F95500637D4A /* UserInfo+UserDetail */,
 				CADC8B8E1793F94A00637D4A /* AnswerHeader */,
 				CADC8B8D1793F94100637D4A /* Collection */,
@@ -1450,6 +1512,11 @@
 				CAEF26C51797C03B00F7F111 /* ZHRegisterButton3Normal@2x.png in Resources */,
 				CA5D4A411797A300005EF79B /* ZHDMViewInputBox.png in Resources */,
 				CA5D4A491797A300005EF79B /* ZHExploreShuffleIconNext.png in Resources */,
+				CA20C28D179E452E00B6DBBD /* feeds1.json in Resources */,
+				CA20C28F179E452E00B6DBBD /* feeds3.json in Resources */,
+				CA20C290179E452E00B6DBBD /* feeds4.json in Resources */,
+				CA20C291179E452E00B6DBBD /* feeds5.json in Resources */,
+				CA20C293179E455200B6DBBD /* feeds2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1521,6 +1588,9 @@
 				CA77DAC1178FEA290012FE4F /* ZHAnswerHeaderObject.m in Sources */,
 				CA77DADE17900F6C0012FE4F /* ZHCollectionCell.m in Sources */,
 				CA2F5D7C1798D2C5001A2872 /* ZHUserInfoListView.m in Sources */,
+				CA20C27F179E441A00B6DBBD /* ZHFeedsViewController.m in Sources */,
+				CA20C283179E44AF00B6DBBD /* ZHFeedsParserFactory.m in Sources */,
+				CA20C286179E44C400B6DBBD /* ZHFeedsParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

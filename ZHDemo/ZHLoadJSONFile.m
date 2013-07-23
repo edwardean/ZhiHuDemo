@@ -61,6 +61,14 @@ static NSString * const collections9 = @"collections9";
 static NSString * const collections10 = @"collections10";
 static NSString * const collections11 = @"collections11";
 
+
+static NSString * const feeds1 = @"feeds1";
+static NSString * const feeds2 = @"feeds2";
+static NSString * const feeds3 = @"feeds3";
+static NSString * const feeds4 = @"feeds4";
+static NSString * const feeds5 = @"feeds5";
+
+
 @interface ZHLoadJSONFile ()
 
 + (NSString *)AnswersFilePath;
@@ -72,6 +80,8 @@ static NSString * const collections11 = @"collections11";
 + (NSString *)UserInfoFilePath;
 
 + (NSString *)CollectionsFilePath;
+
++ (NSString *)FeedsFilePath;
 
 + (NSString *)BundleFilePath:(NSString *)fileName;
 
@@ -88,44 +98,47 @@ static NSString * const collections11 = @"collections11";
   }
 }
 
++ (NSString *)RandomFilePathFromArray:(NSArray *)array
+{
+	NSUInteger arrayIndex = arc4random() % [array count];
+  return [array objectAtIndex:arrayIndex];
+}
+
 + (NSString *)CollectionsFilePath
 {
   NSArray *array = @[collections1,collections2,collections3,collections4,collections5,collections6,collections7,collections8,collections9,collections10,collections11];
-  NSUInteger arrayIndex = arc4random() % [array count];
-  NSString *filePath = [array objectAtIndex:arrayIndex];
-	return [ZHLoadJSONFile BundleFilePath:filePath];
+	return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
+}
+
++ (NSString *)FeedsFilePath
+{
+	NSArray *array = @[feeds1,feeds2,feeds3,feeds4,feeds5];
+  
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
 + (NSString *)AnswerHeaderFilePath
 {
   NSArray *array = @[header1,header10,header2,header3,header4,header5,header6,header7,header8,header9];
-  NSUInteger arrayIndex = arc4random() % [array count];
-  NSString *filePath = [array objectAtIndex:arrayIndex];
-	return [ZHLoadJSONFile BundleFilePath:filePath];
+	return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
 + (NSString *)UserDetailFilePath
 {
   NSArray *array = @[detail1,detail2,detail3,detail4,detail5];
-  NSUInteger arrayIndex = arc4random() % [array count];
-	NSString *filePath =  [array objectAtIndex:arrayIndex];
-  return [ZHLoadJSONFile BundleFilePath:filePath];
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
 + (NSString *)UserInfoFilePath
 {
 	NSArray *array = @[info1,info2,info3,info4,info5,info6,info7,info8,info9,info10];
-  NSUInteger arrayIndex = arc4random() % [array count];
-  NSString *filePath = [array objectAtIndex:arrayIndex];
-  return [ZHLoadJSONFile BundleFilePath:filePath];
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
 + (NSString *)AnswersFilePath
 {
   NSArray *array = @[answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10];
-  NSUInteger arrayIndex = arc4random() % [array count];
-  NSString *filePath = [array objectAtIndex:arrayIndex];
-	return [ZHLoadJSONFile BundleFilePath:filePath];
+	return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
 + (NSData *)CollectionData
@@ -151,6 +164,11 @@ static NSString * const collections11 = @"collections11";
 + (NSData *)AnswerHeaderData
 {
 	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile AnswerHeaderFilePath]];
+}
+
++ (NSData *)FeedsData
+{
+	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile FeedsFilePath]];
 }
 
 @end
