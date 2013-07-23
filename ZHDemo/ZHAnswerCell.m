@@ -77,9 +77,8 @@
     
     self.backgroundView = [[UIImageView alloc]
                            initWithImage:[[UIImage
-                                           imageNamed:@"ZHExploreListItemBase.png"]
-                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
-    //self.backgroundView = cellBackgroundView_;
+                              imageNamed:@"ZHExploreListItemBase.png"]
+             resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
     
     
     // answerTitleLabel

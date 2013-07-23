@@ -31,7 +31,7 @@
 {
   [super viewDidLoad];
   
-  self.listView.contentOffset = CGPointMake(0, -10);
+  self.title = @"热门收藏";
   
   [self registerCellClass:[ZHCollectionCell class]];
 	

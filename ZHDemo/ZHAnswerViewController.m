@@ -21,23 +21,9 @@
 
 @interface ZHAnswerViewController ()
 
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *des;
-@property (nonatomic) NSString *avatar_url;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *follower_count;
-@property (nonatomic) NSString *comment_count;
-
 @end
 
 @implementation ZHAnswerViewController
-
-@synthesize title = title_;
-@synthesize des = des_;
-@synthesize avatar_url = avatar_url_;
-@synthesize name = name_;
-@synthesize follower_count = follower_count_;
-@synthesize comment_count = comment_count_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +40,7 @@
   
   [self registerCellClass:[ZHAnswerCell class]];
   
-  
+  [self setTitle:@"回答"];
 	// Header View
   ZHAnswerHeaderView *headerView = [[ZHAnswerHeaderView alloc]
                                     initWithFrame:CGRectMake(0, 0, 320, 1)];
@@ -74,11 +60,10 @@
   [headerView bindHeaderContentWithObject:answerHeaderModel.object];
   imgView.frame = headerView.bounds;
   
-  // Cell  
+  // Cell
   ZHParser *cellContentsParser = [ZHAnswerFactory ParserFactory];
   ZHModel *cellContentsModel = [cellContentsParser parser];
   
-  //[self numberOfSectionForListView:cellContentsModel.objects.count];
   [self modelDidFinishLoading:cellContentsModel];
   
   [self.listView setTableHeaderView:headerView];

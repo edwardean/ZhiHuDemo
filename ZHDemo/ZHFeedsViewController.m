@@ -7,6 +7,7 @@
 //
 
 #import "ZHFeedsViewController.h"
+#import "ZHFeedsCell.h"
 
 @interface ZHFeedsViewController ()
 
@@ -27,6 +28,8 @@
 {
   [super viewDidLoad];
 	self.title = @"最新动态";
+  
+  [self registerCellClass:[ZHFeedsCell class]];
 }
 
 - (void)didReceiveMemoryWarning

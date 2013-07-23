@@ -68,7 +68,9 @@ typedef struct {
 {
   [super viewDidLoad];
   
-  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.title = @"资料";
+  
+  self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
   [self.tableView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
   
   [self.view addSubview:self.tableView];
@@ -257,12 +259,8 @@ typedef struct {
     cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
                             reuseIdentifier:NSStringFromClass(cellClass)];
   }
-	NSLog(@"Out Class:%@",NSStringFromClass(cellClass));
+  
   if ([cellClass isSubclassOfClass:[ZHProfileCollectionStyleCell class]]) {
-    NSLog(@"In Class:%@",NSStringFromClass(cellClass));
-    NSLog(@"IndexPath:%@",indexPath);
-    NSLog(@"Data:%@ Detail\n\n\n",data);
-    
     [cell bindCellTitle:data
                  detail:[self.collectionArray objectAtIndex:indexPath.row]
            withCellType:cellType];

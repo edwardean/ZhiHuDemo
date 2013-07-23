@@ -10,6 +10,7 @@
 #import "ZHCollectionViewController.h"
 #import "ZHAnswerViewController.h"
 #import "ZHUserInfoViewController.h"
+#import "ZHFeedsViewController.h"
 
 @implementation ZHAppDelegate
 
@@ -30,9 +31,17 @@
                                                   initWithNibName:nil
                                                   bundle:nil];
   
+  ZHFeedsViewController *feedsViewController = [[ZHFeedsViewController alloc] initWithNibName:nil
+                                                                                       bundle:nil];
   
   self.navigationConreoller = [[UINavigationController alloc]
-                               initWithRootViewController:userInfoController];
+                               initWithRootViewController:answerController];
+  
+  
+  if ([[self.navigationConreoller navigationBar] respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+    [[self.navigationConreoller navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+  } 
+  
   
   self.window = [[UIWindow alloc]
                  initWithFrame:[[UIScreen mainScreen]bounds]];
