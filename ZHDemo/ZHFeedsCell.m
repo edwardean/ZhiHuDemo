@@ -14,12 +14,22 @@
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
-    self.backgroundView = [[UIImageView alloc]
-                           initWithImage:[[UIImage
-                              imageNamed:@"ZHExploreListItemBase.png"]
-             resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+//    self.backgroundView = [[UIImageView alloc]
+//                           initWithImage:[[UIImage
+//                              imageNamed:@"ZHExploreListItemBase.png"]
+//             resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
   }
   return self;
+}
+
++ (CGFloat)RowHeightWitObject:(id)object
+{
+	return 144.0f;
+}
+
+- (void)bindWithObject:(id)object
+{
+
 }
 
 @end

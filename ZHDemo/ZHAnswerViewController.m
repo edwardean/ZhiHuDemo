@@ -50,9 +50,6 @@
                            topCapHeight:28];
   
 	UIImageView *imgView = [[UIImageView alloc] initWithImage:resizedImage];
-  headerView.clipsToBounds = NO;
-  imgView.clipsToBounds = YES;
-  
   [headerView addSubview:imgView];
   
   ZHParser *answerHeaderParser = [ZHAnswerHeaderFactory ParserFactory];
@@ -65,7 +62,6 @@
   ZHModel *cellContentsModel = [cellContentsParser parser];
   
   [self modelDidFinishLoading:cellContentsModel];
-  
   [self.listView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:imgView];
   

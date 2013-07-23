@@ -57,6 +57,7 @@
     if (voteup_count) {
       [feedsDic setObject:voteup_count forKey:@"voteup_count"];
     }
+    
     ZHFeedsObject *object  =[ZHFeedsObject objectWithData:feedsDic];
     [self.feedArray addObject:object];
   }

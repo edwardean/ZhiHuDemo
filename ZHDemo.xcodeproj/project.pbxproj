@@ -56,6 +56,8 @@
 		CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F77178F9D5F00383B89 /* ZHUserInfoParser.m */; };
 		CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */; };
 		CA591F4817979F7400B20A26 /* ZHListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA591F4717979F7400B20A26 /* ZHListView.framework */; };
+		CA5B26BD179E66BA000771F3 /* ZHNavigationBarSearchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BB179E66BA000771F3 /* ZHNavigationBarSearchIcon.png */; };
+		CA5B26BE179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */; };
 		CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D49551797A286005EF79B /* UIImage+RounedImage.m */; };
 		CA5D495D1797A2AE005EF79B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D495C1797A2AE005EF79B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA5D49F91797A300005EF79B /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49601797A2FF005EF79B /* answers.json */; };
@@ -355,6 +357,8 @@
 		CA561F7C178FA50800383B89 /* ZHAnswerHeaderParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerHeaderParser.h; sourceTree = "<group>"; };
 		CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerHeaderParser.m; sourceTree = "<group>"; };
 		CA591F4717979F7400B20A26 /* ZHListView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZHListView.framework; path = ZHDemo/ZHListView.framework; sourceTree = "<group>"; };
+		CA5B26BB179E66BA000771F3 /* ZHNavigationBarSearchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZHNavigationBarSearchIcon.png; sourceTree = "<group>"; };
+		CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHNavigationBarSearchIcon@2x.png"; sourceTree = "<group>"; };
 		CA5D49541797A286005EF79B /* UIImage+RounedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RounedImage.h"; path = "Vendors/UIImage+RounedImage.h"; sourceTree = "<group>"; };
 		CA5D49551797A286005EF79B /* UIImage+RounedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RounedImage.m"; path = "Vendors/UIImage+RounedImage.m"; sourceTree = "<group>"; };
 		CA5D495B1797A2AE005EF79B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -778,6 +782,8 @@
 		CA5D49811797A2FF005EF79B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CA5B26BB179E66BA000771F3 /* ZHNavigationBarSearchIcon.png */,
+				CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */,
 				CA5D49821797A2FF005EF79B /* AvatarFemale100.png */,
 				CA5D49831797A2FF005EF79B /* AvatarFemale100@2x.png */,
 				CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */,
@@ -1381,6 +1387,7 @@
 				CA5D4A571797A300005EF79B /* ZHFollowButtonNormal.png in Resources */,
 				CA5D4A231797A300005EF79B /* AvatarMaskXL.png in Resources */,
 				CA5D4A3A1797A300005EF79B /* ZHCellBottomNormal@2x.png in Resources */,
+				CA5B26BE179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png in Resources */,
 				CA5D4A321797A300005EF79B /* NavigationBarShadow@2x.png in Resources */,
 				CA5D4A5C1797A300005EF79B /* ZHNavigationBarActionIcon@2x.png in Resources */,
 				CA5D4A621797A300005EF79B /* ZHNavigationBarShuffleIcon@2x.png in Resources */,
@@ -1525,6 +1532,7 @@
 				CA20C28D179E452E00B6DBBD /* feeds1.json in Resources */,
 				CA20C28F179E452E00B6DBBD /* feeds3.json in Resources */,
 				CA20C290179E452E00B6DBBD /* feeds4.json in Resources */,
+				CA5B26BD179E66BA000771F3 /* ZHNavigationBarSearchIcon.png in Resources */,
 				CA20C291179E452E00B6DBBD /* feeds5.json in Resources */,
 				CA20C293179E455200B6DBBD /* feeds2.json in Resources */,
 			);
