@@ -27,7 +27,8 @@
   if (self) {
     
     self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]];
+                          initWithImage:[UIImage
+                             imageNamed:@"ZHListViewArrowRight.png"]];
     
     self.profileCellTitleLabel = [[UILabel alloc] init];
     [profileCellTitleLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
@@ -57,21 +58,6 @@
   [self.profileCellTitleLabel setText:nil];
 }
 
-- (void)bindWithObject:(id)object
-{
-	NSLog(@"%s %@",__func__,object);
-  //NSString *cellTitle = (NSString *)object;
-}
-
-- (void)bindCellTitle:(NSString *)cellTitle count:(NSString *)countString
-{
-	[self clearCellContent];
-  
-  [self.profileCellTitleLabel setText:cellTitle];
-  [self.profileCellCountLabel setText:countString];
-  
-}
-
 - (void)bindCellTitle:(NSString *)title detail:(NSString *)detail
 {
   [self clearCellContent];
@@ -94,7 +80,6 @@
 {
   [super setSelected:selected animated:animated];
   
-  // Configure the view for the selected state
 }
 
 @end

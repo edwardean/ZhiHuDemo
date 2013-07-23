@@ -44,9 +44,6 @@ typedef struct {
 
 @property (nonatomic, strong) ZHUserInfoObject *profileObject;
 
-- (Class)getCellClassWithType:(NSInteger)type;
-
-
 @end
 
 @implementation ZHUserInfoViewController
@@ -93,11 +90,16 @@ typedef struct {
   self.weiboArray = [NSMutableArray arrayWithCapacity:0];
   
   UIView *headerBG = [[UIView alloc] initWithFrame:CGRectMake(0, -600, 320, 600)];
-  [headerBG setBackgroundColor:[UIColor colorWithRed:245/255.0 green:245.5/255.0 blue:245/255.0 alpha:1.0]];
+  [headerBG setBackgroundColor:[UIColor colorWithRed:245/255.0
+                                               green:245.5/255.0
+                                                blue:245/255.0
+                                               alpha:1.0]];
   
-  ZHUserInfoHeaderView *headerView = [[ZHUserInfoHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+  ZHUserInfoHeaderView *headerView = [[ZHUserInfoHeaderView alloc]
+                                      initWithFrame:CGRectMake(0, 0, 320, 1)];
   
-  UIImage *resizedImage = [[UIImage imageNamed:@"ZHProfileViewTopbg.png"] stretchableImageWithLeftCapWidth:28 topCapHeight:95];
+  UIImage *resizedImage = [[UIImage imageNamed:@"ZHProfileViewTopbg.png"]
+                           stretchableImageWithLeftCapWidth:28 topCapHeight:95];
   UIImageView *headerBackGroundView = [[UIImageView alloc] initWithImage:resizedImage];
   [headerView addSubview:headerBackGroundView];
   [headerView addSubview:headerBG];
@@ -109,7 +111,9 @@ typedef struct {
   
   [self.tableView setTableHeaderView:headerView];
   [headerView sendSubviewToBack:headerBackGroundView];
-	[self performSelector:@selector(setUpData:) withObject:userInfoModel.object afterDelay:1.0f];
+	[self performSelector:@selector(setUpData:)
+             withObject:userInfoModel.object
+             afterDelay:1.0f];
 }
 
 - (void)setUpData:(ZHObject *)object
@@ -140,12 +144,14 @@ typedef struct {
   
   [self.weiboArray removeAllObjects];
   if (self.profileObject.sina_weibo_name) {
-    NSDictionary *sinaname = [NSDictionary dictionaryWithObject:self.profileObject.sina_weibo_name forKey:@"sina"];
+    NSDictionary *sinaname = [NSDictionary dictionaryWithObject:self.profileObject.sina_weibo_name
+                                                         forKey:@"sina"];
     [self.weiboArray addObject:sinaname];
   }
   
   if (self.profileObject.qq_weibo_name) {
-    NSDictionary *qqname = [NSDictionary dictionaryWithObject:self.profileObject.qq_weibo_name forKey:@"qq"];
+    NSDictionary *qqname = [NSDictionary dictionaryWithObject:self.profileObject.qq_weibo_name
+                                                       forKey:@"qq"];
     [self.weiboArray addObject:qqname];
   }
   for (id obj in self.dataArray) {
@@ -164,7 +170,7 @@ typedef struct {
 }
 
 
-//#pragma mark - UITableViewDelegate & UITableViewDataSource
+#pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -176,10 +182,11 @@ typedef struct {
   } else {
   	section = UserProfileSectionCount - 1;
   }
-  NSLog(@"Section:%d",section);
+  
 	return section;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
   NSInteger row = 0;
   NSInteger offset = [self.weiboArray count] > 0 ? 0 : 1;
@@ -266,7 +273,9 @@ typedef struct {
                             forRowIndexPath:(NSIndexPath *)indexPath {
 	cellBaseModel cellModel;
   cellModel.cellclass = [self cellClassForIndexPath:indexPath];
-  cellModel.cellData = [[self.dataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+  cellModel.cellData = [[self.dataArray objectAtIndex:indexPath.section]
+                        objectAtIndex:indexPath.row];
+  
   ZHProfileCellPositionType cellType;
   
   NSInteger section = indexPath.section;

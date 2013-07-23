@@ -33,9 +33,11 @@
   if (self) {
     
     self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]];
+                          initWithImage:[UIImage
+                             imageNamed:@"ZHListViewArrowRight.png"]];
     
-    self.weiboIconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 21, 18)];
+    self.weiboIconImageView = [[UIImageView alloc]
+                                initWithFrame:CGRectMake(0, 0, 21, 18)];
     
     [weiboIconImageView_ setX:20];
     [weiboIconImageView_ setY:10];
@@ -60,31 +62,8 @@
   [self.weiboNameLabel setText:nil];
 }
 
-- (void)bindWeiboCellWithType:(WeiboType)type weiboName:(NSString *)weiboName
-{
-	[self clearCellContent];
-  
-  UIImage *sina = [UIImage imageNamed:@"ZHProfileViewSinaWeiboIcon.png"];
-  UIImage *qq = [UIImage imageNamed:@"ZHProfileViewTencentWeiboIcon.png"];
-  
-  switch (type) {
-    case SinaWeibo:
-      [self.weiboIconImageView setImage:sina];
-      break;
-    case QQWeibo:
-      [self.weiboIconImageView setImage:qq];
-      break;
-      
-    default:
-      break;
-  }
-  
-  [self.weiboNameLabel setText:weiboName];
-}
-
 - (void)bindWithObject:(id)object
 {
-	NSLog(@"%s ,, %@",__func__,object);
   NSDictionary *weiboDic = (NSDictionary *)object;
   [self clearCellContent];
   
@@ -103,25 +82,6 @@
 
 }
 
-- (void)bindWeiboObject:(NSDictionary *)weiboDic
-{
-	[self clearCellContent];
-  
-  UIImage *sina = [UIImage imageNamed:@"ZHProfileViewSinaWeiboIcon.png"];
-  UIImage *qq = [UIImage imageNamed:@"ZHProfileViewTencentWeiboIcon.png"];
-  
-  if ([weiboDic objectForKey:@"sina"]) {
-    [self.weiboIconImageView setImage:sina];
-    [self.weiboNameLabel setText:[weiboDic objectForKey:@"sina"]];
-  }
-  if ([weiboDic objectForKey:@"qq"]) {
-    [self.weiboIconImageView setImage:qq];
-    [self.weiboNameLabel setText:[weiboDic objectForKey:@"qq"]];
-
-  }
-
-}
-
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
@@ -135,7 +95,6 @@
 {
   [super setSelected:selected animated:animated];
   
-  // Configure the view for the selected state
 }
 
 @end

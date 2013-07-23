@@ -10,6 +10,4 @@
 #import "ZHProfileBaseCell.h"
 @interface ZHProfileCollectionStyleCell : ZHProfileBaseCell
 
-- (void)bindCellTitle:(NSString *)cellTitle count:(NSString *)countString;
-
 @end

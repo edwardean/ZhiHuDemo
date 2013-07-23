@@ -70,6 +70,25 @@
   [self setSelectedBackgroundView:cellSelectedBackgroundView];
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+	[super setHighlighted:highlighted animated:animated];
+  
+  for (UIView *view in [self.contentView subviews])
+  {
+    if ([view isKindOfClass:[UILabel class]]) {
+      if (highlighted) {
+        [(UILabel *)view setTextColor:[UIColor whiteColor]];
+      } else {
+        [(UILabel *)view setTextColor:[UIColor blackColor]];
+      }
+      
+    }
+  }
+  
+}
+
+
 #pragma mark - seleted
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -96,5 +115,12 @@
   
   [self bindCellTitle:title detail:detail];
 }
+
+- (void)bindCellTitle:(NSString *)title
+               detail:(NSString *)detail
+{
+  // SubClass will overwrite this method. Don't comment this
+}
+
 
 @end

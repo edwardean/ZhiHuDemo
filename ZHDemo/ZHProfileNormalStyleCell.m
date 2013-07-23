@@ -18,13 +18,15 @@
 
 @synthesize profileCellTitleLabel = profileCellTitleLabel_;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
 {
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   
   if (self) {
     self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]];
+                          initWithImage:[UIImage
+                             imageNamed:@"ZHListViewArrowRight.png"]];
     
     self.profileCellTitleLabel = [[UILabel alloc] init];
     [profileCellTitleLabel_ setX:20];
@@ -57,7 +59,6 @@
 {
   [super setSelected:selected animated:animated];
   
-  // Configure the view for the selected state
 }
 
 @end

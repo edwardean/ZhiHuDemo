@@ -10,6 +10,4 @@
 #import "ZHProfileBaseCell.h"
 @interface ZHProfileBlacklistStyleCell : ZHProfileBaseCell
 
-- (void)bindCellTitle:(NSString *)cellTitle;
-
 @end
