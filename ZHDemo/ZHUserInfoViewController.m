@@ -255,9 +255,12 @@ typedef struct {
     cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault
                             reuseIdentifier:NSStringFromClass(cellClass)];
   }
-  
-  
+	NSLog(@"Out Class:%@",NSStringFromClass(cellClass));
   if ([cellClass isSubclassOfClass:[ZHProfileCollectionStyleCell class]]) {
+    NSLog(@"In Class:%@",NSStringFromClass(cellClass));
+    NSLog(@"IndexPath:%@",indexPath);
+    NSLog(@"Data:%@ Detail\n\n\n",data);
+    
     [cell bindCellTitle:data
                  detail:[self.collectionArray objectAtIndex:indexPath.row]
            withCellType:cellType];
@@ -266,7 +269,11 @@ typedef struct {
             withCellType:cellType];
   }
   
-  return cell;
+  if (!cell) {
+    cell.hidden = YES;
+  }
+  
+	return cell;
 }
 
 - (cellBaseModel)createCellModelInTableView:(UITableView *)tableView
@@ -306,51 +313,43 @@ typedef struct {
   NSInteger offset = [self.weiboArray count] > 0 ? 0 : 1;
   switch (section) {
     case DetailSection:
-      cellClass = [ZHProfileNormalStyleCell class];
-      break;
+      return [ZHProfileNormalStyleCell class];
     case TrendsSection:
       switch (row) {
         case UserInfoCellAllTrends:
-          cellClass = [ZHProfileNormalStyleCell class];
-          break;
+          return [ZHProfileNormalStyleCell class];
         case UserInfoCellAnswered:
-          cellClass = [ZHProfileCollectionStyleCell class];
-          break;
+          return [ZHProfileCollectionStyleCell class];
         case UserInfoCellQuestioned:
-          cellClass = [ZHProfileCollectionStyleCell class];
-          break;
+          return [ZHProfileCollectionStyleCell class];
           
         default:
           break;
       }
     case CollectionSection:
       return [ZHProfileCollectionStyleCell class];
+      break;
     case WeiboSection:
       if (offset == 0) {
-        cellClass = [ZHUserProfileWeiboStyleCell class];
-        break;
+        return [ZHUserProfileWeiboStyleCell class];
       } else {
       	// Do next case...
       }
     case BlacklistSection:
       if (offset == 0) {
-        cellClass = [ZHProfileBlacklistStyleCell class];
-        break;
+        return [ZHProfileBlacklistStyleCell class];
       } else {
         if (section == BlacklistSection - offset) {
-          cellClass = [ZHProfileBlacklistStyleCell class];
-          break;
+          return [ZHProfileBlacklistStyleCell class];
         }
       	// Do next case...
       }
     case ReportSection:
       if (offset == 0) {
-        cellClass = [ZHProfileBlacklistStyleCell class];
-        break;
+        return [ZHProfileBlacklistStyleCell class];
       } else {
         if (section == ReportSection - offset) {
-          cellClass = [ZHProfileBlacklistStyleCell class];
-          break;
+          return [ZHProfileBlacklistStyleCell class];
         }
         // Do next case...
       }

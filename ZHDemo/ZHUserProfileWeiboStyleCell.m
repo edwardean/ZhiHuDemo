@@ -32,9 +32,9 @@
   
   if (self) {
     
-    self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage
-                             imageNamed:@"ZHListViewArrowRight.png"]];
+    self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage
+                                                 imageNamed:@"ZHListViewArrowRight.png"]
+                                           highlightedImage:[UIImage imageNamed:@"ZHListViewArrowRightHighlight.png"]];
     
     self.weiboIconImageView = [[UIImageView alloc]
                                 initWithFrame:CGRectMake(0, 0, 21, 18)];

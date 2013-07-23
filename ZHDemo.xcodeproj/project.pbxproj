@@ -551,7 +551,6 @@
 		CAEFFF431796F58700ABA65B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAEFFF441796F58700ABA65B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CAEFFF451796F58700ABA65B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		CAEFFF551796F58700ABA65B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,8 +737,6 @@
 				CA5D49971797A2FF005EF79B /* NavigationBarButtonHighlight@2x.png */,
 				CA5D49981797A2FF005EF79B /* NavigationBarButtonNormal.png */,
 				CA5D49991797A2FF005EF79B /* NavigationBarButtonNormal@2x.png */,
-				CA131EB51799380900A9FB22 /* ZHListViewArrowRightHighlight.png */,
-				CA131EB61799380900A9FB22 /* ZHListViewArrowRightHighlight@2x.png */,
 				CA5D499A1797A2FF005EF79B /* NavigationBarShadow.png */,
 				CA5D499B1797A2FF005EF79B /* NavigationBarShadow@2x.png */,
 				CA5D499C1797A2FF005EF79B /* ZHAnswerViewCollectIconNormal.png */,
@@ -798,6 +795,8 @@
 				CAEF26B91797BFE100F7F111 /* ZHGuidePushButtonNormal@2x.png */,
 				CA5D49C21797A2FF005EF79B /* ZHListViewArrowRight.png */,
 				CA5D49C31797A2FF005EF79B /* ZHListViewArrowRight@2x.png */,
+				CA131EB51799380900A9FB22 /* ZHListViewArrowRightHighlight.png */,
+				CA131EB61799380900A9FB22 /* ZHListViewArrowRightHighlight@2x.png */,
 				CA5D49C41797A2FF005EF79B /* ZHNavigationBarActionIcon.png */,
 				CA5D49C51797A2FF005EF79B /* ZHNavigationBarActionIcon@2x.png */,
 				CA5D49C61797A2FF005EF79B /* ZHNavigationBarMoreIcon.png */,
@@ -964,7 +963,6 @@
 				CA8C544D178EA2B2005552CE /* Foundation.framework */,
 				CA8C544F178EA2B2005552CE /* CoreGraphics.framework */,
 				CA8C5469178EA2B2005552CE /* SenTestingKit.framework */,
-				CAEFFF551796F58700ABA65B /* XCTest.framework */,
 				CA3DFFC21796F8E7002929FF /* CoreFoundation.framework */,
 				CAEFFF421796F58700ABA65B /* Other Frameworks */,
 			);

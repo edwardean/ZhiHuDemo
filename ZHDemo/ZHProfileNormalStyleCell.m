@@ -24,10 +24,10 @@
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   
   if (self) {
-    self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage
-                             imageNamed:@"ZHListViewArrowRight.png"]];
-    
+    self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage
+                                                 imageNamed:@"ZHListViewArrowRight.png"]
+                                           highlightedImage:[UIImage imageNamed:@"ZHListViewArrowRightHighlight.png"]];
+        
     self.profileCellTitleLabel = [[UILabel alloc] init];
     [profileCellTitleLabel_ setX:20];
     [profileCellTitleLabel_ setY:10];
@@ -47,6 +47,7 @@
 
 - (void)bindWithObject:(id)object
 {
+  NSLog(@"Normal:%@",object);
   NSString *cellTitle = (NSString *)object;
   [self.profileCellTitleLabel setText:nil];
   

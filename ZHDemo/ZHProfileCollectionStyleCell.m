@@ -26,9 +26,9 @@
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
     
-    self.accessoryView = [[UIImageView alloc]
-                          initWithImage:[UIImage
-                             imageNamed:@"ZHListViewArrowRight.png"]];
+    self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage
+                                                 imageNamed:@"ZHListViewArrowRight.png"]
+                                           highlightedImage:[UIImage imageNamed:@"ZHListViewArrowRightHighlight.png"]];
     
     self.profileCellTitleLabel = [[UILabel alloc] init];
     [profileCellTitleLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
