@@ -49,7 +49,7 @@
   UIButton *rightbutton = [[UIButton alloc] initWithFrame:barButtonFrame];
   [rightbutton setBackgroundImage:barNormalImage forState:UIControlStateNormal];
   [rightbutton setBackgroundImage:barHighlightImage forState:UIControlStateHighlighted];
-  [[rightbutton titleLabel] setFont:[UIFont boldSystemFontOfSize:11.0f]];
+  [[rightbutton titleLabel] setFont:[UIFont boldSystemFontOfSize:12.0f]];
   [[rightbutton titleLabel] setTextColor:[UIColor whiteColor]];
   [[rightbutton titleLabel] setShadowColor:[UIColor grayColor]];
   [[rightbutton titleLabel] setShadowOffset:CGSizeMake(0, -1)];

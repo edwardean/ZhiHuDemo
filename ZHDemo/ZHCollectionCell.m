@@ -6,7 +6,6 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImage+RounedImage.h"
 #import "ZHCollectionObject.h"
 #import <QuartzCore/QuartzCore.h>
@@ -94,9 +93,10 @@
     // collectionCellAvatarButton
     self.collectionCellAvatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [collectionCellAvatarButton_ setSize:CGSizeMake(20, 20)];
-    [collectionCellAvatarButton_ setImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
-                                 forState:UIControlStateNormal];
     [collectionCellAvatarButton_.layer setCornerRadius:3.0f];
+    [collectionCellAvatarButton_ setClipsToBounds:YES];
+    [collectionCellAvatarButton_ setBackgroundImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
+                                           forState:UIControlStateNormal];
     [self.contentView addSubview:collectionCellAvatarButton_];
     // Add Button Event here...
     //[collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -153,18 +153,20 @@
   // Downloading Avatar Image Using 'avatar_url' here ...
   if (avatar_url) {
     __block typeof(self) weakself = self;
-    UIImageView *avatarImage = weakself.temporaryImageView;
-    [avatarImage setImageWithURL:[NSURL URLWithString:avatar_url]
-                placeholderImage:nil
-                         options:SDWebImageProgressiveDownload
-                         success:^(UIImage *image) {
-                           
-                           image = [image makeRoundedImage:image radius:3.0f];
-                           [weakself.collectionCellAvatarButton setImage:image forState:UIControlStateNormal];
-                         }
-                         failure:^(NSError *error) {
-                           
-                         }];
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:[NSURL URLWithString:avatar_url]
+                    delegate:self
+                     options:0
+                     success:^(UIImage *image) {
+                       [weakself.collectionCellAvatarButton
+                        setImage:image
+                        forState:UIControlStateNormal];
+                     }
+                     failure:^(NSError *error) {
+                       [weakself.collectionCellAvatarButton
+                        setImage:[UIImage imageNamed:@"AvatarMale68.png"]
+                        forState:UIControlStateNormal];
+                     }];
     
   }
   
@@ -218,7 +220,7 @@
   if (collectionObject.title) {
     title = collectionObject.title;
   }
-
+  
   CGFloat titleHeight = [title CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHCOLLECTIONCELLTITLELABELFONTSIZE]
                                                 Size:CGSizeMake(TITLEWIDTH, TITLEHEIGHT)
                                        LineBreakMode:NSLineBreakByTruncatingTail].height;

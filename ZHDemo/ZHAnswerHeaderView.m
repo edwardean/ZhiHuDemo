@@ -6,7 +6,6 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+RounedImage.h"
 #import "ZHAnswerHeaderObject.h"
@@ -90,9 +89,10 @@
     if (!answerHeaderAvatarButton_) {
       self.answerHeaderAvatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
       [answerHeaderAvatarButton_ setSize:CGSizeMake(20, 20)];
-      [answerHeaderAvatarButton_ setImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
+      [answerHeaderAvatarButton_ setBackgroundImage:[UIImage imageNamed:@"ZHDMViewInputBox.png"]
                                  forState:UIControlStateNormal];
       [answerHeaderAvatarButton_.layer setCornerRadius:3.0f];
+      [answerHeaderAvatarButton_ setClipsToBounds:YES];
       [answerHeaderAvatarButton_ setX:ZH_ANSWERHEADER_CONTENTMARGINTOLEFTSIDE];
       [self addSubview:answerHeaderAvatarButton_];
     }
@@ -209,17 +209,21 @@
      根据url设置用户头像
      **/
     __block typeof(self) weakself = self;
-    UIImageView *avatarImage = [[UIImageView alloc] init];
-    [avatarImage setImageWithURL:[NSURL URLWithString:answerHeaderObject.avatarURL]
-                placeholderImage:nil
-                         options:SDWebImageProgressiveDownload
-                         success:^(UIImage *image) {
-                           image = [image makeRoundedImage:image radius:3.0f];
-                           [weakself.answerHeaderAvatarButton setImage:image forState:UIControlStateNormal];
-                         }
-                         failure:^(NSError *error) {
-                           
-                         }];
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:[NSURL URLWithString:answerHeaderObject.avatarURL]
+                    delegate:self
+                     options:0
+                     success:^(UIImage *image) {
+                       [weakself.answerHeaderAvatarButton
+                        setImage:image
+                        forState:UIControlStateNormal];
+                     }
+                     failure:^(NSError *error) {
+                       [weakself.answerHeaderAvatarButton
+                        setImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                        forState:UIControlStateNormal];
+                     }];
+
   }
   
   [self.answerHeaderTitleLabel sizeToFit];

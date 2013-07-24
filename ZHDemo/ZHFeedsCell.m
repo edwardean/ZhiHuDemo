@@ -7,15 +7,12 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "ZHFeedsObject.h"
 #import "ZHFeedsCell.h"
 
-//#if __IPHONE_OS_VERSION_MIN_REQUIRED <= 60000
-//#define LINEBREAKBYTRUNCATINGTAIL  UILineBreakModeTailTruncation
-//#define TEXTALIGNMENTCENTER				 UITextAlignmentCenter
-//#else
+
 #define LINEBREAKBYTRUNCATINGTAIL  NSLineBreakByTruncatingTail
 #define TEXTALIGNMENTCENTER				 NSTextAlignmentCenter
-//#endif
 
 // global
 #define CELLCONTENTMARGINTOLEFT				10
@@ -29,8 +26,6 @@
 #define TITLELABELFONTSIZE						14.0f
 #define EXCERPTLABELFONTSIZE					13.0f
 
-
-#define ACTORSLABELHIGHLIGHTEDKEY		@"Actors"
 @interface ZHFeedsCell ()
 {
 	BOOL isActorsLabelHighlighted;
@@ -132,21 +127,39 @@
   
 }
 
+- (void)clearCellContent
+{
+	[self.actorsLabel setText:nil];
+  [self.feedLabel setText:nil];
+  [self.titleLabel setText:nil];
+  [self.voteupLabel setText:nil];
+  [self.answerExcerptLabel setText:nil];
+  
+}
 
 + (CGFloat)RowHeightWitObject:(id)object
 {
-  NSLog(@"Object:%@",object);
 	return 144.0f;
 }
 
 - (void)bindWithObject:(id)object
 {
+  [self clearCellContent];
+  
+  ZHFeedsObject *feedObject = (ZHFeedsObject *)object;
+  NSString *excerpt = feedObject.excerpt;
+  
+  NSString *voteup_count = feedObject.voteup_count;
+  
+  NSString *title = feedObject.title;
+  
+  
 	[self.actorsLabel setText:@"插门胡的小背心"];
   [self.feedLabel setText:@"关注了该问题"];
   [self.avatarImageView setImage:[UIImage imageNamed:@"ava.png"]];
-  [self.titleLabel setText:@"尚处在演进中的知乎 REST API，我们不需要关心实现细节，只需要关心接口的定义。"];
-  [self.voteupLabel setText:@"69"];
-  [self.answerExcerptLabel setText:@"GCD 可以使我们的多线程代码获得跨平台的多核 CPU 伸缩性，基于 block 的回调方式，方便立即可用线程安全串行、并行队列，等等，故一般不使用传统基于 POSIX thread API。"];
+  [self.titleLabel setText:title];
+  [self.voteupLabel setText:voteup_count];
+  [self.answerExcerptLabel setText:excerpt];
 }
 
 

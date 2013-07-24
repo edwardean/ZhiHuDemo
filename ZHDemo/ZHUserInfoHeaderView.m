@@ -6,7 +6,6 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 #import "ZHUserInfoHeaderView.h"
 #import "ZHUserInfoBottomView.h"
@@ -22,8 +21,7 @@
 @interface ZHUserInfoHeaderView ()
 
 @property (nonatomic) UIImageView *userInfoHeaderAvatarView;
-//@property (nonatomic) UIImage *userInfoHeaderAvatarPlaceHolderFemaleImage;
-@property (nonatomic) UIImage *userInfoHeaderAvatarPlaceHolderMaleImage;
+@property (nonatomic) UIButton *userInfoHeaderAvatarButton;
 
 @property (nonatomic) UILabel *userInfoHeaderNameLabel;
 
@@ -48,9 +46,7 @@
 @end
 
 @implementation ZHUserInfoHeaderView
-@synthesize userInfoHeaderAvatarView = userInfoHeaderAvatarView_;
-//@synthesize userInfoHeaderAvatarPlaceHolderFemaleImage = userInfoHeaderAvatarPlaceHolderFemaleImage_;
-@synthesize userInfoHeaderAvatarPlaceHolderMaleImage = userInfoHeaderAvatarPlaceHolderMaleImage_;
+@synthesize userInfoHeaderAvatarButton = userInfoHeaderAvatarButton_;
 
 @synthesize userInfoHeaderNameLabel = userInfoHeaderNameLabel_;
 
@@ -77,18 +73,14 @@
   self = [super initWithFrame:frame];
   if (self) {
     
-    if (!userInfoHeaderAvatarView_) {
-      self.userInfoHeaderAvatarView = [[UIImageView alloc] initWithFrame:CGRectMake(8,
-                                                                                    15,
-                                                                                    80,
-                                                                                    81)];
-      [[userInfoHeaderAvatarView_ layer] setCornerRadius:5.0f];
-      userInfoHeaderAvatarView_.clipsToBounds = YES;
-      [self addSubview:userInfoHeaderAvatarView_];
-    }
-    
-    if (!userInfoHeaderAvatarPlaceHolderMaleImage_) {
-      self.userInfoHeaderAvatarPlaceHolderMaleImage = [UIImage imageNamed:@"AvatarMale150.png"];
+    if (!userInfoHeaderAvatarButton_) {
+      self.userInfoHeaderAvatarButton = [[UIButton alloc] initWithFrame:CGRectMake(8,
+                                                                                   15,
+                                                                                   80,
+                                                                                   81)];
+      [[userInfoHeaderAvatarButton_ layer] setCornerRadius:5.0f];
+      [userInfoHeaderAvatarButton_ setClipsToBounds:YES];
+      [self addSubview:userInfoHeaderAvatarButton_];
     }
     
     if (!userInfoHeaderNameLabel_) {
@@ -181,6 +173,7 @@
       self.followerButton = [UIButton buttonWithType:UIButtonTypeCustom];
       [followerButton_ setFrame:CGRectMake(243, 52, 65, 40)];
       [[followerButton_ layer] setCornerRadius:3.0f];
+      [followerButton_ setClipsToBounds:YES];
       //[[followerButton_ layer] setBackgroundColor:[[UIColor colorWithWhite:0.817 alpha:1.000] CGColor]];
      	//[followerButton_ addTarget:self action:@selector(followerButtonTapped) forControlEvents:UIControlEventTouchUpInside];
       // Add followerButton_ touch event here ...
@@ -221,8 +214,8 @@
     if (!userInfoBottomView_) {
       self.userInfoBottomView = [[ZHUserInfoBottomView alloc] initWithFrame:CGRectMake(0, 0, 320, 51)];
       [userInfoBottomView_ setBackgroundColor:[UIColor
-                        colorWithPatternImage:[UIImage
-                                   imageNamed:@"ZHProfileViewToolbar.png"]]];
+                                               colorWithPatternImage:[UIImage
+                                                                      imageNamed:@"ZHProfileViewToolbar.png"]]];
       [self addSubview:userInfoBottomView_];
     }
     
@@ -233,7 +226,8 @@
 
 - (void)clearHeaderContent
 {
-	[self.userInfoHeaderAvatarView setImage:[UIImage imageNamed:@"AvatarMaskXL.png"]];
+  [self.userInfoHeaderAvatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskXL.png"]
+                                             forState:UIControlStateNormal];
   [self.userInfoHeaderNameLabel setText:nil];
   [self.userInfoHeaderHeadlineLabel setText:nil];
   [self.userInfoHeaderFollowing_topic_countLabel setText:@"0"];
@@ -270,18 +264,21 @@
   
   if (infoObject.avatar_url) {
     __block typeof(self) weakself = self;
-    [self.userInfoHeaderAvatarView setImageWithURL:[NSURL URLWithString:infoObject.avatar_url]
-                                  placeholderImage:[UIImage imageNamed:@"AvatarMaskXL.png"]
-                                           options:SDWebImageProgressiveDownload
-                                           success:^(UIImage *image) {
-                                             
-                                           }
-                                           failure:^(NSError *error) {
-                                             
-                                             [weakself.userInfoHeaderAvatarView
-                                              setImage:weakself.userInfoHeaderAvatarPlaceHolderMaleImage];
-                                             
-                                           }];
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:[NSURL URLWithString:infoObject.avatar_url]
+                    delegate:self
+                     options:0
+                     success:^(UIImage *image) {
+                       [weakself.userInfoHeaderAvatarButton
+                        setImage:image
+                        forState:UIControlStateNormal];
+                     }
+                     failure:^(NSError *error) {
+                       [weakself.userInfoHeaderAvatarButton
+                        setImage:[UIImage imageNamed:@"AvatarMale150.png"]
+                        forState:UIControlStateNormal];
+                     }];
+    
   }
   
   if (infoObject.following_topic_count) {
@@ -322,8 +319,6 @@
   [self.userInfoHeaderFollower_countLabel sizeToFit];
   [self.userInfoHeaderFollowerLabel sizeToFit];
   
-  [self layoutIfNeeded];
-  
   [self sizeToFit];
 }
 
@@ -345,7 +340,7 @@
                  Size:CGSizeMake(HeaderDescriptionMaxWidth, MAXFLOAT)
                  LineBreakMode:self.userInfoHeaderDescriptionLabel.lineBreakMode];
   
-  CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
+  CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarButton bottom] + HeaderDescriptionToAvatarMargin;
   [self.userInfoHeaderDescriptionLabel setFrame:CGRectMake(10,
                                                            descriptionLabelOriginY,
                                                            size.width,
@@ -358,7 +353,7 @@
   
   CGRect frame = self.frame;
   
-  CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarView bottom] + HeaderDescriptionToAvatarMargin;
+  CGFloat descriptionLabelOriginY = [self.userInfoHeaderAvatarButton bottom] + HeaderDescriptionToAvatarMargin;
   
   CGFloat bottomViewHeight = [self.userInfoBottomView height];
   

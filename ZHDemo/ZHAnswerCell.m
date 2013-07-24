@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImage+RounedImage.h"
 #import "UIView+Frame.h"
 #import "ZHAnswerCell.h"
@@ -22,7 +21,7 @@
 
 #define ZHANSWERCELLAVATARTOEXCERPTMARGIN										10
 #define ZHANSWERCELLAVATARWIDTH															25
-#define ZHANSWERCELLAVATARHEIGHT														25
+#define ZHANSWERCELLAVATARHEIGHT														26
 #define ZHANSWERCELLTAGWIDTH																25
 #define ZHANSWERCELLTAGHEIGHT																15
 
@@ -73,12 +72,13 @@
     reuseIdentifier:(NSString *)reuseIdentifier
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+  
   if (self) {
     
     self.backgroundView = [[UIImageView alloc]
                            initWithImage:[[UIImage
-                              imageNamed:@"ZHExploreListItemBase.png"]
-             resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+                                           imageNamed:@"ZHExploreListItemBase.png"]
+                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
     
     
     // answerTitleLabel
@@ -103,6 +103,7 @@
     [avatarButton_ setSize:CGSizeMake(ZHANSWERCELLAVATARWIDTH,
                                       ZHANSWERCELLAVATARHEIGHT)];
     [avatarButton_.layer setCornerRadius:3.0f];
+    [avatarButton_ setClipsToBounds:YES];
     [avatarButton_ setX:ZHANSWERCELLCONTENTMARGINTOLEFTSIDE];
     [self.contentView addSubview:avatarButton_];
     
@@ -157,8 +158,9 @@
 - (void)resetCellContent
 {
 	[self.answerTitleLabel setText:nil];
-  [self.avatarButton setImage:[UIImage imageNamed:@"AvatarMaskS.png"]
-                     forState:UIControlStateNormal];
+  [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskS.png"]
+                               forState:UIControlStateNormal];
+  
   [self.voteupLabel setText:@"0"];
   [self.answerExcerptLabel setText:nil];
 }
@@ -209,23 +211,22 @@
   if (answerObject.avatar_url) {
     
     __block typeof(self) weakself = self;
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadWithURL:[NSURL URLWithString:answerObject.avatar_url]
+                    delegate:self
+                     options:0
+                     success:^(UIImage *image) {
+                       [weakself.avatarButton
+                        setImage:image
+                        forState:UIControlStateNormal];
+                     }
+                     failure:^(NSError *error) {
+                       [weakself.avatarButton
+                        setImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                        forState:UIControlStateNormal];
+                       
+                     }];
     
-    UIImageView *avatarImageView = weakself.temporaryImageView;
-    
-    [avatarImageView setImageWithURL:[NSURL URLWithString:answerObject.avatar_url]
-                    placeholderImage:nil
-                             options:SDWebImageProgressiveDownload
-                             success:^(UIImage *image) {
-                               
-                               image = [image makeRoundedImage:image
-                                                        radius:3.0f];
-                               [weakself.avatarButton setImage:image
-                                                      forState:UIControlStateNormal];
-                               
-                             }
-                             failure:^(NSError *error) {
-                               
-                             }];
   }
   
   if (answerObject.voteup_count) {

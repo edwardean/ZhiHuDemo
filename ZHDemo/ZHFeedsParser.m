@@ -38,7 +38,7 @@
     NSString *excerpt = [target objectForKey:@"excerpt"];
     NSDictionary *question = [target objectForKey:@"question"];
     NSString *title = [question objectForKey:@"title"];
-    NSString *voteup_count = [question objectForKey:@"voteup_count"];
+    NSString *voteup_count = [NSString stringWithFormat:@"%d",[[target objectForKey:@"voteup_count"] intValue]];
   
     
     NSMutableDictionary *feedsDic = [NSMutableDictionary dictionary];

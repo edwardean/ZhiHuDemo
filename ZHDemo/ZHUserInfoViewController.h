@@ -55,5 +55,7 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
 
 
 @interface ZHUserInfoViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+
 @property (nonatomic, strong) UITableView *tableView;
+
 @end
