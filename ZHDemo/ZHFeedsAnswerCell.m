@@ -59,7 +59,7 @@
     self.feedLabel = [[UILabel alloc] init];
     [feedLabel_ setBackgroundColor:[UIColor clearColor]];
     [feedLabel_ setFont:[UIFont systemFontOfSize:ACTORSLABELFONTSIZE]];
-    [feedLabel_ setTextColor:[UIColor colorWithWhite:0.684 alpha:1.000]];
+    [feedLabel_ setTextColor:[UIColor colorWithWhite:0.594 alpha:1.000]];
     [feedLabel_ setY:CELLCONTENTMARGINTOTOP];
     [self.contentView addSubview:feedLabel_];
     
@@ -131,6 +131,7 @@
   NSString *title = feedObject.title;
   NSString *excerpt = feedObject.excerpt;
   
+  if (title && excerpt) {
   CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE]
                        constrainedToSize:CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT)
                            lineBreakMode:NSLineBreakByTruncatingTail];
@@ -143,6 +144,9 @@
   CGFloat cellHeight = titleSize.height + excerptSize.height + CELLCONTENTMARGINTOTOP + 15 + MARGINBEWTEENTWOCONTENT  + MARGINBEWTEENTWOCONTENT + CELLCONTENTMARGINTOBOTTOM;
 
   return cellHeight;
+  } else {
+  	return 65;
+  }
 }
 
 - (void)bindWithObject:(id)object

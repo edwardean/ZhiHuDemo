@@ -7,13 +7,15 @@
 //
 
 #import "ZHFeedsObject.h"
+#import "ZHFeedAnswerObject.h"
+#import "ZHFeedQuestionFollowObject.h"
 
 @implementation ZHFeedsObject
-@synthesize excerpt = excerpt_;
-@synthesize voteup_count = voteup_count_;
-@synthesize title = title_;
-@synthesize avata_url = avata_url_;
-@synthesize actors = actors_;
+//@synthesize excerpt = excerpt_;
+//@synthesize voteup_count = voteup_count_;
+//@synthesize title = title_;
+//@synthesize avata_url = avata_url_;
+//@synthesize actors = actors_;
 
 
 - (id)init
@@ -58,4 +60,14 @@
   }
 	return YES;
 }
+
+- (ZHFeedsObject *)FeedObjectWithType:(NSString *)feedType object:(id)object
+{
+	if ([feedType isEqualToString:@"QUESTION_FOLLOW"]) {
+    return [ZHFeedQuestionFollowObject objectWithData:object];
+  } else {
+  	return [ZHFeedAnswerObject objectWithData:object];
+  }
+}
+
 @end

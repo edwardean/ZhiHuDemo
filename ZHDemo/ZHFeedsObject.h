@@ -16,6 +16,9 @@
 @property (nonatomic, copy) NSString *avata_url;
 @property (nonatomic, strong) NSArray *actors;					//赞同该回答的人
 
+@property (nonatomic, copy) NSString *verb;
+@property (nonatomic, copy) NSString *questiontitle;
+@property (nonatomic, copy) NSString *targettitle;
 /*
  actors:
  headline
@@ -24,4 +27,10 @@
  gender
  
  */
++ (id)objectWithData:(id)data;
+
+- (void)bindWithObject:(id)object;
+
+- (ZHFeedsObject *)FeedObjectWithType:(NSString *)feedType object:(id)object;
+
 @end

@@ -23,6 +23,8 @@
 		CA20C291179E452E00B6DBBD /* feeds5.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C28C179E452E00B6DBBD /* feeds5.json */; };
 		CA20C293179E455200B6DBBD /* feeds2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C292179E455200B6DBBD /* feeds2.json */; };
 		CA20C297179E4DD800B6DBBD /* ZHFeedsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */; };
+		CA239984179FB9F200791A7D /* ZHFeedAnswerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */; };
+		CA239985179FB9F200791A7D /* ZHFeedQuestionFollowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */; };
 		CA2B86921797E0070068F056 /* ZHCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2B86911797E0070068F056 /* ZHCheckBox.m */; };
 		CA2F5D7C1798D2C5001A2872 /* ZHUserInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F5D7B1798D2C4001A2872 /* ZHUserInfoListView.m */; };
 		CA38A83D1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA38A83B1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png */; };
@@ -318,6 +320,10 @@
 		CA20C292179E455200B6DBBD /* feeds2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds2.json; sourceTree = "<group>"; };
 		CA20C295179E4DD800B6DBBD /* ZHFeedsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsObject.h; sourceTree = "<group>"; };
 		CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsObject.m; sourceTree = "<group>"; };
+		CA239980179FB9F200791A7D /* ZHFeedAnswerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedAnswerObject.h; sourceTree = "<group>"; };
+		CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedAnswerObject.m; sourceTree = "<group>"; };
+		CA239982179FB9F200791A7D /* ZHFeedQuestionFollowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedQuestionFollowObject.h; sourceTree = "<group>"; };
+		CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedQuestionFollowObject.m; sourceTree = "<group>"; };
 		CA2B86901797E0070068F056 /* ZHCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCheckBox.h; sourceTree = "<group>"; };
 		CA2B86911797E0070068F056 /* ZHCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCheckBox.m; sourceTree = "<group>"; };
 		CA2F5D7A1798D2C4001A2872 /* ZHUserInfoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoListView.h; sourceTree = "<group>"; };
@@ -705,6 +711,10 @@
 			children = (
 				CA20C295179E4DD800B6DBBD /* ZHFeedsObject.h */,
 				CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */,
+				CA239980179FB9F200791A7D /* ZHFeedAnswerObject.h */,
+				CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */,
+				CA239982179FB9F200791A7D /* ZHFeedQuestionFollowObject.h */,
+				CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */,
 			);
 			name = FeedsObject;
 			sourceTree = "<group>";
@@ -1622,6 +1632,7 @@
 				CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */,
 				CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */,
 				CA54FAA4178EA81F007DC220 /* ZHAnswerViewController.m in Sources */,
+				CA239985179FB9F200791A7D /* ZHFeedQuestionFollowObject.m in Sources */,
 				CA5D4A911797A7F2005EF79B /* NSString+CalculateTextSize.m in Sources */,
 				CAC5FAF3179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.m in Sources */,
 				CA8C5458178EA2B2005552CE /* main.m in Sources */,
@@ -1631,6 +1642,7 @@
 				CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */,
 				CA54FAC3178EABB5007DC220 /* ZHCollectionFactory.m in Sources */,
 				CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */,
+				CA239984179FB9F200791A7D /* ZHFeedAnswerObject.m in Sources */,
 				CA54FACD178EAC43007DC220 /* ZHDataParserFactory.m in Sources */,
 				CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */,
 				CA54FACE178EAC64007DC220 /* ZHAnswerFactory.m in Sources */,

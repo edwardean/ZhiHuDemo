@@ -35,7 +35,7 @@
                                                                                        bundle:nil];
   
   self.navigationConreoller = [[UINavigationController alloc]
-                               initWithRootViewController:feedsViewController];
+                               initWithRootViewController:userInfoController];
   
   
   if ([[self.navigationConreoller navigationBar] respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {

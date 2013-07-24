@@ -70,6 +70,42 @@ typedef struct {
   
   self.title = @"资料";
   
+  CGRect barButtonFrame = CGRectMake(0, 0, 44, 30);
+  UIImage *barNorBG = [[UIImage imageNamed:@"NavigationBarButtonNormal.png"]
+         stretchableImageWithLeftCapWidth:5
+                             topCapHeight:5];
+  UIImage *barHighBG = [[UIImage imageNamed:@"NavigationBarButtonHighlight.png"]
+           stretchableImageWithLeftCapWidth:5
+                               topCapHeight:5];
+  
+  UIImageView *leftBarImgView = [[UIImageView alloc] initWithImage:[UIImage
+                                                        imageNamed:@"ZHNavigationBarSettingsIcon.png"]];
+  UIImageView *rightBarImgView = [[UIImageView alloc] initWithImage:[UIImage
+                                                         imageNamed:@"ZHNavigationBarMoreIcon.png"]];
+  
+  UIButton *leftButton = [[UIButton alloc] initWithFrame:barButtonFrame];
+  UIButton *rightButton = [[UIButton alloc] initWithFrame:barButtonFrame];
+  
+  [leftButton setBackgroundImage:barNorBG forState:UIControlStateNormal];
+  [leftButton setBackgroundImage:barHighBG forState:UIControlStateHighlighted];
+  
+  [rightButton setBackgroundImage:barNorBG forState:UIControlStateNormal];
+  [rightButton setBackgroundImage:barHighBG forState:UIControlStateHighlighted];
+  
+  [leftButton addSubview:leftBarImgView];
+  [leftBarImgView setCenter:leftButton.center];
+  
+  [rightButton addSubview:rightBarImgView];
+  [rightBarImgView setCenter:rightButton.center];
+  
+  UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+  UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+  
+  self.navigationItem.leftBarButtonItem = leftBarItem;
+  self.navigationItem.rightBarButtonItem = rightBarItem;
+  
+  
+  
   self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
   [self.tableView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
   

@@ -54,6 +54,55 @@ typedef NS_ENUM(NSInteger, UserProfileSection) {
 };
 
 
+// MyProfileSection
+
+typedef NS_ENUM(NSInteger, MyProfileSection) {
+	MyProfileSectionDetail = 0,
+  MyProfileSectionTrends,
+  MyProfileSectionFollow,
+  MyProfileSectionWeibo,
+  MyProfileSectionSearchFriend,
+  MyProfileSectionFeedBack,
+  MyProfileSectionExit,
+  MyProfileSectionCount
+};
+
+
+typedef NS_ENUM(NSInteger, MyProfileDetailCell) {
+	MyProfileDetailCellDetail = 0,
+  MyProfileDetailCellCount
+};
+
+typedef NS_ENUM(NSInteger, MyProfileTrandsCell) {
+	MyProfileTrandsCellAllTrands = 0,
+  MyProfileTrandsCellQuestioned,
+  MyProfileTrandsCellAnswered,
+  MyProfileTrandsCellCount
+};
+
+typedef NS_ENUM(NSInteger, MyProfileFollowCell) {
+	MyProfileFollowCellMyFollowQuestions = 0,
+  MyProfileFollowCellMyCollections,
+  MyProfileFollowCellMyDraft,
+  MyProfileFollowCellCount
+};
+
+typedef NS_ENUM(NSInteger, MyProfileWeiboCell) {
+	MyProfileWeiboCellSina = 0,
+  MyProfileWeiboCellQQ,
+  MyProfileWeiboCellCount
+};
+
+typedef NS_ENUM(NSInteger, MyProfileFeedBackCell) {
+	MyProfileFeedBackCellFeed = 0,
+  MyProfileFeedBackCellCount
+};
+
+typedef NS_ENUM(NSInteger, MyProfileExitCell) {
+	MyProfileExitCellExit = 0,
+  MyProfileExitCellCount
+};
+
 @interface ZHUserInfoViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;

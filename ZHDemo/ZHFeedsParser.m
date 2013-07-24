@@ -10,6 +10,10 @@
 #import "ZHLoadJSONFile.h"
 #import "ZHFeedsObject.h"
 
+#define ANSWER_VOTE_UP 				@"ANSWER_VOTE_UP"
+#define QUESTION_FOLLOW			  @"QUESTION_FOLLOW"
+#define ANSWER_CREATE					@"ANSWER_CREATE"
+
 @interface ZHFeedsParser ()
 
 @property (nonatomic, strong) NSMutableArray *feedArray;
@@ -30,9 +34,18 @@
   
   for (NSDictionary *dic in dataArray) {
     
-    NSArray *actors = [dic objectForKey:@"actors"];
+    NSString *verb = [dic objectForKey:@"verb"];//问题分类
     
     NSDictionary *target = [dic objectForKey:@"target"];
+    
+    if ([target objectForKey:@"author"]) {
+      NSDictionary *author = [target objectForKey:@"author"];
+      NSString *avatar_url = [author objectForKey:@"avatar_url"];
+    }
+    
+    NSArray *actors = [dic objectForKey:@"actors"];
+    
+    
     NSDictionary *author = [target objectForKey:@"author"];
     NSString *avatar_url = [author objectForKey:@"avatar_url"];
     NSString *excerpt = [target objectForKey:@"excerpt"];

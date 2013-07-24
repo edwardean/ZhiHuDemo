@@ -89,6 +89,7 @@
   [self.weiboNameLabel sizeToFit];
   
   [self.weiboNameLabel setCenterX:self.centerX];
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
