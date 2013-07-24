@@ -8,32 +8,18 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "ZHFeedsObject.h"
-#import "ZHFeedsCell.h"
+#import "ZHFeedsAnswerCell.h"
+#import "UIView+Frame.h"
+#import "NSString+CalculateTextSize.h"
 
-
-#define LINEBREAKBYTRUNCATINGTAIL  NSLineBreakByTruncatingTail
-#define TEXTALIGNMENTCENTER				 NSTextAlignmentCenter
-
-// global
-#define CELLCONTENTMARGINTOLEFT				10
-#define CELLCONTENTMARGINTORIGHT			10
-#define CELLCONTENTMARGINTOTOP				10
-#define CELLCONTENTMARGINTOBOTTOM			10
-
-// detail
-#define MARGINBEWTEENTWOCONTENT				8			//每两个子视图间距都为10
-#define ACTORSLABELFONTSIZE						13.0f
-#define TITLELABELFONTSIZE						14.0f
-#define EXCERPTLABELFONTSIZE					13.0f
-
-@interface ZHFeedsCell ()
+@interface ZHFeedsAnswerCell ()
 {
 	BOOL isActorsLabelHighlighted;
 }
 
 @property (nonatomic, strong, readwrite) UILabel *actorsLabel;							//某某某
 @property (nonatomic, strong, readwrite) UILabel *feedLabel;								//回答/赞同了该问题
-@property (nonatomic, strong, readwrite) UIImageView *avatarImageView;	    //头像
+@property (nonatomic, strong, readwrite) UIButton *avatarButton;						//头像
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;								//标题
 @property (nonatomic, strong, readwrite) UIImageView *voteupBackgroundView;	//标签背景
 @property (nonatomic, strong, readwrite) UILabel *voteupLabel;							//标签
@@ -41,10 +27,10 @@
 
 @end
 
-@implementation ZHFeedsCell
+@implementation ZHFeedsAnswerCell
 @synthesize actorsLabel = actorsLabel_;
 @synthesize feedLabel = feedLabel_;
-@synthesize avatarImageView = avatarImageView_;
+@synthesize avatarButton = avatarButton_;
 @synthesize titleLabel = titleLabel_;
 @synthesize voteupBackgroundView = voteupBackgroundView_;
 @synthesize voteupLabel = voteupLabel_;
@@ -77,13 +63,12 @@
     [feedLabel_ setY:CELLCONTENTMARGINTOTOP];
     [self.contentView addSubview:feedLabel_];
     
-    
-    self.avatarImageView = [[UIImageView alloc] init];
-    [avatarImageView_ setOrigin:CGPointMake([self width] - CELLCONTENTMARGINTORIGHT - 25, CELLCONTENTMARGINTOTOP)];
-    [avatarImageView_ setSize:CGSizeMake(25, 25)];
-    [[avatarImageView_ layer] setCornerRadius:3.0f];
-    [avatarImageView_ setClipsToBounds:YES];
-    [self.contentView addSubview:avatarImageView_];
+    self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [avatarButton_ setOrigin:CGPointMake([self width] - CELLCONTENTMARGINTORIGHT - 25, CELLCONTENTMARGINTOTOP)];
+    [avatarButton_ setSize:CGSizeMake(25, 25)];
+    [[avatarButton_ layer] setCornerRadius:3.0f];
+    [avatarButton_ setClipsToBounds:YES];
+		[self.contentView addSubview:avatarButton_];
     
     self.titleLabel = [[UILabel alloc] init];
     [titleLabel_ setBackgroundColor:[UIColor clearColor]];
@@ -134,12 +119,30 @@
   [self.titleLabel setText:nil];
   [self.voteupLabel setText:nil];
   [self.answerExcerptLabel setText:nil];
+  [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                               forState:UIControlStateNormal];
   
 }
 
 + (CGFloat)RowHeightWitObject:(id)object
 {
-	return 144.0f;
+  ZHFeedsObject *feedObject = (ZHFeedsObject *)object;
+  
+  NSString *title = feedObject.title;
+  NSString *excerpt = feedObject.excerpt;
+  
+  CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE]
+                       constrainedToSize:CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT)
+                           lineBreakMode:NSLineBreakByTruncatingTail];
+  
+  CGSize excerptSize = [excerpt sizeWithFont:[UIFont systemFontOfSize:EXCERPTLABELFONTSIZE]
+                           constrainedToSize:CGSizeMake(CELLEXCERPTLABELWIDTH, CELLEXCERPTLABELHEIGHT)
+                               lineBreakMode:NSLineBreakByTruncatingTail];
+  
+  //15为第一行文字的高度
+  CGFloat cellHeight = titleSize.height + excerptSize.height + CELLCONTENTMARGINTOTOP + 15 + MARGINBEWTEENTWOCONTENT  + MARGINBEWTEENTWOCONTENT + CELLCONTENTMARGINTOBOTTOM;
+
+  return cellHeight;
 }
 
 - (void)bindWithObject:(id)object
@@ -156,7 +159,10 @@
   
 	[self.actorsLabel setText:@"插门胡的小背心"];
   [self.feedLabel setText:@"关注了该问题"];
-  [self.avatarImageView setImage:[UIImage imageNamed:@"ava.png"]];
+  [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                               forState:UIControlStateNormal];
+  [self.avatarButton setImage:[UIImage imageNamed:@"ava.png"]
+                     forState:UIControlStateNormal];
   [self.titleLabel setText:title];
   [self.voteupLabel setText:voteup_count];
   [self.answerExcerptLabel setText:excerpt];
@@ -174,9 +180,7 @@
   
   [self.titleLabel setY:[self.feedLabel bottom] + MARGINBEWTEENTWOCONTENT];
   
-  CGFloat titleDefaultWidth = [self.avatarImageView left] - CELLCONTENTMARGINTOLEFT - 10;
-  CGFloat titleDefaultHeight = 45;
-  CGSize titleDefaultSize = CGSizeMake(titleDefaultWidth, titleDefaultHeight);
+  CGSize titleDefaultSize = CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT);
   CGSize titleSize = [self.titleLabel.text CalculateTextSizeWith:self.titleLabel.font
                                                             Size:titleDefaultSize
                                                    LineBreakMode:self.titleLabel.lineBreakMode];
@@ -187,9 +191,9 @@
 	[self.voteupLabel setSize:CGSizeMake([self.voteupBackgroundView width] - 1,
   [self.voteupBackgroundView height] - 1)];
   
-  [self.answerExcerptLabel setOrigin:CGPointMake([self.voteupBackgroundView right] + 5, [self.voteupBackgroundView y])];
-  CGFloat excerptLabelDefultWidth = [self width] - [self.voteupBackgroundView right] - 5 - CELLCONTENTMARGINTORIGHT;
-	CGSize excerptLabelDefultSize = CGSizeMake(excerptLabelDefultWidth, 55);
+  [self.answerExcerptLabel setOrigin:CGPointMake([self.voteupBackgroundView right] + 5, [self.voteupBackgroundView y] - 2)];
+  
+	CGSize excerptLabelDefultSize = CGSizeMake(CELLEXCERPTLABELWIDTH, CELLEXCERPTLABELHEIGHT);
   
   CGSize size = [self.answerExcerptLabel.text sizeWithFont:self.answerExcerptLabel.font
                                          constrainedToSize:excerptLabelDefultSize

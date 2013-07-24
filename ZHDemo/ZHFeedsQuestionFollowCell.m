@@ -6,7 +6,10 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import "ZHFeedQuestionFollowCell.h"
+#import "ZHFeedsQuestionFollowCell.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ZHFeedsObject.h"
+#import "UIView+Frame.h"
 
 @interface ZHFeedQuestionFollowCell ()
 
@@ -50,9 +53,39 @@
     [titleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
     [self.contentView addSubview:titleLabel_];
     
+    self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [avatarButton_ setOrigin:CGPointMake([self width] - CELLCONTENTMARGINTORIGHT - 25, CELLCONTENTMARGINTOTOP)];
+    [avatarButton_ setSize:CGSizeMake(25, 25)];
+    [[avatarButton_ layer] setCornerRadius:3.0f];
+    [avatarButton_ setClipsToBounds:YES];
+    [self.contentView addSubview:avatarButton_];
   }
   
   return self;
+}
+
+- (void)clearCellContent
+{
+	[self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                               forState:UIControlStateNormal];
+  [self.followerLabel setText:nil];
+  [self.followDesLabel setText:nil];
+  [self.titleLabel setText:nil];
+}
+
++ (CGFloat)RowHeightWitObject:(id)object
+{
+  ZHFeedsObject *feedObject = (ZHFeedsObject *)object;
+  NSString *title = feedObject.title;
+  CGSize titleDefaultSize = CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT);
+  CGSize size = [title sizeWithFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE] constrainedToSize:titleDefaultSize lineBreakMode:NSLineBreakByTruncatingTail];
+  CGFloat cellHeight = CELLCONTENTMARGINTOTOP + 10 + MARGINBEWTEENTWOCONTENT + size.height + CELLCONTENTMARGINTOBOTTOM;
+  return cellHeight;
+}
+
+- (void)bindWithObject:(id)object
+{
+	
 }
 
 @end

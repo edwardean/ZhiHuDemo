@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <ZHListView/ZHListView.h>
+#import "ZHFeedBaseCell.h"
 
-@interface ZHFeedsCell : ZHListViewCell
+@interface ZHFeedsAnswerCell : ZHFeedBaseCell
 
 @end

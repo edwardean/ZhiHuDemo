@@ -7,7 +7,7 @@
 //
 
 #import "ZHFeedsViewController.h"
-#import "ZHFeedsCell.h"
+#import "ZHFeedsAnswerCell.h"
 #import "ZHParser.h"
 #import "ZHFeedsParserFactory.h"
 
@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  [self registerCellClass:[ZHFeedsAnswerCell class]];
   
 	self.title = @"最新动态";
   
@@ -62,8 +64,6 @@
   
   self.navigationItem.leftBarButtonItem = leftButtonItem;
   self.navigationItem.rightBarButtonItem = rightButtonItem;
-  
-  [self registerCellClass:[ZHFeedsCell class]];
   
   [self performSelector:@selector(dataReady) withObject:nil afterDelay:2.5f];
   

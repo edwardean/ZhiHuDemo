@@ -232,7 +232,7 @@
 		CA8C5474178EA2B2005552CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8C5472178EA2B2005552CE /* InfoPlist.strings */; };
 		CA8C5477178EA2B2005552CE /* ZHDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C5476178EA2B2005552CE /* ZHDemoTests.m */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
-		CABDEA99179E5A5500092EDE /* ZHFeedsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABDEA98179E5A5500092EDE /* ZHFeedsCell.m */; };
+		CABDEA99179E5A5500092EDE /* ZHFeedsAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */; };
 		CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */; };
 		CAC5FAEA179A498600CF3CF9 /* ZHProfileNormalStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC5FAE9179A498600CF3CF9 /* ZHProfileNormalStyleCell.m */; };
 		CAC5FAED179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC5FAEC179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.m */; };
@@ -247,9 +247,7 @@
 		CADED720179F86C10017FD66 /* AvatarMale68@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADED71C179F86C10017FD66 /* AvatarMale68@2x.png */; };
 		CADED723179F86D20017FD66 /* AvatarFemale68@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADED722179F86D20017FD66 /* AvatarFemale68@2x.png */; };
 		CAE33892179F78FA004FFA0F /* ZHFeedBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE33891179F78FA004FFA0F /* ZHFeedBaseCell.m */; };
-		CAE33896179F7928004FFA0F /* ZHFeedQuestionFollowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE33895179F7928004FFA0F /* ZHFeedQuestionFollowCell.m */; };
-		CAE33899179F7940004FFA0F /* ZHFeedAnswerCreateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE33898179F7940004FFA0F /* ZHFeedAnswerCreateCell.m */; };
-		CAE3389C179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE3389B179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.m */; };
+		CAE33896179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE33895179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m */; };
 		CAEF26AE1797B59600F7F111 /* AvatarFemale150.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */; };
 		CAEF26AF1797B59600F7F111 /* AvatarFemale150@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AB1797B59600F7F111 /* AvatarFemale150@2x.png */; };
 		CAEF26B01797B59600F7F111 /* AvatarMale150.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEF26AC1797B59600F7F111 /* AvatarMale150.png */; };
@@ -563,8 +561,8 @@
 		CA8C5476178EA2B2005552CE /* ZHDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHDemoTests.m; sourceTree = "<group>"; };
 		CABA8A4F179012F0004B356E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		CABA8A50179012F0004B356E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		CABDEA97179E5A5500092EDE /* ZHFeedsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsCell.h; sourceTree = "<group>"; };
-		CABDEA98179E5A5500092EDE /* ZHFeedsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsCell.m; sourceTree = "<group>"; };
+		CABDEA97179E5A5500092EDE /* ZHFeedsAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsAnswerCell.h; sourceTree = "<group>"; };
+		CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsAnswerCell.m; sourceTree = "<group>"; };
 		CAC5FAE1179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserProfileWeiboStyleCell.h; sourceTree = "<group>"; };
 		CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserProfileWeiboStyleCell.m; sourceTree = "<group>"; };
 		CAC5FAE8179A498600CF3CF9 /* ZHProfileNormalStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHProfileNormalStyleCell.h; sourceTree = "<group>"; };
@@ -585,12 +583,8 @@
 		CADED722179F86D20017FD66 /* AvatarFemale68@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvatarFemale68@2x.png"; sourceTree = "<group>"; };
 		CAE33890179F78FA004FFA0F /* ZHFeedBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedBaseCell.h; sourceTree = "<group>"; };
 		CAE33891179F78FA004FFA0F /* ZHFeedBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedBaseCell.m; sourceTree = "<group>"; };
-		CAE33894179F7928004FFA0F /* ZHFeedQuestionFollowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedQuestionFollowCell.h; sourceTree = "<group>"; };
-		CAE33895179F7928004FFA0F /* ZHFeedQuestionFollowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedQuestionFollowCell.m; sourceTree = "<group>"; };
-		CAE33897179F7940004FFA0F /* ZHFeedAnswerCreateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedAnswerCreateCell.h; sourceTree = "<group>"; };
-		CAE33898179F7940004FFA0F /* ZHFeedAnswerCreateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedAnswerCreateCell.m; sourceTree = "<group>"; };
-		CAE3389A179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedAnswerVoteUpCell.h; sourceTree = "<group>"; };
-		CAE3389B179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedAnswerVoteUpCell.m; sourceTree = "<group>"; };
+		CAE33894179F7928004FFA0F /* ZHFeedsQuestionFollowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsQuestionFollowCell.h; sourceTree = "<group>"; };
+		CAE33895179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsQuestionFollowCell.m; sourceTree = "<group>"; };
 		CAEF26AA1797B59600F7F111 /* AvatarFemale150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarFemale150.png; sourceTree = "<group>"; };
 		CAEF26AB1797B59600F7F111 /* AvatarFemale150@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvatarFemale150@2x.png"; sourceTree = "<group>"; };
 		CAEF26AC1797B59600F7F111 /* AvatarMale150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarMale150.png; sourceTree = "<group>"; };
@@ -673,16 +667,12 @@
 			children = (
 				CA20C27D179E441A00B6DBBD /* ZHFeedsViewController.h */,
 				CA20C27E179E441A00B6DBBD /* ZHFeedsViewController.m */,
-				CABDEA97179E5A5500092EDE /* ZHFeedsCell.h */,
-				CABDEA98179E5A5500092EDE /* ZHFeedsCell.m */,
 				CAE33890179F78FA004FFA0F /* ZHFeedBaseCell.h */,
 				CAE33891179F78FA004FFA0F /* ZHFeedBaseCell.m */,
-				CAE33894179F7928004FFA0F /* ZHFeedQuestionFollowCell.h */,
-				CAE33895179F7928004FFA0F /* ZHFeedQuestionFollowCell.m */,
-				CAE33897179F7940004FFA0F /* ZHFeedAnswerCreateCell.h */,
-				CAE33898179F7940004FFA0F /* ZHFeedAnswerCreateCell.m */,
-				CAE3389A179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.h */,
-				CAE3389B179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.m */,
+				CABDEA97179E5A5500092EDE /* ZHFeedsAnswerCell.h */,
+				CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */,
+				CAE33894179F7928004FFA0F /* ZHFeedsQuestionFollowCell.h */,
+				CAE33895179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m */,
 			);
 			name = Feeds;
 			sourceTree = "<group>";
@@ -1662,11 +1652,9 @@
 				CA20C283179E44AF00B6DBBD /* ZHFeedsParserFactory.m in Sources */,
 				CA20C286179E44C400B6DBBD /* ZHFeedsParser.m in Sources */,
 				CA20C297179E4DD800B6DBBD /* ZHFeedsObject.m in Sources */,
-				CABDEA99179E5A5500092EDE /* ZHFeedsCell.m in Sources */,
+				CABDEA99179E5A5500092EDE /* ZHFeedsAnswerCell.m in Sources */,
 				CAE33892179F78FA004FFA0F /* ZHFeedBaseCell.m in Sources */,
-				CAE33896179F7928004FFA0F /* ZHFeedQuestionFollowCell.m in Sources */,
-				CAE33899179F7940004FFA0F /* ZHFeedAnswerCreateCell.m in Sources */,
-				CAE3389C179F795C004FFA0F /* ZHFeedAnswerVoteUpCell.m in Sources */,
+				CAE33896179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

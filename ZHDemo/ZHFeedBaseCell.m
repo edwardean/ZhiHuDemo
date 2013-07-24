@@ -10,22 +10,15 @@
 
 @implementation ZHFeedBaseCell
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+  
+  if (self) {
+    
+  }
+  return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
