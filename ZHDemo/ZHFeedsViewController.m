@@ -55,10 +55,17 @@
 
 - (void)dataReady
 {
-	ZHParser *parser = [ZHFeedsParserFactory ParserFactory];
-  ZHModel *model = [parser parser];
-  self.myModel = model;
-  [self modelDidFinishLoading:model];
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    ZHParser *parser = [ZHFeedsParserFactory ParserFactory];
+    ZHModel *model = [parser parser];
+    self.myModel = model;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self modelDidFinishLoading:model];
+    });
+    
+  });
 }
 
 - (void)didReceiveMemoryWarning
