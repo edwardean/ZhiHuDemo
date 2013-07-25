@@ -58,6 +58,8 @@ typedef struct {
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
+    
+    self.title = @"资料";
     self.profileObject = [[ZHUserInfoObject alloc] init];
     self.collectionArray = [NSMutableArray arrayWithCapacity:3];
   }
@@ -67,8 +69,6 @@ typedef struct {
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-  self.title = @"资料";
   
   self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarSettingsIcon.png"] block:^(){
     

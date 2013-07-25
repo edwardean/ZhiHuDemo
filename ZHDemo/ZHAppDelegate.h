@@ -12,6 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, strong, readwrite) UINavigationController *navigationConreoller;
+//@property (nonatomic, strong, readwrite) UINavigationController *navigationConreoller;
 
 @end

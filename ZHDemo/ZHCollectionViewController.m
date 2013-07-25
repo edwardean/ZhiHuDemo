@@ -22,7 +22,7 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    
+    self.title = @"热门收藏";
   }
   return self;
 }
@@ -30,8 +30,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-  self.title = @"热门收藏";
   
   UIImage *barImage = [UIImage imageNamed:@"ZHNavigationBarShuffleIcon.png"];
 

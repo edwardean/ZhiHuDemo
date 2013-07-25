@@ -24,7 +24,7 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    
+    self.title = @"最新动态";
   }
   return self;
 }
@@ -39,8 +39,6 @@
   
   //[self.listView setDelegate:self];
   //[self.listView setDataSource:self];
-  
-	self.title = @"最新动态";
   
   UIImage *leftBarSearchImage = [UIImage imageNamed:@"ZHNavigationBarSearchIcon.png"];
 

@@ -29,7 +29,7 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    
+    [self setTitle:@"回答"];
   }
   return self;
 }
@@ -39,8 +39,6 @@
   [super viewDidLoad];
   
   [self registerCellClass:[ZHAnswerCell class]];
-  
-  [self setTitle:@"回答"];
   
   UIImage *shareImage = [UIImage imageNamed:@"ZHNavigationBarActionIcon.png"];
   self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:shareImage block:^(){
