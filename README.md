@@ -44,3 +44,11 @@ AppleDelegate类中有几个未使用的ViewController类，分别对应几个�
 增加了最新动态界面
 
 ![](./screenshot/12.png)
+
+![](./screenshot/13.png)
+
+![](./screenshot/14.png)
+
+![](./screenshot/15.png)
+
+![](./screenshot/16.png)
