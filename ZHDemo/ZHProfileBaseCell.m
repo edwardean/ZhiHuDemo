@@ -40,8 +40,12 @@
 - (void)setCellType:(ZHProfileCellPositionType)cellType
 {
   cellType_ = cellType;
-  UIImageView *cellNormalBackgroundView = [[UIImageView alloc] init];
-  UIImageView *cellSelectedBackgroundView = [[UIImageView alloc] init];
+  CGRect rect = CGRectMake(0, 0, 320, self.frame.size.height);
+  self.bounds = rect;
+  UIImageView *cellNormalBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+  UIImageView *cellSelectedBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+  [cellNormalBackgroundView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+  [cellSelectedBackgroundView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
   switch (cellType) {
     case CellBottom:
       [cellNormalBackgroundView setImage:[UIImage imageNamed:@"ZHCellBottomNormal.png"]];
@@ -66,6 +70,8 @@
     default:
       break;
   }
+  [self setBackgroundView:nil];
+  [self setSelectedBackgroundView:nil];
   [self setBackgroundView:cellNormalBackgroundView];
   [self setSelectedBackgroundView:cellSelectedBackgroundView];
 }

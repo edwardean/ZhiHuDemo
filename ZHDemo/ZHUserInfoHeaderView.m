@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <SDWebImage/SDWebImageManager.h>
 #import "ZHUserInfoHeaderView.h"
 #import "ZHUserInfoBottomView.h"
 #import "ZHUserInfoObject.h"

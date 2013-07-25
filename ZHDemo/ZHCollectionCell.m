@@ -9,6 +9,7 @@
 #import "UIImage+RounedImage.h"
 #import "ZHCollectionObject.h"
 #import <QuartzCore/QuartzCore.h>
+#import <SDWebImage/SDWebImageManager.h>
 #import "ZHCollectionCell.h"
 #import "ZHUserInfoViewController.h"
 

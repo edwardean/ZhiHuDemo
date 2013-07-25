@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <SDWebImage/SDWebImageManager.h>
 #import "UIImage+RounedImage.h"
 #import "UIView+Frame.h"
 #import "ZHAnswerCell.h"
