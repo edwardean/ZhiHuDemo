@@ -83,7 +83,6 @@
   [self setBackgroundView:cellNormalBackgroundView_];
   [self setSelectedBackgroundView:cellSelectedBackgroundView_];
   
-  [self sizeToFit];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated

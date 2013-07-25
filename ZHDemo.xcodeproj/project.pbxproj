@@ -211,6 +211,8 @@
 		CA5D4A8C1797A300005EF79B /* info8.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49F71797A300005EF79B /* info8.json */; };
 		CA5D4A8D1797A300005EF79B /* info9.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49F81797A300005EF79B /* info9.json */; };
 		CA5D4A911797A7F2005EF79B /* NSString+CalculateTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */; };
+		CA6EAFFA17A122CE00821D95 /* ZHUserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6EAFF917A122CE00821D95 /* ZHUserDetailView.m */; };
+		CA6EB00117A1250600821D95 /* ZHDetailViewBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6EB00017A1250600821D95 /* ZHDetailViewBottom.m */; };
 		CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */; };
 		CA7185A3179541BA005726B3 /* ZHUserInfoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */; };
 		CA77DA96178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA77DA95178FB8EF0012FE4F /* ZHAnswerHeaderFactory.m */; };
@@ -1055,6 +1057,10 @@
 		CA5D49F81797A300005EF79B /* info9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info9.json; sourceTree = "<group>"; };
 		CA5D4A8F1797A7F2005EF79B /* NSString+CalculateTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CalculateTextSize.h"; path = "Vendors/NSString+CalculateTextSize.h"; sourceTree = "<group>"; };
 		CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CalculateTextSize.m"; path = "Vendors/NSString+CalculateTextSize.m"; sourceTree = "<group>"; };
+		CA6EAFF817A122CE00821D95 /* ZHUserDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserDetailView.h; sourceTree = "<group>"; };
+		CA6EAFF917A122CE00821D95 /* ZHUserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserDetailView.m; sourceTree = "<group>"; };
+		CA6EAFFF17A1250600821D95 /* ZHDetailViewBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDetailViewBottom.h; sourceTree = "<group>"; };
+		CA6EB00017A1250600821D95 /* ZHDetailViewBottom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDetailViewBottom.m; sourceTree = "<group>"; };
 		CA71859E17953F84005726B3 /* ZHUserInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoHeaderView.h; sourceTree = "<group>"; };
 		CA71859F17953F84005726B3 /* ZHUserInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUserInfoHeaderView.m; sourceTree = "<group>"; };
 		CA7185A1179541BA005726B3 /* ZHUserInfoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoBottomView.h; sourceTree = "<group>"; };
@@ -2774,6 +2780,10 @@
 			children = (
 				CA54FAA8178EA860007DC220 /* ZHUserDetailViewController.h */,
 				CA54FAA9178EA860007DC220 /* ZHUserDetailViewController.m */,
+				CA6EAFF817A122CE00821D95 /* ZHUserDetailView.h */,
+				CA6EAFF917A122CE00821D95 /* ZHUserDetailView.m */,
+				CA6EAFFF17A1250600821D95 /* ZHDetailViewBottom.h */,
+				CA6EB00017A1250600821D95 /* ZHDetailViewBottom.m */,
 			);
 			name = UserDetail;
 			sourceTree = "<group>";
@@ -3769,6 +3779,8 @@
 				CABDEA99179E5A5500092EDE /* ZHFeedsAnswerCell.m in Sources */,
 				CAE33892179F78FA004FFA0F /* ZHFeedBaseCell.m in Sources */,
 				CAE33896179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m in Sources */,
+				CA6EAFFA17A122CE00821D95 /* ZHUserDetailView.m in Sources */,
+				CA6EB00117A1250600821D95 /* ZHDetailViewBottom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

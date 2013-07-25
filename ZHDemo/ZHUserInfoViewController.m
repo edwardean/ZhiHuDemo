@@ -20,6 +20,7 @@
 #import "ZHProfileCollectionStyleCell.h"
 #import "ZHUserProfileWeiboStyleCell.h"
 #import "ZHProfileBlacklistStyleCell.h"
+#import "ZHUserDetailViewController.h"
 
 @class ZHProfileNormalStyleCell;
 @class ZHProfileCollectionStyleCell;
@@ -75,7 +76,10 @@ typedef struct {
     [self.navigationController popViewControllerAnimated:YES];
   }];
   self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarMoreIcon.png"] block:^(){
-  	[[[UIAlertView alloc] initWithTitle:@"UserInfo" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+//  	[[[UIAlertView alloc] initWithTitle:@"UserInfo" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
   }];
   
   self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];

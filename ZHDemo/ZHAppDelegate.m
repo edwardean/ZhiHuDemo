@@ -59,13 +59,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                        withFinishedUnselectedImage:[UIImage imageNamed:@"MaleNormal.png"]];
   //  }
   
-  NSArray *tabVCArray = @[collectionNav,answerNav,userInfoNav,feedNav];
+  
+  NSArray *tabVCArray = @[feedNav,collectionNav,answerNav,userInfoNav];
   for (UINavigationController *nav in tabVCArray) {
     [[nav navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]
                               forBarMetrics:UIBarMetricsDefault];
   }
   UITabBarController *tabViewController = [[UITabBarController alloc] init];
-  [tabViewController setViewControllers:@[feedNav,collectionNav,answerNav,userInfoNav]];
+  [tabViewController setViewControllers:tabVCArray];
   
   self.window = [[UIWindow alloc]
                  initWithFrame:[[UIScreen mainScreen]bounds]];
