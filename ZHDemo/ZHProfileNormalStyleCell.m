@@ -41,8 +41,7 @@
 
 -(void)layoutSubviews
 {
-  [super layoutSubviews];
-  
+  [super layoutSubviews];  
 }
 
 - (void)bindWithObject:(id)object
@@ -51,7 +50,6 @@
   [self.profileCellTitleLabel setText:nil];
   
 	[self.profileCellTitleLabel setText:cellTitle];
-
 }
 
 

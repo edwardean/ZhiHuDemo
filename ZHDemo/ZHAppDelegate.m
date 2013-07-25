@@ -22,53 +22,47 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   ZHCollectionViewController *collectionViewController = [[ZHCollectionViewController alloc]
                                                           initWithNibName:nil
                                                           bundle:nil];
-  UINavigationController *collectionNav = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
+  UINavigationController *collectionNav = [[UINavigationController alloc]
+                                           initWithRootViewController:collectionViewController];
   collectionNav.tabBarItem.title = @"发现";
-  collectionNav.tabBarItem.image = [UIImage imageNamed:@"ExploreNormal.png"];
-  collectionNav.tabBarItem.selectedImage = [UIImage imageNamed:@"ExploreSelected.png"];
+  [collectionNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"ExploreSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"ExploreNormal.png"]];
   
   
   ZHAnswerViewController *answerController = [[ZHAnswerViewController alloc]
                                               initWithNibName:nil
                                               bundle:nil];
-  UINavigationController *answerNav = [[UINavigationController alloc] initWithRootViewController:answerController];
+  UINavigationController *answerNav = [[UINavigationController alloc]
+                                       initWithRootViewController:answerController];
   answerNav.tabBarItem.title = @"消息";
-  answerNav.tabBarItem.image = [UIImage imageNamed:@"NotificationNormal.png"];
-  answerNav.tabBarItem.selectedImage = [UIImage imageNamed:@"NotificationSelected.png"];
+  [answerNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"NotificationSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"NotificationNormal.png"] ];
   
   ZHFeedsViewController *feedsViewController = [[ZHFeedsViewController alloc] initWithNibName:nil
                                                                                        bundle:nil];
   UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedsViewController];
   feedNav.tabBarItem.title = @"首页";
-  feedNav.tabBarItem.image = [UIImage imageNamed:@"FeedNormal.png"];
-  feedNav.tabBarItem.selectedImage = [UIImage imageNamed:@"FeedSelected.png"];
+  [feedNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FeedSelected.png"]
+                   withFinishedUnselectedImage:[UIImage imageNamed:@"FeedNormal.png"]];
   
   ZHUserInfoViewController *userInfoController = [[ZHUserInfoViewController alloc]
                                                   initWithNibName:nil
                                                   bundle:nil];
-  UINavigationController *userInfoNav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
+  UINavigationController *userInfoNav = [[UINavigationController alloc]
+                                         initWithRootViewController:userInfoController];
   userInfoNav.tabBarItem.title = @"我";
   
   //伪代码
   //  if ([user isFemale]) {
-  //    userInfoNav.tabBarItem.image = [UIImage imageNamed:@"FemaleNormal.png"];
-  //    userInfoNav.tabBarItem.selectedImage = [UIImage imageNamed:@"FemaleSelected.png"];
+  //    [userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FemaleSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"FemaleNormal.png"]];
   //  } else {
-  userInfoNav.tabBarItem.image = [UIImage imageNamed:@"MaleNormal.png"];
-  userInfoNav.tabBarItem.selectedImage = [UIImage imageNamed:@"MaleSelected.png"];
-  //  }
   
-  // self.navigationConreoller = [[UINavigationController alloc]
-  //initWithRootViewController:feedsViewController];
-  
-  
-  //  if ([[self.navigationConreoller navigationBar] respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-  //    [[self.navigationConreoller navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+  [userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"MaleSelected.png"]
+                       withFinishedUnselectedImage:[UIImage imageNamed:@"MaleNormal.png"]];
   //  }
   
   NSArray *tabVCArray = @[collectionNav,answerNav,userInfoNav,feedNav];
   for (UINavigationController *nav in tabVCArray) {
-    [[nav navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+    [[nav navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]
+                              forBarMetrics:UIBarMetricsDefault];
   }
   UITabBarController *tabViewController = [[UITabBarController alloc] init];
   [tabViewController setViewControllers:@[feedNav,collectionNav,answerNav,userInfoNav]];
@@ -76,7 +70,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   self.window = [[UIWindow alloc]
                  initWithFrame:[[UIScreen mainScreen]bounds]];
   
-  self.window.rootViewController = tabViewController;//self.navigationConreoller;
+  self.window.rootViewController = tabViewController;
   
   [self.window makeKeyAndVisible];
   

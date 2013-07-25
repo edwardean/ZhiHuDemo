@@ -19,19 +19,27 @@
 
 @property (nonatomic) Class cellClass;
 
+@property (nonatomic, strong, readwrite) UIImageView *cellNormalBackgroundView;
+@property (nonatomic, strong, readwrite) UIImageView *cellSelectedBackgroundView;
+
 @end
 
 @implementation ZHProfileBaseCell
 
 @synthesize cellType = cellType_;
 @synthesize cellClass = cellClass_;
+@synthesize cellNormalBackgroundView = cellNormalBackgroundView_;
+@synthesize cellSelectedBackgroundView = cellSelectedBackgroundView_;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
 {
-  self = [super initWithFrame:frame];
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+	
   if (self) {
-    // Initialization code
+
   }
+  
   return self;
 }
 
@@ -42,29 +50,29 @@
   cellType_ = cellType;
   CGRect rect = CGRectMake(0, 0, 320, self.frame.size.height);
   self.bounds = rect;
-  UIImageView *cellNormalBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-  UIImageView *cellSelectedBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-  [cellNormalBackgroundView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-  [cellSelectedBackgroundView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+  self.cellNormalBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+  self.cellSelectedBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+  [cellNormalBackgroundView_ setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+  [cellSelectedBackgroundView_ setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
   switch (cellType) {
     case CellBottom:
-      [cellNormalBackgroundView setImage:[UIImage imageNamed:@"ZHCellBottomNormal.png"]];
-      [cellSelectedBackgroundView setImage:[UIImage imageNamed:@"ZHCellBottomHighlight.png"]];
+      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellBottomNormal.png"]];
+      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellBottomHighlight.png"]];
       break;
       
     case CellMiddle:
-      [cellNormalBackgroundView setImage:[UIImage imageNamed:@"ZHCellMiddleNormal.png"]];
-      [cellSelectedBackgroundView setImage:[UIImage imageNamed:@"ZHCellMiddleHighlight.png"]];
+      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellMiddleNormal.png"]];
+      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellMiddleHighlight.png"]];
       break;
       
     case CellSingle:
-      [cellNormalBackgroundView setImage:[UIImage imageNamed:@"ZHCellSingleNormal.png"]];
-      [cellSelectedBackgroundView setImage:[UIImage imageNamed:@"ZHCellSingleHighlight.png"]];
+      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellSingleNormal.png"]];
+      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellSingleHighlight.png"]];
       break;
       
     case CellTop:
-      [cellNormalBackgroundView setImage:[UIImage imageNamed:@"ZHCellTopNormal.png"]];
-      [cellSelectedBackgroundView setImage:[UIImage imageNamed:@"ZHCellTopHighlight.png"]];
+      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellTopNormal.png"]];
+      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellTopHighlight.png"]];
       break;
       
     default:
@@ -72,8 +80,10 @@
   }
   [self setBackgroundView:nil];
   [self setSelectedBackgroundView:nil];
-  [self setBackgroundView:cellNormalBackgroundView];
-  [self setSelectedBackgroundView:cellSelectedBackgroundView];
+  [self setBackgroundView:cellNormalBackgroundView_];
+  [self setSelectedBackgroundView:cellSelectedBackgroundView_];
+  
+  [self sizeToFit];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
@@ -129,5 +139,9 @@
   // SubClass will overwrite this method. Don't comment this
 }
 
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
+}
 
 @end

@@ -53,6 +53,7 @@
                                                   action:@selector(labelTapped:)];
     [actorsLabel_ addGestureRecognizer:actorsLabelGesture];
     [[UILabel appearance] setHighlightedTextColor:[UIColor grayColor]];
+    [actorsLabel_ setBackgroundColor:[UIColor grayColor]];
     [self.contentView addSubview:actorsLabel_];
     
     
