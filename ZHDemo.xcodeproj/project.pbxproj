@@ -23,8 +23,7 @@
 		CA20C291179E452E00B6DBBD /* feeds5.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C28C179E452E00B6DBBD /* feeds5.json */; };
 		CA20C293179E455200B6DBBD /* feeds2.json in Resources */ = {isa = PBXBuildFile; fileRef = CA20C292179E455200B6DBBD /* feeds2.json */; };
 		CA20C297179E4DD800B6DBBD /* ZHFeedsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */; };
-		CA239984179FB9F200791A7D /* ZHFeedAnswerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */; };
-		CA239985179FB9F200791A7D /* ZHFeedQuestionFollowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */; };
+		CA239988179FD93400791A7D /* ZHBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CA239987179FD93400791A7D /* ZHBarButtonItem.m */; };
 		CA2B86921797E0070068F056 /* ZHCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2B86911797E0070068F056 /* ZHCheckBox.m */; };
 		CA2F5D7C1798D2C5001A2872 /* ZHUserInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2F5D7B1798D2C4001A2872 /* ZHUserInfoListView.m */; };
 		CA38A83D1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = CA38A83B1798D6F40001A19E /* ZHQuestionViewAddButtonNormal.png */; };
@@ -57,7 +56,6 @@
 		CA561F75178F9D3900383B89 /* ZHAnswerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F74178F9D3900383B89 /* ZHAnswerParser.m */; };
 		CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F77178F9D5F00383B89 /* ZHUserInfoParser.m */; };
 		CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA561F7D178FA50800383B89 /* ZHAnswerHeaderParser.m */; };
-		CA591F4817979F7400B20A26 /* ZHListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA591F4717979F7400B20A26 /* ZHListView.framework */; };
 		CA5B26BD179E66BA000771F3 /* ZHNavigationBarSearchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BB179E66BA000771F3 /* ZHNavigationBarSearchIcon.png */; };
 		CA5B26BE179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */; };
 		CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D49551797A286005EF79B /* UIImage+RounedImage.m */; };
@@ -233,6 +231,7 @@
 		CA8C546C178EA2B2005552CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C544D178EA2B2005552CE /* Foundation.framework */; };
 		CA8C5474178EA2B2005552CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA8C5472178EA2B2005552CE /* InfoPlist.strings */; };
 		CA8C5477178EA2B2005552CE /* ZHDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C5476178EA2B2005552CE /* ZHDemoTests.m */; };
+		CA9F109217A0D68700CD503E /* ZHListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA591F4717979F7400B20A26 /* ZHListView.framework */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CABDEA99179E5A5500092EDE /* ZHFeedsAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */; };
 		CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */; };
@@ -320,10 +319,8 @@
 		CA20C292179E455200B6DBBD /* feeds2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds2.json; sourceTree = "<group>"; };
 		CA20C295179E4DD800B6DBBD /* ZHFeedsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsObject.h; sourceTree = "<group>"; };
 		CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedsObject.m; sourceTree = "<group>"; };
-		CA239980179FB9F200791A7D /* ZHFeedAnswerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedAnswerObject.h; sourceTree = "<group>"; };
-		CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedAnswerObject.m; sourceTree = "<group>"; };
-		CA239982179FB9F200791A7D /* ZHFeedQuestionFollowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedQuestionFollowObject.h; sourceTree = "<group>"; };
-		CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFeedQuestionFollowObject.m; sourceTree = "<group>"; };
+		CA239986179FD93400791A7D /* ZHBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBarButtonItem.h; sourceTree = "<group>"; };
+		CA239987179FD93400791A7D /* ZHBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBarButtonItem.m; sourceTree = "<group>"; };
 		CA2B86901797E0070068F056 /* ZHCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCheckBox.h; sourceTree = "<group>"; };
 		CA2B86911797E0070068F056 /* ZHCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCheckBox.m; sourceTree = "<group>"; };
 		CA2F5D7A1798D2C4001A2872 /* ZHUserInfoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUserInfoListView.h; sourceTree = "<group>"; };
@@ -615,6 +612,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9F109217A0D68700CD503E /* ZHListView.framework in Frameworks */,
 				CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */,
 				CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */,
 				CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */,
@@ -622,7 +620,6 @@
 				CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */,
 				CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */,
 				CA54FAC0178EAB36007DC220 /* CoreGraphics.framework in Frameworks */,
-				CA591F4817979F7400B20A26 /* ZHListView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,10 +708,6 @@
 			children = (
 				CA20C295179E4DD800B6DBBD /* ZHFeedsObject.h */,
 				CA20C296179E4DD800B6DBBD /* ZHFeedsObject.m */,
-				CA239980179FB9F200791A7D /* ZHFeedAnswerObject.h */,
-				CA239981179FB9F200791A7D /* ZHFeedAnswerObject.m */,
-				CA239982179FB9F200791A7D /* ZHFeedQuestionFollowObject.h */,
-				CA239983179FB9F200791A7D /* ZHFeedQuestionFollowObject.m */,
 			);
 			name = FeedsObject;
 			sourceTree = "<group>";
@@ -1049,6 +1042,8 @@
 				CA71859D17953F5D005726B3 /* UserInfo */,
 				CA131B2A17915A7A001EE98D /* CollectionCells */,
 				CA131B2B17915A89001EE98D /* AnswerCells */,
+				CA239986179FD93400791A7D /* ZHBarButtonItem.h */,
+				CA239987179FD93400791A7D /* ZHBarButtonItem.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1627,12 +1622,12 @@
 				CA561F75178F9D3900383B89 /* ZHAnswerParser.m in Sources */,
 				CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */,
 				CA54FB7E178EB32F007DC220 /* ZHLoadJSONFile.m in Sources */,
+				CA239988179FD93400791A7D /* ZHBarButtonItem.m in Sources */,
 				CA5D495D1797A2AE005EF79B /* JSONKit.m in Sources */,
 				CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */,
 				CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */,
 				CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */,
 				CA54FAA4178EA81F007DC220 /* ZHAnswerViewController.m in Sources */,
-				CA239985179FB9F200791A7D /* ZHFeedQuestionFollowObject.m in Sources */,
 				CA5D4A911797A7F2005EF79B /* NSString+CalculateTextSize.m in Sources */,
 				CAC5FAF3179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.m in Sources */,
 				CA8C5458178EA2B2005552CE /* main.m in Sources */,
@@ -1642,7 +1637,6 @@
 				CA561F78178F9D5F00383B89 /* ZHUserInfoParser.m in Sources */,
 				CA54FAC3178EABB5007DC220 /* ZHCollectionFactory.m in Sources */,
 				CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */,
-				CA239984179FB9F200791A7D /* ZHFeedAnswerObject.m in Sources */,
 				CA54FACD178EAC43007DC220 /* ZHDataParserFactory.m in Sources */,
 				CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */,
 				CA54FACE178EAC64007DC220 /* ZHAnswerFactory.m in Sources */,
@@ -1739,9 +1733,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
 				SDKROOT = iphoneos;
@@ -1768,7 +1761,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "72E76468-5FD0-4859-A66A-3C404D67FEEE";
@@ -1787,8 +1780,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ZHListView-fpfzvnetdviypjbcmdhcwtpooehl/Build/Products/Debug-iphoneos",
-					"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ZHListView-fpfzvnetdviypjbcmdhcwtpooehl/Build/Products/Release-iphoneos",
+					"\"$(SRCROOT)/ZHDemo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";
@@ -1812,8 +1804,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ZHListView-fpfzvnetdviypjbcmdhcwtpooehl/Build/Products/Debug-iphoneos",
-					"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ZHListView-fpfzvnetdviypjbcmdhcwtpooehl/Build/Products/Release-iphoneos",
+					"\"$(SRCROOT)/ZHDemo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHDemo/ZHDemo-Prefix.pch";

@@ -41,6 +41,13 @@
   [self registerCellClass:[ZHAnswerCell class]];
   
   [self setTitle:@"回答"];
+  
+  UIImage *shareImage = [UIImage imageNamed:@"ZHNavigationBarActionIcon.png"];
+  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:shareImage block:^(){
+    [[[UIAlertView alloc] initWithTitle:@"Answer" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+  }];
+  
+  
 	// Header View
   ZHAnswerHeaderView *headerView = [[ZHAnswerHeaderView alloc]
                                     initWithFrame:CGRectMake(0, 0, 320, 1)];

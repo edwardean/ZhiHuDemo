@@ -10,6 +10,7 @@
 #import "ZHParser.h"
 #import "ZHCollectionFactory.h"
 #import "ZHCollectionViewController.h"
+#import "ZHUserInfoViewController.h"
 
 @interface ZHCollectionViewController ()
 
@@ -31,6 +32,12 @@
   [super viewDidLoad];
   
   self.title = @"热门收藏";
+  
+  UIImage *barImage = [UIImage imageNamed:@"ZHNavigationBarShuffleIcon.png"];
+
+  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:barImage block:^(){
+  	[[[UIAlertView alloc] initWithTitle:@"Collection" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+  }];
   
   [self registerCellClass:[ZHCollectionCell class]];
 	

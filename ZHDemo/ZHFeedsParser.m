@@ -34,13 +34,13 @@
   
   for (NSDictionary *dic in dataArray) {
     
-    NSString *verb = [dic objectForKey:@"verb"];//问题分类
+    //NSString *verb = [dic objectForKey:@"verb"];//问题分类
     
     NSDictionary *target = [dic objectForKey:@"target"];
     
     if ([target objectForKey:@"author"]) {
-      NSDictionary *author = [target objectForKey:@"author"];
-      NSString *avatar_url = [author objectForKey:@"avatar_url"];
+      //NSDictionary *author = [target objectForKey:@"author"];
+      //NSString *avatar_url = [author objectForKey:@"avatar_url"];
     }
     
     NSArray *actors = [dic objectForKey:@"actors"];

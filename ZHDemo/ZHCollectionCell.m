@@ -10,6 +10,7 @@
 #import "ZHCollectionObject.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ZHCollectionCell.h"
+#import "ZHUserInfoViewController.h"
 
 #define ZHCOLLECTIONCELLDEFAULTCELLHEIGHT												95
 
@@ -99,7 +100,7 @@
                                            forState:UIControlStateNormal];
     [self.contentView addSubview:collectionCellAvatarButton_];
     // Add Button Event here...
-    //[collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     
     // collectionCellNameLabel
@@ -131,6 +132,11 @@
   [self.collectionCellNameLabel setText:nil];
   [self.collectionCellAnswersLabel setText:nil];
   
+}
+
+- (void)buttonTapped:(id)sender
+{
+	NSLog(@"%s",__func__);
 }
 
 - (void)bindWithObject:(id)object
@@ -228,7 +234,6 @@
   CGFloat rowHeight = [des CalculateTextSizeWith:[UIFont systemFontOfSize:ZHCOLLECTIONCELLDESLABELFONTSIZE]
                                             Size:CGSizeMake(ZHCOLLECTIONCELLDESLABELWIDTH, MAXFLOAT)
                                    LineBreakMode:NSLineBreakByWordWrapping].height + titleHeight+ ZHCOLLECTIONCELLDEFAULTCELLHEIGHT;
-  NSLog(@"RowHeight:%.0f",rowHeight);
   return rowHeight;
 }
 

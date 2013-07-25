@@ -31,6 +31,4 @@
 
 - (void)bindWithObject:(id)object;
 
-- (ZHFeedsObject *)FeedObjectWithType:(NSString *)feedType object:(id)object;
-
 @end
