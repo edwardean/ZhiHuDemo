@@ -48,9 +48,7 @@
   	[[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Left" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
   }];
   self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithTitle:@"提问" block:^(){
-//  	[[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-    ZHUserInfoViewController *userInfoVC = [[ZHUserInfoViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:userInfoVC animated:YES];
+  	[[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
   }];
   
   [self dataReady];
