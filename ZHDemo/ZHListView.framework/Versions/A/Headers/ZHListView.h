@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/***********框架内的tableView基类，默认是Plain样式**************/
 @interface ZHListView : UITableView
 
 @end
