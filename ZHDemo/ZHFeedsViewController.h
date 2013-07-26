@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, FeedCellType) {
   FeedCellTypeAnswerVoteUp
 };
 
-@interface ZHFeedsViewController : ZHListViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ZHFeedsViewController : ZHListViewController
 
 
 

@@ -21,4 +21,11 @@
 + (NSData *)UserDetailData;
 
 + (NSData *)FeedsData;
+
++ (NSData *)DetailAnswerTopicsData;
+
++ (NSData *)DetailAnswerQuestionData;
+
++ (NSData *)DetailAnswerAnswersData;
+
 @end

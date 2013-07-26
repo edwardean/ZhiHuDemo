@@ -68,6 +68,38 @@ static NSString * const feeds3 = @"feeds3";
 static NSString * const feeds4 = @"feeds4";
 static NSString * const feeds5 = @"feeds5";
 
+static NSString * const detailanswers1 = @"detailanswers1";
+static NSString * const detailanswers2 = @"detailanswers2";
+static NSString * const detailanswers3 = @"detailanswers3";
+static NSString * const detailanswers4 = @"detailanswers4";
+static NSString * const detailanswers5 = @"detailanswers5";
+static NSString * const detailanswers6 = @"detailanswers6";
+static NSString * const detailanswers7 = @"detailanswers7";
+static NSString * const detailanswers8 = @"detailanswers8";
+static NSString * const detailanswers9 = @"detailanswers9";
+static NSString * const detailanswers10 = @"detailanswers10";
+
+static NSString * const question1 = @"question1";
+static NSString * const question2 = @"question2";
+static NSString * const question3 = @"question3";
+static NSString * const question4 = @"question4";
+static NSString * const question5 = @"question5";
+static NSString * const question6 = @"question6";
+static NSString * const question7 = @"question7";
+static NSString * const question8 = @"question8";
+static NSString * const question9 = @"question9";
+static NSString * const question10 = @"question10";
+
+static NSString * const topics1 = @"topics1";
+static NSString * const topics2 = @"topics2";
+static NSString * const topics3 = @"topics3";
+static NSString * const topics4 = @"topics4";
+static NSString * const topics5 = @"topics5";
+static NSString * const topics6 = @"topics6";
+static NSString * const topics7 = @"topics7";
+static NSString * const topics8 = @"topics8";
+static NSString * const topics9 = @"topics9";
+static NSString * const topics10 = @"topics10";
 
 @interface ZHLoadJSONFile ()
 
@@ -82,6 +114,12 @@ static NSString * const feeds5 = @"feeds5";
 + (NSString *)CollectionsFilePath;
 
 + (NSString *)FeedsFilePath;
+
++ (NSString *)DetailAnswerTopicsFilePath;
+
++ (NSString *)DetailAnswersQuestionFilePath;
+
++ (NSString *)DetailAnswerAnswersFilePath;
 
 + (NSString *)BundleFilePath:(NSString *)fileName;
 
@@ -141,6 +179,24 @@ static NSString * const feeds5 = @"feeds5";
 	return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
 }
 
++ (NSString *)DetailAnswerTopicsFilePath
+{
+	NSArray *array = @[topics1,topics10,topics2,topics3,topics4,topics5,topics6,topics7,topics8,topics9];
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
+}
+
++ (NSString *)DetailAnswersQuestionFilePath
+{
+	NSArray *array = @[question1,question10,question2,question3,question4,question5,question6,question7,question8,question9];
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
+}
+
++ (NSString *)DetailAnswerAnswersFilePath
+{
+	NSArray *array = @[detailanswers1,detailanswers10,detailanswers2,detailanswers3,detailanswers4,detailanswers5,detailanswers6,detailanswers7,detailanswers8,detailanswers9];
+  return [ZHLoadJSONFile BundleFilePath:[ZHLoadJSONFile RandomFilePathFromArray:array]];
+}
+
 + (NSData *)CollectionData
 {
 	return  [NSData dataWithContentsOfFile:[ZHLoadJSONFile CollectionsFilePath]];
@@ -169,6 +225,21 @@ static NSString * const feeds5 = @"feeds5";
 + (NSData *)FeedsData
 {
 	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile FeedsFilePath]];
+}
+
++ (NSData *)DetailAnswerTopicsData
+{
+	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile DetailAnswerTopicsFilePath]];
+}
+
++ (NSData *)DetailAnswerQuestionData
+{
+	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile DetailAnswersQuestionFilePath]];
+}
+
++ (NSData *)DetailAnswerAnswersData
+{
+	return [NSData dataWithContentsOfFile:[ZHLoadJSONFile DetailAnswerAnswersFilePath]];
 }
 
 @end
