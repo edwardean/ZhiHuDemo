@@ -122,15 +122,15 @@
 	[super setSelected:selected animated:animated];
 }
 
-//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
-//{
-//	[super setHighlighted:highlighted animated:animated];
-//  if (highlighted) {
-//    [self.titleLabel setBackgroundColor:[UIColor colorWithRed:0.778 green:0.816 blue:0.853 alpha:1.000]];
-//  } else {
-//  	[self.titleLabel setBackgroundColor:[UIColor clearColor]];
-//  }
-//}
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+	[super setHighlighted:highlighted animated:animated];
+  if (highlighted) {
+    
+  } else {
+  	
+  }
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -181,9 +181,11 @@
   }
   if ([touch view] == self.titleLabel) {
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setShadowOffset:CGSizeZero];
   }
   if ([touch view] == self.answerExcerptLabel) {
     [self.answerExcerptLabel setBackgroundColor:[UIColor clearColor]];
+    [self.answerExcerptLabel setShadowOffset:CGSizeZero];
   }
 }
 

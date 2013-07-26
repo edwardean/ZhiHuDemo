@@ -771,6 +771,10 @@
 		CAD86E1E17A0F26E00E70B88 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD86E1D17A0F26E00E70B88 /* Default.png */; };
 		CAD86E2117A0F27300E70B88 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD86E2017A0F27300E70B88 /* Default@2x.png */; };
 		CAD86E2317A0F27A00E70B88 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD86E2217A0F27A00E70B88 /* Default-568h@2x.png */; };
+		CAD93B8317A27A9E0096C503 /* ZHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD93B8217A27A9E0096C503 /* ZHQuestionCell.m */; };
+		CAD93B8717A27CC20096C503 /* ZHQuestionTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD93B8617A27CC20096C503 /* ZHQuestionTopicView.m */; };
+		CAD93B8A17A27D790096C503 /* ZHQuestionMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD93B8917A27D790096C503 /* ZHQuestionMessageView.m */; };
+		CAD93B8D17A27E1D0096C503 /* ZHQuestionBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD93B8C17A27E1C0096C503 /* ZHQuestionBottomView.m */; };
 		CADED71D179F86C10017FD66 /* AvatarFemale36.png in Resources */ = {isa = PBXBuildFile; fileRef = CADED719179F86C10017FD66 /* AvatarFemale36.png */; };
 		CADED71E179F86C10017FD66 /* AvatarFemale68.png in Resources */ = {isa = PBXBuildFile; fileRef = CADED71A179F86C10017FD66 /* AvatarFemale68.png */; };
 		CADED71F179F86C10017FD66 /* AvatarMale68.png in Resources */ = {isa = PBXBuildFile; fileRef = CADED71B179F86C10017FD66 /* AvatarMale68.png */; };
@@ -1679,6 +1683,14 @@
 		CAD86E1D17A0F26E00E70B88 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		CAD86E2017A0F27300E70B88 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		CAD86E2217A0F27A00E70B88 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		CAD93B8117A27A9E0096C503 /* ZHQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionCell.h; sourceTree = "<group>"; };
+		CAD93B8217A27A9E0096C503 /* ZHQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionCell.m; sourceTree = "<group>"; };
+		CAD93B8517A27CC20096C503 /* ZHQuestionTopicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionTopicView.h; sourceTree = "<group>"; };
+		CAD93B8617A27CC20096C503 /* ZHQuestionTopicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionTopicView.m; sourceTree = "<group>"; };
+		CAD93B8817A27D790096C503 /* ZHQuestionMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionMessageView.h; sourceTree = "<group>"; };
+		CAD93B8917A27D790096C503 /* ZHQuestionMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionMessageView.m; sourceTree = "<group>"; };
+		CAD93B8B17A27E1C0096C503 /* ZHQuestionBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHQuestionBottomView.h; sourceTree = "<group>"; };
+		CAD93B8C17A27E1C0096C503 /* ZHQuestionBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHQuestionBottomView.m; sourceTree = "<group>"; };
 		CADED719179F86C10017FD66 /* AvatarFemale36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarFemale36.png; sourceTree = "<group>"; };
 		CADED71A179F86C10017FD66 /* AvatarFemale68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarFemale68.png; sourceTree = "<group>"; };
 		CADED71B179F86C10017FD66 /* AvatarMale68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarMale68.png; sourceTree = "<group>"; };
@@ -3045,6 +3057,14 @@
 			children = (
 				CAEB711617A25582002B21F7 /* ZHQuestionViewController.h */,
 				CAEB711717A25582002B21F7 /* ZHQuestionViewController.m */,
+				CAD93B8517A27CC20096C503 /* ZHQuestionTopicView.h */,
+				CAD93B8617A27CC20096C503 /* ZHQuestionTopicView.m */,
+				CAD93B8817A27D790096C503 /* ZHQuestionMessageView.h */,
+				CAD93B8917A27D790096C503 /* ZHQuestionMessageView.m */,
+				CAD93B8B17A27E1C0096C503 /* ZHQuestionBottomView.h */,
+				CAD93B8C17A27E1C0096C503 /* ZHQuestionBottomView.m */,
+				CAD93B8117A27A9E0096C503 /* ZHQuestionCell.h */,
+				CAD93B8217A27A9E0096C503 /* ZHQuestionCell.m */,
 			);
 			name = Questions;
 			sourceTree = "<group>";
@@ -4001,6 +4021,10 @@
 				CAE33896179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m in Sources */,
 				CA6EAFFA17A122CE00821D95 /* ZHUserDetailView.m in Sources */,
 				CA6EB00117A1250600821D95 /* ZHDetailViewBottom.m in Sources */,
+				CAD93B8317A27A9E0096C503 /* ZHQuestionCell.m in Sources */,
+				CAD93B8717A27CC20096C503 /* ZHQuestionTopicView.m in Sources */,
+				CAD93B8A17A27D790096C503 /* ZHQuestionMessageView.m in Sources */,
+				CAD93B8D17A27E1D0096C503 /* ZHQuestionBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
