@@ -101,7 +101,8 @@
                                            forState:UIControlStateNormal];
     [self.contentView addSubview:collectionCellAvatarButton_];
     // Add Button Event here...
-    [collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [collectionCellAvatarButton_ addTarget:self action:@selector(buttonTapped:)
+                          forControlEvents:UIControlEventTouchUpInside];
     
     
     // collectionCellNameLabel

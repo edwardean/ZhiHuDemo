@@ -71,14 +71,19 @@ typedef struct {
 {
   [super viewDidLoad];
   
-  self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarSettingsIcon.png"] block:^(){
+  self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarSettingsIcon.png"]
+                                                                            block:^(){
     
     [self.navigationController popViewControllerAnimated:YES];
   }];
-  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarMoreIcon.png"] block:^(){
+  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarMoreIcon.png"]
+                                                                             block:^(){
 //  	[[[UIAlertView alloc] initWithTitle:@"UserInfo" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-    ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc]
+                                                        initWithNibName:nil
+                                                        bundle:nil];
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
 
   }];
   

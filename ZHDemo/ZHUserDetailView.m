@@ -33,7 +33,8 @@
       [[avatarButton_ layer] setCornerRadius:3.0f];
       [avatarButton_ setClipsToBounds:YES];
       [[avatarButton_ layer] setBorderWidth:1.0f];
-      [[avatarButton_ layer] setBorderColor:[UIColor colorWithWhite:0.719 alpha:1.000].CGColor];
+      [[avatarButton_ layer] setBorderColor:[UIColor colorWithWhite:0.719
+                                                              alpha:1.000].CGColor];
       [avatarButton_ setContentMode:UIViewContentModeScaleAspectFill];
       [avatarButton_ setY:10];
       [self addSubview:avatarButton_];
@@ -62,7 +63,8 @@
 
 - (void)clearCellContent
 {
-	[self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskXL.png"] forState:UIControlStateNormal];
+	[self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskXL.png"]
+                               forState:UIControlStateNormal];
   [self.userNameLabel setText:@"Edward"];
   [self.sexImage setImage:[UIImage imageNamed:@"ZHProfileViewGenderMale.png"]];
   
@@ -76,7 +78,8 @@
 	[super layoutSubviews];
   
   [self.avatarButton setBackgroundImage:nil forState:UIControlStateNormal];
-  [self.avatarButton setImage:[UIImage imageNamed:@"AvatarMale150.png"] forState:UIControlStateNormal];
+  [self.avatarButton setImage:[UIImage imageNamed:@"AvatarMale150.png"]
+                     forState:UIControlStateNormal];
   [self.avatarButton setCenterX:self.centerX];
   
   [self.userNameLabel setCenterX:self.centerX];

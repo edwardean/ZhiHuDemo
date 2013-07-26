@@ -313,7 +313,8 @@
     thanked_count = infoObject.thanked_count;
   }
   
-  [self.userInfoBottomView addUserVoteupCount:voteup_count ThankCount:thanked_count];
+  [self.userInfoBottomView addUserVoteupCount:voteup_count
+                                   ThankCount:thanked_count];
   
   [self.userInfoHeaderNameLabel sizeToFit];
   [self.userInfoHeaderHeadlineLabel sizeToFit];

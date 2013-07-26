@@ -67,7 +67,8 @@
     [blocks addObject:[block copy]];
 #endif
     
-    [barButton addTarget:self action:@selector(handleBlock) forControlEvents:UIControlEventTouchUpInside];
+    [barButton addTarget:self action:@selector(handleBlock)
+        forControlEvents:UIControlEventTouchUpInside];
   }
   
   return self;
@@ -90,7 +91,8 @@
                                stretchableImageWithLeftCapWidth:5 topCapHeight:5];
     UIImage *barHighImage = [[UIImage imageNamed:@"NavigationBarButtonHighlight.png"]
                              stretchableImageWithLeftCapWidth:5 topCapHeight:5];
-    CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 20)];
+    CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:12.0f]
+                    constrainedToSize:CGSizeMake(320, 20)];
     CGRect rect = CGRectInset(CGRectMake(0, 0, size.width, size.height), -10, -7);
     
     UIButton *barButton = [[UIButton alloc] initWithFrame:rect];
@@ -116,7 +118,8 @@
     [blocks addObject:[block copy]];
 #endif
     
-    [barButton addTarget:self action:@selector(handleBlock) forControlEvents:UIControlEventTouchUpInside];
+    [barButton addTarget:self action:@selector(handleBlock)
+        forControlEvents:UIControlEventTouchUpInside];
     
   }
 	return self;

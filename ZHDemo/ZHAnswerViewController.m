@@ -41,8 +41,13 @@
   [self registerCellClass:[ZHAnswerCell class]];
   
   UIImage *shareImage = [UIImage imageNamed:@"ZHNavigationBarActionIcon.png"];
-  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:shareImage block:^(){
-    [[[UIAlertView alloc] initWithTitle:@"Answer" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:shareImage
+                                                                             block:^(){
+    [[[UIAlertView alloc] initWithTitle:@"Answer"
+                                message:@"Right"
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil, nil] show];
   }];
   
   

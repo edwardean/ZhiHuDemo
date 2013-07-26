@@ -42,11 +42,21 @@
   
   UIImage *leftBarSearchImage = [UIImage imageNamed:@"ZHNavigationBarSearchIcon.png"];
 
-  self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:leftBarSearchImage block:^(){
-  	[[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Left" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+  self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:leftBarSearchImage
+                                                                            block:^(){
+  	[[[UIAlertView alloc] initWithTitle:@"Alert"
+                                message:@"Left"
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil, nil] show];
   }];
-  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithTitle:@"提问" block:^(){
-  	[[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+  self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithTitle:@"提问"
+                                                                             block:^(){
+  	[[[UIAlertView alloc] initWithTitle:@"Alert"
+                                message:@"Right"
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil, nil] show];
   }];
   
   [self dataReady];
@@ -74,49 +84,4 @@
   // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - UITableViewDelegate & UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return self.myModel.objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	static NSString *CellIdentifier = @"ZHCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (!cell) {
-    cell = [[ZHFeedBaseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
-  cell.textLabel.text = [[self.myModel.objects objectAtIndex:indexPath.row] valueForKey:@"title"];
-  return cell;
-}
-
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if ([tableView numberOfRowsInSection:indexPath.section] == 1) {
-    //Signal
-    NSLog(@"%@ Signal",indexPath);
-  } else {
-  	if (indexPath.row == 0) {
-      //Top
-      NSLog(@"%@ Top",indexPath);
-    } else if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
-    	// Last
-      NSLog(@"%@ Last",indexPath);
-    } else {
-    	//Middle
-      NSLog(@"%@ Middle",indexPath);
-    }
-  }
-}
 @end

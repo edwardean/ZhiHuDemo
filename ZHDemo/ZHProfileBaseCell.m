@@ -93,7 +93,10 @@
   {
     if ([view isKindOfClass:[UILabel class]]) {
       if (highlighted) {
-        [(UILabel *)view setTextColor:[UIColor colorWithRed:0.991 green:0.990 blue:1.000 alpha:1.000]];
+        [(UILabel *)view setTextColor:[UIColor colorWithRed:0.991
+                                                      green:0.990
+                                                       blue:1.000
+                                                      alpha:1.000]];
       } else {
         [(UILabel *)view setTextColor:[UIColor blackColor]];
       }

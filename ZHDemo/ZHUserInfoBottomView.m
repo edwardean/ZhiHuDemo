@@ -63,7 +63,8 @@
     if (!thankedButton_) {
       self.thankedButton = [UIButton buttonWithType:UIButtonTypeCustom];
       [thankedButton_ setSize:CGSizeMake(20, 19)];
-      [thankedButton_ setImage:[UIImage imageNamed:@"ZHThankIcon.png"] forState:UIControlStateNormal];
+      [thankedButton_ setImage:[UIImage imageNamed:@"ZHThankIcon.png"]
+                      forState:UIControlStateNormal];
       [thankedButton_ setX:70];
       [thankedButton_ setCenterY:self.contentCenter.y];
       [self addSubview:thankedButton_];

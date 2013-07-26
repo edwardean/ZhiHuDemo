@@ -79,7 +79,10 @@
     self.backgroundView = [[UIImageView alloc]
                            initWithImage:[[UIImage
                                            imageNamed:@"ZHExploreListItemBase.png"]
-                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15, 16, 7, 16)]];
+                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15,
+                                                                                       16,
+                                                                                       7,
+                                                                                       16)]];
     
     
     // answerTitleLabel
@@ -145,7 +148,8 @@
     self.temporaryImageView = [[UIImageView alloc] init];
     
     // answerSeparateLine
-    self.answerSeparateLine = [[UIImageView alloc] initWithFrame:CGRectMake(9.5, 0, 301, 1)];
+    self.answerSeparateLine = [[UIImageView alloc]
+                               initWithFrame:CGRectMake(9.5, 0, 301, 1)];
     [answerSeparateLine_ setImage:[UIImage imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
     
     [self.backgroundView addSubview:self.answerSeparateLine];
