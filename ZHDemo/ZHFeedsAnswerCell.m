@@ -77,9 +77,12 @@
     self.titleLabel = [[UILabel alloc] init];
     [titleLabel_ setBackgroundColor:[UIColor clearColor]];
     [titleLabel_ setNumberOfLines:0];
+    [titleLabel_ setClipsToBounds:YES];
+    [[titleLabel_ layer] setCornerRadius:2.0f];
     [titleLabel_ setX:CELLCONTENTMARGINTOLEFT];
     [titleLabel_ setLineBreakMode:LINEBREAKBYTRUNCATINGTAIL];
     [titleLabel_ setFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE]];
+    [titleLabel_ setUserInteractionEnabled:YES];
     [self.contentView addSubview:titleLabel_];
     
     
@@ -101,9 +104,12 @@
     
     self.answerExcerptLabel = [[UILabel alloc] init];
     [answerExcerptLabel_ setBackgroundColor:[UIColor clearColor]];
+    [answerExcerptLabel_ setClipsToBounds:YES];
+    [[answerExcerptLabel_ layer] setCornerRadius:3.0f];
     [answerExcerptLabel_ setNumberOfLines:0];
     [answerExcerptLabel_ setLineBreakMode:LINEBREAKBYTRUNCATINGTAIL];
     [answerExcerptLabel_ setFont:[UIFont systemFontOfSize:EXCERPTLABELFONTSIZE]];
+    [answerExcerptLabel_ setUserInteractionEnabled:YES];
     [answerExcerptLabel_ setTextColor:[UIColor grayColor]];
     [self.contentView addSubview:answerExcerptLabel_];
     
@@ -111,22 +117,59 @@
   return self;
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+	[super setSelected:selected animated:animated];
+}
+
+//- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+//{
+//	[super setHighlighted:highlighted animated:animated];
+//  if (highlighted) {
+//    [self.titleLabel setBackgroundColor:[UIColor colorWithRed:0.778 green:0.816 blue:0.853 alpha:1.000]];
+//  } else {
+//  	[self.titleLabel setBackgroundColor:[UIColor clearColor]];
+//  }
+//}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
   UITouch *touch = [touches anyObject];
   if ([touch view] == self.actorsLabel) {
-    [self.actorsLabel setBackgroundColor:[UIColor colorWithRed:0.714 green:0.814 blue:0.827 alpha:1.000]];
+    [self.actorsLabel setBackgroundColor:[UIColor colorWithRed:0.778 green:0.816 blue:0.853 alpha:1.000]];
+    [self.actorsLabel setShadowColor:[UIColor whiteColor]];
+    [self.actorsLabel setShadowOffset:CGSizeMake(0, 1)];
   }
   
+  if ([touch view] == self.titleLabel) {
+    [self.titleLabel setBackgroundColor:[UIColor colorWithRed:0.778 green:0.816 blue:0.853 alpha:1.000]];
+    [self.titleLabel setShadowOffset:CGSizeMake(0, 1)];
+    [self.titleLabel setShadowColor:[UIColor whiteColor]];
+  }
+  
+  if ([touch view] == self.answerExcerptLabel) {
+    [self.answerExcerptLabel setBackgroundColor:[UIColor colorWithRed:0.778 green:0.816 blue:0.853 alpha:1.000]];
+    [self.answerExcerptLabel setShadowOffset:CGSizeMake(0, 1)];
+    [self.answerExcerptLabel setShadowColor:[UIColor whiteColor]];
+  }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
   UITouch *touch = [touches anyObject];
   if ([touch view] == self.actorsLabel) {
-     [self.actorsLabel setBackgroundColor:[UIColor clearColor]];
+    [self.actorsLabel setBackgroundColor:[UIColor clearColor]];
+    [self.actorsLabel setShadowOffset:CGSizeZero];
   }
   
+  if ([touch view] == self.titleLabel) {
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setShadowOffset:CGSizeZero];
+  }
+  if ([touch view] == self.answerExcerptLabel) {
+    [self.answerExcerptLabel setBackgroundColor:[UIColor clearColor]];
+    [self.answerExcerptLabel setShadowOffset:CGSizeZero];
+  }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -134,8 +177,14 @@
   UITouch *touch = [touches anyObject];
   if ([touch view] == self.actorsLabel) {
     [self.actorsLabel setBackgroundColor:[UIColor clearColor]];
+    [self.actorsLabel setShadowOffset:CGSizeZero];
   }
-  
+  if ([touch view] == self.titleLabel) {
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+  }
+  if ([touch view] == self.answerExcerptLabel) {
+    [self.answerExcerptLabel setBackgroundColor:[UIColor clearColor]];
+  }
 }
 
 
@@ -144,8 +193,8 @@
   if (!self.feedsViewController) {
     ZHFeedsViewController *feeds = [[ZHFeedsViewController alloc] initWithNibName:nil bundle:nil];
     self.feedsViewController = feeds;
-  ZHUserInfoViewController *userInfo = [[ZHUserInfoViewController alloc] initWithNibName:nil bundle:nil];
-  [self.feedsViewController.navigationController pushViewController:userInfo animated:YES];
+    ZHUserInfoViewController *userInfo = [[ZHUserInfoViewController alloc] initWithNibName:nil bundle:nil];
+    [self.feedsViewController.navigationController pushViewController:userInfo animated:YES];
   }
 }
 
@@ -170,18 +219,18 @@
   NSString *excerpt = feedObject.excerpt;
   
   if (title && excerpt) {
-  CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE]
-                       constrainedToSize:CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT)
-                           lineBreakMode:NSLineBreakByTruncatingTail];
-  
-  CGSize excerptSize = [excerpt sizeWithFont:[UIFont systemFontOfSize:EXCERPTLABELFONTSIZE]
-                           constrainedToSize:CGSizeMake(CELLEXCERPTLABELWIDTH, CELLEXCERPTLABELHEIGHT)
-                               lineBreakMode:NSLineBreakByTruncatingTail];
-  
-  //15为第一行文字的高度
-  CGFloat cellHeight = titleSize.height + excerptSize.height + CELLCONTENTMARGINTOTOP + 15 + MARGINBEWTEENTWOCONTENT  + MARGINBEWTEENTWOCONTENT + CELLCONTENTMARGINTOBOTTOM;
-
-  return cellHeight;
+    CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:TITLELABELFONTSIZE]
+                         constrainedToSize:CGSizeMake(CELLTITLELABELWIDTH, CELLTITLELABELHEIGHT)
+                             lineBreakMode:NSLineBreakByTruncatingTail];
+    
+    CGSize excerptSize = [excerpt sizeWithFont:[UIFont systemFontOfSize:EXCERPTLABELFONTSIZE]
+                             constrainedToSize:CGSizeMake(CELLEXCERPTLABELWIDTH, CELLEXCERPTLABELHEIGHT)
+                                 lineBreakMode:NSLineBreakByTruncatingTail];
+    
+    //15为第一行文字的高度
+    CGFloat cellHeight = titleSize.height + excerptSize.height + CELLCONTENTMARGINTOTOP + 15 + MARGINBEWTEENTWOCONTENT  + MARGINBEWTEENTWOCONTENT + CELLCONTENTMARGINTOBOTTOM;
+    
+    return cellHeight;
   } else {
   	return 65;
   }
@@ -229,7 +278,7 @@
   
   [self.voteupBackgroundView setY:[self.titleLabel bottom] + MARGINBEWTEENTWOCONTENT];
 	[self.voteupLabel setSize:CGSizeMake([self.voteupBackgroundView width] - 1,
-  [self.voteupBackgroundView height] - 1)];
+                                       [self.voteupBackgroundView height] - 1)];
   
   [self.answerExcerptLabel setOrigin:CGPointMake([self.voteupBackgroundView right] + 5, [self.voteupBackgroundView y] - 2)];
   
@@ -237,14 +286,9 @@
   
   CGSize size = [self.answerExcerptLabel.text sizeWithFont:self.answerExcerptLabel.font
                                          constrainedToSize:excerptLabelDefultSize
-                                            lineBreakMode:self.answerExcerptLabel.lineBreakMode];
+                                             lineBreakMode:self.answerExcerptLabel.lineBreakMode];
   
   [self.answerExcerptLabel setSize:size];
-}
-
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
-{
-	[super setHighlighted:highlighted animated:animated];
 }
 
 @end

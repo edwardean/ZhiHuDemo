@@ -78,7 +78,6 @@ typedef struct {
   }];
   self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarMoreIcon.png"]
                                                                              block:^(){
-//  	[[[UIAlertView alloc] initWithTitle:@"UserInfo" message:@"Right" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc]
                                                         initWithNibName:nil
                                                         bundle:nil];

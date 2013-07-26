@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 ZhiHu. All rights reserved.
 //
 
-#import <ZHListView/ZHListView.h>
+#import <ZHListView/ZHListViewController.h>
 
 @interface ZHQuestionViewController : ZHListViewController
 
