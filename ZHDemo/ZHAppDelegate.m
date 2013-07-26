@@ -61,10 +61,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   
   
   NSArray *tabVCArray = @[feedNav,collectionNav,answerNav,userInfoNav];
-  for (UINavigationController *nav in tabVCArray) {
-    [[nav navigationBar] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]
-                              forBarMetrics:UIBarMetricsDefault];
-  }
+  
   UITabBarController *tabViewController = [[UITabBarController alloc] init];
   [tabViewController setViewControllers:tabVCArray];
   
@@ -80,6 +77,20 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
 - (void)customAppraeance
 {
+  [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+  
+  [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"NavigationBarBackButtonNormal.png"]
+                                                              stretchableImageWithLeftCapWidth:13
+                                                              topCapHeight:14]
+                                                    forState:UIControlStateNormal
+                                                  barMetrics:UIBarMetricsDefault];
+  
+  [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"NavigationBarBackButtonHighlight.png"]
+                                                              stretchableImageWithLeftCapWidth:13
+                                                              topCapHeight:14]
+                                                    forState:UIControlStateHighlighted
+                                                  barMetrics:UIBarMetricsDefault];
+  
   UIImage *barBackImage = [UIImage imageNamed:@"TabbarBase.png"];
 	[[UITabBar appearance] setBackgroundImage:barBackImage];
   

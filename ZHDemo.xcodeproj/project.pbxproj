@@ -1730,12 +1730,6 @@
 			children = (
 				CA20C27D179E441A00B6DBBD /* ZHFeedsViewController.h */,
 				CA20C27E179E441A00B6DBBD /* ZHFeedsViewController.m */,
-				CAE33890179F78FA004FFA0F /* ZHFeedBaseCell.h */,
-				CAE33891179F78FA004FFA0F /* ZHFeedBaseCell.m */,
-				CABDEA97179E5A5500092EDE /* ZHFeedsAnswerCell.h */,
-				CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */,
-				CAE33894179F7928004FFA0F /* ZHFeedsQuestionFollowCell.h */,
-				CAE33895179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m */,
 			);
 			name = Feeds;
 			sourceTree = "<group>";
@@ -2594,6 +2588,16 @@
 				CA7185A2179541BA005726B3 /* ZHUserInfoBottomView.m */,
 				CA2F5D7A1798D2C4001A2872 /* ZHUserInfoListView.h */,
 				CA2F5D7B1798D2C4001A2872 /* ZHUserInfoListView.m */,
+				CAC5FAE8179A498600CF3CF9 /* ZHProfileNormalStyleCell.h */,
+				CAC5FAE9179A498600CF3CF9 /* ZHProfileNormalStyleCell.m */,
+				CAC5FAEB179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.h */,
+				CAC5FAEC179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.m */,
+				CAC5FAE1179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.h */,
+				CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */,
+				CAC5FAF1179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.h */,
+				CAC5FAF2179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.m */,
+				CACDB9CB179A9BC700C94DC5 /* ZHProfileBaseCell.h */,
+				CACDB9CC179A9BC700C94DC5 /* ZHProfileBaseCell.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -2625,6 +2629,7 @@
 		CA77DACD178FFF390012FE4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAA0428C17A2245400679B52 /* FeedsView */,
 				CAA4B21E17994B9100C3B3DE /* Checkbutton */,
 				CA71859D17953F5D005726B3 /* UserInfo */,
 				CA131B2A17915A7A001EE98D /* CollectionCells */,
@@ -2720,6 +2725,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CAA0428C17A2245400679B52 /* FeedsView */ = {
+			isa = PBXGroup;
+			children = (
+				CAE33890179F78FA004FFA0F /* ZHFeedBaseCell.h */,
+				CAE33891179F78FA004FFA0F /* ZHFeedBaseCell.m */,
+				CABDEA97179E5A5500092EDE /* ZHFeedsAnswerCell.h */,
+				CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */,
+				CAE33894179F7928004FFA0F /* ZHFeedsQuestionFollowCell.h */,
+				CAE33895179F7928004FFA0F /* ZHFeedsQuestionFollowCell.m */,
+			);
+			name = FeedsView;
+			sourceTree = "<group>";
+		};
 		CAA4B21E17994B9100C3B3DE /* Checkbutton */ = {
 			isa = PBXGroup;
 			children = (
@@ -2761,16 +2779,6 @@
 			children = (
 				CA54FAA5178EA850007DC220 /* ZHUserInfoViewController.h */,
 				CA54FAA6178EA850007DC220 /* ZHUserInfoViewController.m */,
-				CAC5FAE8179A498600CF3CF9 /* ZHProfileNormalStyleCell.h */,
-				CAC5FAE9179A498600CF3CF9 /* ZHProfileNormalStyleCell.m */,
-				CAC5FAEB179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.h */,
-				CAC5FAEC179A49A200CF3CF9 /* ZHProfileCollectionStyleCell.m */,
-				CAC5FAE1179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.h */,
-				CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */,
-				CAC5FAF1179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.h */,
-				CAC5FAF2179A49CA00CF3CF9 /* ZHProfileBlacklistStyleCell.m */,
-				CACDB9CB179A9BC700C94DC5 /* ZHProfileBaseCell.h */,
-				CACDB9CC179A9BC700C94DC5 /* ZHProfileBaseCell.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";

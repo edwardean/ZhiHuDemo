@@ -28,21 +28,20 @@
     [cellTitleLabel_ setY:15];
     [cellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
     [self.contentView addSubview:cellTitleLabel_];
-    
-    [self clearCellContent];
   }
   return self;
 }
 
-- (void)clearCellContent
+- (void)prepareForReuse
 {
-	[[self cellTitleLabel] setText:nil];
+	[super prepareForReuse];
+  
+  [[self cellTitleLabel] setText:nil];
 }
 
 - (void)bindWithObject:(id)object
 {
   NSString *cellTitle = (NSString *)object;
-  [self.cellTitleLabel setText:nil];
   
   [self.cellTitleLabel setText:cellTitle];
 }

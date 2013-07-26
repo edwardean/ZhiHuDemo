@@ -244,6 +244,10 @@
 {
   [self clearHeaderContent];
   
+  [self.userInfoHeaderAvatarButton setBackgroundImage:nil forState:UIControlStateNormal];
+  [[self.userInfoHeaderAvatarButton layer] setBorderWidth:1.0f];
+  [[self.userInfoHeaderAvatarButton layer] setBorderColor:[[UIColor lightGrayColor] CGColor]];
+  
 	ZHUserInfoObject *infoObject = (ZHUserInfoObject *)object;
   
   if (infoObject.name) {

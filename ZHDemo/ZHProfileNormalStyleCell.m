@@ -44,10 +44,16 @@
   [super layoutSubviews];  
 }
 
+- (void)prepareForReuse
+{
+	[super prepareForReuse];
+  
+  [self.profileCellTitleLabel setText:nil];
+}
+
 - (void)bindWithObject:(id)object
 {
   NSString *cellTitle = (NSString *)object;
-  [self.profileCellTitleLabel setText:nil];
   
 	[self.profileCellTitleLabel setText:cellTitle];
 }

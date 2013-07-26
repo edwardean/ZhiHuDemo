@@ -32,6 +32,9 @@
       [avatarButton_ setFrame:CGRectMake(0, 0, 75, 75)];
       [[avatarButton_ layer] setCornerRadius:3.0f];
       [avatarButton_ setClipsToBounds:YES];
+      [[avatarButton_ layer] setBorderWidth:1.0f];
+      [[avatarButton_ layer] setBorderColor:[UIColor colorWithWhite:0.719 alpha:1.000].CGColor];
+      [avatarButton_ setContentMode:UIViewContentModeScaleAspectFill];
       [avatarButton_ setY:10];
       [self addSubview:avatarButton_];
     }

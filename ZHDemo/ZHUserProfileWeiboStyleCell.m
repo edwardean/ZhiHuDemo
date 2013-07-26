@@ -49,23 +49,21 @@
     [weiboNameLabel_ setSize:CGSizeMake(40, 15)];
     [weiboNameLabel_ setY:10];
     [self.contentView addSubview:weiboNameLabel_];
-    
-    
-    [self clearCellContent];
   }
   return self;
 }
 
-- (void)clearCellContent
+- (void)prepareForReuse
 {
-	[self.weiboIconImageView setImage:nil];
+	[super prepareForReuse];
+  
+  [self.weiboIconImageView setImage:nil];
   [self.weiboNameLabel setText:nil];
 }
 
 - (void)bindWithObject:(id)object
 {
   NSDictionary *weiboDic = (NSDictionary *)object;
-  [self clearCellContent];
   
   UIImage *sina = [UIImage imageNamed:@"ZHProfileViewSinaWeiboIcon.png"];
   UIImage *qq = [UIImage imageNamed:@"ZHProfileViewTencentWeiboIcon.png"];

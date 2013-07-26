@@ -64,9 +64,11 @@
   return self;
 }
 
-- (void)clearCellContent
+- (void)prepareForReuse
 {
-	[self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
+	[super prepareForReuse];
+  
+  [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
                                forState:UIControlStateNormal];
   [self.followerLabel setText:nil];
   [self.followDesLabel setText:nil];

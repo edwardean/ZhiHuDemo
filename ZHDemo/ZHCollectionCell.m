@@ -120,19 +120,19 @@
     
     answerLabelOriginX_ = self.width - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERMAXWIDTH - ZHCOLLECTIONCELLBOTTOMCONTENTANSWERTORIGHTMARGIN;
  		self.temporaryImageView = [[UIImageView alloc] init];
-    
-    [self clearCellContent];
+  
   }
   return self;
 }
 
-- (void)clearCellContent
+- (void)prepareForReuse
 {
-	[self.collectionCellTitleLabel setText:nil];
+	[super prepareForReuse];
+  
+  [self.collectionCellTitleLabel setText:nil];
   [self.collectionCellDesLabel setText:nil];
   [self.collectionCellNameLabel setText:nil];
   [self.collectionCellAnswersLabel setText:nil];
-  
 }
 
 - (void)buttonTapped:(id)sender
@@ -142,7 +142,6 @@
 
 - (void)bindWithObject:(id)object
 {
-  [self clearCellContent];
   
 	ZHCollectionObject *collectionObject = (ZHCollectionObject *)object;
   NSString *title = collectionObject.title;

@@ -150,15 +150,15 @@
     
     [self.backgroundView addSubview:self.answerSeparateLine];
     
-    [self resetCellContent];
-    
   }
   return self;
 }
 
-- (void)resetCellContent
+- (void)prepareForReuse
 {
-	[self.answerTitleLabel setText:nil];
+	[super prepareForReuse];
+  
+  [self.answerTitleLabel setText:nil];
   [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskS.png"]
                                forState:UIControlStateNormal];
   
@@ -192,14 +192,11 @@
     cellHeight = titleSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + avatarAndTagHeight + ZHANSWERCELLTAGLABELTOBOTTOMMARGIN;
   }
 	
-  
 	return cellHeight;
 }
 
 - (void)bindWithObject:(id)object
-{
-  [self resetCellContent];
-  
+{  
 	ZHAnswerObject *answerObject = (ZHAnswerObject *)object;
   if (answerObject.title) {
     [self.answerTitleLabel setText:answerObject.title];

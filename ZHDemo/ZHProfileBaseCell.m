@@ -120,7 +120,6 @@
   self.cellType = aCellType;
   
   [self bindWithObject:object];
-  NSLog(@"Object:%@",object);
 }
 
 - (void)bindCellTitle:(NSString *)title

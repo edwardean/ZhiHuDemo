@@ -11,11 +11,15 @@
 #import "ZHFeedsAnswerCell.h"
 #import "UIView+Frame.h"
 #import "NSString+CalculateTextSize.h"
+#import "ZHUserInfoViewController.h"
+#import "ZHFeedsViewController.h"
 
 @interface ZHFeedsAnswerCell ()
 {
 	BOOL isActorsLabelHighlighted;
 }
+
+@property (nonatomic, weak) ZHFeedsViewController *feedsViewController;
 
 @property (nonatomic, strong, readwrite) UILabel *actorsLabel;							//某某某
 @property (nonatomic, strong, readwrite) UILabel *feedLabel;								//回答/赞同了该问题
@@ -107,21 +111,55 @@
   return self;
 }
 
-- (void)labelTapped:(UIGestureRecognizer *)sender
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  UITouch *touch = [touches anyObject];
+  if ([touch view] == self.actorsLabel) {
+    [self.actorsLabel setBackgroundColor:[UIColor colorWithRed:0.714 green:0.814 blue:0.827 alpha:1.000]];
+  }
   
 }
 
-- (void)clearCellContent
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[self.actorsLabel setText:nil];
+  UITouch *touch = [touches anyObject];
+  if ([touch view] == self.actorsLabel) {
+     [self.actorsLabel setBackgroundColor:[UIColor clearColor]];
+  }
+  
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  UITouch *touch = [touches anyObject];
+  if ([touch view] == self.actorsLabel) {
+    [self.actorsLabel setBackgroundColor:[UIColor clearColor]];
+  }
+  
+}
+
+
+- (void)labelTapped:(UIGestureRecognizer *)sender
+{
+  if (!self.feedsViewController) {
+    ZHFeedsViewController *feeds = [[ZHFeedsViewController alloc] initWithNibName:nil bundle:nil];
+    self.feedsViewController = feeds;
+  ZHUserInfoViewController *userInfo = [[ZHUserInfoViewController alloc] initWithNibName:nil bundle:nil];
+  [self.feedsViewController.navigationController pushViewController:userInfo animated:YES];
+  }
+}
+
+- (void)prepareForReuse
+{
+	[super prepareForReuse];
+  
+  [self.actorsLabel setText:nil];
   [self.feedLabel setText:nil];
   [self.titleLabel setText:nil];
   [self.voteupLabel setText:nil];
   [self.answerExcerptLabel setText:nil];
   [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMale50.png"]
                                forState:UIControlStateNormal];
-  
 }
 
 + (CGFloat)RowHeightWitObject:(id)object
@@ -151,8 +189,6 @@
 
 - (void)bindWithObject:(id)object
 {
-  [self clearCellContent];
-  
   ZHFeedsObject *feedObject = (ZHFeedsObject *)object;
   NSString *excerpt = feedObject.excerpt;
   

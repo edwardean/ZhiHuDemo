@@ -46,21 +46,22 @@
     [profileCellCountLabel_ setY:10];
     [profileCellCountLabel_ setSize:CGSizeMake(30, 20)];
     [self.contentView addSubview:profileCellCountLabel_];
-    
-    [self clearCellContent];
+
   }
   return self;
 }
 
-- (void)clearCellContent
+- (void)prepareForReuse
 {
-	[self.profileCellCountLabel setText:@"0"];
+	[super prepareForReuse];
+  
+  [self.profileCellCountLabel setText:@"0"];
   [self.profileCellTitleLabel setText:nil];
 }
 
+
 - (void)bindCellTitle:(NSString *)title detail:(NSString *)detail
 {
-  [self clearCellContent];
   
   [self.profileCellTitleLabel setText:title];
   [self.profileCellCountLabel setText:detail];
