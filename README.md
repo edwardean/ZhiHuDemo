@@ -54,5 +54,5 @@ ZHDemo
 
 ![](./screenshot/16.png)
 
-在iOS7上运行时发现布局异常，有待改进
+在iOS7上运行时发现布局异常，待改进
 ![](./screenshot/17.png)
