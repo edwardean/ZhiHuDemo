@@ -78,6 +78,11 @@
   });
 }
 
+- (void)viewDidLayoutSubviews
+{
+	NSLog(@"Frame:%@",NSStringFromCGRect(self.view.frame));
+}
+
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
