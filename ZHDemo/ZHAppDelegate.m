@@ -25,54 +25,61 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   UINavigationController *collectionNav = [[UINavigationController alloc]
                                            initWithRootViewController:collectionViewController];
   
-  // <= iOS 6
-  //collectionNav.tabBarItem.title = @"发现";
-  //[collectionNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"ExploreSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"ExploreNormal.png"]];
-  
-  // iOS 7
- UITabBarItem *collectionBarItem =  [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"ExploreNormal.png"] selectedImage:[UIImage imageNamed:@"ExploreSelected.png"]];
-  collectionNav.tabBarItem = collectionBarItem;
-  
-  
   ZHAnswerViewController *answerController = [[ZHAnswerViewController alloc]
                                               initWithNibName:nil
                                               bundle:nil];
   UINavigationController *answerNav = [[UINavigationController alloc]
                                        initWithRootViewController:answerController];
-  //answerNav.tabBarItem.title = @"消息";
-  //[answerNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"NotificationSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"NotificationNormal.png"] ];
-  
-  UITabBarItem *answerItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"NotificationNormal.png"] selectedImage:[UIImage imageNamed:@"NotificationSelected.png"]];
-  answerNav.tabBarItem = answerItem;
   
   ZHFeedsViewController *feedsViewController = [[ZHFeedsViewController alloc] initWithNibName:nil
                                                                                        bundle:nil];
   UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedsViewController];
-  //feedNav.tabBarItem.title = @"首页";
-  //[feedNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FeedSelected.png"]
-                   //withFinishedUnselectedImage:[UIImage imageNamed:@"FeedNormal.png"]];
-  
-  UITabBarItem *feedItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"FeedNormal.png"] selectedImage:[UIImage imageNamed:@"FeedSelected.png"]];
-  feedNav.tabBarItem = feedItem;
   
   ZHUserInfoViewController *userInfoController = [[ZHUserInfoViewController alloc]
                                                   initWithNibName:nil
                                                   bundle:nil];
   UINavigationController *userInfoNav = [[UINavigationController alloc]
                                          initWithRootViewController:userInfoController];
-  //userInfoNav.tabBarItem.title = @"我";
   
-  //伪代码
-  //  if ([user isFemale]) {
-  //    [userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FemaleSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"FemaleNormal.png"]];
-  //  } else {
+  if (DeviceSystemMajorVersion() < 7) {
+    // iOS Version  <= iOS 6
+    collectionNav.tabBarItem.title = @"发现";
+    [collectionNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"ExploreSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"ExploreNormal.png"]];
+    
+    answerNav.tabBarItem.title = @"消息";
+    [answerNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"NotificationSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"NotificationNormal.png"] ];
+    
+    feedNav.tabBarItem.title = @"首页";
+    [feedNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FeedSelected.png"]
+    withFinishedUnselectedImage:[UIImage imageNamed:@"FeedNormal.png"]];
+    
+    userInfoNav.tabBarItem.title = @"我";
+    
+    //伪代码
+    //  if ([user isFemale]) {
+        [userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"FemaleSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"FemaleNormal.png"]];
+    //  } else {
+    
+    //[userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"MaleSelected.png"]
+    //withFinishedUnselectedImage:[UIImage imageNamed:@"MaleNormal.png"]];
+    //  }
+
+  } else {
+  	// iOS 7
+    UITabBarItem *collectionBarItem =  [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"ExploreNormal.png"] selectedImage:[UIImage imageNamed:@"ExploreSelected.png"]];
+    collectionNav.tabBarItem = collectionBarItem;
+    
+    UITabBarItem *answerItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"NotificationNormal.png"] selectedImage:[UIImage imageNamed:@"NotificationSelected.png"]];
+    answerNav.tabBarItem = answerItem;
+    
+    UITabBarItem *feedItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"FeedNormal.png"] selectedImage:[UIImage imageNamed:@"FeedSelected.png"]];
+    feedNav.tabBarItem = feedItem;
+    
+    UITabBarItem *userInfoItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"MaleNormal.png"] selectedImage:[UIImage imageNamed:@"MaleSelected.png"]];
+    userInfoNav.tabBarItem = userInfoItem;
+  }
+
   
-  //[userInfoNav.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"MaleSelected.png"]
-                       //withFinishedUnselectedImage:[UIImage imageNamed:@"MaleNormal.png"]];
-  //  }
-  
-  UITabBarItem *userInfoItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"MaleNormal.png"] selectedImage:[UIImage imageNamed:@"MaleSelected.png"]];
-  userInfoNav.tabBarItem = userInfoItem;
   
   NSArray *tabVCArray = @[feedNav,collectionNav,answerNav,userInfoNav];
   

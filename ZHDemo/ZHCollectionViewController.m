@@ -43,6 +43,8 @@
   
   ZHModel *model = [parser parser];
   
+  [self.listView setSeparatorColor:[UIColor clearColor]];
+  
   [self modelDidFinishLoading:model];
 }
 

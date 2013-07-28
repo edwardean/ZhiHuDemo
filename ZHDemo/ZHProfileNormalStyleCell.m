@@ -30,7 +30,6 @@
         
     self.profileCellTitleLabel = [[UILabel alloc] init];
     [profileCellTitleLabel_ setX:20];
-    [profileCellTitleLabel_ setY:10];
     [profileCellTitleLabel_ setSize:CGSizeMake(70, 20)];
     [profileCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
     [profileCellTitleLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
@@ -41,7 +40,11 @@
 
 -(void)layoutSubviews
 {
-  [super layoutSubviews];  
+  [super layoutSubviews];
+  
+  [self.profileCellTitleLabel sizeToFit];
+  
+  [self.profileCellTitleLabel setCenterY:self.bounds.size.height / 2];
 }
 
 - (void)prepareForReuse

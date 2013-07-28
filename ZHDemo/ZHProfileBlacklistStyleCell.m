@@ -25,7 +25,6 @@
   if (self) {
     self.cellTitleLabel = [[UILabel alloc] init];
     [cellTitleLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
-    [cellTitleLabel_ setY:15];
     [cellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
     [self.contentView addSubview:cellTitleLabel_];
   }
@@ -52,7 +51,8 @@
 	[super layoutSubviews];
   
   [self.cellTitleLabel sizeToFit];
-  [self.cellTitleLabel setCenterX:self.centerX];
+  CGSize size = self.bounds.size;
+  [self.cellTitleLabel setCenter:CGPointMake(size.width / 2, size.height / 2)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

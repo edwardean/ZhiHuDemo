@@ -19,8 +19,7 @@
 
 @property (nonatomic) Class cellClass;
 
-@property (nonatomic, strong, readwrite) UIImageView *cellNormalBackgroundView;
-@property (nonatomic, strong, readwrite) UIImageView *cellSelectedBackgroundView;
+@property (nonatomic) UIEdgeInsets backgroundImageEdgeInsets;
 
 @end
 
@@ -28,8 +27,6 @@
 
 @synthesize cellType = cellType_;
 @synthesize cellClass = cellClass_;
-@synthesize cellNormalBackgroundView = cellNormalBackgroundView_;
-@synthesize cellSelectedBackgroundView = cellSelectedBackgroundView_;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
@@ -37,7 +34,12 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	
   if (self) {
-
+    self.backgroundImageEdgeInsets = UIEdgeInsetsMake(10.0, 20.0, 10.0, 20.0);
+    self.backgroundView = [[UIImageView alloc] initWithImage:nil highlightedImage:nil];
+    self.backgroundView.contentMode = UIViewContentModeScaleToFill;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.cellType = -1;
   }
   
   return self;
@@ -47,41 +49,45 @@
 
 - (void)setCellType:(ZHProfileCellPositionType)cellType
 {
-  cellType_ = cellType;
-  CGRect rect = CGRectMake(0, 0, 320, self.frame.size.height);
-  self.bounds = rect;
-  self.cellNormalBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-  self.cellSelectedBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-  [cellNormalBackgroundView_ setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-  [cellSelectedBackgroundView_ setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+  if (cellType_ != cellType) {
+    
+  UIImage *normalImage = nil;
+  UIImage *highlightImage = nil;
+  UIEdgeInsets insets = self.backgroundImageEdgeInsets;
+
   switch (cellType) {
     case CellBottom:
-      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellBottomNormal.png"]];
-      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellBottomHighlight.png"]];
+      
+      normalImage = [[UIImage imageNamed:@"ZHCellBottomNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+      highlightImage = [[UIImage imageNamed:@"ZHCellBottomHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
     case CellMiddle:
-      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellMiddleNormal.png"]];
-      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellMiddleHighlight.png"]];
+      
+      normalImage = [[UIImage imageNamed:@"ZHCellMiddleNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+      highlightImage = [[UIImage imageNamed:@"ZHCellMiddleHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
     case CellSingle:
-      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellSingleNormal.png"]];
-      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellSingleHighlight.png"]];
+      normalImage = [[UIImage imageNamed:@"ZHCellSingleNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+      highlightImage = [[UIImage imageNamed:@"ZHCellSingleHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
     case CellTop:
-      [cellNormalBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellTopNormal.png"]];
-      [cellSelectedBackgroundView_ setImage:[UIImage imageNamed:@"ZHCellTopHighlight.png"]];
+      normalImage = [[UIImage imageNamed:@"ZHCellTopNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+      highlightImage = [[UIImage imageNamed:@"ZHCellTopHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
     default:
       break;
   }
-  [self setBackgroundView:nil];
-  [self setSelectedBackgroundView:nil];
-  [self setBackgroundView:cellNormalBackgroundView_];
-  [self setSelectedBackgroundView:cellSelectedBackgroundView_];
+
+  [(UIImageView *)[self backgroundView] setImage:normalImage];
+  [(UIImageView *)[self backgroundView] setHighlightedImage:highlightImage];
+
+  cellType_ = cellType;
+    
+  }
   
 }
 
@@ -89,17 +95,18 @@
 {
 	[super setHighlighted:highlighted animated:animated];
   
+  [(UIImageView *)self.backgroundView setHighlighted:highlighted];
+  
+  [(UIImageView *)self.accessoryView setHighlighted:highlighted];
+  
   for (UIView *view in [self.contentView subviews])
   {
     if ([view isKindOfClass:[UILabel class]]) {
-      if (highlighted) {
-        [(UILabel *)view setTextColor:[UIColor colorWithRed:0.991
-                                                      green:0.990
-                                                       blue:1.000
-                                                      alpha:1.000]];
-      } else {
-        [(UILabel *)view setTextColor:[UIColor blackColor]];
-      }
+      UILabel *label = (UILabel *)view;
+      label.textColor = highlighted ? [UIColor whiteColor] : [UIColor blackColor];
+      
+      label.shadowOffset = highlighted ? CGSizeMake(0, -1.0) : CGSizeZero;
+      label.shadowColor = highlighted ? [UIColor grayColor] : [UIColor clearColor];
       
     }
   }
@@ -137,7 +144,7 @@
 - (void)bindCellTitle:(NSString *)title
                detail:(NSString *)detail
 {
-  // SubClass will overwrite this method. Don't comment this
+  // SubClass will overwrite this method. Don't comment me
 }
 
 - (void)layoutSubviews

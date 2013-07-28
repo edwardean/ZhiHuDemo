@@ -40,14 +40,12 @@
                                 initWithFrame:CGRectMake(0, 0, 21, 18)];
     
     [weiboIconImageView_ setX:20];
-    [weiboIconImageView_ setY:10];
     [self.contentView addSubview:weiboIconImageView_];
     
     self.weiboNameLabel = [[UILabel alloc] init];
     [weiboNameLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
     [weiboNameLabel_ setBackgroundColor:[UIColor clearColor]];
     [weiboNameLabel_ setSize:CGSizeMake(40, 15)];
-    [weiboNameLabel_ setY:10];
     [self.contentView addSubview:weiboNameLabel_];
   }
   return self;
@@ -86,7 +84,12 @@
   
   [self.weiboNameLabel sizeToFit];
   
-  [self.weiboNameLabel setCenterX:self.centerX];
+  CGFloat centerY = self.bounds.size.height / 2;
+  
+  [self.weiboIconImageView setCenterY:centerY];
+  
+  [self.weiboNameLabel setCenter:CGPointMake(self.centerX, centerY)];
+  
   
 }
 

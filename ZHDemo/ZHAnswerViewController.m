@@ -73,6 +73,7 @@
   
   [self modelDidFinishLoading:cellContentsModel];
   [self.listView setTableHeaderView:headerView];
+  [self.listView setSeparatorColor:[UIColor clearColor]];
   [headerView sendSubviewToBack:imgView];
   
 }

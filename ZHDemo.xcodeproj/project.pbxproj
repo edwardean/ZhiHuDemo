@@ -758,6 +758,7 @@
 		CA8F1E0517A0DA8E0001D67D /* Editor_UnderLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8F1DCD17A0DA8E0001D67D /* Editor_UnderLine@2x.png */; };
 		CA8F1E0617A0DA8E0001D67D /* egopv_fullscreen_button.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8F1DCE17A0DA8E0001D67D /* egopv_fullscreen_button.png */; };
 		CA9F109217A0D68700CD503E /* ZHListView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA591F4717979F7400B20A26 /* ZHListView.framework */; };
+		CAA3411A17A4A94B00D8C50E /* ZHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA3411917A4A94B00D8C50E /* ZHConfig.m */; };
 		CABA8A51179012F0004B356E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8A50179012F0004B356E /* UIView+Frame.m */; };
 		CABDEA99179E5A5500092EDE /* ZHFeedsAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABDEA98179E5A5500092EDE /* ZHFeedsAnswerCell.m */; };
 		CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC5FAE2179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m */; };
@@ -1663,6 +1664,8 @@
 		CA8F1DCC17A0DA8E0001D67D /* Editor_UnderLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Editor_UnderLine.png; sourceTree = "<group>"; };
 		CA8F1DCD17A0DA8E0001D67D /* Editor_UnderLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Editor_UnderLine@2x.png"; sourceTree = "<group>"; };
 		CA8F1DCE17A0DA8E0001D67D /* egopv_fullscreen_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egopv_fullscreen_button.png; sourceTree = "<group>"; };
+		CAA3411817A4A94B00D8C50E /* ZHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHConfig.h; sourceTree = "<group>"; };
+		CAA3411917A4A94B00D8C50E /* ZHConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHConfig.m; sourceTree = "<group>"; };
 		CABA8A4F179012F0004B356E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		CABA8A50179012F0004B356E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		CABDEA97179E5A5500092EDE /* ZHFeedsAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFeedsAnswerCell.h; sourceTree = "<group>"; };
@@ -1871,6 +1874,8 @@
 		CA54FA8A178EA707007DC220 /* Verdons */ = {
 			isa = PBXGroup;
 			children = (
+				CAA3411817A4A94B00D8C50E /* ZHConfig.h */,
+				CAA3411917A4A94B00D8C50E /* ZHConfig.m */,
 				CA5D4A8F1797A7F2005EF79B /* NSString+CalculateTextSize.h */,
 				CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */,
 				CA5D49541797A286005EF79B /* UIImage+RounedImage.h */,
@@ -3991,6 +3996,7 @@
 				CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */,
 				CA54FACD178EAC43007DC220 /* ZHDataParserFactory.m in Sources */,
 				CA7185A017953F84005726B3 /* ZHUserInfoHeaderView.m in Sources */,
+				CAA3411A17A4A94B00D8C50E /* ZHConfig.m in Sources */,
 				CAEB710A17A24264002B21F7 /* ZHQuestionTopicsParser.m in Sources */,
 				CA54FACE178EAC64007DC220 /* ZHAnswerFactory.m in Sources */,
 				CA54FACF178EAC68007DC220 /* ZHUserInfoFactory.m in Sources */,
@@ -4097,7 +4103,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
 				WRAPPER_EXTENSION = "";
@@ -4123,7 +4129,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ZHDemo/";
@@ -4136,7 +4142,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZHDemo\"",
@@ -4157,7 +4163,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZHDemo\"",

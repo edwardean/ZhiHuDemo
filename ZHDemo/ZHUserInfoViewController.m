@@ -73,18 +73,19 @@ typedef struct {
   
   self.navigationItem.leftBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarSettingsIcon.png"]
                                                                             block:^(){
-    
-    [self.navigationController popViewControllerAnimated:YES];
-  }];
+                                                                              
+                                                                              [self.navigationController popViewControllerAnimated:YES];
+                                                                            }];
   self.navigationItem.rightBarButtonItem = [ZHBarButtonItem BarButtonItemWithImage:[UIImage imageNamed:@"ZHNavigationBarMoreIcon.png"]
                                                                              block:^(){
-    ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc]
-                                                        initWithNibName:nil
-                                                        bundle:nil];
-    [self.navigationController pushViewController:detailViewController
-                                         animated:YES];
-
-  }];
+                ZHUserDetailViewController *detailViewController = [[ZHUserDetailViewController alloc]
+																																							initWithNibName:nil
+                                                                                      bundle:nil];
+                                                                               [self.navigationController
+                                                                                pushViewController:detailViewController
+                                                                                          animated:YES];
+                                                                               
+                                                                             }];
   
   self.tableView = [[ZHUserInfoListView alloc] initWithFrame:[self.view bounds]];
   [self.tableView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
@@ -92,6 +93,9 @@ typedef struct {
   [self.view addSubview:self.tableView];
   [self.tableView setDelegate:self];
   [self.tableView setDataSource:self];
+  [self.tableView setSeparatorColor:[UIColor clearColor]];
+  [self.tableView setSectionFooterHeight:0.0f];
+  [self.tableView setSectionHeaderHeight:10.0f];
   
   NSArray *detail = @[@"详细信息"];
   NSArray *dongtai = @[@"全部动态",@"答过",@"问过"];
@@ -205,6 +209,15 @@ typedef struct {
   
 	return section;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	if (section == 0) {
+    return 10.0f;
+  }
+  return 0.0f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {

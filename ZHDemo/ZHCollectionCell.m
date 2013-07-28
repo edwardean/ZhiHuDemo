@@ -67,7 +67,6 @@
 {
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
-    
     self.backgroundView = [[UIImageView alloc]
                            initWithImage:[[UIImage
                                            imageNamed:@"ZHExploreFavBase.png"]

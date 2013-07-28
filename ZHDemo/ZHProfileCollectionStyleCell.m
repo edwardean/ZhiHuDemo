@@ -34,7 +34,6 @@
     [profileCellTitleLabel_ setFont:[UIFont systemFontOfSize:14.0f]];
     [profileCellTitleLabel_ setBackgroundColor:[UIColor clearColor]];
     [profileCellTitleLabel_ setX:20];
-    [profileCellTitleLabel_ setY:10];
     [self.contentView addSubview:profileCellTitleLabel_];
     
     self.profileCellCountLabel = [[UILabel alloc] init];
@@ -42,9 +41,7 @@
     [profileCellCountLabel_ setTextColor:[UIColor grayColor]];
     [profileCellCountLabel_ setBackgroundColor:[UIColor clearColor]];
     [profileCellCountLabel_ setTextAlignment:NSTextAlignmentCenter];
-    [profileCellCountLabel_ setX:[self width]- 74];
-    [profileCellCountLabel_ setY:10];
-    [profileCellCountLabel_ setSize:CGSizeMake(30, 20)];
+//    [profileCellCountLabel_ setSize:CGSizeMake(30, 20)];
     [self.contentView addSubview:profileCellCountLabel_];
 
   }
@@ -72,9 +69,13 @@
 {
 	[super layoutSubviews];
   
-  
   [self.profileCellTitleLabel sizeToFit];
   [self.profileCellCountLabel sizeToFit];
+  
+  [self.profileCellTitleLabel setCenterY:self.bounds.size.height * 0.5];
+  [self.profileCellCountLabel setCenterY:self.bounds.size.height * 0.5];
+  [self.profileCellCountLabel setX:([self.accessoryView left] - [self.profileCellCountLabel width] - 20)];
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
