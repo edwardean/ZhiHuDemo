@@ -66,17 +66,17 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
   } else {
   	// iOS 7
-    UITabBarItem *collectionBarItem =  [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"ExploreNormal.png"] selectedImage:[UIImage imageNamed:@"ExploreSelected.png"]];
-    collectionNav.tabBarItem = collectionBarItem;
-    
-    UITabBarItem *answerItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"NotificationNormal.png"] selectedImage:[UIImage imageNamed:@"NotificationSelected.png"]];
-    answerNav.tabBarItem = answerItem;
-    
-    UITabBarItem *feedItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"FeedNormal.png"] selectedImage:[UIImage imageNamed:@"FeedSelected.png"]];
-    feedNav.tabBarItem = feedItem;
-    
-    UITabBarItem *userInfoItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"MaleNormal.png"] selectedImage:[UIImage imageNamed:@"MaleSelected.png"]];
-    userInfoNav.tabBarItem = userInfoItem;
+//    UITabBarItem *collectionBarItem =  [[UITabBarItem alloc] initWithTitle:@"发现" image:[UIImage imageNamed:@"ExploreNormal.png"] selectedImage:[UIImage imageNamed:@"ExploreSelected.png"]];
+//    collectionNav.tabBarItem = collectionBarItem;
+//    
+//    UITabBarItem *answerItem = [[UITabBarItem alloc] initWithTitle:@"消息" image:[UIImage imageNamed:@"NotificationNormal.png"] selectedImage:[UIImage imageNamed:@"NotificationSelected.png"]];
+//    answerNav.tabBarItem = answerItem;
+//    
+//    UITabBarItem *feedItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"FeedNormal.png"] selectedImage:[UIImage imageNamed:@"FeedSelected.png"]];
+//    feedNav.tabBarItem = feedItem;
+//    
+//    UITabBarItem *userInfoItem = [[UITabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"MaleNormal.png"] selectedImage:[UIImage imageNamed:@"MaleSelected.png"]];
+//    userInfoNav.tabBarItem = userInfoItem;
   }
 
   

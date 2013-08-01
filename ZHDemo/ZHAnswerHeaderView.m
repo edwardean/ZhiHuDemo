@@ -138,17 +138,17 @@
     
     if (!checkbox_) {
       
-      UIImage *unselectedNormalImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
+      UIImage *unselectedNormalBgImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
       UIImage *unselectedHighlightImage = [UIImage imageNamed:@"ZHFollowButtonHighlight.png"];
-      UIImage *selectedNormalImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
+      UIImage *selectedNormalBgImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
       UIImage *selectedHighlightImage = [UIImage imageNamed:@"ZHGuidePushButtonHighlight.png"];
       
       self.checkbox = [ZHCheckBox checkBoxWithSize:CGSizeMake(76, 31)
                                              NormalTitle:@"关注收藏夹"
                                            SelectedTitle:@"取消关注"
-                                   unselectedNormalImage:unselectedNormalImage
+                                   unselectedNormalBgImage:unselectedNormalBgImage
                                 unselectedHighlightImage:unselectedHighlightImage
-                                     selectedNormalImage:selectedNormalImage
+                                     selectedNormalBgImage:selectedNormalBgImage
                                   selectedHighlightImage:selectedHighlightImage];
 
       [checkbox_ setDelegate:self];

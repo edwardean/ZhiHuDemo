@@ -86,9 +86,9 @@
       self.privateletterButton = [ZHCheckBox checkBoxWithSize:CGSizeMake(52, 31)
                                                   NormalTitle:nil
                                                 SelectedTitle:nil
-                                        unselectedNormalImage:normalImage
+                                        unselectedNormalBgImage:normalImage
                                      unselectedHighlightImage:highlightImage
-                                          selectedNormalImage:normalImage
+                                          selectedNormalBgImage:normalImage
                                        selectedHighlightImage:highlightImage];
       
       UIImage *messageImage = [UIImage imageNamed:@"ZHProfileMessageIconNormal.png"];
@@ -100,17 +100,17 @@
     }
     
     if (!followButton_) {
-      UIImage *unselectedNormalImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
+      UIImage *unselectedNormalBgImage = [UIImage imageNamed:@"ZHFollowButtonNormal.png"];
       UIImage *unselectedHighlightImage = [UIImage imageNamed:@"ZHFollowButtonHighlight.png"];
-      UIImage *selectedNormalImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
+      UIImage *selectedNormalBgImage = [UIImage imageNamed:@"ZHGuidePushButtonNormal.png"];
       UIImage *selectedHighlightImage = [UIImage imageNamed:@"ZHGuidePushButtonHighlight.png"];
       
       self.followButton = [ZHCheckBox checkBoxWithSize:CGSizeMake(76, 31)
                                            NormalTitle:@"关注"
                                          SelectedTitle:@"取消关注"
-                                 unselectedNormalImage:unselectedNormalImage
+                                 unselectedNormalBgImage:unselectedNormalBgImage
                               unselectedHighlightImage:unselectedHighlightImage
-                                   selectedNormalImage:selectedNormalImage
+                                   selectedNormalBgImage:selectedNormalBgImage
                                 selectedHighlightImage:selectedHighlightImage];
       
       [self addSubview:followButton_];

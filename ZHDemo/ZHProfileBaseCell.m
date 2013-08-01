@@ -36,10 +36,11 @@
   if (self) {
     self.backgroundImageEdgeInsets = UIEdgeInsetsMake(10.0, 20.0, 10.0, 20.0);
     self.backgroundView = [[UIImageView alloc] initWithImage:nil highlightedImage:nil];
-    self.backgroundView.contentMode = UIViewContentModeScaleToFill;
+    self.contentMode = UIViewContentModeScaleToFill;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
-    self.cellType = -1;
+    self.cellType = CellPositionUnknow;
   }
   
   return self;
@@ -47,7 +48,7 @@
 
 #pragma mark - Background
 
-- (void)setCellType:(ZHProfileCellPositionType)cellType
+- (void)setCellType:(ZHCellPositionType)cellType
 {
   if (cellType_ != cellType) {
     
@@ -56,24 +57,24 @@
   UIEdgeInsets insets = self.backgroundImageEdgeInsets;
 
   switch (cellType) {
-    case CellBottom:
+    case CellPositionBottom:
       
       normalImage = [[UIImage imageNamed:@"ZHCellBottomNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       highlightImage = [[UIImage imageNamed:@"ZHCellBottomHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
-    case CellMiddle:
+    case CellPositionMiddle:
       
       normalImage = [[UIImage imageNamed:@"ZHCellMiddleNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       highlightImage = [[UIImage imageNamed:@"ZHCellMiddleHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
-    case CellSingle:
+    case CellPositionSingle:
       normalImage = [[UIImage imageNamed:@"ZHCellSingleNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       highlightImage = [[UIImage imageNamed:@"ZHCellSingleHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
       
-    case CellTop:
+    case CellPositionTop:
       normalImage = [[UIImage imageNamed:@"ZHCellTopNormal.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       highlightImage = [[UIImage imageNamed:@"ZHCellTopHighlight.png"] resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
       break;
@@ -125,7 +126,7 @@
 #pragma mark - Bind Data
 
 - (void)bindWithObject:(id)object
-          withCellType:(ZHProfileCellPositionType)aCellType
+          withCellType:(ZHCellPositionType)aCellType
 {
   self.cellType = aCellType;
   
@@ -134,7 +135,7 @@
 
 - (void)bindCellTitle:(NSString *)title
                detail:(NSString *)detail
-         withCellType:(ZHProfileCellPositionType)aCellType
+         withCellType:(ZHCellPositionType)aCellType
 {
   self.cellType = aCellType;
   

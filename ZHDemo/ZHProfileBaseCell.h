@@ -9,15 +9,16 @@
 #import <ZHListView/ZHListView.h>
 
 typedef enum {
-  CellTop = 0,
-  CellMiddle,
-  CellBottom,
-  CellSingle,
-  } ZHProfileCellPositionType;
+  CellPositionUnknow = 0,
+  CellPositionTop,
+  CellPositionMiddle,
+  CellPositionBottom,
+  CellPositionSingle,
+  } ZHCellPositionType;
 
 @interface ZHProfileBaseCell : ZHListViewCell
 
-@property (nonatomic, assign) ZHProfileCellPositionType cellType;
+@property (nonatomic, assign) ZHCellPositionType cellType;
 
 /**
  绑定数据，设置列表样式
@@ -27,11 +28,11 @@ typedef enum {
 */
 
 - (void)bindWithObject:(id)object
-          withCellType:(ZHProfileCellPositionType)aCellType;
+          withCellType:(ZHCellPositionType)aCellType;
 
 - (void)bindCellTitle:(NSString *)title
                detail:(NSString *)detail
-         withCellType:(ZHProfileCellPositionType)aCellType;
+         withCellType:(ZHCellPositionType)aCellType;
 
 - (void)bindCellTitle:(NSString *)title
                detail:(NSString *)detail;

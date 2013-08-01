@@ -7,8 +7,19 @@
 //
 
 #import "ZHUserInfoListView.h"
+#import <QuartzCore/QuartzCore.h>
+
+@interface ZHUserInfoListView ()
+
+@property (nonatomic) CGFloat lastConfiguresHeight;
+@property (nonatomic, retain) CALayer *backgroundLayer;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@end
 
 @implementation ZHUserInfoListView
+@synthesize lastConfiguresHeight = lastConfiguresHeight_;
+@synthesize backgroundLayer = backgroundLayer_;
+@synthesize backgroundImage = backgroundImage_;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,5 +34,4 @@
   }
   return self;
 }
-
 @end

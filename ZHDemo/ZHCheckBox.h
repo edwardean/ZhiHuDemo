@@ -24,9 +24,22 @@
 + (id)checkBoxWithSize:(CGSize)size
            NormalTitle:(NSString *)normalTitle
          SelectedTitle:(NSString *)selectedTitle
- unselectedNormalImage:(UIImage *)unselectedImage
+ unselectedNormalBgImage:(UIImage *)unselectedImage
 unselectedHighlightImage:(UIImage *)unselectedHighlightImage
-   selectedNormalImage:(UIImage *)selectedNormalImage
+   selectedNormalBgImage:(UIImage *)selectedNormalBgImage
 selectedHighlightImage:(UIImage *)selectedHighlightImage;
+
+
+/**
+ *
+ **/
++ (id)checkBoxWithNormalTitle:(NSString *)normalTitle
+                SelectedTitle:(NSString *)selectedTitle
+                     NorImage:(UIImage *)norImage
+                SelectedImage:(UIImage *)selectedImage
+        unselectedNormalBgImg:(UIImage *)unselectedBgImg
+     unselectedHighlightBgImg:(UIImage *)unselectedHighlightBgImg
+          selectedNormalBgImg:(UIImage *)selectedNormalBgImg
+       selectedHighlightBgImg:(UIImage *)selectedHighlightBgImg;
 
 @end

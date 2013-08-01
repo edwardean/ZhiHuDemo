@@ -75,10 +75,7 @@
   if (self) {
     
     if (!userInfoHeaderAvatarButton_) {
-      self.userInfoHeaderAvatarButton = [[UIButton alloc] initWithFrame:CGRectMake(8,
-                                                                                   15,
-                                                                                   80,
-                                                                                   81)];
+      self.userInfoHeaderAvatarButton = [[UIButton alloc] initWithFrame:CGRectMake(8, 15, 80, 81)];
       [[userInfoHeaderAvatarButton_ layer] setCornerRadius:5.0f];
       [userInfoHeaderAvatarButton_ setClipsToBounds:YES];
       [self addSubview:userInfoHeaderAvatarButton_];

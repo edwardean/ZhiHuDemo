@@ -30,7 +30,7 @@
 typedef struct {
 	Class cellclass;
   __unsafe_unretained id cellData;
-  ZHProfileCellPositionType cellPostionType;
+  ZHCellPositionType cellPostionType;
 } cellBaseModel;
 
 @interface ZHUserInfoViewController ()
@@ -281,7 +281,7 @@ typedef struct {
   Class cellClass = cellModel.cellclass;
   id data = cellModel.cellData;
   
-  ZHProfileCellPositionType cellType = cellModel.cellPostionType;
+  ZHCellPositionType cellType = cellModel.cellPostionType;
   
   ZHProfileBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
   if (!cell) {
@@ -312,19 +312,19 @@ typedef struct {
   cellModel.cellData = [[self.dataArray objectAtIndex:indexPath.section]
                         objectAtIndex:indexPath.row];
   
-  ZHProfileCellPositionType cellType;
+  ZHCellPositionType cellType;
   
   NSInteger section = indexPath.section;
   NSInteger row = indexPath.row;
   if ([tableView numberOfRowsInSection:section] == 1) {
-    cellType = CellSingle;
+    cellType = CellPositionSingle;
   } else {
     if (row == 0) {
-      cellType = CellTop;
+      cellType = CellPositionTop;
     } else if (row == [tableView numberOfRowsInSection:section] - 1) {
-  		cellType = CellBottom;
+  		cellType = CellPositionBottom;
     } else {
-    	cellType = CellMiddle;
+    	cellType = CellPositionMiddle;
     }
     
   }
