@@ -47,6 +47,8 @@
 }
 
 #pragma mark - Background
+//我去年买了个表，因为提供的Cell背景图片左右两边各有10个像素的透明像素，
+//所以导致cell背景显示时不能显示原有的长度，这个bug望后人修复
 
 - (void)setCellType:(ZHCellPositionType)cellType
 {

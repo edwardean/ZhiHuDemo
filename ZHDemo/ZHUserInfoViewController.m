@@ -312,7 +312,7 @@ typedef struct {
   cellModel.cellData = [[self.dataArray objectAtIndex:indexPath.section]
                         objectAtIndex:indexPath.row];
   
-  ZHCellPositionType cellType;
+  ZHCellPositionType cellType = CellPositionUnknow;
   
   NSInteger section = indexPath.section;
   NSInteger row = indexPath.row;

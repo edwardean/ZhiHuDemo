@@ -17,7 +17,6 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [self customAppraeance];
   
   ZHCollectionViewController *collectionViewController = [[ZHCollectionViewController alloc]
                                                           initWithNibName:nil
@@ -93,6 +92,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   self.window.rootViewController = tabViewController;
   
   [self.window makeKeyAndVisible];
+  
+  [self customAppraeance];
   
   return YES;
 }
