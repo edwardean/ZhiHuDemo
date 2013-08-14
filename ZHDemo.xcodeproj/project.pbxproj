@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B59779E17B6487B00683F7D /* ZHLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B59779D17B6487B00683F7D /* ZHLabel.m */; };
+		2B5977A217B654DA00683F7D /* tabBarShowHideAnimationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5977A117B654DA00683F7D /* tabBarShowHideAnimationUtil.m */; };
 		CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EE61794DD1C0067C31C /* ImageIO.framework */; };
 		CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */; };
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
@@ -871,6 +873,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B59779C17B6487B00683F7D /* ZHLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHLabel.h; sourceTree = "<group>"; };
+		2B59779D17B6487B00683F7D /* ZHLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHLabel.m; sourceTree = "<group>"; };
+		2B5977A017B654DA00683F7D /* tabBarShowHideAnimationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarShowHideAnimationUtil.h; sourceTree = "<group>"; };
+		2B5977A117B654DA00683F7D /* tabBarShowHideAnimationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarShowHideAnimationUtil.m; sourceTree = "<group>"; };
 		CA080EE61794DD1C0067C31C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		CA080EF41794DEB70067C31C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -2747,6 +2753,10 @@
 				CA131B2B17915A89001EE98D /* AnswerCells */,
 				CA239986179FD93400791A7D /* ZHBarButtonItem.h */,
 				CA239987179FD93400791A7D /* ZHBarButtonItem.m */,
+				2B59779C17B6487B00683F7D /* ZHLabel.h */,
+				2B59779D17B6487B00683F7D /* ZHLabel.m */,
+				2B5977A017B654DA00683F7D /* tabBarShowHideAnimationUtil.h */,
+				2B5977A117B654DA00683F7D /* tabBarShowHideAnimationUtil.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -4031,6 +4041,8 @@
 				CAD93B8717A27CC20096C503 /* ZHQuestionTopicView.m in Sources */,
 				CAD93B8A17A27D790096C503 /* ZHQuestionMessageView.m in Sources */,
 				CAD93B8D17A27E1D0096C503 /* ZHQuestionBottomView.m in Sources */,
+				2B59779E17B6487B00683F7D /* ZHLabel.m in Sources */,
+				2B5977A217B654DA00683F7D /* tabBarShowHideAnimationUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

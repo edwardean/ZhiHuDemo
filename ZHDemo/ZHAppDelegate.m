@@ -101,9 +101,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void)customAppraeance
 {
   
-  [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"NavigationBar.png"]
-                                                    stretchableImageWithLeftCapWidth:0
-                                                    topCapHeight:10]
+  [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NavigationBar.png"]
                                      forBarMetrics:UIBarMetricsDefault];
   
   [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[[UIImage imageNamed:@"NavigationBarBackButtonNormal.png"]
