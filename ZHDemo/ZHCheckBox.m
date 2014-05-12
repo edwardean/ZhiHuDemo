@@ -195,7 +195,6 @@ selectedHighlightImage:(UIImage *)selectedHighlightImage
 - (void)checkBoxStye:(ZHCheckBoxType)type
 {
   CGSize titleImageSize = CGSizeMake(17, 14);
-  CGSize smallImgSize = CGSizeMake(19, 14);
   CGRect titleRect = CGRectMake(0,0,self.titleSize.width,self.titleSize.height);
   CGRect frame = CGRectInset(titleRect, -10, -5);
 	switch (type) {
