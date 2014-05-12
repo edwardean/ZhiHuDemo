@@ -8,7 +8,6 @@
 
 #import <ZHListView/ZHListViewController.h>
 #import <UIKit/UITableViewController.h>
-
 typedef NS_ENUM(NSInteger, UserProfileDetail) {				//详细信息
   UserInfoCellDetail = 0,
   UserProfileDetailCount
