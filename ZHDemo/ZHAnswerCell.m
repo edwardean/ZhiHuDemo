@@ -73,227 +73,227 @@
     reuseIdentifier:(NSString *)reuseIdentifier
 {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-  
-  if (self) {
     
-    self.backgroundView = [[UIImageView alloc]
-                           initWithImage:[[UIImage
-                                           imageNamed:@"ZHExploreListItemBase.png"]
-                                          resizableImageWithCapInsets:UIEdgeInsetsMake(15,
-                                                                                       16,
-                                                                                       7,
-                                                                                       16)]];
-    
-    
-    // answerTitleLabel
-    self.answerTitleLabel = [[UILabel alloc] init];
-    [answerTitleLabel_ setFont:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]];
-    [answerTitleLabel_ setNumberOfLines:0];
-    [answerTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
-    [answerTitleLabel_ setBackgroundColor:[UIColor clearColor]];
-    [answerTitleLabel_ setOrigin:CGPointMake(ZHANSWERCELLCONTENTMARGINTOLEFTSIDE,
-                                             ZHANSWERCELLCONTENTMARGINTOTOPSIDE)];
-    [self.contentView addSubview:answerTitleLabel_];
-    
-    // answerArrowListButton
-    self.answerArrowListButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [answerArrowListButton_ setSize:CGSizeMake(10, 14)];
-    [answerArrowListButton_ setImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]
-                            forState:UIControlStateNormal];
-    [self.contentView addSubview:answerArrowListButton_];
-    
-    // avatarButton
-    self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [avatarButton_ setSize:CGSizeMake(ZHANSWERCELLAVATARWIDTH,
-                                      ZHANSWERCELLAVATARHEIGHT)];
-    [avatarButton_.layer setCornerRadius:3.0f];
-    [avatarButton_ setClipsToBounds:YES];
-    [avatarButton_ setX:ZHANSWERCELLCONTENTMARGINTOLEFTSIDE];
-    [self.contentView addSubview:avatarButton_];
-    
-    // voteupBackgroundView
-    self.voteupBackgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                              0,
-                                                                              25,
-                                                                              15)];
-    [voteupBackgroundView_ setImage:[UIImage
-                                     imageNamed:@"ZHQuestionViewAnswerVotedBase.png"]];
-    [voteupBackgroundView_ setX:ZHANSWERCELLCONTENTMARGINTOLEFTSIDE];
-    [voteupBackgroundView_ setSize:CGSizeMake(ZHANSWERCELLTAGWIDTH,
-                                              ZHANSWERCELLTAGHEIGHT)];
-    [self.voteupBackgroundView.layer setCornerRadius:3.0f];
-    [self.contentView addSubview:voteupBackgroundView_];
-    
-    // voteupLabel
-    self.voteupLabel = [[UILabel alloc] init];
-    [voteupLabel_ setTextColor:[UIColor whiteColor]];
-    [voteupLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
-    [voteupLabel_ setTextAlignment:NSTextAlignmentCenter];
-    [voteupLabel_ setAdjustsFontSizeToFitWidth:YES];
-    [voteupLabel_ setBackgroundColor:[UIColor clearColor]];
-    if (voteupBackgroundView_) {
-      [voteupBackgroundView_ addSubview:voteupLabel_];
+    if (self) {
+        
+        self.backgroundView = [[UIImageView alloc]
+                               initWithImage:[[UIImage
+                                               imageNamed:@"ZHExploreListItemBase.png"]
+                                              resizableImageWithCapInsets:UIEdgeInsetsMake(15,
+                                                                                           16,
+                                                                                           7,
+                                                                                           16)]];
+        
+        
+        // answerTitleLabel
+        self.answerTitleLabel = [[UILabel alloc] init];
+        [answerTitleLabel_ setFont:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]];
+        [answerTitleLabel_ setNumberOfLines:0];
+        [answerTitleLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
+        [answerTitleLabel_ setBackgroundColor:[UIColor clearColor]];
+        [answerTitleLabel_ setOrigin:CGPointMake(ZHANSWERCELLCONTENTMARGINTOLEFTSIDE,
+                                                 ZHANSWERCELLCONTENTMARGINTOTOPSIDE)];
+        [self.contentView addSubview:answerTitleLabel_];
+        
+        // answerArrowListButton
+        self.answerArrowListButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [answerArrowListButton_ setSize:CGSizeMake(10, 14)];
+        [answerArrowListButton_ setImage:[UIImage imageNamed:@"ZHListViewArrowRight.png"]
+                                forState:UIControlStateNormal];
+        [self.contentView addSubview:answerArrowListButton_];
+        
+        // avatarButton
+        self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [avatarButton_ setSize:CGSizeMake(ZHANSWERCELLAVATARWIDTH,
+                                          ZHANSWERCELLAVATARHEIGHT)];
+        [avatarButton_.layer setCornerRadius:3.0f];
+        [avatarButton_ setClipsToBounds:YES];
+        [avatarButton_ setX:ZHANSWERCELLCONTENTMARGINTOLEFTSIDE];
+        [self.contentView addSubview:avatarButton_];
+        
+        // voteupBackgroundView
+        self.voteupBackgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                                  0,
+                                                                                  25,
+                                                                                  15)];
+        [voteupBackgroundView_ setImage:[UIImage
+                                         imageNamed:@"ZHQuestionViewAnswerVotedBase.png"]];
+        [voteupBackgroundView_ setX:ZHANSWERCELLCONTENTMARGINTOLEFTSIDE];
+        [voteupBackgroundView_ setSize:CGSizeMake(ZHANSWERCELLTAGWIDTH,
+                                                  ZHANSWERCELLTAGHEIGHT)];
+        [self.voteupBackgroundView.layer setCornerRadius:3.0f];
+        [self.contentView addSubview:voteupBackgroundView_];
+        
+        // voteupLabel
+        self.voteupLabel = [[UILabel alloc] init];
+        [voteupLabel_ setTextColor:[UIColor whiteColor]];
+        [voteupLabel_ setFont:[UIFont systemFontOfSize:11.0f]];
+        [voteupLabel_ setTextAlignment:NSTextAlignmentCenter];
+        [voteupLabel_ setAdjustsFontSizeToFitWidth:YES];
+        [voteupLabel_ setBackgroundColor:[UIColor clearColor]];
+        if (voteupBackgroundView_) {
+            [voteupBackgroundView_ addSubview:voteupLabel_];
+        }
+        
+        // answerExcerptLabel
+        self.answerExcerptLabel = [[UILabel alloc] init];
+        [answerExcerptLabel_ setFont:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]];
+        [answerExcerptLabel_ setNumberOfLines:0];
+        [answerExcerptLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
+        [answerExcerptLabel_ setTextColor:[UIColor colorWithWhite:0.337 alpha:1.000]];
+        [answerExcerptLabel_ setBackgroundColor:[UIColor clearColor]];
+        [self.contentView addSubview:answerExcerptLabel_];
+        
+        
+        self.temporaryImageView = [[UIImageView alloc] init];
+        
+        // answerSeparateLine
+        self.answerSeparateLine = [[UIImageView alloc]
+                                   initWithFrame:CGRectMake(9.5, 0, 301, 1)];
+        [answerSeparateLine_ setImage:[UIImage imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
+        
+        [self.backgroundView addSubview:self.answerSeparateLine];
+        
     }
-    
-    // answerExcerptLabel
-    self.answerExcerptLabel = [[UILabel alloc] init];
-    [answerExcerptLabel_ setFont:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]];
-    [answerExcerptLabel_ setNumberOfLines:0];
-    [answerExcerptLabel_ setLineBreakMode:NSLineBreakByTruncatingTail];
-    [answerExcerptLabel_ setTextColor:[UIColor colorWithWhite:0.337 alpha:1.000]];
-    [answerExcerptLabel_ setBackgroundColor:[UIColor clearColor]];
-    [self.contentView addSubview:answerExcerptLabel_];
-    
-    
-    self.temporaryImageView = [[UIImageView alloc] init];
-    
-    // answerSeparateLine
-    self.answerSeparateLine = [[UIImageView alloc]
-                               initWithFrame:CGRectMake(9.5, 0, 301, 1)];
-    [answerSeparateLine_ setImage:[UIImage imageNamed:@"ZHAnswerViewTopBarShadow.png"]];
-    
-    [self.backgroundView addSubview:self.answerSeparateLine];
-    
-  }
-  return self;
+    return self;
 }
 
 - (void)prepareForReuse
 {
 	[super prepareForReuse];
-  
-  [self.answerTitleLabel setText:nil];
-  [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskS.png"]
-                               forState:UIControlStateNormal];
-  
-  [self.voteupLabel setText:@"0"];
-  [self.answerExcerptLabel setText:nil];
+    
+    [self.answerTitleLabel setText:nil];
+    [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"AvatarMaskS.png"]
+                                 forState:UIControlStateNormal];
+    
+    [self.voteupLabel setText:@"0"];
+    [self.answerExcerptLabel setText:nil];
 }
 
 + (CGFloat)RowHeightWitObject:(id)object
 {
-  ZHAnswerObject *answerObject = (ZHAnswerObject *)object;
-  CGSize titleSize = CGSizeZero;
-  CGSize excerptSize = CGSizeZero;
-  
-  if (answerObject.title) {
-    titleSize = [answerObject.title CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]
-                                                     Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
-                                            LineBreakMode:NSLineBreakByTruncatingTail];
-  }
-  
-  if (answerObject.excerpt) {
-    excerptSize = [answerObject.excerpt CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
-                                                         Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
+    ZHAnswerObject *answerObject = (ZHAnswerObject *)object;
+    CGSize titleSize = CGSizeZero;
+    CGSize excerptSize = CGSizeZero;
+    
+    if (answerObject.title) {
+        titleSize = [answerObject.title CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]
+                                                         Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
                                                 LineBreakMode:NSLineBreakByTruncatingTail];
-  }
-  
-  CGFloat cellHeight = titleSize.height + excerptSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + ZHANSWERCELLEXCERPTLABELTOBOTTOMMARGIN;
-  
-  
-  CGFloat avatarAndTagHeight = ZHANSWERCELLAVATARHEIGHT + ZHANSWERCELLTAGHEIGHT + ZHANSWERCELLAVATARTOTAGMARGIN;
-  if (excerptSize.height < avatarAndTagHeight) {
-    cellHeight = titleSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + avatarAndTagHeight + ZHANSWERCELLTAGLABELTOBOTTOMMARGIN;
-  }
+    }
+    
+    if (answerObject.excerpt) {
+        excerptSize = [answerObject.excerpt CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
+                                                             Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
+                                                    LineBreakMode:NSLineBreakByTruncatingTail];
+    }
+    
+    CGFloat cellHeight = titleSize.height + excerptSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + ZHANSWERCELLEXCERPTLABELTOBOTTOMMARGIN;
+    
+    
+    CGFloat avatarAndTagHeight = ZHANSWERCELLAVATARHEIGHT + ZHANSWERCELLTAGHEIGHT + ZHANSWERCELLAVATARTOTAGMARGIN;
+    if (excerptSize.height < avatarAndTagHeight) {
+        cellHeight = titleSize.height + ZHANSWERCELLCONTENTMARGINTOTOPSIDE + ZHANSWERCELLTITLETOLINEMARGIN + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE + avatarAndTagHeight + ZHANSWERCELLTAGLABELTOBOTTOMMARGIN;
+    }
 	
 	return cellHeight;
 }
 
 - (void)bindWithObject:(id)object
-{  
+{
 	ZHAnswerObject *answerObject = (ZHAnswerObject *)object;
-  if (answerObject.title) {
-    [self.answerTitleLabel setText:answerObject.title];
-  }
-  
-  if (answerObject.excerpt) {
-    [self.answerExcerptLabel setText:answerObject.excerpt];
-  }
-  
-  if (answerObject.avatar_url) {
+    if (answerObject.title) {
+        [self.answerTitleLabel setText:answerObject.title];
+    }
     
-    __block typeof(self) weakself = self;
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadWithURL:[NSURL URLWithString:answerObject.avatar_url]
-                    delegate:self
-                     options:0
-                     success:^(UIImage *image) {
-                       [weakself.avatarButton
-                        setImage:image
-                        forState:UIControlStateNormal];
-                     }
-                     failure:^(NSError *error) {
-                       [weakself.avatarButton
-                        setImage:[UIImage imageNamed:@"AvatarMale50.png"]
-                        forState:UIControlStateNormal];
-                       
-                     }];
+    if (answerObject.excerpt) {
+        [self.answerExcerptLabel setText:answerObject.excerpt];
+    }
     
-  }
-  
-  if (answerObject.voteup_count) {
-    [self.voteupLabel setText:answerObject.voteup_count];
-  }
-  
+    if (answerObject.avatar_url) {
+        
+        __block typeof(self) weakself = self;
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        
+        [manager downloadWithURL:[NSURL URLWithString:answerObject.avatar_url] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
+            if (!error) {
+                [weakself.avatarButton
+                 setImage:image
+                 forState:UIControlStateNormal];
+            } else {
+                [weakself.avatarButton
+                 setImage:[UIImage imageNamed:@"AvatarMale50.png"]
+                 forState:UIControlStateNormal];
+            }
+        }];
+        
+    }
+    
+    if (answerObject.voteup_count) {
+        [self.voteupLabel setText:answerObject.voteup_count];
+    }
+    
 }
 
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-  
-  // Layout Subviews
-  
-  // Layout TitleLabel
+    
+    // Layout Subviews
+    
+    // Layout TitleLabel
 	CGSize answerTitleSize = [self.answerTitleLabel.text CalculateTextSizeWith:[UIFont boldSystemFontOfSize:ZHANSWERCELLANSWERTITLELABELFONT]
-                                                                        Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
-                                                               LineBreakMode:self.answerTitleLabel.lineBreakMode];
-  
-  [self.answerTitleLabel setSize:answerTitleSize];
-  
-  // Layout Arrow Button
-  [self.answerArrowListButton setX:[self width] - 35];
-  [self.answerArrowListButton setCenterY:[self.answerTitleLabel centerY]];
-  
-  // Layout Line
-  CGFloat  lineOriginY = [self.answerTitleLabel bottom] + ZHANSWERCELLTITLETOLINEMARGIN;
-  [self.answerSeparateLine setY:lineOriginY];
-  
-  // Layout Bottom Content
-  // Layout Avatar
-  CGFloat avatarOriginY = [self.answerSeparateLine bottom] + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE;
-  [self.avatarButton setY:avatarOriginY];
-  
-  // Layout TagBackgroundView
-  CGFloat tagViewOriginY = [self.avatarButton bottom] + ZHANSWERCELLAVATARTOTAGMARGIN;
-  [self.voteupBackgroundView setY:tagViewOriginY];
-  
-  // Layout TagLabel
-  [self.voteupLabel setSize:CGSizeMake([self.voteupBackgroundView width] - 1,
-                                       [self.voteupBackgroundView height] - 1)];
-  
-  // Layout Excerpt Label
-  CGFloat excerptLabelOriginX = [self.avatarButton right] + ZHANSWERCELLAVATARTOEXCERPTMARGIN;
-  CGFloat excerptLabelOriginY = [self.avatarButton y];
-  
-  CGSize excerptSize = [self.answerExcerptLabel.text CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
-                                                                      Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
-                                                             LineBreakMode:self.answerExcerptLabel.lineBreakMode];
-  
-  CGFloat voteupLabelBottom = [self.voteupBackgroundView bottom];
+                                                                          Size:CGSizeMake(ZHANSWERCELLTITLELABELWIDTH, ZHANSWERCELLTITLELABELMAXHEIGHT)
+                                                                 LineBreakMode:self.answerTitleLabel.lineBreakMode];
+    
+    [self.answerTitleLabel setSize:answerTitleSize];
+    
+    // Layout Arrow Button
+    [self.answerArrowListButton setX:[self width] - 35];
+    [self.answerArrowListButton setCenterY:[self.answerTitleLabel centerY]];
+    
+    // Layout Line
+    CGFloat  lineOriginY = [self.answerTitleLabel bottom] + ZHANSWERCELLTITLETOLINEMARGIN;
+    [self.answerSeparateLine setY:lineOriginY];
+    
+    // Layout Bottom Content
+    // Layout Avatar
+    CGFloat avatarOriginY = [self.answerSeparateLine bottom] + ZHANSWERCELLBOTTOMCONTENTORIGINTOLINE;
+    [self.avatarButton setY:avatarOriginY];
+    
+    // Layout TagBackgroundView
+    CGFloat tagViewOriginY = [self.avatarButton bottom] + ZHANSWERCELLAVATARTOTAGMARGIN;
+    [self.voteupBackgroundView setY:tagViewOriginY];
+    
+    // Layout TagLabel
+    [self.voteupLabel setSize:CGSizeMake([self.voteupBackgroundView width] - 1,
+                                         [self.voteupBackgroundView height] - 1)];
+    
+    // Layout Excerpt Label
+    CGFloat excerptLabelOriginX = [self.avatarButton right] + ZHANSWERCELLAVATARTOEXCERPTMARGIN;
+    CGFloat excerptLabelOriginY = [self.avatarButton y];
+    
+    CGSize excerptSize = [self.answerExcerptLabel.text CalculateTextSizeWith:[UIFont systemFontOfSize:ZHANSWERCELLANSWEREXCERPTLABELFONTSIZE]
+                                                                        Size:CGSizeMake(ZHANSWERCELLEXCERPTLABELWIDTH, ZHANSWERCELLEXCERPTLABELMAXHEIGHT)
+                                                               LineBreakMode:self.answerExcerptLabel.lineBreakMode];
+    
+    CGFloat voteupLabelBottom = [self.voteupBackgroundView bottom];
 	CGFloat height = voteupLabelBottom - avatarOriginY;
-  CGFloat excerptCenterY = 0;
-  if (excerptSize.height < height) {
-    excerptCenterY = height * 0.5f;
-  }
-  
-  [self.answerExcerptLabel setFrame:CGRectMake(excerptLabelOriginX,
-                                               excerptLabelOriginY,
-                                               excerptSize.width,
-                                               excerptSize.height)];
-  if (excerptCenterY) {
-    [self.answerExcerptLabel setCenterY:excerptLabelOriginY + excerptCenterY];
-  }
-  
+    CGFloat excerptCenterY = 0;
+    if (excerptSize.height < height) {
+        excerptCenterY = height * 0.5f;
+    }
+    
+    [self.answerExcerptLabel setFrame:CGRectMake(excerptLabelOriginX,
+                                                 excerptLabelOriginY,
+                                                 excerptSize.width,
+                                                 excerptSize.height)];
+    if (excerptCenterY) {
+        [self.answerExcerptLabel setCenterY:excerptLabelOriginY + excerptCenterY];
+    }
+    
 }
 
 @end

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B59779E17B6487B00683F7D /* ZHLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B59779D17B6487B00683F7D /* ZHLabel.m */; };
 		2B5977A217B654DA00683F7D /* tabBarShowHideAnimationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5977A117B654DA00683F7D /* tabBarShowHideAnimationUtil.m */; };
+		8DD0642923614405BA865D15 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F72822FBF2FF44C69DFDC7E0 /* libPods.a */; };
 		CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EE61794DD1C0067C31C /* ImageIO.framework */; };
-		CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */; };
 		CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA080EF41794DEB70067C31C /* MapKit.framework */; };
 		CA131B261791591D001EE98D /* ZHAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B251791591D001EE98D /* ZHAnswerCell.m */; };
 		CA131B2917915A5E001EE98D /* ZHAnswerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA131B2817915A5E001EE98D /* ZHAnswerHeaderView.m */; };
@@ -62,7 +62,6 @@
 		CA5B26BD179E66BA000771F3 /* ZHNavigationBarSearchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BB179E66BA000771F3 /* ZHNavigationBarSearchIcon.png */; };
 		CA5B26BE179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */; };
 		CA5D49581797A286005EF79B /* UIImage+RounedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D49551797A286005EF79B /* UIImage+RounedImage.m */; };
-		CA5D495D1797A2AE005EF79B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5D495C1797A2AE005EF79B /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA5D49F91797A300005EF79B /* answers.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49601797A2FF005EF79B /* answers.json */; };
 		CA5D49FA1797A300005EF79B /* answers1.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49611797A2FF005EF79B /* answers1.json */; };
 		CA5D49FB1797A300005EF79B /* answers10.json in Resources */ = {isa = PBXBuildFile; fileRef = CA5D49621797A2FF005EF79B /* answers10.json */; };
@@ -842,27 +841,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CA080EED1794DDFA0067C31C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53922D6F148C55820056699D;
-			remoteInfo = SDWebImage;
-		};
-		CA080EEF1794DDFA0067C31C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53761325155AD0D5005750A4;
-			remoteInfo = "SDWebImage ARC";
-		};
-		CA080EF11794DE0B0067C31C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53761307155AD0D5005750A4;
-			remoteInfo = "SDWebImage ARC";
-		};
 		CA8C546D178EA2B2005552CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA8C5440178EA2B2005552CE /* Project object */;
@@ -877,8 +855,8 @@
 		2B59779D17B6487B00683F7D /* ZHLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHLabel.m; sourceTree = "<group>"; };
 		2B5977A017B654DA00683F7D /* tabBarShowHideAnimationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarShowHideAnimationUtil.h; sourceTree = "<group>"; };
 		2B5977A117B654DA00683F7D /* tabBarShowHideAnimationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarShowHideAnimationUtil.m; sourceTree = "<group>"; };
+		8E1C676446D7495B80E694B9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CA080EE61794DD1C0067C31C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDWebImage.xcodeproj; sourceTree = "<group>"; };
 		CA080EF41794DEB70067C31C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CA131B241791591D001EE98D /* ZHAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAnswerCell.h; sourceTree = "<group>"; };
 		CA131B251791591D001EE98D /* ZHAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAnswerCell.m; sourceTree = "<group>"; };
@@ -955,8 +933,6 @@
 		CA5B26BC179E66BA000771F3 /* ZHNavigationBarSearchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZHNavigationBarSearchIcon@2x.png"; sourceTree = "<group>"; };
 		CA5D49541797A286005EF79B /* UIImage+RounedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RounedImage.h"; path = "Vendors/UIImage+RounedImage.h"; sourceTree = "<group>"; };
 		CA5D49551797A286005EF79B /* UIImage+RounedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RounedImage.m"; path = "Vendors/UIImage+RounedImage.m"; sourceTree = "<group>"; };
-		CA5D495B1797A2AE005EF79B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		CA5D495C1797A2AE005EF79B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CA5D49601797A2FF005EF79B /* answers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers.json; sourceTree = "<group>"; };
 		CA5D49611797A2FF005EF79B /* answers1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers1.json; sourceTree = "<group>"; };
 		CA5D49621797A2FF005EF79B /* answers10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = answers10.json; sourceTree = "<group>"; };
@@ -1776,6 +1752,7 @@
 		CAEFFF431796F58700ABA65B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAEFFF441796F58700ABA65B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CAEFFF451796F58700ABA65B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F72822FBF2FF44C69DFDC7E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1785,12 +1762,12 @@
 			files = (
 				CA9F109217A0D68700CD503E /* ZHListView.framework in Frameworks */,
 				CA080EF51794DEB70067C31C /* MapKit.framework in Frameworks */,
-				CA080EF31794DE110067C31C /* libSDWebImageARC.a in Frameworks */,
 				CA080EE71794DD1C0067C31C /* ImageIO.framework in Frameworks */,
 				CA4EA68F17911F3C004BE8F9 /* QuartzCore.framework in Frameworks */,
 				CA8C544C178EA2B2005552CE /* UIKit.framework in Frameworks */,
 				CA8C544E178EA2B2005552CE /* Foundation.framework in Frameworks */,
 				CA54FAC0178EAB36007DC220 /* CoreGraphics.framework in Frameworks */,
+				8DD0642923614405BA865D15 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1807,15 +1784,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA080EE91794DDF90067C31C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CA080EEE1794DDFA0067C31C /* libSDWebImage.a */,
-				CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CA131B2A17915A7A001EE98D /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1886,8 +1854,6 @@
 				CA5D4A901797A7F2005EF79B /* NSString+CalculateTextSize.m */,
 				CA5D49541797A286005EF79B /* UIImage+RounedImage.h */,
 				CA5D49551797A286005EF79B /* UIImage+RounedImage.m */,
-				CA5D495A1797A2AE005EF79B /* JSONKit */,
-				CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */,
 				CABA8A4E179012F0004B356E /* UIView+Frame */,
 			);
 			name = Verdons;
@@ -1909,16 +1875,6 @@
 				CA561F71178F9D2400383B89 /* ZHParser.m */,
 			);
 			name = DataParser;
-			sourceTree = "<group>";
-		};
-		CA5D495A1797A2AE005EF79B /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				CA5D495B1797A2AE005EF79B /* JSONKit.h */,
-				CA5D495C1797A2AE005EF79B /* JSONKit.m */,
-			);
-			name = JSONKit;
-			path = Vendors/JSONKit;
 			sourceTree = "<group>";
 		};
 		CA5D495E1797A2FF005EF79B /* Resources */ = {
@@ -2770,6 +2726,7 @@
 				CA8C546F178EA2B2005552CE /* ZHDemoTests */,
 				CA8C544A178EA2B2005552CE /* Frameworks */,
 				CA8C5449178EA2B2005552CE /* Products */,
+				8E1C676446D7495B80E694B9 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2795,6 +2752,7 @@
 				CA8C5469178EA2B2005552CE /* SenTestingKit.framework */,
 				CA3DFFC21796F8E7002929FF /* CoreFoundation.framework */,
 				CAEFFF421796F58700ABA65B /* Other Frameworks */,
+				F72822FBF2FF44C69DFDC7E0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3101,14 +3059,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA8C547A178EA2B2005552CE /* Build configuration list for PBXNativeTarget "ZHDemo" */;
 			buildPhases = (
+				50C7E6A6B0264937B9F1BA9A /* Check Pods Manifest.lock */,
 				CA8C5444178EA2B2005552CE /* Sources */,
 				CA8C5445178EA2B2005552CE /* Frameworks */,
 				CA8C5446178EA2B2005552CE /* Resources */,
+				23D1F935EAC04A40830924E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CA080EF21794DE0B0067C31C /* PBXTargetDependency */,
 			);
 			name = ZHDemo;
 			productName = ZHDemo;
@@ -3154,12 +3113,6 @@
 			mainGroup = CA8C543F178EA2B2005552CE;
 			productRefGroup = CA8C5449178EA2B2005552CE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CA080EE91794DDF90067C31C /* Products */;
-					ProjectRef = CA080EE81794DDF90067C31C /* SDWebImage.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CA8C5447178EA2B2005552CE /* ZHDemo */,
@@ -3167,23 +3120,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CA080EEE1794DDFA0067C31C /* libSDWebImage.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDWebImage.a;
-			remoteRef = CA080EED1794DDFA0067C31C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CA080EF01794DDFA0067C31C /* libSDWebImageARC.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDWebImageARC.a;
-			remoteRef = CA080EEF1794DDFA0067C31C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CA8C5446178EA2B2005552CE /* Resources */ = {
@@ -3959,6 +3895,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23D1F935EAC04A40830924E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50C7E6A6B0264937B9F1BA9A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		CA8C5466178EA2B2005552CE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3989,7 +3955,6 @@
 				CA54FB7E178EB32F007DC220 /* ZHLoadJSONFile.m in Sources */,
 				CAEB711417A243CB002B21F7 /* ZHQuestionAnswersObject.m in Sources */,
 				CA239988179FD93400791A7D /* ZHBarButtonItem.m in Sources */,
-				CA5D495D1797A2AE005EF79B /* JSONKit.m in Sources */,
 				CA561F7E178FA50800383B89 /* ZHAnswerHeaderParser.m in Sources */,
 				CAC5FAE3179A343400CF3CF9 /* ZHUserProfileWeiboStyleCell.m in Sources */,
 				CA54FAA7178EA850007DC220 /* ZHUserInfoViewController.m in Sources */,
@@ -4057,11 +4022,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CA080EF21794DE0B0067C31C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SDWebImage ARC";
-			targetProxy = CA080EF11794DE0B0067C31C /* PBXContainerItemProxy */;
-		};
 		CA8C546E178EA2B2005552CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA8C5447178EA2B2005552CE /* ZHDemo */;
@@ -4152,6 +4112,7 @@
 		};
 		CA8C547B178EA2B2005552CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E1C676446D7495B80E694B9 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -4173,6 +4134,7 @@
 		};
 		CA8C547C178EA2B2005552CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E1C676446D7495B80E694B9 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
